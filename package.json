@@ -1,0 +1,19 @@
+{
+  "name": "jsLearnerForms",
+  "version": "0.1.0",
+  "description": "JS muscle memory building forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node ./test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmstead/jsLearnerForms.git"
+  },
+  "author": "Chris Stead <cmstead@gmail.com> (http://www.chrisstead.com/)",
+  "license": "MPL",
+  "bugs": {
+    "url": "https://github.com/cmstead/jsLearnerForms/issues"
+  },
+  "homepage": "https://github.com/cmstead/jsLearnerForms"
+}
