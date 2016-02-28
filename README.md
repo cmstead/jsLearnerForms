@@ -19,6 +19,10 @@ tests by reading them and then providing an appropriate response.
 As a student becomes more conversant in a particular form, they are encouraged to apply their knowledge
 using code katas, like the problems provided by [Exercism.io](http://exercism.io/).
 
+I have created a quick start video which you can watch here:
+
+https://youtu.be/6G3PH4vb_gc
+
 ## Skills covered per form
 
 This section will be updated as forms are completed and ready for use.
