@@ -4,7 +4,7 @@
   "description": "JS muscle memory building forms",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine-node ./test/"
+    "test": "node node_modules/jasmine-node/bin/jasmine-node ./test/"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cmstead/jsLearnerForms/issues"
   },
-  "homepage": "https://github.com/cmstead/jsLearnerForms"
+  "homepage": "https://github.com/cmstead/jsLearnerForms",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
 }
