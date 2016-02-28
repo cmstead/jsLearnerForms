@@ -25,10 +25,13 @@ This section will be updated as forms are completed and ready for use.
 
 ### First Form
 
+Core setup concepts:
+
 - Strict mode Javascript
 - Immediately Invoked Function Expressions
 - Exporting a module
 
+Ideas to build upon:
 
 - Function creation
 - Conditional statements
