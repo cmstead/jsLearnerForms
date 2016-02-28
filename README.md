@@ -51,6 +51,6 @@ Good reinforcement exercises from Exercism.io include:
 
 Strong first form students will be challenged by these exercises:
 
-- Gigasecond
+- Gigasecond (The Date api is necessary for this problem)
 - Word-count
 - Pangram
