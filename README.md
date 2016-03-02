@@ -62,3 +62,20 @@ Strong first form students will be challenged by these exercises:
 - Gigasecond (The Date api is necessary for this problem)
 - Word-count
 - Pangram
+
+### Second Form
+
+Second form concepts
+
+- Inner looping functions
+- Ternary expressions
+- Instantiable objects
+- Closures
+- Factory functions
+- Higher-order functions
+
+Reinforcement exercises from Exercism.io are to refactor the following using second form concepts:
+
+- Hamming
+- Word-count
+- Pangram
