@@ -51,7 +51,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -144,7 +144,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -237,7 +237,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -334,7 +334,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -431,7 +431,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -528,7 +528,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -625,7 +625,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -718,7 +718,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -809,7 +809,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -898,7 +898,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -1001,7 +1001,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -1098,7 +1098,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -1195,7 +1195,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -1292,7 +1292,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
@@ -1385,7 +1385,7 @@ in second form follow the same test order as first form.
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function add (a, b){
