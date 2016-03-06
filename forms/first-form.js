@@ -233,7 +233,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     module.exports = {
@@ -264,7 +264,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -300,7 +300,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -340,7 +340,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -382,7 +382,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -429,7 +429,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -484,7 +484,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -544,7 +544,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -605,7 +605,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -671,7 +671,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -737,7 +737,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -809,7 +809,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -885,7 +885,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -966,7 +966,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -1054,7 +1054,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -1135,7 +1135,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -1222,7 +1222,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -1313,7 +1313,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
@@ -1410,7 +1410,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareRoot(x) {
-        return Math.pow(x, 0.5);
+        return Math.sqrt(x);
     }
 
     function sum(nums) {
