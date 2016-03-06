@@ -79,3 +79,19 @@ Reinforcement exercises from Exercism.io are to refactor the following using sec
 - Hamming
 - Word-count
 - Pangram
+
+### Third Form
+
+Third form concepts
+
+- Reduce
+- Recursion
+- Function chaining
+- Instantiable objects as types
+- Creating static methods on types
+- Executing prototypal methods as static
+- Scope management
+- Partial application with bind
+- Generic functions
+
+Reinforcement exercises to come
