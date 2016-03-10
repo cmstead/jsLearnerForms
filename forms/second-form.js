@@ -70,7 +70,7 @@ in second form follow the same test order as first form.
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -163,7 +163,7 @@ in second form follow the same test order as first form.
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -260,7 +260,7 @@ in second form follow the same test order as first form.
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -357,7 +357,7 @@ in second form follow the same test order as first form.
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;

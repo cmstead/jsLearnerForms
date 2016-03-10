@@ -448,7 +448,7 @@ Even the longest journey begins with a single step. Good luck!
         
         for(var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
         
         return result;
@@ -503,7 +503,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -563,7 +563,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -624,7 +624,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -690,7 +690,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -756,7 +756,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -828,7 +828,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -904,7 +904,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -985,7 +985,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -1073,7 +1073,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -1154,7 +1154,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -1241,7 +1241,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -1332,7 +1332,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
@@ -1429,7 +1429,7 @@ Even the longest journey begins with a single step. Good luck!
 
         for (var index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
-            result[result.length] = squaredNum;
+            result[index] = squaredNum;
         }
 
         return result;
