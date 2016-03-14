@@ -23,6 +23,12 @@ I have created a quick start video which you can watch here:
 
 https://youtu.be/6G3PH4vb_gc
 
+During the video, I talk about setting up Node. If you haven't done this before, please watch the following video on Node.
+
+https://www.youtube.com/watch?v=tlntE8fe6u4
+
+This video is geared for people installing on Windows, but if you are on a Mac the setup is effectively the same.
+
 ## Skills covered per form
 
 This section will be updated as forms are completed and ready for use.
