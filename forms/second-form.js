@@ -1100,6 +1100,10 @@ in second form follow the same test order as first form.
 
 // Changes made:
 
+// function squareAll(nums) {
+//     return nums.valueOf().map(square);
+// }
+
 // function buildVector(valueArray) {
 //     return new Vector(valueArray);
 // }

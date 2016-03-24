@@ -7,7 +7,9 @@ describe('Forms', function () {
         expect(typeof jsforms).toBe('object');
     });
 
+    // First form, movements 2 and 3
     // Second form, movements 1 and 2
+    // Third form, movements 1-3
     describe('greeter', function () {
         
         // First form, movement 2
@@ -22,6 +24,7 @@ describe('Forms', function () {
         
     });
     
+    // First form, movements 4-6
     describe('square', function () {
         
         // First form, movement 4
@@ -36,6 +39,7 @@ describe('Forms', function () {
         
     });
     
+    // First form, movements 7 and 8
     describe('squareRoot', function () {
         
         // First form, movement 7
@@ -50,7 +54,9 @@ describe('Forms', function () {
         
     });
     
+    // First form, movements 9-11
     // Second form, movements 3 and 4
+    // Third form, movements 4 and 5
     describe('sum', function () {
         
         // First form, movement 9
@@ -69,6 +75,7 @@ describe('Forms', function () {
         });
     });
 
+    // First form, movements 12 and 13
     // Second form, movements 5-9
     describe('squareAll', function () {
         
@@ -84,6 +91,8 @@ describe('Forms', function () {
         
     });
     
+    // First form, movements 14 and 15
+    // Third form, movements 6-8
     describe('sumOfSquares', function () {
         
         // First form, movement 14
@@ -98,7 +107,9 @@ describe('Forms', function () {
         
     });
 
+    // First form, movement 16-19
     // Second form, movements 10 and 11
+    // Third form, movements 9-24
     describe('buildVector', function () {
 
         // First form, movement 16
@@ -134,6 +145,7 @@ describe('Forms', function () {
         
     });
 
+    // First form, movement 20-23
     describe('magnitude', function () {
         
         // First form, movement 20
@@ -158,7 +170,9 @@ describe('Forms', function () {
         
     });    
 
+    // First form, movement 24-27
     // Second form, movements 12-15
+    // Third form, movements 25 and 26
     describe('getVectorsShorterThan', function () {
         
         // First form, movement 24
