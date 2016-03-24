@@ -23,15 +23,27 @@ Topics in second form:
 
 Although second form topics list is shorter than the first form,
 each item is a denser idea. Be sure to stop and consider what each
-motion means to the overall program structure. Don't be deceived,
+movement means to the overall program structure. Don't be deceived,
 second form takes some work, but it's worth it.
 
-Second form start with completed code from first form. All motions
+Second form start with completed code from first form. All movements
 in second form follow the same test order as first form.
 
 ********************************************************************/
 
-// Motion 1
+// Movement 1
+
+// Changes made:
+
+// function greet(greeting) {
+//     var message = 'Hello';
+    
+//     if (greeting !== undefined) {
+//         message = greeting;
+//     }
+    
+//     return message + '!';
+// }
 
 (function () {
     'use strict';
@@ -128,7 +140,16 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
-// Motion 2
+
+// Movement 2
+
+// Changes made:
+
+// function greet(greeting) {
+//     var message = greeting !== undefined ? greeting : 'Hello';
+    
+//     return message + '!';
+// }
 
 (function () {
     'use strict';
@@ -221,7 +242,18 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
-// Motion 3
+
+// Movement 3
+
+// Changes made
+
+// function sum(nums) {
+//     ...
+//     for (var index = 0; index < nums.length; index++) {
+//         finalSum = add(finalSum, nums[index]);
+//     }
+//     ...
+// }
 
 (function () {
     'use strict';
@@ -318,7 +350,18 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
-// Motion 4
+
+// Movement 4
+
+// Changes made:
+
+// function sum(nums) {
+//     ...
+//     nums.forEach(function (value) {
+//         finalSum = add(finalSum, value);
+//     });
+//     ...
+// }
 
 (function () {
     'use strict';
@@ -415,7 +458,19 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 5
+
+// Changes made:
+
+// function squareAll(nums) {
+//     ...
+//     for (var index = 0; index < nums.length; index++) {
+//         squaredNum = square(nums[index]);
+//         result.push(squaredNum);
+//     }
+//     ...
+// }
 
 (function () {
     'use strict';
@@ -512,7 +567,19 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 6
+
+// Changes made
+
+// function squareAll(nums) {
+//     ...
+//     nums.forEach(function (value) {
+//         squaredNum = square(value);
+//         result.push(squaredNum);
+//     });
+//     ...
+// }
 
 (function () {
     'use strict';
@@ -609,7 +676,17 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 7
+
+// Changes made:
+
+// function squareAll(nums) {
+//     var result = nums.map(function (value) {
+//         return square(value);
+//     });
+//     ...
+// }
 
 (function () {
     'use strict';
@@ -702,7 +779,15 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 8
+
+// Changes made:
+
+// function squareAll(nums) {
+//     var result = nums.map(square);
+//     ...
+// }
 
 (function () {
     'use strict';
@@ -793,7 +878,14 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 9
+
+// Changes made:
+
+// function squareAll(nums) {
+//     return nums.map(square);
+// }
 
 (function () {
     'use strict';
@@ -882,7 +974,25 @@ in second form follow the same test order as first form.
 
 // Run the tests
 
+
 // Movement 10
+
+// Changes made:
+// Added vector object
+
+// function Vector (valueArray) {
+//     this.points = valueArray
+// }
+
+// Vector.prototype = {
+//     valueOf: function () {
+//         return this.points.slice(0);
+//     },
+    
+//     toString: function () {
+//         return '<' + this.valueOf().toString() + '>';
+//     }
+// };
 
 (function () {
     'use strict';
@@ -985,7 +1095,14 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 11
+
+// Changes made:
+
+// function buildVector(valueArray) {
+//     return new Vector(valueArray);
+// }
 
 (function () {
     'use strict';
@@ -1082,7 +1199,20 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 12
+
+// Changes made:
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     ...
+//     for(var index = 0; index < vectors.length; index++) {
+//         if(magnitude(vectors[index]) <= maxLength) {
+//             filteredVectors.push(vectors[index]);
+//         }
+//     }
+//     ...
+// }
 
 (function () {
     'use strict';
@@ -1179,7 +1309,21 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 13
+
+// Changes made:
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     var filteredVectors = [];
+    
+//     vectors.forEach(function (vector) {
+//         if(magnitude(vector) <= maxLength) {
+//             filteredVectors.push(vector);
+//         }
+//     });
+//     ...
+// }
 
 (function () {
     'use strict';
@@ -1276,7 +1420,17 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 14
+
+// Changes made:
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     var filteredVectors = vectors.filter(function (vector) {
+//         return magnitude(vector) <= maxLength;
+//     });
+//     ...
+// }
 
 (function () {
     'use strict';
@@ -1369,7 +1523,16 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
+
 // Movement 15
+
+// Changes made:
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     return vectors.filter(function (vector) {
+//         return magnitude(vector) <= maxLength;
+//     });
+// }
 
 (function () {
     'use strict';

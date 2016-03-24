@@ -68,7 +68,18 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 2
+
+// Changes made:
+
+// function greet (greeting){
+//     return 'Hello!';
+// }
+
+// module.exports = {
+//     greet: greet
+// };
 
 (function () {
     'use strict';
@@ -85,7 +96,18 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 3
+
+// Changes made:
+
+// function greet(greeting) {
+//     if (greeting === undefined) {
+//         return 'Hello!';
+//     } else {
+//         return greeting + '!';
+//     }
+// }
 
 (function () {
     'use strict';
@@ -106,7 +128,20 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 4
+
+// Changes made:
+
+// function square(x) {
+//     return 1;
+// }
+
+// module.exports = {
+//     square: square,
+//     ...
+// };
+
 
 (function () {
     'use strict';
@@ -132,7 +167,14 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 5
+
+// Changes made:
+
+// function square(x) {
+//     return x * x;
+// }
 
 (function () {
     'use strict';
@@ -158,7 +200,14 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 6
+
+// Changes made:
+
+// function square(x) {
+//     return Math.pow(x, 2);
+// }
 
 (function () {
     'use strict';
@@ -184,7 +233,19 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 7
+
+// Changes made:
+
+// function squareRoot(x) {
+//     return 1;
+// }
+
+// module.exports = {
+//     squareRoot: squareRoot,
+//     ...
+// };
 
 (function () {
     'use strict';
@@ -215,7 +276,14 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 8
+
+// Changes made:
+
+// function squareRoot(x) {
+//     return Math.sqrt(x);
+// }
 
 (function () {
     'use strict';
@@ -246,7 +314,19 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 9
+
+// Changes made:
+
+// function sum(nums) {
+//     return 1;
+// }
+
+// module.exports = {
+//     sum: sum,
+//     ...
+// };
 
 (function () {
     'use strict';
@@ -282,7 +362,18 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 10
+
+// Changes made:
+
+// function sum(nums) {
+//     if(nums.length === 1) {
+//         return nums[0];
+//     } else {
+//         return nums[0] + nums[1];
+//     }
+// }
 
 (function () {
     'use strict';
@@ -322,7 +413,20 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 11
+
+// Changes made:
+
+// function sum(nums) {
+//     var finalSum = 0;
+    
+//     for(var index = 0; index < nums.length; index++) {
+//         finalSum += nums[index];
+//     }
+    
+//     return finalSum;
+// }
 
 (function () {
     'use strict';
@@ -364,7 +468,19 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 12
+
+// Changes made:
+
+// function squareAll(nums) {
+//     return [4];
+// }
+
+// module.exports = {
+//     squareAll: squareAll,
+//     ...
+// };
 
 (function () {
     'use strict';
@@ -411,7 +527,22 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 13
+
+// Changes made:
+
+// function squareAll(nums) {
+//     var result = [];
+//     var squaredNum = 0;
+    
+//     for(var index = 0; index < nums.length; index++) {
+//         squaredNum = square(nums[index]);
+//         result[index] = squaredNum;
+//     }
+    
+//     return result;
+// }
 
 (function () {
     'use strict';
@@ -466,7 +597,19 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 14
+
+// Changes made:
+
+// function sumOfSquares(nums) {
+//     return square(nums[0]);
+// }
+
+// module.exports = {
+//     sumOfSquares: sumOfSquares,
+//     ...
+// };
 
 (function () {
     'use strict';
@@ -526,7 +669,15 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 15
+
+// Changes made:
+
+// function sumOfSquares(nums) {
+//     var squares = squareAll(nums);
+//     return sum(squares);
+// }
 
 (function () {
     'use strict';
@@ -587,7 +738,19 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 16
+
+// Changes made:
+
+// function buildVector(valueArray) {
+//     return valueArray;
+// }
+
+// module.exports = {
+//     buildVector: buildVector,
+//     ...
+// };
 
 (function () {
     'use strict';
@@ -653,7 +816,14 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
+
 // Movement 17
+
+// Changes made:
+
+// function buildVector(valueArray) {
+//     return valueArray.slice(0);
+// }
 
 (function () {
     'use strict';
@@ -720,6 +890,18 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 // Movement 18
+
+// Changes made:
+
+// function buildVector(valueArray) {
+//     var vector = valueArray.slice(0);
+    
+//     vector.valueOf = function () {
+//         return this.slice(0);
+//     };
+    
+//     return vector;
+// }
 
 (function () {
     'use strict';
@@ -792,6 +974,22 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 // Movement 19
+
+// Changes made:
+
+// function buildVector(valueArray) {
+//     var vector = valueArray.slice(0);
+    
+//     vector.valueOf = function () {
+//         return this.slice(0);
+//     };
+    
+//     vector.toString = function () {
+//         return '<' + this.valueOf().toString() + '>';
+//     };
+    
+//     return vector;
+// }
 
 (function () {
     'use strict';
@@ -868,6 +1066,104 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 // Movement 20
+
+// Changes made:
+
+// function magnitude(vector) {
+//     return vector[0];
+// }
+
+// module.exports = {
+//     magnitude: magnitude,
+//     ...
+// };
+
+(function () {
+    'use strict';
+
+    function greet(greeting) {
+        if (greeting === undefined) {
+            return 'Hello!';
+        } else {
+            return greeting + '!';
+        }
+    }
+
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function sum(nums) {
+        var finalSum = 0;
+
+        for (var index = 0; index < nums.length; index++) {
+            finalSum += nums[index];
+        }
+
+        return finalSum;
+    }
+
+    function squareAll(nums) {
+        var result = [];
+        var squaredNum = 0;
+
+        for (var index = 0; index < nums.length; index++) {
+            squaredNum = square(nums[index]);
+            result[index] = squaredNum;
+        }
+
+        return result;
+    }
+
+    function sumOfSquares(nums) {
+        var squares = squareAll(nums);
+        return sum(squares);
+    }
+
+    function buildVector(valueArray) {
+        var vector = valueArray.slice(0);
+        
+        vector.valueOf = function () {
+            return this.slice(0);
+        };
+        
+        vector.toString = function () {
+            return '<' + this.valueOf().toString() + '>';
+        };
+        
+        return vector;
+    }
+
+    function magnitude(vector) {
+        return vector[0];
+    }
+
+    module.exports = {
+        magnitude: magnitude,
+        sumOfSquares: sumOfSquares,
+        squareAll: squareAll,
+        sum: sum,
+        squareRoot: squareRoot,
+        square: square,
+        greet: greet
+    };
+
+})();
+
+// Run the tests!
+
+// Movement 21
+
+// Changes made:
+
+// function magnitude(vector) {
+//     var squaredNum = square(vector[0]);
+//     return squareRoot(squaredNum);
+// }
 
 (function () {
     'use strict';
@@ -948,7 +1244,22 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 21
+
+// Movement 22
+
+// Changes made:
+
+// function magnitude(vector) {
+//     var squares;
+    
+//     if(vector.length === 1) {
+//         squares = square(vector[0]);
+//         return squareRoot(squares);
+//     } else {
+//         squares = [square(vector[0]), square(vector[1])];
+//         return squareRoot(squares[0] + squares[1]);
+//     }
+// }
 
 (function () {
     'use strict';
@@ -1036,7 +1347,15 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 22
+
+// Movement 23
+
+// Changes made:
+
+// function magnitude(vector) {
+//     var summedSquares = sumOfSquares(vector);
+//     return squareRoot(summedSquares);
+// }
 
 (function () {
     'use strict';
@@ -1117,7 +1436,19 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 23
+
+// Movement 24
+
+// Changes made:
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     return vectors;
+// }
+
+// module.exports = {
+//     getVectorsShorterThan: getVectorsShorterThan,
+//     ...
+// };
 
 (function () {
     'use strict';
@@ -1204,7 +1535,18 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 24
+
+// Movement 25
+
+// Changes made:
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     if (magnitude(vectors[0]) < maxLength) {
+//         return vectors;
+//     } else {
+//         return [];
+//     }
+// }
 
 (function () {
     'use strict';
@@ -1295,7 +1637,24 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 25
+
+// Movement 26
+
+// Changes made:
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     var filteredVectors = [];
+
+//     if(magnitude(vectors[0]) < maxLength) {
+//         filteredVectors[0] = vectors[0];
+//     }
+    
+//     if(vectors.length > 1 && magnitude(vectors[1]) < maxLength) {
+//         filteredVectors[filteredVectors.length] = vectors[1];
+//     }
+    
+//     return filteredVectors;
+// }
 
 (function () {
     'use strict';
@@ -1392,7 +1751,22 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 26
+
+// Movement 27
+
+// Changes made:
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     var filteredVectors = [];
+    
+//     for(var index = 0; index < vectors.length; index++) {
+//         if(magnitude(vectors[index]) <= maxLength) {
+//             filteredVectors[filteredVectors.length] = vectors[index];
+//         }
+//     }
+    
+//     return filteredVectors;
+// }
 
 (function () {
     'use strict';
