@@ -247,6 +247,10 @@ in second form follow the same test order as first form.
 
 // Changes made
 
+// function add (a, b){
+//     return a + b;
+// }
+
 // function sum(nums) {
 //     ...
 //     for (var index = 0; index < nums.length; index++) {
