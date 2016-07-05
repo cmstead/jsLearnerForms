@@ -155,17 +155,17 @@ describe('Forms', function () {
         
         // First form, movement 21
         it('should return only positive magnitude values', function () {
-            expect(jsforms.magnitude([-5])).toBe(5);
+            expect(jsforms.magnitude([-3])).toBe(3);
         });
         
         // First form, movement 22
         it('should return the magnitude of a two-value vector', function () {
-            expect(jsforms.magnitude([3, 4])).toBe(5);
+            expect(jsforms.magnitude([6, 8])).toBe(10);
         });
         
         // First form, movement 23
         it('should return the magnitude of a multi-value vector', function () {
-            expect(jsforms.magnitude([0, 3, 0, 4])).toBe(5);
+            expect(jsforms.magnitude([0, 12, 3, 4])).toBe(13);
         });
         
     });    
