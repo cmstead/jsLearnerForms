@@ -37,11 +37,11 @@ in second form follow the same test order as first form.
 
 // function greet(greeting) {
 //     var message = 'Hello';
-    
+
 //     if (greeting !== undefined) {
 //         message = greeting;
 //     }
-    
+
 //     return message + '!';
 // }
 
@@ -50,11 +50,11 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = 'Hello';
-        
+
         if (greeting !== undefined) {
             message = greeting;
         }
-        
+
         return message + '!';
     }
 
@@ -114,13 +114,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -147,7 +147,7 @@ in second form follow the same test order as first form.
 
 // function greet(greeting) {
 //     var message = greeting !== undefined ? greeting : 'Hello';
-    
+
 //     return message + '!';
 // }
 
@@ -156,7 +156,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -216,13 +216,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -264,7 +264,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -276,7 +276,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -328,13 +328,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -372,7 +372,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -384,7 +384,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -436,13 +436,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -481,7 +481,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -493,7 +493,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -545,13 +545,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -590,7 +590,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -602,7 +602,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -654,13 +654,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -697,7 +697,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -709,7 +709,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -757,13 +757,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -798,7 +798,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -810,7 +810,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -856,13 +856,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -896,7 +896,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -908,7 +908,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -952,13 +952,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -992,7 +992,7 @@ in second form follow the same test order as first form.
 //     valueOf: function () {
 //         return this.points.slice(0);
 //     },
-    
+
 //     toString: function () {
 //         return '<' + this.valueOf().toString() + '>';
 //     }
@@ -1003,7 +1003,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -1015,7 +1015,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -1038,15 +1038,15 @@ in second form follow the same test order as first form.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -1073,13 +1073,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -1104,6 +1104,15 @@ in second form follow the same test order as first form.
 
 // Changes made:
 
+// function Vector(valueArray) {
+//     ...
+
+//     valueArray.forEach(function (value, index) {
+//         this[index] = value;
+//     }.bind(this));
+// }
+
+
 // function squareAll(nums) {
 //     return nums.valueOf().map(square);
 // }
@@ -1117,7 +1126,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -1129,7 +1138,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -1152,19 +1161,19 @@ in second form follow the same test order as first form.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
+
         valueArray.forEach(function (value, index) {
             this[index] = value;
         }.bind(this));
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -1181,13 +1190,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -1227,7 +1236,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -1239,7 +1248,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -1262,19 +1271,19 @@ in second form follow the same test order as first form.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
+
         valueArray.forEach(function (value, index) {
             this[index] = value;
         }.bind(this));
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -1291,13 +1300,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
-        for(var index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors.push(vectors[index]);
             }
         }
-        
+
         return filteredVectors;
     }
 
@@ -1324,7 +1333,7 @@ in second form follow the same test order as first form.
 
 // function getVectorsShorterThan(maxLength, vectors) {
 //     var filteredVectors = [];
-    
+
 //     vectors.forEach(function (vector) {
 //         if(magnitude(vector) <= maxLength) {
 //             filteredVectors.push(vector);
@@ -1338,7 +1347,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -1350,7 +1359,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -1373,19 +1382,19 @@ in second form follow the same test order as first form.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
+
         valueArray.forEach(function (value, index) {
             this[index] = value;
         }.bind(this));
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -1402,13 +1411,13 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
-        
+
         vectors.forEach(function (vector) {
-            if(magnitude(vector) <= maxLength) {
+            if (magnitude(vector) <= maxLength) {
                 filteredVectors.push(vector);
             }
         });
-        
+
         return filteredVectors;
     }
 
@@ -1445,7 +1454,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -1457,7 +1466,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -1480,19 +1489,19 @@ in second form follow the same test order as first form.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
+
         valueArray.forEach(function (value, index) {
             this[index] = value;
         }.bind(this));
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -1508,10 +1517,10 @@ in second form follow the same test order as first form.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       var filteredVectors = vectors.filter(function (vector) {
+        var filteredVectors = vectors.filter(function (vector) {
             return magnitude(vector) <= maxLength;
         });
-        
+
         return filteredVectors;
     }
 
@@ -1547,7 +1556,7 @@ in second form follow the same test order as first form.
 
     function greet(greeting) {
         var message = greeting !== undefined ? greeting : 'Hello';
-        
+
         return message + '!';
     }
 
@@ -1559,7 +1568,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -1582,19 +1591,19 @@ in second form follow the same test order as first form.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
+
         valueArray.forEach(function (value, index) {
             this[index] = value;
         }.bind(this));
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -1610,7 +1619,7 @@ in second form follow the same test order as first form.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
+        return vectors.filter(function (vector) {
             return magnitude(vector) <= maxLength;
         });
     }
