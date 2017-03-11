@@ -1,6 +1,6 @@
 {
   "name": "jsLearnerForms",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JS muscle memory building forms",
   "main": "index.js",
   "scripts": {

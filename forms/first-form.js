@@ -29,8 +29,10 @@ proficiency with the following concepts:
 - Strict mode Javascript
 - Immediately Invoked Function Expressions
 - Exporting a module
+- Exporting a function
 
 - Function creation
+- Returning a value
 - Conditional statements
 - Calling a function
 - Interaction and use of function parameters
@@ -59,6 +61,11 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 1
 
+// Concepts in this movement:
+// - Strict mode
+// - Immediately Invoked Function Expressions
+// - Exporting a Module
+
 (function () {
     'use strict';
 
@@ -70,6 +77,11 @@ Even the longest journey begins with a single step. Good luck!
 
 
 // Movement 2
+
+// Concepts in this movement:
+// - function creation
+// - returning a value
+// - exporting a function
 
 // Changes made:
 
@@ -98,6 +110,9 @@ Even the longest journey begins with a single step. Good luck!
 
 
 // Movement 3
+
+// Concepts in this movement:
+// - conditional statements
 
 // Changes made:
 
@@ -130,6 +145,11 @@ Even the longest journey begins with a single step. Good luck!
 
 
 // Movement 4
+
+// Concepts in this movement:
+// - Simplest thing that passes the test
+// - returning a value
+// - exporting a function
 
 // Changes made:
 
@@ -170,6 +190,9 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 5
 
+// Concepts in this movement
+// - simple mathematical computation
+
 // Changes made:
 
 // function square(x) {
@@ -203,6 +226,10 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 6
 
+// Concepts in this movement
+// - built-in modules (Math)
+// - build-in functions (pow)
+
 // Changes made:
 
 // function square(x) {
@@ -235,6 +262,10 @@ Even the longest journey begins with a single step. Good luck!
 
 
 // Movement 7
+
+// Concepts in this movement:
+// - simplest thing to pass the test
+// - export a function
 
 // Changes made:
 
@@ -278,6 +309,10 @@ Even the longest journey begins with a single step. Good luck!
 
 
 // Movement 8
+
+// Concepts in this movement
+// - built-in modules (Math)
+// - build-in functions (sqrt)
 
 // Changes made:
 
@@ -365,6 +400,11 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 10
 
+// Concepts in this movement:
+// - Conditional statements
+// - mathematical operations
+// - arrays
+
 // Changes made:
 
 // function sum(nums) {
@@ -415,6 +455,10 @@ Even the longest journey begins with a single step. Good luck!
 
 
 // Movement 11
+
+// Concepts introduced in this movement:
+// - looping
+// - arrays
 
 // Changes made:
 
