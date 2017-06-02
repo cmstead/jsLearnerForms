@@ -1104,17 +1104,16 @@ in second form follow the same test order as first form.
 
 // Changes made:
 
+// function squareAll(nums) {
+//     return nums.valueOf().map(square);
+// }
+
 // function Vector(valueArray) {
-//     ...
+//     this.points = valueArray;
 
 //     valueArray.forEach(function (value, index) {
 //         this[index] = value;
 //     }.bind(this));
-// }
-
-
-// function squareAll(nums) {
-//     return nums.valueOf().map(square);
 // }
 
 // function buildVector(valueArray) {

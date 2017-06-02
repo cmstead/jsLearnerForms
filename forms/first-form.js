@@ -1885,3 +1885,5 @@ Even the longest journey begins with a single step. Good luck!
     };
 
 })();
+
+// Run the tests!

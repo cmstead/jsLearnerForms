@@ -1188,6 +1188,11 @@ they interact with each other.
 //     ...
 // }
 
+// function buildVector(valueArray) {
+//     return Vector(valueArray);
+// }
+
+
 (function () {
     'use strict';
 
@@ -2188,8 +2193,15 @@ they interact with each other.
 //     index = eitherType('number', 0, index);
     
 //     var point = vector[index];
-//     ...    
+    
+//     if(isType('undefined', point)) {
+//         return points;
+//     } else {
+//         return Vector.getPoints(vector, inc(index), conj(point, points));
+//     }
+    
 // };
+
 
 (function () {
     'use strict';

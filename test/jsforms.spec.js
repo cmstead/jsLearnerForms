@@ -3,117 +3,112 @@ var assert = require('chai').assert;
 
 describe('Forms', function () {
 
-    // First form, movement 1
-    it('should be an object', function () {
-        assert.equal(typeof jsforms, 'object');
-    });
-
-    // First form, movements 2 and 3
+    // First form, movements 1 and 2
     // Second form, movements 1 and 2
     // Third form, movements 1-3
     describe('greeter', function () {
         
-        // First form, movement 2
+        // First form, movement 1
         it('should say "Hello!" by default', function () {
             assert.equal(jsforms.greet(), 'Hello!');
         });
         
-        // First form, movement 3
+        // First form, movement 2
         it('should say "Salutations!" when Salutations is passed', function () {
             assert.equal(jsforms.greet('Salutations'), 'Salutations!');
         });
         
     });
     
-    // First form, movements 4-6
+    // First form, movements 3-5
     describe('square', function () {
         
-        // First form, movement 4
+        // First form, movement 3
         it('should square 1', function () {
             assert.equal(jsforms.square(1), 1);
         });
         
-        // First form, movements 5 and 6
+        // First form, movements 4 and 5
         it('should square 3', function () {
             assert.equal(jsforms.square(3), 9);
         });
         
     });
     
-    // First form, movements 7 and 8
+    // First form, movements 6 and 7
     describe('squareRoot', function () {
         
-        // First form, movement 7
+        // First form, movement 6
         it('should take the square root of 1', function () {
             assert.equal(jsforms.squareRoot(1), 1);
         });
         
-        // FIrst form, movement 8
+        // FIrst form, movement 7
         it('should take the square root of 4', function () {
             assert.equal(jsforms.squareRoot(4), 2);
         });
         
     });
     
-    // First form, movements 9-11
+    // First form, movements 8-10
     // Second form, movements 3 and 4
     // Third form, movements 4 and 5
     describe('sum', function () {
         
-        // First form, movement 9
+        // First form, movement 8
         it('should take the sum of one number', function () {
             assert.equal(jsforms.sum([1]), 1);
         });
         
-        // First form, movement 10
+        // First form, movement 9
         it('should add two numbers', function () {
             assert.equal(jsforms.sum([2, 3]), 5);
         });
         
-        // First form, movement 11
+        // First form, movement 10
         it('should add multiple numbers', function () {
             assert.equal(jsforms.sum([1, 3, 5, 7]), 16);
         });
     });
 
-    // First form, movements 12 and 13
+    // First form, movements 11 and 12
     // Second form, movements 5-9
     describe('squareAll', function () {
         
-        // First form, movement 12
+        // First form, movement 11
         it('should square all numbers in a single-value array', function () {
             assert.equal(jsforms.squareAll([2]).toString(), '4');
         });
         
-        // First form, movement 13
+        // First form, movement 12
         it('should square multiple numbers', function () {
             assert.equal(jsforms.squareAll([1, 2, 3, 5]).toString(), '1,4,9,25');
         });
         
     });
     
-    // First form, movements 14 and 15
+    // First form, movements 13 and 14
     // Third form, movements 6-8
     describe('sumOfSquares', function () {
         
-        // First form, movement 14
+        // First form, movement 13
         it('should square number in a 1-length array and return it', function () {
             assert.equal(jsforms.sumOfSquares([2]), 4);
         });
         
-        // First form, movement 15
+        // First form, movement 14
         it('should take the sum of squares of multiple numbers', function () {
             assert.equal(jsforms.sumOfSquares([1, 2, 3]), 14);
         });
         
     });
 
-    // First form, movement 16-19
+    // First form, movement 15-18
     // Second form, movements 10 and 11
     // Third form, movements 9-24
     describe('buildVector', function () {
 
-        // First form, movement 16
+        // First form, movement 15
         it('should return a vector matching original values', function () {
             var initialArray = [1, 2];
             var vector = jsforms.buildVector(initialArray);
@@ -122,7 +117,7 @@ describe('Forms', function () {
             assert.equal(resultValues.toString(), initialArray.toString());
         });
         
-        // First form, movement 17
+        // First form, movement 16
         it('should return a vector given an array which is not the original array', function () {
             var initialArray = [1, 2];
             var vector = jsforms.buildVector(initialArray);
@@ -130,14 +125,14 @@ describe('Forms', function () {
             assert.equal(initialArray !== vector, true);
         });
         
-        // First form, movement 18
+        // First form, movement 17
         it('should return vector with valueOf function which does not return vector', function () {
             var vector = jsforms.buildVector([1, 2, 3]);
             
             assert.equal(vector.valueOf() !== vector, true);
         });
         
-        // First form, movement 19
+        // First form, movement 18
         it('should return a vector where toString returns a vector string', function () {
             var vector = jsforms.buildVector([1, 2, 3]);
             
@@ -146,37 +141,37 @@ describe('Forms', function () {
         
     });
 
-    // First form, movement 20-23
+    // First form, movement 19-22
     describe('magnitude', function () {
         
-        // First form, movement 20
+        // First form, movement 19
         it('should return the magnitude of a one-value vector', function () {
             assert.equal(jsforms.magnitude([5]), 5);
         });
         
-        // First form, movement 21
+        // First form, movement 20
         it('should return only positive magnitude values', function () {
             assert.equal(jsforms.magnitude([-3]), 3);
         });
         
-        // First form, movement 22
+        // First form, movement 21
         it('should return the magnitude of a two-value vector', function () {
             assert.equal(jsforms.magnitude([6, 8]), 10);
         });
         
-        // First form, movement 23
+        // First form, movement 22
         it('should return the magnitude of a multi-value vector', function () {
             assert.equal(jsforms.magnitude([0, 12, 3, 4]), 13);
         });
         
     });    
 
-    // First form, movement 24-27
+    // First form, movement 23-26
     // Second form, movements 12-15
     // Third form, movements 25 and 26
     describe('getVectorsShorterThan', function () {
         
-        // First form, movement 24
+        // First form, movement 23
         it('should return single vector when the only vector magnitude is acceptably short', function () {
             var vectors = [jsforms.buildVector([1, 2])];
             var result = jsforms.getVectorsShorterThan(5, vectors);
@@ -185,7 +180,7 @@ describe('Forms', function () {
             assert.equal(result[0].toString(), '<1,2>');
         });
         
-        // First form, movement 25
+        // First form, movement 24
         it('should return an empty array when the only vector magnitude is too long', function () {
             var vectors = [jsforms.buildVector([3, 4])];
             var result = jsforms.getVectorsShorterThan(4, vectors);
@@ -193,7 +188,7 @@ describe('Forms', function () {
             assert.equal(result.length, 0)
         });
         
-        // First form, movement 26
+        // First form, movement 25
         it('should only filter vectors which are too long', function () {
             var vectors = [
                 jsforms.buildVector([10, 10]),
@@ -206,7 +201,7 @@ describe('Forms', function () {
             assert.equal(result[0].toString(), '<3,4>');
         });
         
-        // First form, movement 27
+        // First form, movement 26
         it('should filter all vectors which are too long', function () {
             var vectors = [
                 jsforms.buildVector([1, 2, 2]),
