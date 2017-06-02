@@ -1,6 +1,6 @@
 {
-  "name": "jsLearnerForms",
-  "version": "0.1.1",
+  "name": "js-language-forms",
+  "version": "0.2.0",
   "description": "JS muscle memory building forms",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,18 @@
   "bugs": {
     "url": "https://github.com/cmstead/jsLearnerForms/issues"
   },
+  "quokka": {
+    "plugins": [
+      "quokka-mocha-bdd"
+    ],
+    "quokka-mocha-bdd": {
+      "interface": "bdd"
+    }
+  },
   "homepage": "https://github.com/cmstead/jsLearnerForms",
   "devDependencies": {
-    "jasmine-node": "^1.14.5"
+    "chai": "^4.0.1",
+    "mocha": "^3.4.2",
+    "quokka-mocha-bdd": "^1.1.0"
   }
 }

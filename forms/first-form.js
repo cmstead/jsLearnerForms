@@ -62,23 +62,6 @@ Even the longest journey begins with a single step. Good luck!
 // Movement 1
 
 // Concepts in this movement:
-// - Strict mode
-// - Immediately Invoked Function Expressions
-// - Exporting a Module
-
-(function () {
-    'use strict';
-
-    module.exports = {};
-    
-})();
-
-// Run the tests!
-
-
-// Movement 2
-
-// Concepts in this movement:
 // - function creation
 // - returning a value
 // - exporting a function
@@ -109,7 +92,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 3
+// Movement 2
 
 // Concepts in this movement:
 // - conditional statements
@@ -144,7 +127,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 4
+// Movement 3
 
 // Concepts in this movement:
 // - Simplest thing that passes the test
@@ -188,7 +171,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 5
+// Movement 4
 
 // Concepts in this movement
 // - simple mathematical computation
@@ -224,7 +207,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 6
+// Movement 5
 
 // Concepts in this movement
 // - built-in modules (Math)
@@ -261,7 +244,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 7
+// Movement 6
 
 // Concepts in this movement:
 // - simplest thing to pass the test
@@ -308,7 +291,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 8
+// Movement 7
 
 // Concepts in this movement
 // - built-in modules (Math)
@@ -350,7 +333,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 9
+// Movement 8
 
 // Changes made:
 
@@ -398,7 +381,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 10
+// Movement 9
 
 // Concepts in this movement:
 // - Conditional statements
@@ -454,7 +437,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 11
+// Movement 10
 
 // Concepts introduced in this movement:
 // - looping
@@ -513,7 +496,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 12
+// Movement 11
 
 // Changes made:
 
@@ -572,7 +555,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 13
+// Movement 12
 
 // Changes made:
 
@@ -642,7 +625,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 14
+// Movement 13
 
 // Changes made:
 
@@ -714,7 +697,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 15
+// Movement 14
 
 // Changes made:
 
@@ -783,7 +766,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 16
+// Movement 15
 
 // Changes made:
 
@@ -861,7 +844,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 17
+// Movement 16
 
 // Changes made:
 
@@ -933,7 +916,7 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 18
+// Movement 17
 
 // Changes made:
 
@@ -1017,7 +1000,7 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 19
+// Movement 18
 
 // Changes made:
 
@@ -1109,7 +1092,7 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 20
+// Movement 19
 
 // Changes made:
 
@@ -1200,7 +1183,7 @@ Even the longest journey begins with a single step. Good luck!
 
 // Run the tests!
 
-// Movement 21
+// Movement 20
 
 // Changes made:
 
@@ -1289,7 +1272,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 22
+// Movement 21
 
 // Changes made:
 
@@ -1392,7 +1375,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 23
+// Movement 22
 
 // Changes made:
 
@@ -1481,7 +1464,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 24
+// Movement 23
 
 // Changes made:
 
@@ -1580,7 +1563,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 25
+// Movement 24
 
 // Changes made:
 
@@ -1682,7 +1665,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 26
+// Movement 25
 
 // Changes made:
 
@@ -1796,7 +1779,7 @@ Even the longest journey begins with a single step. Good luck!
 // Run the tests!
 
 
-// Movement 27
+// Movement 26
 
 // Changes made:
 

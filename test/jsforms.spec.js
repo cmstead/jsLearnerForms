@@ -1,10 +1,11 @@
 var jsforms = require('../src/jsforms');
+var assert = require('chai').assert;
 
 describe('Forms', function () {
 
     // First form, movement 1
     it('should be an object', function () {
-        expect(typeof jsforms).toBe('object');
+        assert.equal(typeof jsforms, 'object');
     });
 
     // First form, movements 2 and 3
@@ -14,12 +15,12 @@ describe('Forms', function () {
         
         // First form, movement 2
         it('should say "Hello!" by default', function () {
-            expect(jsforms.greet()).toBe('Hello!');
+            assert.equal(jsforms.greet(), 'Hello!');
         });
         
         // First form, movement 3
         it('should say "Salutations!" when Salutations is passed', function () {
-            expect(jsforms.greet('Salutations')).toBe('Salutations!');
+            assert.equal(jsforms.greet('Salutations'), 'Salutations!');
         });
         
     });
@@ -29,12 +30,12 @@ describe('Forms', function () {
         
         // First form, movement 4
         it('should square 1', function () {
-            expect(jsforms.square(1)).toBe(1);
+            assert.equal(jsforms.square(1), 1);
         });
         
         // First form, movements 5 and 6
         it('should square 3', function () {
-            expect(jsforms.square(3)).toBe(9);
+            assert.equal(jsforms.square(3), 9);
         });
         
     });
@@ -44,12 +45,12 @@ describe('Forms', function () {
         
         // First form, movement 7
         it('should take the square root of 1', function () {
-            expect(jsforms.squareRoot(1)).toBe(1);
+            assert.equal(jsforms.squareRoot(1), 1);
         });
         
         // FIrst form, movement 8
         it('should take the square root of 4', function () {
-            expect(jsforms.squareRoot(4)).toBe(2);
+            assert.equal(jsforms.squareRoot(4), 2);
         });
         
     });
@@ -61,17 +62,17 @@ describe('Forms', function () {
         
         // First form, movement 9
         it('should take the sum of one number', function () {
-            expect(jsforms.sum([1])).toBe(1);
+            assert.equal(jsforms.sum([1]), 1);
         });
         
         // First form, movement 10
         it('should add two numbers', function () {
-            expect(jsforms.sum([2, 3])).toBe(5);
+            assert.equal(jsforms.sum([2, 3]), 5);
         });
         
         // First form, movement 11
         it('should add multiple numbers', function () {
-            expect(jsforms.sum([1, 3, 5, 7])).toBe(16);
+            assert.equal(jsforms.sum([1, 3, 5, 7]), 16);
         });
     });
 
@@ -81,12 +82,12 @@ describe('Forms', function () {
         
         // First form, movement 12
         it('should square all numbers in a single-value array', function () {
-            expect(jsforms.squareAll([2]).toString()).toBe('4');
+            assert.equal(jsforms.squareAll([2]).toString(), '4');
         });
         
         // First form, movement 13
         it('should square multiple numbers', function () {
-            expect(jsforms.squareAll([1, 2, 3, 5]).toString()).toBe('1,4,9,25');
+            assert.equal(jsforms.squareAll([1, 2, 3, 5]).toString(), '1,4,9,25');
         });
         
     });
@@ -97,12 +98,12 @@ describe('Forms', function () {
         
         // First form, movement 14
         it('should square number in a 1-length array and return it', function () {
-            expect(jsforms.sumOfSquares([2])).toBe(4);
+            assert.equal(jsforms.sumOfSquares([2]), 4);
         });
         
         // First form, movement 15
         it('should take the sum of squares of multiple numbers', function () {
-            expect(jsforms.sumOfSquares([1, 2, 3])).toBe(14);
+            assert.equal(jsforms.sumOfSquares([1, 2, 3]), 14);
         });
         
     });
@@ -118,7 +119,7 @@ describe('Forms', function () {
             var vector = jsforms.buildVector(initialArray);
             var resultValues = [vector[0], vector[1]];
             
-            expect(resultValues.toString()).toBe(initialArray.toString());
+            assert.equal(resultValues.toString(), initialArray.toString());
         });
         
         // First form, movement 17
@@ -126,21 +127,21 @@ describe('Forms', function () {
             var initialArray = [1, 2];
             var vector = jsforms.buildVector(initialArray);
             
-            expect(initialArray !== vector).toBe(true);
+            assert.equal(initialArray !== vector, true);
         });
         
         // First form, movement 18
         it('should return vector with valueOf function which does not return vector', function () {
             var vector = jsforms.buildVector([1, 2, 3]);
             
-            expect(vector.valueOf() !== vector).toBe(true);
+            assert.equal(vector.valueOf() !== vector, true);
         });
         
         // First form, movement 19
         it('should return a vector where toString returns a vector string', function () {
             var vector = jsforms.buildVector([1, 2, 3]);
             
-            expect(vector.toString()).toBe('<1,2,3>');
+            assert.equal(vector.toString(), '<1,2,3>');
         });
         
     });
@@ -150,22 +151,22 @@ describe('Forms', function () {
         
         // First form, movement 20
         it('should return the magnitude of a one-value vector', function () {
-            expect(jsforms.magnitude([5])).toBe(5);
+            assert.equal(jsforms.magnitude([5]), 5);
         });
         
         // First form, movement 21
         it('should return only positive magnitude values', function () {
-            expect(jsforms.magnitude([-3])).toBe(3);
+            assert.equal(jsforms.magnitude([-3]), 3);
         });
         
         // First form, movement 22
         it('should return the magnitude of a two-value vector', function () {
-            expect(jsforms.magnitude([6, 8])).toBe(10);
+            assert.equal(jsforms.magnitude([6, 8]), 10);
         });
         
         // First form, movement 23
         it('should return the magnitude of a multi-value vector', function () {
-            expect(jsforms.magnitude([0, 12, 3, 4])).toBe(13);
+            assert.equal(jsforms.magnitude([0, 12, 3, 4]), 13);
         });
         
     });    
@@ -180,8 +181,8 @@ describe('Forms', function () {
             var vectors = [jsforms.buildVector([1, 2])];
             var result = jsforms.getVectorsShorterThan(5, vectors);
             
-            expect(result.length).toBe(1);
-            expect(result[0].toString()).toBe('<1,2>');
+            assert.equal(result.length, 1);
+            assert.equal(result[0].toString(), '<1,2>');
         });
         
         // First form, movement 25
@@ -189,7 +190,7 @@ describe('Forms', function () {
             var vectors = [jsforms.buildVector([3, 4])];
             var result = jsforms.getVectorsShorterThan(4, vectors);
             
-            expect(result.length).toBe(0);
+            assert.equal(result.length, 0)
         });
         
         // First form, movement 26
@@ -201,8 +202,8 @@ describe('Forms', function () {
             
             var result = jsforms.getVectorsShorterThan(10, vectors);
             
-            expect(result.length).toBe(1);
-            expect(result[0].toString()).toBe('<3,4>');
+            assert.equal(result.length, 1);
+            assert.equal(result[0].toString(), '<3,4>');
         });
         
         // First form, movement 27
@@ -221,9 +222,13 @@ describe('Forms', function () {
                 result[1].toString()
             ];
             
-            expect(resultValues.toString()).toBe('<1,2,2>,<3,4>');
+            assert.equal(resultValues.toString(), '<1,2,2>,<3,4>');
         });
         
     });
 
 });
+
+if(typeof global.runQuokkaMochaBdd === 'function') {
+    runQuokkaMochaBdd();
+}
