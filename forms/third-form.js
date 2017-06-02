@@ -1225,7 +1225,7 @@ they interact with each other.
         return vector;
     }
 
-    const attachImmutableProperty = (vector) => (value, key) => {
+    const attachImmutablePropertyTo = (vector) => (value, key) => {
         Object.defineProperty(vector, key, {
             writeable: false,
             value: value
@@ -1234,7 +1234,7 @@ they interact with each other.
 
     Vector.attachValues = function (vector, points) {
         vector.valueOf = () => points.slice(0);
-        points.forEach(attachImmutableProperty(vector));
+        points.forEach(attachImmutablePropertyTo(vector));
     };
 
     Vector.prototype = {
