@@ -21,14 +21,14 @@ entire program easier to maintain.
 Third form covers
 
 - Reduce
-- Recursion
-- Function chaining
-- Instantiable objects as types
-- Creating static methods on types
-- Executing prototypal methods as static
+- Instantiable objects as types (instanceof)
+- Creating static methods on objects
+- Curried and partially applied functions
+- Closures
 - Scope management
-- Partial application with bind
 - Generic functions
+- Immutable object properties
+- Functions as types (predicate function * => boolean)
 
 As with the previous forms, be sure to research and absorb the
 changes which are made to the program through each movement. A
@@ -159,13 +159,13 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
     function greet(greeting) {
         var message = eitherType('string', 'Hello', greeting);
-        
+
         return message + '!';
     }
 
@@ -259,7 +259,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -359,7 +359,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -455,7 +455,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -549,7 +549,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -643,7 +643,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -677,7 +677,7 @@ they interact with each other.
 
     function Vector(valueArray) {
         let vector = this instanceof Vector ? this : new Vector(valueArray);
-        
+
         Vector.attachValues(vector, valueArray);
 
         return vector;
@@ -734,7 +734,7 @@ they interact with each other.
 
 // function Vector(valueArray) {
 //     let vector = this instanceof Vector ? this : new Vector(valueArray);
-    
+
 //     vector.points = valueArray;
 //     valueArray.forEach((value, index) => vector[index] = value);
 
@@ -749,7 +749,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -783,7 +783,7 @@ they interact with each other.
 
     function Vector(valueArray) {
         let vector = this instanceof Vector ? this : new Vector(valueArray);
-        
+
         vector.points = valueArray;
         valueArray.forEach((value, index) => vector[index] = value);
 
@@ -835,6 +835,7 @@ they interact with each other.
 // Changes made:
 
 // Exposed Vector instead of buildVector
+// deleted buildVector function
 
 // module.exports = {
 //     ...
@@ -846,11 +847,11 @@ they interact with each other.
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -866,7 +867,7 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -882,7 +883,7 @@ they interact with each other.
         return nums.valueOf().map(square).reduce(add, 0);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         var vector = this instanceof Vector ? this : new Vector(valueArray);
 
         return valueArray.reduce(function (vector, value, index) {
@@ -890,28 +891,24 @@ they interact with each other.
             return vector;
         }, vector);
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             var points = [];
             var index = 0;
-            
-            while(!isType('undefined', this[index])){
+
+            while (!isType('undefined', this[index])) {
                 points.push(this[index]);
                 index++;
             }
-            
+
             return points;
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
     };
-
-    function buildVector(valueArray) {
-        return Vector(valueArray);
-    }
 
     function magnitude(vector) {
         var summedSquares = sumOfSquares(vector);
@@ -919,7 +916,7 @@ they interact with each other.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
+        return vectors.filter(function (vector) {
             return magnitude(vector) <= maxLength;
         });
     }
@@ -948,9 +945,9 @@ they interact with each other.
 
 // function Vector(valueArray) {
 //     let vector = this instanceof Vector ? this : new Vector(valueArray);
-    
+
 //     Vector.attachValues(vector, valueArray);
-    
+
 //     return vector;
 // }
 
@@ -966,7 +963,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -1000,9 +997,9 @@ they interact with each other.
 
     function Vector(valueArray) {
         let vector = this instanceof Vector ? this : new Vector(valueArray);
-        
+
         Vector.attachValues(vector, valueArray);
-        
+
         return vector;
     }
 
@@ -1020,10 +1017,6 @@ they interact with each other.
             return '<' + this.valueOf().toString() + '>';
         }
     };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
 
     function magnitude(vector) {
         var summedSquares = sumOfSquares(vector);
@@ -1055,10 +1048,11 @@ they interact with each other.
 
 // Changes made:
 // Hide points array from outside world to limit manipulation
+// ValueOf creates a closure over points variable
 
 // function Vector(valueArray) {
 //     let vector = this instanceof Vector ? this : new Vector(valueArray);
-    
+
 //     Vector.attachValues(vector, valueArray);
 
 //     return vector;
@@ -1082,7 +1076,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -1116,7 +1110,7 @@ they interact with each other.
 
     function Vector(valueArray) {
         let vector = this instanceof Vector ? this : new Vector(valueArray);
-        
+
         Vector.attachValues(vector, valueArray);
 
         return vector;
@@ -1132,10 +1126,6 @@ they interact with each other.
             return '<' + this.valueOf().toString() + '>';
         }
     };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
 
     function magnitude(vector) {
         return squareRoot(sumOfSquares(vector));
@@ -1164,7 +1154,9 @@ they interact with each other.
 // Movement 12
 
 // Changes made:
-// Make vector properties immutable
+// Attaching immutable (writeable: false) object properties
+// Introduced partially curried attachImmutableProperty function
+// Closing over vector value in attachImmutableProperty
 
 // const attachImmutableProperty = (vector) => (value, key) => {
 //     Object.defineProperty(vector, key, {
@@ -1185,7 +1177,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType (typeStr, defaultValue, value){
+    function eitherType(typeStr, defaultValue, value) {
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -1219,7 +1211,7 @@ they interact with each other.
 
     function Vector(valueArray) {
         let vector = this instanceof Vector ? this : new Vector(valueArray);
-        
+
         Vector.attachValues(vector, valueArray);
 
         return vector;
@@ -1243,9 +1235,261 @@ they interact with each other.
         }
     };
 
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
+    function magnitude(vector) {
+        return squareRoot(sumOfSquares(vector));
     }
+
+    function getVectorsShorterThan(maxLength, vectors) {
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    }
+
+    module.exports = {
+        getVectorsShorterThan: getVectorsShorterThan,
+        magnitude: magnitude,
+        buildVector: Vector,
+        sumOfSquares: sumOfSquares,
+        squareAll: squareAll,
+        sum: sum,
+        squareRoot: squareRoot,
+        square: square,
+        greet: greet
+    };
+
+})();
+
+// Run the tests!
+
+
+// Movement 13
+
+// Changes made:
+// Added type check on vector constructor for array
+// implemented predicate function isArray
+
+// function isObjectInstance(value) {
+//     return isType('object', value) && value !== null;
+// }
+
+// function isArray(value) {
+//     return isObjectInstance(value) &&
+//         Object.prototype.toString.call(value) === '[object Array]';
+// }
+
+// function Vector(valueArray) {
+//     if(!isArray(valueArray)) {
+//         throw new TypeError('Vector point array must be an array of numbers.');
+//     }
+
+//     ...
+// }
+
+(function () {
+    'use strict';
+
+    function isType(type, value) {
+        return typeof value === type;
+    }
+
+    function eitherType(typeStr, defaultValue, value) {
+        return isType(typeStr, value) ? value : defaultValue;
+    }
+
+    function greet(greeting) {
+        return eitherType('string', 'Hello', greeting) + '!';
+    }
+
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function sum(nums) {
+        return nums.reduce(add, 0);
+    }
+
+    function squareAll(nums) {
+        return nums.valueOf().map(square);
+    }
+
+    function sumOfSquares(nums) {
+        return sum(squareAll(nums));
+    }
+
+    function isObjectInstance(value) {
+        return isType('object', value) && value !== null;
+    }
+
+    function isArray(value) {
+        return isObjectInstance(value) &&
+            Object.prototype.toString.call(value) === '[object Array]';
+    }
+
+    function Vector(valueArray) {
+        if (!isArray(valueArray)) {
+            throw new TypeError('Vector point array must be an array of numbers.');
+        }
+
+        let vector = this instanceof Vector ? this : new Vector(valueArray);
+
+        Vector.attachValues(vector, valueArray);
+
+        return vector;
+    }
+
+    const attachImmutablePropertyTo = (vector) => (value, key) => {
+        Object.defineProperty(vector, key, {
+            writeable: false,
+            value: value
+        });
+    };
+
+    Vector.attachValues = function (vector, points) {
+        vector.valueOf = () => points.slice(0);
+        points.forEach(attachImmutablePropertyTo(vector));
+    };
+
+    Vector.prototype = {
+        toString: function () {
+            return '<' + this.valueOf().toString() + '>';
+        }
+    };
+
+    function magnitude(vector) {
+        return squareRoot(sumOfSquares(vector));
+    }
+
+    function getVectorsShorterThan(maxLength, vectors) {
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    }
+
+    module.exports = {
+        getVectorsShorterThan: getVectorsShorterThan,
+        magnitude: magnitude,
+        buildVector: Vector,
+        sumOfSquares: sumOfSquares,
+        squareAll: squareAll,
+        sum: sum,
+        squareRoot: squareRoot,
+        square: square,
+        greet: greet
+    };
+
+})();
+
+// Run the tests!
+
+// Movement 14
+
+// Changes made:
+// Enhanced type check on vector constructor to ensure array is valid
+// Composed isArray into implementation of predicate function isValidVectorArray
+
+// const isNumber = (value) => isType('number', value);
+
+// function isValidVectorArray(valueArray) {
+//     return isArray(valueArray) &&
+//         valueArray.filter(isNumber).length === valueArray.length;
+// }
+
+// function Vector(valueArray) {
+//     if (!isValidVectorArray(valueArray)) {
+//         throw new TypeError('Vector point array must be an array of numbers.');
+//     }
+
+//     ...
+// }
+
+(function () {
+    'use strict';
+
+    function isType(type, value) {
+        return typeof value === type;
+    }
+
+    function eitherType(typeStr, defaultValue, value) {
+        return isType(typeStr, value) ? value : defaultValue;
+    }
+
+    function greet(greeting) {
+        return eitherType('string', 'Hello', greeting) + '!';
+    }
+
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function sum(nums) {
+        return nums.reduce(add, 0);
+    }
+
+    function squareAll(nums) {
+        return nums.valueOf().map(square);
+    }
+
+    function sumOfSquares(nums) {
+        return sum(squareAll(nums));
+    }
+
+    function isObjectInstance (value) {
+        return isType('object', value) && value !== null;
+    }
+
+    function isArray(value) {
+        return isObjectInstance(value) &&
+            Object.prototype.toString.call(value) === '[object Array]';
+    }
+
+    const isNumber = (value) => isType('number', value);
+    
+    function isValidVectorArray(valueArray) {
+        return isArray(valueArray) &&
+            valueArray.filter(isNumber).length === valueArray.length;
+    }
+
+    function Vector(valueArray) {
+        if (!isValidVectorArray(valueArray)) {
+            throw new TypeError('Vector point array must be an array of numbers.');
+        }
+
+        let vector = this instanceof Vector ? this : new Vector(valueArray);
+
+        Vector.attachValues(vector, valueArray);
+
+        return vector;
+    }
+
+    const attachImmutablePropertyTo = (vector) => (value, key) => {
+        Object.defineProperty(vector, key, {
+            writeable: false,
+            value: value
+        });
+    };
+
+    Vector.attachValues = function (vector, points) {
+        vector.valueOf = () => points.slice(0);
+        points.forEach(attachImmutablePropertyTo(vector));
+    };
+
+    Vector.prototype = {
+        toString: function () {
+            return '<' + this.valueOf().toString() + '>';
+        }
+    };
 
     function magnitude(vector) {
         return squareRoot(sumOfSquares(vector));

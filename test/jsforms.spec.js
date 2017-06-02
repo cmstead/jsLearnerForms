@@ -212,6 +212,19 @@ describe('Forms', function () {
         
     });
 
+    // Unskip these tests for third form, movements 13 and 14
+    describe.skip('Vector construction check', function () {
+
+        it('should throw an error if constructor is called without array', function () {
+            assert.throws(jsforms.buildVector.bind(null));
+        });
+
+        it('should throw an error if constructor is called with bad array', function () {
+            assert.throws(jsforms.buildVector.bind(null, [1, 2, 3, 'bad', {}]));
+        });
+
+    });
+
 });
 
 if(typeof global.runQuokkaMochaBdd === 'function') {
