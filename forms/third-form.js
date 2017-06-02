@@ -54,13 +54,13 @@ they interact with each other.
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
     function greet(greeting) {
-        var message = isType('string', greeting) ? greeting : 'Hello';
-        
+        var message = isType('undefined', greeting) ? greeting : 'Hello';
+
         return message + '!';
     }
 
@@ -72,16 +72,14 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
     function sum(nums) {
         var finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
@@ -95,19 +93,17 @@ they interact with each other.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+
+        valueArray.forEach((value, index) => this[index] = value);
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -123,9 +119,7 @@ they interact with each other.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
@@ -161,7 +155,7 @@ they interact with each other.
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
@@ -183,16 +177,14 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
     function sum(nums) {
         var finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
@@ -206,19 +198,17 @@ they interact with each other.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+
+        valueArray.forEach((value, index) => this[index] = value);
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -234,9 +224,7 @@ they interact with each other.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
@@ -267,7 +255,7 @@ they interact with each other.
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
@@ -287,16 +275,14 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
     function sum(nums) {
         var finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
@@ -310,19 +296,17 @@ they interact with each other.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+
+        valueArray.forEach((value, index) => this[index] = value);
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -338,9 +322,7 @@ they interact with each other.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
@@ -373,7 +355,7 @@ they interact with each other.
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
@@ -393,7 +375,7 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -412,19 +394,17 @@ they interact with each other.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+
+        valueArray.forEach((value, index) => this[index] = value);
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -440,9 +420,7 @@ they interact with each other.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
@@ -473,7 +451,7 @@ they interact with each other.
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
@@ -493,7 +471,7 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -510,19 +488,17 @@ they interact with each other.
         return sum(squares);
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+
+        valueArray.forEach((value, index) => this[index] = value);
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -538,9 +514,7 @@ they interact with each other.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
@@ -571,7 +545,7 @@ they interact with each other.
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
@@ -591,7 +565,7 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -607,19 +581,17 @@ they interact with each other.
         return sum(squareAll(nums));
     }
 
-    function Vector (valueArray) {
+    function Vector(valueArray) {
         this.points = valueArray;
-        
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+
+        valueArray.forEach((value, index) => this[index] = value);
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -635,9 +607,7 @@ they interact with each other.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
@@ -660,15 +630,16 @@ they interact with each other.
 // Movement 7
 
 // Changes made:
+// Composed function calls in magnitude behavior
 
-// function sumOfSquares(nums) {
-//     return sum(nums.valueOf().map(square));
+// function magnitude(vector) {
+//     return squareRoot(sumOfSquares(vector));
 // }
 
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
@@ -688,7 +659,7 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -701,22 +672,27 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        return sum(nums.valueOf().map(square));
+        return sum(squareAll(nums));
     }
 
-    function Vector (valueArray) {
-        this.points = valueArray;
+    function Vector(valueArray) {
+        let vector = this instanceof Vector ? this : new Vector(valueArray);
         
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+        Vector.attachValues(vector, valueArray);
+
+        return vector;
     }
-    
+
+    Vector.attachValues = function (vector, valueArray) {
+        vector.points = valueArray;
+        valueArray.forEach((value, index) => vector[index] = value);
+    };
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -727,20 +703,17 @@ they interact with each other.
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        return squareRoot(sumOfSquares(vector));
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
         getVectorsShorterThan: getVectorsShorterThan,
         magnitude: magnitude,
-        buildVector: buildVector,
+        buildVector: Vector,
         sumOfSquares: sumOfSquares,
         squareAll: squareAll,
         sum: sum,
@@ -757,15 +730,22 @@ they interact with each other.
 // Movement 8
 
 // Changes made:
+// Converted Vector object to self-instantiating factory
 
-// function sumOfSquares(nums) {
-//     return nums.valueOf().map(square).reduce(add, 0);
+// function Vector(valueArray) {
+//     let vector = this instanceof Vector ? this : new Vector(valueArray);
+    
+//     vector.points = valueArray;
+//     valueArray.forEach((value, index) => vector[index] = value);
+
+//     return vector;
 // }
+
 
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
@@ -785,7 +765,7 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -798,22 +778,23 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
+        return sum(squareAll(nums));
     }
 
-    function Vector (valueArray) {
-        this.points = valueArray;
+    function Vector(valueArray) {
+        let vector = this instanceof Vector ? this : new Vector(valueArray);
         
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+        vector.points = valueArray;
+        valueArray.forEach((value, index) => vector[index] = value);
+
+        return vector;
     }
-    
+
     Vector.prototype = {
         valueOf: function () {
             return this.points.slice(0);
         },
-        
+
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
@@ -829,9 +810,7 @@ they interact with each other.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
@@ -855,342 +834,13 @@ they interact with each other.
 
 // Changes made:
 
-// function Vector (valueArray) {
-//     this.points = valueArray;
+// Exposed Vector instead of buildVector
 
-//     valueArray.reduce(function (vector, value, index) {
-//         vector[index] = value;
-//         return vector;
-//     }, this);
-// }
-
-(function () {
-    'use strict';
-
-    function isType (typeStr, value){
-        return typeof value === typeStr;
-    }
-
-    function eitherType (typeStr, defaultValue, value){
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add (a, b){
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function Vector (valueArray) {
-        this.points = valueArray;
-
-        valueArray.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, this);
-    }
-    
-    Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-        
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 10
-
-// Changes made:
-
-// function Vector (valueArray) {
-//     var vector = this instanceof Vector ? this : new Vector(valueArray);
-//     vector.points = valueArray;
+// module.exports = {
 //     ...
-//     return vector;
-// }
-
-(function () {
-    'use strict';
-
-    function isType (typeStr, value){
-        return typeof value === typeStr;
-    }
-
-    function eitherType (typeStr, defaultValue, value){
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add (a, b){
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function Vector (valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-        vector.points = valueArray;
-
-        valueArray.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-        
-        return vector;
-    }
-    
-    Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-        
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-// Movement 11
-
-// Changes made:
-
-// Vector.prototype = {
-//     valueOf: function () {
-//         var points = [];
-//         var index = 0;
-        
-//         while(!isType('undefined', this[index])){
-//             points.push(this[index]);
-//             index++;
-//         }
-        
-//         return points;
-//     },
+//     buildVector: Vector,
 //     ...
 // };
-
-(function () {
-    'use strict';
-
-    function isType (typeStr, value){
-        return typeof value === typeStr;
-    }
-
-    function eitherType (typeStr, defaultValue, value){
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add (a, b){
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function Vector (valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-        vector.points = valueArray;
-
-        valueArray.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-        
-        return vector;
-    }
-    
-    Vector.prototype = {
-        valueOf: function () {
-            var points = [];
-            var index = 0;
-            
-            while(!isType('undefined', this[index])){
-                points.push(this[index]);
-                index++;
-            }
-            
-            return points;
-        },
-        
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 12
-
-// Changes made:
-
-// function Vector (valueArray) {
-//     var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-//     return valueArray.reduce(function (vector, value, index) {
-//     ...
-// }
-
-// function buildVector(valueArray) {
-//     return Vector(valueArray);
-// }
 
 
 (function () {
@@ -1291,27 +941,28 @@ they interact with each other.
 // Run the tests!
 
 
-// Movement 13
+// Movement 10
 
 // Changes made:
+// Created static method attachValues on Vector and extracted attach behavior
 
-// function Vector (valueArray) {
-//     var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-//     return Vector.attachValues(vector, valueArray);
+// function Vector(valueArray) {
+//     let vector = this instanceof Vector ? this : new Vector(valueArray);
+    
+//     Vector.attachValues(vector, valueArray);
+    
+//     return vector;
 // }
 
-// Vector.attachValues = function (vector, values) {
-//     return values.reduce(function (vector, value, index) {
-//         vector[index] = value;
-//         return vector;
-//     }, vector);
+// Vector.attachValues = function (vector, valueArray) {
+//     vector.points = valueArray;
+//     valueArray.forEach((value, index) => vector[index] = value);
 // };
 
 (function () {
     'use strict';
 
-    function isType (typeStr, value){
+    function isType(typeStr, value) {
         return typeof value === typeStr;
     }
 
@@ -1331,131 +982,6 @@ they interact with each other.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function Vector (valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        return Vector.attachValues(vector, valueArray);
-    }
-    
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-    
-    Vector.prototype = {
-        valueOf: function () {
-            var points = [];
-            var index = 0;
-            
-            while(!isType('undefined', this[index])){
-                points.push(this[index]);
-                index++;
-            }
-            
-            return points;
-        },
-        
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-       return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 14
-
-// Changes made:
-
-// Vector.getPoints = function (vector) {
-//     var points = [];
-//     var index = 0;
-
-//     while (!isType('undefined', vector[index])) {
-//         points.push(vector[index]);
-//         index++;
-//     }
-
-//     return points;
-// };
-
-// Vector.prototype = {
-//     valueOf: function () {
-//         return Vector.getPoints(this);
-//     },
-//     ...
-// };
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
     function add(a, b) {
         return a + b;
     }
@@ -1469,552 +995,25 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
+        return sum(squareAll(nums));
     }
 
     function Vector(valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        return Vector.attachValues(vector, valueArray);
-    }
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector) {
-        var points = [];
-        var index = 0;
-
-        while (!isType('undefined', vector[index])) {
-            points.push(vector[index]);
-            index++;
-        }
-
-        return points;
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 15
-
-// Changes made:
-
-// function conj (value, list){
-//     return list.concat([value]);
-// }
-
-// Vector.getPoints = function (vector) {
-//     ...
-//     while (!isType('undefined', vector[index])) {
-//         points = conj(vector[index], points);
-//         index++;
-//     }
-//     ...
-// };
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj (value, list){
-        return list.concat([value]);
-    }
-
-    function Vector(valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        return Vector.attachValues(vector, valueArray);
-    }
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector) {
-        var points = [];
-        var index = 0;
-
-        while (!isType('undefined', vector[index])) {
-            points = conj(vector[index], points);
-            index++;
-        }
-
-        return points;
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 16
-
-// Changes made:
-
-// function inc (value){
-//     return value + 1;
-// }
-
-// Vector.getPoints = function (vector) {
-//     ...
-//     while (!isType('undefined', vector[index])) {
-//         points = conj(vector[index], points);
-//         index = inc(index);
-//     }
-//     ...
-// };
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj (value, list){
-        return list.concat([value]);
-    }
-
-    function inc (value){
-        return value + 1;
-    }
-
-    function Vector(valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        return Vector.attachValues(vector, valueArray);
-    }
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector) {
-        var points = [];
-        var index = 0;
-
-        while (!isType('undefined', vector[index])) {
-            points = conj(vector[index], points);
-            index = inc(index);
-        }
-
-        return points;
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 17
-
-// Changes made:
-
-// Vector.getPoints = function (vector, index, points) {
-//     if(isType('undefined', vector[index])) {
-//         return points;
-//     } else {
-//         return Vector.getPoints(vector, inc(index), conj(vector[index], points));
-//     }
-// };
-
-// Vector.prototype = {
-//     valueOf: function () {
-//         return Vector.getPoints(this, 0, []);
-//     },
-//     ...
-// };
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj (value, list){
-        return list.concat([value]);
-    }
-
-    function inc (value){
-        return value + 1;
-    }
-
-    function Vector(valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        return Vector.attachValues(vector, valueArray);
-    }
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        if(isType('undefined', vector[index])) {
-            return points;
-        } else {
-            return Vector.getPoints(vector, inc(index), conj(vector[index], points));
-        }
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this, 0, []);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 18
-
-// Changes made:
-
-// Vector.getPoints = function (vector, index, points) {
-//     points = eitherType('object', [], points);
-//     ...    
-// };
-
-// Vector.prototype = {
-//     valueOf: function () {
-//         return Vector.getPoints(this, 0);
-//     },
-//     ...
-// };
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj (value, list){
-        return list.concat([value]);
-    }
-
-    function inc (value){
-        return value + 1;
-    }
-
-    function Vector(valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        return Vector.attachValues(vector, valueArray);
-    }
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
+        let vector = this instanceof Vector ? this : new Vector(valueArray);
         
-        if(isType('undefined', vector[index])) {
-            return points;
-        } else {
-            return Vector.getPoints(vector, inc(index), conj(vector[index], points));
-        }
+        Vector.attachValues(vector, valueArray);
+        
+        return vector;
+    }
+
+    Vector.attachValues = function (vector, valueArray) {
+        vector.points = valueArray;
+        valueArray.forEach((value, index) => vector[index] = value);
     };
 
     Vector.prototype = {
         valueOf: function () {
-            return Vector.getPoints(this, 0);
+            return this.points.slice(0);
         },
 
         toString: function () {
@@ -2023,7 +1022,7 @@ they interact with each other.
     };
 
     function buildVector(valueArray) {
-        return Vector(valueArray);
+        return new Vector(valueArray);
     }
 
     function magnitude(vector) {
@@ -2032,15 +1031,13 @@ they interact with each other.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
         getVectorsShorterThan: getVectorsShorterThan,
         magnitude: magnitude,
-        buildVector: buildVector,
+        buildVector: Vector,
         sumOfSquares: sumOfSquares,
         squareAll: squareAll,
         sum: sum,
@@ -2054,405 +1051,29 @@ they interact with each other.
 // Run the tests!
 
 
-// Movement 19
+// Movement 11
 
 // Changes made:
-
-// Vector.getPoints = function (vector, index, points) {
-//     points = eitherType('object', [], points);
-//     index = eitherType('number', 0, index);
-//     ...
-// };
-
-// Vector.prototype = {
-//     valueOf: function () {
-//         return Vector.getPoints(this);
-//     },
-//     ...
-// };
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj (value, list){
-        return list.concat([value]);
-    }
-
-    function inc (value){
-        return value + 1;
-    }
-
-    function Vector(valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        return Vector.attachValues(vector, valueArray);
-    }
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
-        index = eitherType('number', 0, index);
-        
-        if(isType('undefined', vector[index])) {
-            return points;
-        } else {
-            return Vector.getPoints(vector, inc(index), conj(vector[index], points));
-        }
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 20
-
-// Changes made:
-
-// Vector.getPoints = function (vector, index, points) {
-//     points = eitherType('object', [], points);
-//     index = eitherType('number', 0, index);
-    
-//     var point = vector[index];
-    
-//     if(isType('undefined', point)) {
-//         return points;
-//     } else {
-//         return Vector.getPoints(vector, inc(index), conj(point, points));
-//     }
-    
-// };
-
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj (value, list){
-        return list.concat([value]);
-    }
-
-    function inc (value){
-        return value + 1;
-    }
-
-    function Vector(valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        return Vector.attachValues(vector, valueArray);
-    }
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
-        index = eitherType('number', 0, index);
-        
-        var point = vector[index];
-        
-        if(isType('undefined', point)) {
-            return points;
-        } else {
-            return Vector.getPoints(vector, inc(index), conj(point, points));
-        }
-        
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 21
-
-// Changes made:
-
-// Vector.getPoints = function (vector, index, points) {
-//     points = eitherType('object', [], points);
-//     index = eitherType('number', 0, index);
-    
-//     var point = vector[index];
-    
-//     return isType('undefined', point) ? points : Vector.getPoints(vector, inc(index), conj(point, points));
-// };
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj (value, list){
-        return list.concat([value]);
-    }
-
-    function inc (value){
-        return value + 1;
-    }
-
-    function Vector(valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        return Vector.attachValues(vector, valueArray);
-    }
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
-        index = eitherType('number', 0, index);
-        
-        var point = vector[index];
-        
-        return isType('undefined', point) ? points : Vector.getPoints(vector, inc(index), conj(point, points));
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 22
-
-// Changes made:
+// Hide points array from outside world to limit manipulation
 
 // function Vector(valueArray) {
-//     var points = Array.prototype.slice.call(arguments, 0);
-//     var vector = this instanceof Vector ? this : new Vector(points[0]);
+//     let vector = this instanceof Vector ? this : new Vector(valueArray);
+    
+//     Vector.attachValues(vector, valueArray);
 
-//     return Vector.attachValues(vector, valueArray);
+//     return vector;
 // }
+
+// Vector.attachValues = function (vector, points) {
+//     vector.valueOf = () => points.slice(0);
+//     points.forEach((value, index) => vector[index] = value);
+// };
+
+// Vector.prototype = {
+//     toString: function () {
+//         return '<' + this.valueOf().toString() + '>';
+//     }
+// };
 
 (function () {
     'use strict';
@@ -2461,7 +1082,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
+    function eitherType (typeStr, defaultValue, value){
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -2490,69 +1111,44 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj (value, list){
-        return list.concat([value]);
-    }
-
-    function inc (value){
-        return value + 1;
+        return sum(squareAll(nums));
     }
 
     function Vector(valueArray) {
-        var points = Array.prototype.slice.call(arguments, 0);
-        var vector = this instanceof Vector ? this : new Vector(points[0]);
+        let vector = this instanceof Vector ? this : new Vector(valueArray);
+        
+        Vector.attachValues(vector, valueArray);
 
-        return Vector.attachValues(vector, valueArray);
+        return vector;
     }
 
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
-        index = eitherType('number', 0, index);
-        
-        var point = vector[index];
-        
-        return isType('undefined', point) ? points : Vector.getPoints(vector, inc(index), conj(point, points));
+    Vector.attachValues = function (vector, points) {
+        vector.valueOf = () => points.slice(0);
+        points.forEach((value, index) => vector[index] = value);
     };
 
     Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
     };
 
     function buildVector(valueArray) {
-        return Vector(valueArray);
+        return new Vector(valueArray);
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        return squareRoot(sumOfSquares(vector));
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
         getVectorsShorterThan: getVectorsShorterThan,
         magnitude: magnitude,
-        buildVector: buildVector,
+        buildVector: Vector,
         sumOfSquares: sumOfSquares,
         squareAll: squareAll,
         sum: sum,
@@ -2565,145 +1161,21 @@ they interact with each other.
 
 // Run the tests!
 
-
-// Movement 23
-
-// Changes made:
-
-// function Vector() {
-//     var points = Array.prototype.slice.call(arguments, 0);
-//     var vector = this instanceof Vector ? this : new Vector();
-
-//     return Vector.attachValues(vector, points);
-// }
-
-// function buildVector(valueArray) {
-//     return Vector.apply(null, valueArray);
-// }
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj (value, list){
-        return list.concat([value]);
-    }
-
-    function inc (value){
-        return value + 1;
-    }
-
-    function Vector() {
-        var points = Array.prototype.slice.call(arguments, 0);
-        var vector = this instanceof Vector ? this : new Vector();
-
-        return Vector.attachValues(vector, points);
-    }
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
-        index = eitherType('number', 0, index);
-        
-        var point = vector[index];
-        
-        return isType('undefined', point) ? points : Vector.getPoints(vector, inc(index), conj(point, points));
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector.apply(null, valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests
-
-
-// Movement 24
+// Movement 12
 
 // Changes made:
+// Make vector properties immutable
 
-// Vector.attachValueAtIndex = function (vector, value, index) {
-//     vector[index] = value;
-//     return vector;
+// const attachImmutableProperty = (vector) => (value, key) => {
+//     Object.defineProperty(vector, key, {
+//         writeable: false,
+//         value: value
+//     });
 // };
 
-// Vector.attachValues = function (vector, values) {
-//     return values.reduce(Vector.attachValueAtIndex, vector);
+// Vector.attachValues = function (vector, points) {
+//     vector.valueOf = () => points.slice(0);
+//     points.forEach(attachImmutableProperty(vector));
 // };
 
 (function () {
@@ -2713,7 +1185,7 @@ they interact with each other.
         return typeof value === typeStr;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
+    function eitherType (typeStr, defaultValue, value){
         return isType(typeStr, value) ? value : defaultValue;
     }
 
@@ -2742,460 +1214,51 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
+        return sum(squareAll(nums));
     }
 
-    function conj (value, list){
-        return list.concat([value]);
-    }
+    function Vector(valueArray) {
+        let vector = this instanceof Vector ? this : new Vector(valueArray);
+        
+        Vector.attachValues(vector, valueArray);
 
-    function inc (value){
-        return value + 1;
-    }
-
-    function Vector() {
-        var points = Array.prototype.slice.call(arguments, 0);
-        var vector = this instanceof Vector ? this : new Vector();
-
-        return Vector.attachValues(vector, points);
-    }
-
-    Vector.attachValueAtIndex = function (vector, value, index) {
-        vector[index] = value;
         return vector;
-    };
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(Vector.attachValueAtIndex, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
-        index = eitherType('number', 0, index);
-        
-        var point = vector[index];
-        
-        return isType('undefined', point) ? points : Vector.getPoints(vector, inc(index), conj(point, points));
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector.apply(null, valueArray);
     }
 
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
+    const attachImmutableProperty = (vector) => (value, key) => {
+        Object.defineProperty(vector, key, {
+            writeable: false,
+            value: value
         });
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
     };
 
-})();
-
-// Run the tests!
-
-
-// Movement 25
-
-// Changes made:
-
-// function getVectorsShorterThan(maxLength, vectors) {
-//     return vectors.filter(isShortVector);
-
-//     function isShortVector(vector) {
-//         return magnitude(vector) <= maxLength;
-//     }
-// }
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj(value, list) {
-        return list.concat([value]);
-    }
-
-    function inc(value) {
-        return value + 1;
-    }
-
-    function Vector() {
-        var points = Array.prototype.slice.call(arguments, 0);
-        var vector = this instanceof Vector ? this : new Vector();
-
-        return Vector.attachValues(vector, points);
-    }
-
-    Vector.attachValueAtIndex = function (vector, value, index) {
-        vector[index] = value;
-        return vector;
-    };
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(Vector.attachValueAtIndex, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
-        index = eitherType('number', 0, index);
-
-        var point = vector[index];
-
-        return isType('undefined', point) ? points : Vector.getPoints(vector, inc(index), conj(point, points));
+    Vector.attachValues = function (vector, points) {
+        vector.valueOf = () => points.slice(0);
+        points.forEach(attachImmutableProperty(vector));
     };
 
     Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
         toString: function () {
             return '<' + this.valueOf().toString() + '>';
         }
     };
 
     function buildVector(valueArray) {
-        return Vector.apply(null, valueArray);
+        return new Vector(valueArray);
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        return squareRoot(sumOfSquares(vector));
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(isShortVector);
-
-        function isShortVector(vector) {
-            return magnitude(vector) <= maxLength;
-        }
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
         getVectorsShorterThan: getVectorsShorterThan,
         magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 26
-
-// Changes made:
-
-// function isShortVector(maxLength, vector) {
-//     return magnitude(vector) <= maxLength;
-// }
-
-// function getVectorsShorterThan(maxLength, vectors) {
-//     return vectors.filter(isShortVector.bind(null, maxLength));
-// }
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function conj(value, list) {
-        return list.concat([value]);
-    }
-
-    function inc(value) {
-        return value + 1;
-    }
-
-    function Vector() {
-        var points = Array.prototype.slice.call(arguments, 0);
-        var vector = this instanceof Vector ? this : new Vector();
-
-        return Vector.attachValues(vector, points);
-    }
-
-    Vector.attachValueAtIndex = function (vector, value, index) {
-        vector[index] = value;
-        return vector;
-    };
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(Vector.attachValueAtIndex, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
-        index = eitherType('number', 0, index);
-
-        var point = vector[index];
-
-        return isType('undefined', point) ? points : Vector.getPoints(vector, inc(index), conj(point, points));
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return Vector.apply(null, valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function isShortVector(maxLength, vector) {
-        return magnitude(vector) <= maxLength;
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(isShortVector.bind(null, maxLength));
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 27 -- cleanup and comments
-
-(function () {
-    'use strict';
-
-    // Generic functions
-    
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function conj(value, list) {
-        return list.concat([value]);
-    }
-
-    function inc(value) {
-        return value + 1;
-    }
-
-    // Final vector as a data type
-    // Interactions with the Vector type would be as follows:
-    // var vector = Vector(1, 2, 3);
-    // console.log(vector); // <1,2,3>
-    function Vector() {
-        var points = Array.prototype.slice.call(arguments, 0);
-        var vector = this instanceof Vector ? this : new Vector();
-
-        return Vector.attachValues(vector, points);
-    }
-
-    // Vector static methods
-    Vector.attachValueAtIndex = function (vector, value, index) {
-        vector[index] = value;
-        return vector;
-    };
-
-    Vector.attachValues = function (vector, values) {
-        return values.reduce(Vector.attachValueAtIndex, vector);
-    };
-
-    Vector.getPoints = function (vector, index, points) {
-        points = eitherType('object', [], points);
-        index = eitherType('number', 0, index);
-
-        var point = vector[index];
-
-        return isType('undefined', point) ? points : Vector.getPoints(vector, inc(index), conj(point, points));
-    };
-
-    // Vector method overrides
-    Vector.prototype = {
-        valueOf: function () {
-            return Vector.getPoints(this);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    // Factory method for the vector type
-    function buildVector(valueArray) {
-        return Vector.apply(null, valueArray);
-    }
-
-    // Final Greeting function
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    // Vestigial sum -- this could be removed in a production environment
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    // Vestigial squareAll -- could also be removed
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    // Final sumOfSquares, using chained higher-order functions
-    function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    // Pure convenience function for vector filtering
-    function isShortVector(maxLength, vector) {
-        return magnitude(vector) <= maxLength;
-    }
-
-    // Final vector filter behavior
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(isShortVector.bind(null, maxLength));
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
+        buildVector: Vector,
         sumOfSquares: sumOfSquares,
         squareAll: squareAll,
         sum: sum,

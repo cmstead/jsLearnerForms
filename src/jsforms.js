@@ -2,4 +2,5 @@
     'use strict';
 
     module.exports = {};
+
 })();

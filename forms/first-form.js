@@ -446,9 +446,9 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function sum(nums) {
-//     var finalSum = 0;
+//     let finalSum = 0;
     
-//     for(var index = 0; index < nums.length; index++) {
+//     for(let index = 0; index < nums.length; index++) {
 //         finalSum += nums[index];
 //     }
     
@@ -475,9 +475,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
         
-        for(var index = 0; index < nums.length; index++) {
+        for(let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
         
@@ -529,9 +529,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -560,10 +560,10 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function squareAll(nums) {
-//     var result = [];
-//     var squaredNum = 0;
+//     let result = [];
+//     let squaredNum = 0;
     
-//     for(var index = 0; index < nums.length; index++) {
+//     for(let index = 0; index < nums.length; index++) {
 //         squaredNum = square(nums[index]);
 //         result[index] = squaredNum;
 //     }
@@ -591,9 +591,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -601,10 +601,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
         
-        for(var index = 0; index < nums.length; index++) {
+        for(let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -658,9 +658,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -668,10 +668,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -702,7 +702,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function sumOfSquares(nums) {
-//     var squares = squareAll(nums);
+//     let squares = squareAll(nums);
 //     return sum(squares);
 // }
 
@@ -726,9 +726,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -736,10 +736,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -748,7 +748,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
@@ -799,9 +799,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -809,10 +809,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -821,7 +821,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
@@ -872,9 +872,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -882,10 +882,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -894,7 +894,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
@@ -921,7 +921,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function buildVector(valueArray) {
-//     var vector = valueArray.slice(0);
+//     let vector = valueArray.slice(0);
     
 //     vector.valueOf = function () {
 //         return this.slice(0);
@@ -950,9 +950,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -960,10 +960,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -972,12 +972,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
         
         vector.valueOf = function () {
             return this.slice(0);
@@ -1005,7 +1005,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function buildVector(valueArray) {
-//     var vector = valueArray.slice(0);
+//     let vector = valueArray.slice(0);
     
 //     vector.valueOf = function () {
 //         return this.slice(0);
@@ -1038,9 +1038,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -1048,10 +1048,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -1060,12 +1060,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
         
         vector.valueOf = function () {
             return this.slice(0);
@@ -1125,9 +1125,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -1135,10 +1135,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -1147,12 +1147,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
         
         vector.valueOf = function () {
             return this.slice(0);
@@ -1188,7 +1188,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function magnitude(vector) {
-//     var squaredNum = square(vector[0]);
+//     let squaredNum = square(vector[0]);
 //     return squareRoot(squaredNum);
 // }
 
@@ -1212,9 +1212,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -1222,10 +1222,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -1234,12 +1234,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
         
         vector.valueOf = function () {
             return this.slice(0);
@@ -1253,7 +1253,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function magnitude(vector) {
-        var squaredNum = square(vector[0]);
+        let squaredNum = square(vector[0]);
         return squareRoot(squaredNum);
     }
 
@@ -1277,7 +1277,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function magnitude(vector) {
-//     var squares;
+//     let squares;
     
 //     if(vector.length === 1) {
 //         squares = square(vector[0]);
@@ -1308,9 +1308,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -1318,10 +1318,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -1330,12 +1330,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
         
         vector.valueOf = function () {
             return this.slice(0);
@@ -1349,7 +1349,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function magnitude(vector) {
-        var squares;
+        let squares;
         
         if(vector.length === 1) {
             squares = square(vector[0]);
@@ -1380,7 +1380,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function magnitude(vector) {
-//     var summedSquares = sumOfSquares(vector);
+//     let summedSquares = sumOfSquares(vector);
 //     return squareRoot(summedSquares);
 // }
 
@@ -1404,9 +1404,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -1414,10 +1414,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -1426,12 +1426,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
         
         vector.valueOf = function () {
             return this.slice(0);
@@ -1445,7 +1445,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
@@ -1497,9 +1497,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -1507,10 +1507,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -1519,12 +1519,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -1538,7 +1538,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
@@ -1595,9 +1595,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -1605,10 +1605,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -1617,12 +1617,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -1636,7 +1636,7 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
@@ -1670,7 +1670,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function getVectorsShorterThan(maxLength, vectors) {
-//     var filteredVectors = [];
+//     let filteredVectors = [];
 
 //     if(magnitude(vectors[0]) < maxLength) {
 //         filteredVectors[0] = vectors[0];
@@ -1703,9 +1703,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -1713,10 +1713,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -1725,12 +1725,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -1744,12 +1744,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
 
         if(magnitude(vectors[0]) < maxLength) {
             filteredVectors[0] = vectors[0];
@@ -1784,9 +1784,9 @@ Even the longest journey begins with a single step. Good luck!
 // Changes made:
 
 // function getVectorsShorterThan(maxLength, vectors) {
-//     var filteredVectors = [];
+//     let filteredVectors = [];
     
-//     for(var index = 0; index < vectors.length; index++) {
+//     for(let index = 0; index < vectors.length; index++) {
 //         if(magnitude(vectors[index]) <= maxLength) {
 //             filteredVectors[filteredVectors.length] = vectors[index];
 //         }
@@ -1815,9 +1815,9 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -1825,10 +1825,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -1837,12 +1837,12 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -1856,14 +1856,14 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
         
-        for(var index = 0; index < vectors.length; index++) {
+        for(let index = 0; index < vectors.length; index++) {
             if(magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }

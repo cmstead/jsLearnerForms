@@ -4,8 +4,6 @@ var assert = require('chai').assert;
 describe('Forms', function () {
 
     // First form, movements 1 and 2
-    // Second form, movements 1 and 2
-    // Third form, movements 1-3
     describe('greeter', function () {
         
         // First form, movement 1
@@ -51,8 +49,6 @@ describe('Forms', function () {
     });
     
     // First form, movements 8-10
-    // Second form, movements 3 and 4
-    // Third form, movements 4 and 5
     describe('sum', function () {
         
         // First form, movement 8
@@ -72,7 +68,6 @@ describe('Forms', function () {
     });
 
     // First form, movements 11 and 12
-    // Second form, movements 5-9
     describe('squareAll', function () {
         
         // First form, movement 11
@@ -88,7 +83,6 @@ describe('Forms', function () {
     });
     
     // First form, movements 13 and 14
-    // Third form, movements 6-8
     describe('sumOfSquares', function () {
         
         // First form, movement 13
@@ -104,8 +98,6 @@ describe('Forms', function () {
     });
 
     // First form, movement 15-18
-    // Second form, movements 10 and 11
-    // Third form, movements 9-24
     describe('buildVector', function () {
 
         // First form, movement 15
@@ -135,7 +127,7 @@ describe('Forms', function () {
         // First form, movement 18
         it('should return a vector where toString returns a vector string', function () {
             var vector = jsforms.buildVector([1, 2, 3]);
-            
+
             assert.equal(vector.toString(), '<1,2,3>');
         });
         
@@ -167,8 +159,6 @@ describe('Forms', function () {
     });    
 
     // First form, movement 23-26
-    // Second form, movements 12-15
-    // Third form, movements 25 and 26
     describe('getVectorsShorterThan', function () {
         
         // First form, movement 23

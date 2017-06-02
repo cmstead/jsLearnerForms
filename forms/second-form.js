@@ -20,6 +20,7 @@ Topics in second form:
 - Closures
 - Factory functions
 - Higher-order functions
+- Lambda expressions
 
 Although second form topics list is shorter than the first form,
 each item is a denser idea. Be sure to stop and consider what each
@@ -34,9 +35,10 @@ in second form follow the same test order as first form.
 // Movement 1
 
 // Changes made:
+// Removed unnecessary else
 
 // function greet(greeting) {
-//     var message = 'Hello';
+//     let message = 'Hello';
 
 //     if (greeting !== undefined) {
 //         message = greeting;
@@ -49,7 +51,7 @@ in second form follow the same test order as first form.
     'use strict';
 
     function greet(greeting) {
-        var message = 'Hello';
+        let message = 'Hello';
 
         if (greeting !== undefined) {
             message = greeting;
@@ -67,9 +69,9 @@ in second form follow the same test order as first form.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -77,10 +79,10 @@ in second form follow the same test order as first form.
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -89,12 +91,12 @@ in second form follow the same test order as first form.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -108,14 +110,14 @@ in second form follow the same test order as first form.
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
 
-        for (var index = 0; index < vectors.length; index++) {
+        for (let index = 0; index < vectors.length; index++) {
             if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
@@ -144,9 +146,11 @@ in second form follow the same test order as first form.
 // Movement 2
 
 // Changes made:
+// Moved to ternary expression for message assignment formatted as such:
+// test ? trueResult : falseResult
 
 // function greet(greeting) {
-//     var message = greeting !== undefined ? greeting : 'Hello';
+//     let message = greeting !== undefined ? greeting : 'Hello';
 
 //     return message + '!';
 // }
@@ -155,7 +159,7 @@ in second form follow the same test order as first form.
     'use strict';
 
     function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
+        let message = greeting !== undefined ? greeting : 'Hello';
 
         return message + '!';
     }
@@ -169,9 +173,9 @@ in second form follow the same test order as first form.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum += nums[index];
         }
 
@@ -179,10 +183,10 @@ in second form follow the same test order as first form.
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -191,12 +195,12 @@ in second form follow the same test order as first form.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -210,14 +214,14 @@ in second form follow the same test order as first form.
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
 
-        for (var index = 0; index < vectors.length; index++) {
+        for (let index = 0; index < vectors.length; index++) {
             if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
@@ -245,7 +249,8 @@ in second form follow the same test order as first form.
 
 // Movement 3
 
-// Changes made
+// Changes made:
+// Introduced add function
 
 // function add (a, b){
 //     return a + b;
@@ -253,7 +258,7 @@ in second form follow the same test order as first form.
 
 // function sum(nums) {
 //     ...
-//     for (var index = 0; index < nums.length; index++) {
+//     for (let index = 0; index < nums.length; index++) {
 //         finalSum = add(finalSum, nums[index]);
 //     }
 //     ...
@@ -263,7 +268,7 @@ in second form follow the same test order as first form.
     'use strict';
 
     function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
+        let message = greeting !== undefined ? greeting : 'Hello';
 
         return message + '!';
     }
@@ -281,9 +286,9 @@ in second form follow the same test order as first form.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             finalSum = add(finalSum, nums[index]);
         }
 
@@ -291,10 +296,10 @@ in second form follow the same test order as first form.
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -303,12 +308,12 @@ in second form follow the same test order as first form.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -322,14 +327,14 @@ in second form follow the same test order as first form.
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
 
-        for (var index = 0; index < vectors.length; index++) {
+        for (let index = 0; index < vectors.length; index++) {
             if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
@@ -358,6 +363,7 @@ in second form follow the same test order as first form.
 // Movement 4
 
 // Changes made:
+// Refactored to forEach, away from for structure
 
 // function sum(nums) {
 //     ...
@@ -371,7 +377,7 @@ in second form follow the same test order as first form.
     'use strict';
 
     function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
+        let message = greeting !== undefined ? greeting : 'Hello';
 
         return message + '!';
     }
@@ -389,7 +395,7 @@ in second form follow the same test order as first form.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
         nums.forEach(function (value) {
             finalSum = add(finalSum, value);
@@ -399,10 +405,10 @@ in second form follow the same test order as first form.
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result[index] = squaredNum;
         }
@@ -411,12 +417,12 @@ in second form follow the same test order as first form.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -430,14 +436,14 @@ in second form follow the same test order as first form.
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
 
-        for (var index = 0; index < vectors.length; index++) {
+        for (let index = 0; index < vectors.length; index++) {
             if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
@@ -462,14 +468,119 @@ in second form follow the same test order as first form.
 
 // Run the tests!
 
-
 // Movement 5
 
 // Changes made:
+// Refactored to lambda expression
+
+// function sum(nums) {
+//     let finalSum = 0;
+
+//     nums.forEach(value => finalSum = add(finalSum, value));
+
+//     return finalSum;
+// }
+
+(function () {
+    'use strict';
+
+    function greet(greeting) {
+        let message = greeting !== undefined ? greeting : 'Hello';
+
+        return message + '!';
+    }
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function sum(nums) {
+        let finalSum = 0;
+
+        nums.forEach(value => finalSum = add(finalSum, value));
+
+        return finalSum;
+    }
+
+    function squareAll(nums) {
+        let result = [];
+        let squaredNum = 0;
+
+        for (let index = 0; index < nums.length; index++) {
+            squaredNum = square(nums[index]);
+            result[index] = squaredNum;
+        }
+
+        return result;
+    }
+
+    function sumOfSquares(nums) {
+        let squares = squareAll(nums);
+        return sum(squares);
+    }
+
+    function buildVector(valueArray) {
+        let vector = valueArray.slice(0);
+
+        vector.valueOf = function () {
+            return this.slice(0);
+        };
+
+        vector.toString = function () {
+            return '<' + this.valueOf().toString() + '>';
+        };
+
+        return vector;
+    }
+
+    function magnitude(vector) {
+        let summedSquares = sumOfSquares(vector);
+        return squareRoot(summedSquares);
+    }
+
+    function getVectorsShorterThan(maxLength, vectors) {
+        let filteredVectors = [];
+
+        for (let index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
+                filteredVectors[filteredVectors.length] = vectors[index];
+            }
+        }
+
+        return filteredVectors;
+    }
+
+    module.exports = {
+        getVectorsShorterThan: getVectorsShorterThan,
+        magnitude: magnitude,
+        buildVector: buildVector,
+        sumOfSquares: sumOfSquares,
+        squareAll: squareAll,
+        sum: sum,
+        squareRoot: squareRoot,
+        square: square,
+        greet: greet
+    };
+
+})();
+
+// Run the tests!
+
+// Movement 6
+
+// Changes made:
+// Refactored to pushing value into result array
 
 // function squareAll(nums) {
 //     ...
-//     for (var index = 0; index < nums.length; index++) {
+//     for (let index = 0; index < nums.length; index++) {
 //         squaredNum = square(nums[index]);
 //         result.push(squaredNum);
 //     }
@@ -480,11 +591,10 @@ in second form follow the same test order as first form.
     'use strict';
 
     function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
+        let message = greeting !== undefined ? greeting : 'Hello';
 
         return message + '!';
     }
-
     function square(x) {
         return Math.pow(x, 2);
     }
@@ -498,20 +608,18 @@ in second form follow the same test order as first form.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
 
     function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
+        let result = [];
+        let squaredNum = 0;
 
-        for (var index = 0; index < nums.length; index++) {
+        for (let index = 0; index < nums.length; index++) {
             squaredNum = square(nums[index]);
             result.push(squaredNum);
         }
@@ -520,12 +628,12 @@ in second form follow the same test order as first form.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -539,123 +647,14 @@ in second form follow the same test order as first form.
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
 
-        for (var index = 0; index < vectors.length; index++) {
-            if (magnitude(vectors[index]) <= maxLength) {
-                filteredVectors[filteredVectors.length] = vectors[index];
-            }
-        }
-
-        return filteredVectors;
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 6
-
-// Changes made
-
-// function squareAll(nums) {
-//     ...
-//     nums.forEach(function (value) {
-//         squaredNum = square(value);
-//         result.push(squaredNum);
-//     });
-//     ...
-// }
-
-(function () {
-    'use strict';
-
-    function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
-
-        return message + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        var finalSum = 0;
-
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        var result = [];
-        var squaredNum = 0;
-
-        nums.forEach(function (value) {
-            squaredNum = square(value);
-            result.push(squaredNum);
-        });
-
-        return result;
-    }
-
-    function sumOfSquares(nums) {
-        var squares = squareAll(nums);
-        return sum(squares);
-    }
-
-    function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
-
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
-
-        return vector;
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
-
-        for (var index = 0; index < vectors.length; index++) {
+        for (let index = 0; index < vectors.length; index++) {
             if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
@@ -684,9 +683,119 @@ in second form follow the same test order as first form.
 // Movement 7
 
 // Changes made:
+// Refactored to forEach from for loop
 
 // function squareAll(nums) {
-//     var result = nums.map(function (value) {
+//     ...
+//     nums.forEach(function (value) {
+//         squaredNum = square(value);
+//         result.push(squaredNum);
+//     });
+//     ...
+// }
+
+(function () {
+    'use strict';
+
+    function greet(greeting) {
+        let message = greeting !== undefined ? greeting : 'Hello';
+
+        return message + '!';
+    }
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function sum(nums) {
+        let finalSum = 0;
+
+        nums.forEach(value => finalSum = add(finalSum, value));
+
+        return finalSum;
+    }
+
+    function squareAll(nums) {
+        let result = [];
+        let squaredNum = 0;
+
+        nums.forEach(function (value) {
+            squaredNum = square(value);
+            result.push(squaredNum);
+        });
+
+        return result;
+    }
+
+    function sumOfSquares(nums) {
+        let squares = squareAll(nums);
+        return sum(squares);
+    }
+
+    function buildVector(valueArray) {
+        let vector = valueArray.slice(0);
+
+        vector.valueOf = function () {
+            return this.slice(0);
+        };
+
+        vector.toString = function () {
+            return '<' + this.valueOf().toString() + '>';
+        };
+
+        return vector;
+    }
+
+    function magnitude(vector) {
+        let summedSquares = sumOfSquares(vector);
+        return squareRoot(summedSquares);
+    }
+
+    function getVectorsShorterThan(maxLength, vectors) {
+        let filteredVectors = [];
+
+        for (let index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
+                filteredVectors[filteredVectors.length] = vectors[index];
+            }
+        }
+
+        return filteredVectors;
+    }
+
+    module.exports = {
+        getVectorsShorterThan: getVectorsShorterThan,
+        magnitude: magnitude,
+        buildVector: buildVector,
+        sumOfSquares: sumOfSquares,
+        squareAll: squareAll,
+        sum: sum,
+        squareRoot: squareRoot,
+        square: square,
+        greet: greet
+    };
+
+})();
+
+
+// Run the tests!
+
+
+// Movement 8
+
+// Changes made:
+// Refactored from forEach to map, eliminating explicit looping steps 
+// and introducing a more declarative style
+
+// function squareAll(nums) {
+//     let result = nums.map(function (value) {
 //         return square(value);
 //     });
 //     ...
@@ -696,11 +805,10 @@ in second form follow the same test order as first form.
     'use strict';
 
     function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
+        let message = greeting !== undefined ? greeting : 'Hello';
 
         return message + '!';
     }
-
     function square(x) {
         return Math.pow(x, 2);
     }
@@ -714,17 +822,15 @@ in second form follow the same test order as first form.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
 
     function squareAll(nums) {
-        var result = nums.map(function (value) {
+        let result = nums.map(function (value) {
             return square(value);
         });
 
@@ -732,12 +838,12 @@ in second form follow the same test order as first form.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -751,14 +857,14 @@ in second form follow the same test order as first form.
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
 
-        for (var index = 0; index < vectors.length; index++) {
+        for (let index = 0; index < vectors.length; index++) {
             if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
@@ -781,15 +887,17 @@ in second form follow the same test order as first form.
 
 })();
 
+
 // Run the tests!
 
 
-// Movement 8
+// Movement 9
 
 // Changes made:
+// Removed unnecessary function wrapper, passing square function directly to map
 
 // function squareAll(nums) {
-//     var result = nums.map(square);
+//     let result = nums.map(square);
 //     ...
 // }
 
@@ -797,11 +905,10 @@ in second form follow the same test order as first form.
     'use strict';
 
     function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
+        let message = greeting !== undefined ? greeting : 'Hello';
 
         return message + '!';
     }
-
     function square(x) {
         return Math.pow(x, 2);
     }
@@ -815,28 +922,26 @@ in second form follow the same test order as first form.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
 
     function squareAll(nums) {
-        var result = nums.map(square);
+        let result = nums.map(square);
 
         return result;
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -850,14 +955,14 @@ in second form follow the same test order as first form.
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
 
-        for (var index = 0; index < vectors.length; index++) {
+        for (let index = 0; index < vectors.length; index++) {
             if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
@@ -880,12 +985,14 @@ in second form follow the same test order as first form.
 
 })();
 
+
 // Run the tests!
 
 
-// Movement 9
+// Movement 10
 
 // Changes made:
+// Directly returning result of map operation
 
 // function squareAll(nums) {
 //     return nums.map(square);
@@ -895,11 +1002,10 @@ in second form follow the same test order as first form.
     'use strict';
 
     function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
+        let message = greeting !== undefined ? greeting : 'Hello';
 
         return message + '!';
     }
-
     function square(x) {
         return Math.pow(x, 2);
     }
@@ -913,11 +1019,9 @@ in second form follow the same test order as first form.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
@@ -927,12 +1031,12 @@ in second form follow the same test order as first form.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
     function buildVector(valueArray) {
-        var vector = valueArray.slice(0);
+        let vector = valueArray.slice(0);
 
         vector.valueOf = function () {
             return this.slice(0);
@@ -946,14 +1050,14 @@ in second form follow the same test order as first form.
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
+        let summedSquares = sumOfSquares(vector);
         return squareRoot(summedSquares);
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
+        let filteredVectors = [];
 
-        for (var index = 0; index < vectors.length; index++) {
+        for (let index = 0; index < vectors.length; index++) {
             if (magnitude(vectors[index]) <= maxLength) {
                 filteredVectors[filteredVectors.length] = vectors[index];
             }
@@ -979,13 +1083,17 @@ in second form follow the same test order as first form.
 // Run the tests
 
 
-// Movement 10
+// Movement 11
 
 // Changes made:
-// Added vector object
+// Introduced prototypal vector object definition
 
 // function Vector (valueArray) {
 //     this.points = valueArray
+
+//     valueArray.forEach(function (value, index) {
+//         this[index] = value;
+//     }.bind(this));
 // }
 
 // Vector.prototype = {
@@ -1006,7 +1114,6 @@ in second form follow the same test order as first form.
 
         return message + '!';
     }
-
     function square(x) {
         return Math.pow(x, 2);
     }
@@ -1022,9 +1129,7 @@ in second form follow the same test order as first form.
     function sum(nums) {
         var finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
@@ -1040,6 +1145,10 @@ in second form follow the same test order as first form.
 
     function Vector(valueArray) {
         this.points = valueArray
+
+        valueArray.forEach(function (value, index) {
+            this[index] = value;
+        }.bind(this));
     }
 
     Vector.prototype = {
@@ -1064,122 +1173,6 @@ in second form follow the same test order as first form.
         };
 
         return vector;
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
-
-        for (var index = 0; index < vectors.length; index++) {
-            if (magnitude(vectors[index]) <= maxLength) {
-                filteredVectors[filteredVectors.length] = vectors[index];
-            }
-        }
-
-        return filteredVectors;
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 11
-
-// Changes made:
-
-// function squareAll(nums) {
-//     return nums.valueOf().map(square);
-// }
-
-// function Vector(valueArray) {
-//     this.points = valueArray;
-
-//     valueArray.forEach(function (value, index) {
-//         this[index] = value;
-//     }.bind(this));
-// }
-
-// function buildVector(valueArray) {
-//     return new Vector(valueArray);
-// }
-
-(function () {
-    'use strict';
-
-    function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
-
-        return message + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        var finalSum = 0;
-
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        var squares = squareAll(nums);
-        return sum(squares);
-    }
-
-    function Vector(valueArray) {
-        this.points = valueArray;
-
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
-    }
-
-    Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
     }
 
     function magnitude(vector) {
@@ -1219,15 +1212,15 @@ in second form follow the same test order as first form.
 // Movement 12
 
 // Changes made:
+// Swapped in vector object, replacing monkey-patched array
+// Introduced valueOf call in squareAll to get array from vector instance
 
-// function getVectorsShorterThan(maxLength, vectors) {
-//     ...
-//     for(var index = 0; index < vectors.length; index++) {
-//         if(magnitude(vectors[index]) <= maxLength) {
-//             filteredVectors.push(vectors[index]);
-//         }
-//     }
-//     ...
+// function squareAll(nums) {
+//     return nums.valueOf().map(square);
+// }
+
+// function buildVector(valueArray) {
+//     return new Vector(valueArray);
 // }
 
 (function () {
@@ -1238,7 +1231,6 @@ in second form follow the same test order as first form.
 
         return message + '!';
     }
-
     function square(x) {
         return Math.pow(x, 2);
     }
@@ -1254,9 +1246,7 @@ in second form follow the same test order as first form.
     function sum(nums) {
         var finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
@@ -1302,7 +1292,7 @@ in second form follow the same test order as first form.
 
         for (var index = 0; index < vectors.length; index++) {
             if (magnitude(vectors[index]) <= maxLength) {
-                filteredVectors.push(vectors[index]);
+                filteredVectors[filteredVectors.length] = vectors[index];
             }
         }
 
@@ -1329,16 +1319,12 @@ in second form follow the same test order as first form.
 // Movement 13
 
 // Changes made:
+// Refactored to lambda expression to eliminate bind
 
-// function getVectorsShorterThan(maxLength, vectors) {
-//     var filteredVectors = [];
+// function Vector(valueArray) {
+//     this.points = valueArray;
 
-//     vectors.forEach(function (vector) {
-//         if(magnitude(vector) <= maxLength) {
-//             filteredVectors.push(vector);
-//         }
-//     });
-//     ...
+//     valueArray.forEach((value, index) => this[index] = value);
 // }
 
 (function () {
@@ -1349,7 +1335,6 @@ in second form follow the same test order as first form.
 
         return message + '!';
     }
-
     function square(x) {
         return Math.pow(x, 2);
     }
@@ -1365,9 +1350,7 @@ in second form follow the same test order as first form.
     function sum(nums) {
         var finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
@@ -1384,9 +1367,7 @@ in second form follow the same test order as first form.
     function Vector(valueArray) {
         this.points = valueArray;
 
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+        valueArray.forEach((value, index) => this[index] = value);
     }
 
     Vector.prototype = {
@@ -1410,6 +1391,219 @@ in second form follow the same test order as first form.
 
     function getVectorsShorterThan(maxLength, vectors) {
         var filteredVectors = [];
+
+        for (var index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
+                filteredVectors[filteredVectors.length] = vectors[index];
+            }
+        }
+
+        return filteredVectors;
+    }
+
+    module.exports = {
+        getVectorsShorterThan: getVectorsShorterThan,
+        magnitude: magnitude,
+        buildVector: buildVector,
+        sumOfSquares: sumOfSquares,
+        squareAll: squareAll,
+        sum: sum,
+        squareRoot: squareRoot,
+        square: square,
+        greet: greet
+    };
+
+})();
+
+// Run the tests!
+
+
+// Movement 14
+
+// Changes made:
+// Pushing value into array instead of setting value at index
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     ...
+//     for(let index = 0; index < vectors.length; index++) {
+//         if(magnitude(vectors[index]) <= maxLength) {
+//             filteredVectors.push(vectors[index]);
+//         }
+//     }
+//     ...
+// }
+
+(function () {
+    'use strict';
+
+    function greet(greeting) {
+        var message = greeting !== undefined ? greeting : 'Hello';
+
+        return message + '!';
+    }
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function sum(nums) {
+        var finalSum = 0;
+
+        nums.forEach(value => finalSum = add(finalSum, value));
+
+        return finalSum;
+    }
+
+    function squareAll(nums) {
+        return nums.valueOf().map(square);
+    }
+
+    function sumOfSquares(nums) {
+        var squares = squareAll(nums);
+        return sum(squares);
+    }
+
+    function Vector(valueArray) {
+        this.points = valueArray;
+
+        valueArray.forEach((value, index) => this[index] = value);
+    }
+
+    Vector.prototype = {
+        valueOf: function () {
+            return this.points.slice(0);
+        },
+
+        toString: function () {
+            return '<' + this.valueOf().toString() + '>';
+        }
+    };
+
+    function buildVector(valueArray) {
+        return new Vector(valueArray);
+    }
+
+    function magnitude(vector) {
+        var summedSquares = sumOfSquares(vector);
+        return squareRoot(summedSquares);
+    }
+
+    function getVectorsShorterThan(maxLength, vectors) {
+        let filteredVectors = [];
+
+        for (let index = 0; index < vectors.length; index++) {
+            if (magnitude(vectors[index]) <= maxLength) {
+                filteredVectors.push(vectors[index]);
+            }
+        }
+
+        return filteredVectors;
+    }
+
+    module.exports = {
+        getVectorsShorterThan: getVectorsShorterThan,
+        magnitude: magnitude,
+        buildVector: buildVector,
+        sumOfSquares: sumOfSquares,
+        squareAll: squareAll,
+        sum: sum,
+        squareRoot: squareRoot,
+        square: square,
+        greet: greet
+    };
+
+})();
+
+// Run the tests!
+
+
+// Movement 15
+
+// Changes made:
+// Updated for loop to forEach, reducing variable overhead, preparing to use filter
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     let filteredVectors = [];
+
+//     vectors.forEach(function (vector) {
+//         if(magnitude(vector) <= maxLength) {
+//             filteredVectors.push(vector);
+//         }
+//     });
+//     ...
+// }
+
+(function () {
+    'use strict';
+
+    function greet(greeting) {
+        var message = greeting !== undefined ? greeting : 'Hello';
+
+        return message + '!';
+    }
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function sum(nums) {
+        var finalSum = 0;
+
+        nums.forEach(value => finalSum = add(finalSum, value));
+
+        return finalSum;
+    }
+
+    function squareAll(nums) {
+        return nums.valueOf().map(square);
+    }
+
+    function sumOfSquares(nums) {
+        var squares = squareAll(nums);
+        return sum(squares);
+    }
+
+    function Vector(valueArray) {
+        this.points = valueArray;
+
+        valueArray.forEach((value, index) => this[index] = value);
+    }
+
+    Vector.prototype = {
+        valueOf: function () {
+            return this.points.slice(0);
+        },
+
+        toString: function () {
+            return '<' + this.valueOf().toString() + '>';
+        }
+    };
+
+    function buildVector(valueArray) {
+        return new Vector(valueArray);
+    }
+
+    function magnitude(vector) {
+        var summedSquares = sumOfSquares(vector);
+        return squareRoot(summedSquares);
+    }
+
+    function getVectorsShorterThan(maxLength, vectors) {
+        let filteredVectors = [];
 
         vectors.forEach(function (vector) {
             if (magnitude(vector) <= maxLength) {
@@ -1437,12 +1631,13 @@ in second form follow the same test order as first form.
 // Run the tests!
 
 
-// Movement 14
+// Movement 16
 
 // Changes made:
+// Swapped filter in for forEach to abstract away looping logic
 
 // function getVectorsShorterThan(maxLength, vectors) {
-//     var filteredVectors = vectors.filter(function (vector) {
+//     let filteredVectors = vectors.filter(function (vector) {
 //         return magnitude(vector) <= maxLength;
 //     });
 //     ...
@@ -1456,7 +1651,6 @@ in second form follow the same test order as first form.
 
         return message + '!';
     }
-
     function square(x) {
         return Math.pow(x, 2);
     }
@@ -1472,9 +1666,7 @@ in second form follow the same test order as first form.
     function sum(nums) {
         var finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
@@ -1491,9 +1683,7 @@ in second form follow the same test order as first form.
     function Vector(valueArray) {
         this.points = valueArray;
 
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+        valueArray.forEach((value, index) => this[index] = value);
     }
 
     Vector.prototype = {
@@ -1516,7 +1706,7 @@ in second form follow the same test order as first form.
     }
 
     function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = vectors.filter(function (vector) {
+        let filteredVectors = vectors.filter(function (vector) {
             return magnitude(vector) <= maxLength;
         });
 
@@ -1540,9 +1730,10 @@ in second form follow the same test order as first form.
 // Run the tests!
 
 
-// Movement 15
+// Movement 17
 
 // Changes made:
+// Returning directly from filter, eliminating unnecessary variable
 
 // function getVectorsShorterThan(maxLength, vectors) {
 //     return vectors.filter(function (vector) {
@@ -1558,7 +1749,6 @@ in second form follow the same test order as first form.
 
         return message + '!';
     }
-
     function square(x) {
         return Math.pow(x, 2);
     }
@@ -1574,9 +1764,7 @@ in second form follow the same test order as first form.
     function sum(nums) {
         var finalSum = 0;
 
-        nums.forEach(function (value) {
-            finalSum = add(finalSum, value);
-        });
+        nums.forEach(value => finalSum = add(finalSum, value));
 
         return finalSum;
     }
@@ -1593,9 +1781,7 @@ in second form follow the same test order as first form.
     function Vector(valueArray) {
         this.points = valueArray;
 
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+        valueArray.forEach((value, index) => this[index] = value);
     }
 
     Vector.prototype = {
@@ -1621,6 +1807,98 @@ in second form follow the same test order as first form.
         return vectors.filter(function (vector) {
             return magnitude(vector) <= maxLength;
         });
+    }
+
+    module.exports = {
+        getVectorsShorterThan: getVectorsShorterThan,
+        magnitude: magnitude,
+        buildVector: buildVector,
+        sumOfSquares: sumOfSquares,
+        squareAll: squareAll,
+        sum: sum,
+        squareRoot: squareRoot,
+        square: square,
+        greet: greet
+    };
+
+})();
+
+// Run the tests!
+
+
+// Movement 18
+
+// Changes made:
+// Refactored to lambda expression, removing excess function syntax cruft
+
+// function getVectorsShorterThan(maxLength, vectors) {
+//     return vectors.filter((vector) => magnitude(vector) <= maxLength);
+// }
+
+(function () {
+    'use strict';
+
+    function greet(greeting) {
+        var message = greeting !== undefined ? greeting : 'Hello';
+
+        return message + '!';
+    }
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function sum(nums) {
+        var finalSum = 0;
+
+        nums.forEach(value => finalSum = add(finalSum, value));
+
+        return finalSum;
+    }
+
+    function squareAll(nums) {
+        return nums.valueOf().map(square);
+    }
+
+    function sumOfSquares(nums) {
+        var squares = squareAll(nums);
+        return sum(squares);
+    }
+
+    function Vector(valueArray) {
+        this.points = valueArray;
+
+        valueArray.forEach((value, index) => this[index] = value);
+    }
+
+    Vector.prototype = {
+        valueOf: function () {
+            return this.points.slice(0);
+        },
+
+        toString: function () {
+            return '<' + this.valueOf().toString() + '>';
+        }
+    };
+
+    function buildVector(valueArray) {
+        return new Vector(valueArray);
+    }
+
+    function magnitude(vector) {
+        var summedSquares = sumOfSquares(vector);
+        return squareRoot(summedSquares);
+    }
+
+    function getVectorsShorterThan(maxLength, vectors) {
+        return vectors.filter((vector) => magnitude(vector) <= maxLength);
     }
 
     module.exports = {
