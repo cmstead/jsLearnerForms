@@ -25,8 +25,11 @@
   },
   "homepage": "https://github.com/cmstead/jsLearnerForms",
   "devDependencies": {
+    "approvals": "^2.1.2",
     "chai": "^4.0.1",
     "mocha": "^3.4.2",
-    "quokka-mocha-bdd": "^1.1.0"
+    "mockery": "^2.0.0",
+    "quokka-mocha-bdd": "^1.1.0",
+    "sinon": "^2.3.2"
   }
 }
