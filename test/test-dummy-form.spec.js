@@ -3,12 +3,12 @@
 const assert = require('chai').assert;
 const sinon = require('sinon');
 const mockery = require('mockery');
-const jsonHelper = require('./helpers/jsonHelper');
+const prettyJson = require('./helpers/prettyJson');
 
-// This is a self-running configuration
-require('./helpers/approvalsConfig');
 
 describe('Test Dummy Form', function () {
+
+    require('./helpers/approvalsConfig');
 
     let testDummyForm;
 
@@ -18,7 +18,7 @@ describe('Test Dummy Form', function () {
             warnOnUnregistered: false
         });
 
-        testDummyForm = require('../src/test-dummy-form');
+        testDummyForm = require('../src/test-dummy-form/codeUnderTest');
     });
 
     afterEach(function () {
@@ -26,12 +26,36 @@ describe('Test Dummy Form', function () {
         mockery.disable();
     });
 
-    describe('range', function () {
+    describe('compareNames', function () {
 
-        it('should create a range, 1 to 10, without an increment specified');
-        it('should create a range, 1 to 20, with an increment of 2');
-        it('should create a single-value array when a > b');
-        it('should throw an error when inccrement is negative');
+        it('should return 0 when two values are equal');
+        it('should return -1 when name 1 comes before name 2 alphabetically');
+        it('should return 1 when name 1 comes after name 2 alphabetically');
+
+    });
+
+    describe('compareContactRecords', function () {
+        
+        it('should return 0 when first and last name are equal between two records');
+        it('should return -1 when record1.firstName comes before record2.firstName alphabetically');
+        it('should return 1 when record1.firstName comes after record2.firstName alphabetically');
+        it('should return -1 when first names are equal and record1.lastName comes before record2.lastName alphabetically');
+        it('should return 1 when first names are equal and record1.lastName comes after record2.lastName alphabetically');
+
+    });
+
+    describe('sortByContactName', function () {
+        
+        it('should return an array of records sorted by name');
+        it('should return null if passed argument is not an array');
+
+    });
+
+    describe('getContactNames', function () {
+        
+        it('should not throw error immediately when called');
+        it('should call callback with a null error and an array of sorted names on success');
+        it('should call callback with error and a null value on failure');
 
     });
 

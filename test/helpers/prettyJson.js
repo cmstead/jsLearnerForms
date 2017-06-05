@@ -1,6 +1,5 @@
 'use strict';
 
-
 function getFunctionName (fn) {
     return fn.name === '' ? 'Anonymous Function' : fn.name;
 }
@@ -15,13 +14,4 @@ function prettyJson(obj) {
     '"undefined"';
 }
 
-function stringify (obj) {
-    return typeof obj !== 'undefined' ? 
-    JSON.stringify(obj) :
-    '"undefined"';
-}
-
-module.exports = {
-    prettyJson: prettyJson,
-    stringify: stringify
-};
+module.exports = prettyJson;

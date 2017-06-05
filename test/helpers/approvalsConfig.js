@@ -1,31 +1,11 @@
 'use strict';
 
-var approvalsLocation = './test/approvals';
+const approvalsLocation = './test/approvals';
+const quokkaApprovalsHelper = require('./quokkaApprovalsHelper')();
+const approvalsConfigFactory = require('approvals-config-factory');
 
-var approvalsConfig = {
-    reporters: ['kdiff3'],
+const approvalsConfig = approvalsConfigFactory.buildApprovalsConfig({ 
+    reporter: quokkaApprovalsHelper.chooseReporter('kdiff3')
+});
 
-    normalizeLineEndingsTo: '\n',
-
-    appendEOL: true,
-
-    EOL: require('os').EOL,
-
-    errorOnStaleApprovedFiles: true,
-
-    shouldIgnoreStaleApprovedFile: function (/*fileName*/) { return false; },
-
-    stripBOM: false,
-
-    forceApproveAll: false,
-
-    failOnLineEndingDifferences: true
-};
-
-if (typeof global.runQuokkaMochaBdd === 'function') {
-    // set up custom mocha reporter
-} else {
-    var approvals = require('approvals').configure(approvalsConfig).mocha(approvalsLocation);
-}
-
-module.exports = approvals;
+module.exports = require('approvals').configure(approvalsConfig).mocha(approvalsLocation);

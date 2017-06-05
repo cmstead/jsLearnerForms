@@ -4,7 +4,7 @@
   "description": "JS muscle memory building forms",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/jasmine-node/bin/jasmine-node ./test/"
+    "test": "node node_modules/mocha/bin/mocha ./test/test-dummy-form.spec.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/cmstead/jsLearnerForms",
   "devDependencies": {
     "approvals": "^2.1.2",
+    "approvals-config-factory": "^1.0.0",
     "chai": "^4.0.1",
     "mocha": "^3.4.2",
     "mockery": "^2.0.0",
