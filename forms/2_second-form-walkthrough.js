@@ -1091,9 +1091,7 @@ in second form follow the same test order as first form.
 // function Vector (valueArray) {
 //     this.points = valueArray
 
-//     valueArray.forEach(function (value, index) {
-//         this[index] = value;
-//     }.bind(this));
+//     valueArray.forEach((value, index) => this[index] = value);
 // }
 
 // Vector.prototype = {
@@ -1146,9 +1144,7 @@ in second form follow the same test order as first form.
     function Vector(valueArray) {
         this.points = valueArray
 
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
+        valueArray.forEach((value, index) => this[index] = value);
     }
 
     Vector.prototype = {
@@ -1263,110 +1259,6 @@ in second form follow the same test order as first form.
     function Vector(valueArray) {
         this.points = valueArray;
 
-        valueArray.forEach(function (value, index) {
-            this[index] = value;
-        }.bind(this));
-    }
-
-    Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        var filteredVectors = [];
-
-        for (var index = 0; index < vectors.length; index++) {
-            if (magnitude(vectors[index]) <= maxLength) {
-                filteredVectors[filteredVectors.length] = vectors[index];
-            }
-        }
-
-        return filteredVectors;
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 13
-
-// Changes made:
-// Refactored to lambda expression to eliminate bind
-
-// function Vector(valueArray) {
-//     this.points = valueArray;
-
-//     valueArray.forEach((value, index) => this[index] = value);
-// }
-
-(function () {
-    'use strict';
-
-    function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
-
-        return message + '!';
-    }
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        var finalSum = 0;
-
-        nums.forEach(value => finalSum = add(finalSum, value));
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        var squares = squareAll(nums);
-        return sum(squares);
-    }
-
-    function Vector(valueArray) {
-        this.points = valueArray;
-
         valueArray.forEach((value, index) => this[index] = value);
     }
 
@@ -1421,113 +1313,7 @@ in second form follow the same test order as first form.
 // Movement 14
 
 // Changes made:
-// Pushing value into array instead of setting value at index
-
-// function getVectorsShorterThan(maxLength, vectors) {
-//     ...
-//     for(let index = 0; index < vectors.length; index++) {
-//         if(magnitude(vectors[index]) <= maxLength) {
-//             filteredVectors.push(vectors[index]);
-//         }
-//     }
-//     ...
-// }
-
-(function () {
-    'use strict';
-
-    function greet(greeting) {
-        var message = greeting !== undefined ? greeting : 'Hello';
-
-        return message + '!';
-    }
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        var finalSum = 0;
-
-        nums.forEach(value => finalSum = add(finalSum, value));
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        var squares = squareAll(nums);
-        return sum(squares);
-    }
-
-    function Vector(valueArray) {
-        this.points = valueArray;
-
-        valueArray.forEach((value, index) => this[index] = value);
-    }
-
-    Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        let filteredVectors = [];
-
-        for (let index = 0; index < vectors.length; index++) {
-            if (magnitude(vectors[index]) <= maxLength) {
-                filteredVectors.push(vectors[index]);
-            }
-        }
-
-        return filteredVectors;
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 15
-
-// Changes made:
-// Updated for loop to forEach, reducing variable overhead, preparing to use filter
+// Refactor to foreach with a condition. (Use the examples from prior steps)
 
 // function getVectorsShorterThan(maxLength, vectors) {
 //     let filteredVectors = [];
@@ -1631,7 +1417,7 @@ in second form follow the same test order as first form.
 // Run the tests!
 
 
-// Movement 16
+// Movement 15
 
 // Changes made:
 // Swapped filter in for forEach to abstract away looping logic
@@ -1730,7 +1516,7 @@ in second form follow the same test order as first form.
 // Run the tests!
 
 
-// Movement 17
+// Movement 16
 
 // Changes made:
 // Returning directly from filter, eliminating unnecessary variable
@@ -1826,7 +1612,7 @@ in second form follow the same test order as first form.
 // Run the tests!
 
 
-// Movement 18
+// Movement 17
 
 // Changes made:
 // Refactored to lambda expression, removing excess function syntax cruft

@@ -66,7 +66,8 @@ Even the longest journey begins with a single step. Good luck!
 // - returning a value
 // - exporting a function
 
-// Changes made:
+// Changes to make:
+// Create function called greet
 
 // function greet (greeting){
 //     return 'Hello!';
@@ -97,7 +98,8 @@ Even the longest journey begins with a single step. Good luck!
 // Concepts in this movement:
 // - conditional statements
 
-// Changes made:
+// Changes to make:
+// Add condition to greet to handle custom greeting case
 
 // function greet(greeting) {
 //     if (greeting === undefined) {
@@ -134,7 +136,8 @@ Even the longest journey begins with a single step. Good luck!
 // - returning a value
 // - exporting a function
 
-// Changes made:
+// Changes to make:
+// Add cheated-out square function
 
 // function square(x) {
 //     return 1;
@@ -176,7 +179,8 @@ Even the longest journey begins with a single step. Good luck!
 // Concepts in this movement
 // - simple mathematical computation
 
-// Changes made:
+// Changes to make:
+// Add logic to correctly square a number
 
 // function square(x) {
 //     return x * x;
@@ -213,7 +217,8 @@ Even the longest journey begins with a single step. Good luck!
 // - built-in modules (Math)
 // - build-in functions (pow)
 
-// Changes made:
+// Changes to make:
+// Move to library function to perform square operation
 
 // function square(x) {
 //     return Math.pow(x, 2);
@@ -250,7 +255,8 @@ Even the longest journey begins with a single step. Good luck!
 // - simplest thing to pass the test
 // - export a function
 
-// Changes made:
+// Changes to make:
+// Add cheated-out square root function
 
 // function squareRoot(x) {
 //     return 1;
@@ -297,7 +303,8 @@ Even the longest journey begins with a single step. Good luck!
 // - built-in modules (Math)
 // - build-in functions (sqrt)
 
-// Changes made:
+// Changes to make:
+// Add logic to properly take square root
 
 // function squareRoot(x) {
 //     return Math.sqrt(x);
@@ -335,7 +342,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 8
 
-// Changes made:
+// Changes to make:
+// Add cheated out sum function
 
 // function sum(nums) {
 //     return 1;
@@ -388,7 +396,8 @@ Even the longest journey begins with a single step. Good luck!
 // - mathematical operations
 // - arrays
 
-// Changes made:
+// Changes to make:
+// Add logic to sum 1 or two numbers
 
 // function sum(nums) {
 //     if(nums.length === 1) {
@@ -443,7 +452,8 @@ Even the longest journey begins with a single step. Good luck!
 // - looping
 // - arrays
 
-// Changes made:
+// Changes to make:
+// Add logic to sum an arbitrary length array of numbers
 
 // function sum(nums) {
 //     let finalSum = 0;
@@ -498,7 +508,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 11
 
-// Changes made:
+// Changes to make:
+// Add a cheated-out squareAll function
 
 // function squareAll(nums) {
 //     return [4];
@@ -557,7 +568,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 12
 
-// Changes made:
+// Changes to make:
+// Add logic to square all numbers in array
 
 // function squareAll(nums) {
 //     let result = [];
@@ -627,7 +639,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 13
 
-// Changes made:
+// Changes to make:
+// Add sumOfSquares function with logic to square a single number
 
 // function sumOfSquares(nums) {
 //     return square(nums[0]);
@@ -699,7 +712,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 14
 
-// Changes made:
+// Changes to make:
+// Add logic to square all numbers and return the sum
 
 // function sumOfSquares(nums) {
 //     let squares = squareAll(nums);
@@ -768,7 +782,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 15
 
-// Changes made:
+// Changes to make:
+// Add buildVector function
 
 // function buildVector(valueArray) {
 //     return valueArray;
@@ -846,7 +861,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 16
 
-// Changes made:
+// Changes to make:
+// Add logic to return a copy of vector array
 
 // function buildVector(valueArray) {
 //     return valueArray.slice(0);
@@ -918,7 +934,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 17
 
-// Changes made:
+// Changes to make:
+// Add custom valueOf function to array
 
 // function buildVector(valueArray) {
 //     let vector = valueArray.slice(0);
@@ -1002,7 +1019,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 18
 
-// Changes made:
+// Changes to make:
+// Add custom toString function to array
 
 // function buildVector(valueArray) {
 //     let vector = valueArray.slice(0);
@@ -1094,7 +1112,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 19
 
-// Changes made:
+// Changes to make:
+// Add cheated-out magnitude function
 
 // function magnitude(vector) {
 //     return vector[0];
@@ -1185,7 +1204,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 20
 
-// Changes made:
+// Changes to make:
+// Add logic to ensure magnitude is always positive
 
 // function magnitude(vector) {
 //     let squaredNum = square(vector[0]);
@@ -1274,7 +1294,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 21
 
-// Changes made:
+// Changes to make:
+// Add logic to perform proper magnitude calculation for length 1 and 2 vectors
 
 // function magnitude(vector) {
 //     let squares;
@@ -1377,7 +1398,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 22
 
-// Changes made:
+// Changes to make:
+// Add logic to compute the magnitude of an arbitrary length vector.
 
 // function magnitude(vector) {
 //     let summedSquares = sumOfSquares(vector);
@@ -1466,7 +1488,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 23
 
-// Changes made:
+// Changes to make:
+// Add cheated-out getVectorsShorterThan function
 
 // function getVectorsShorterThan(maxLength, vectors) {
 //     return vectors;
@@ -1565,7 +1588,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 24
 
-// Changes made:
+// Changes to make:
+// Add logic to handle the case where a vector is too long
 
 // function getVectorsShorterThan(maxLength, vectors) {
 //     if (magnitude(vectors[0]) < maxLength) {
@@ -1667,7 +1691,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 25
 
-// Changes made:
+// Changes to make:
+// Add logic to handle 0, 1 or 2 vector cases
 
 // function getVectorsShorterThan(maxLength, vectors) {
 //     let filteredVectors = [];
@@ -1781,7 +1806,8 @@ Even the longest journey begins with a single step. Good luck!
 
 // Movement 26
 
-// Changes made:
+// Changes to make:
+// Move to general code for filtering vecctors
 
 // function getVectorsShorterThan(maxLength, vectors) {
 //     let filteredVectors = [];
