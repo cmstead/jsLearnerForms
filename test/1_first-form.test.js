@@ -1,8 +1,9 @@
 'use strict';
 
-const jsforms = require('../src/jsforms');
+const jsforms = require('../src/1_first-form');
 const assert = require('chai').assert;
 
+require('./helpers/global-helper');
 
 describe('Forms', function () {
 
@@ -10,6 +11,12 @@ describe('Forms', function () {
 
         it('should say "Hello!" by default', function () {
             // Create function called greet
+            
+            /*
+             * function greet() {
+             *      return _something_;
+             * }
+             */
 
             assert.equal(jsforms.greet(), 'Hello!');
         });
@@ -17,6 +24,14 @@ describe('Forms', function () {
         it('should say "Salutations!" when Salutations is passed', function () {
             // Add condition to greet to handle custom greeting case
             // (Try using an "if/else" structure. "If" is a control structure)
+
+            /*
+             * if (_boolean_) {
+             *      _something_;
+             * } else {
+             *      _something_;
+             * }
+             */
 
             assert.equal(jsforms.greet('Salutations'), 'Salutations!');
         });
@@ -28,6 +43,12 @@ describe('Forms', function () {
         it('should square 1', function () {
             // Add cheated-out square function
             // (Cheating out means just passing the current tests, don't go crazy!)
+
+            /*
+             * function (value) {
+             *      return _number_;
+             * }
+             */
 
             assert.equal(jsforms.square(1), 1);
         });
@@ -52,7 +73,7 @@ describe('Forms', function () {
 
         it('should take the square root of 4', function () {
             // Add logic to properly take square root
-            // (There is more than one way to solve this in one line)
+            // (There is more than one way to solve this in one line, maybe with Math)
 
             assert.equal(jsforms.squareRoot(4), 2);
         });
@@ -69,6 +90,7 @@ describe('Forms', function () {
 
         it('should add two numbers', function () {
             // Add logic to sum 1 or two numbers
+            // (An if structure might help here)
 
             assert.equal(jsforms.sum([2, 3]), 5);
         });
@@ -77,6 +99,12 @@ describe('Forms', function () {
             // Add logic to sum an arbitrary length array of numbers
             // (A for loop might help to accomplish this
             //  loops, like ifs, are control structures)
+
+            /*
+             * for(let index = _number_; _number_ < _number_; index = index + 1) {
+             *      result[index] = _something_;
+             * }
+             */
 
             assert.equal(jsforms.sum([1, 3, 5, 7]), 16);
         });
@@ -136,7 +164,11 @@ describe('Forms', function () {
 
         it('should return a vector given an array which is not the original array', function () {
             // Add logic to return a copy of vector array
-            // (Slice will create a new array with a subset of all elements...)
+            // (Slice will create a new array just like the old one...)
+
+            /*
+             * let myVar = [1, 2, 3].slice(_number_);
+             */
 
             let initialArray = [1, 2];
             let vector = jsforms.buildVector(initialArray);
@@ -149,6 +181,11 @@ describe('Forms', function () {
             // (valueOf is a built in function for every object in Javascript.
             //  It is possible to override functions...)
 
+            /*
+             * // Overriding looks like this:
+             * _array_.valueOf = _function_;
+             */
+
             let vector = jsforms.buildVector([1, 2, 3]);
 
             assert.equal(vector.valueOf() !== vector, true);
@@ -156,7 +193,7 @@ describe('Forms', function () {
 
         it('should return a vector where toString returns a vector string', function () {
             // Add custom toString function to array
-            // (toString is also built in...)
+            // (toString is also built in.)
 
             let vector = jsforms.buildVector([1, 2, 3]);
 
@@ -202,8 +239,7 @@ describe('Forms', function () {
 
     describe('getVectorsShorterThan', function () {
 
-        // We will now compare the length (magnitude) of a vector
-        // to a value.
+        // We will now compare the length (magnitude) of a vector to a value.
 
         it('should return single vector when the only vector magnitude is acceptably short', function () {
             // Add cheated-out getVectorsShorterThan function

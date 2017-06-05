@@ -534,199 +534,6 @@ they interact with each other.
 // Run the tests!
 
 
-// Movement 6
-
-// Changes made:
-
-// function sumOfSquares(nums) {
-//     return sum(squareAll(nums));
-// }
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return sum(squareAll(nums));
-    }
-
-    function Vector(valueArray) {
-        this.points = valueArray;
-
-        valueArray.forEach((value, index) => this[index] = value);
-    }
-
-    Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 7
-
-// Changes made:
-// Composed function calls in magnitude behavior
-
-// function magnitude(vector) {
-//     return squareRoot(sumOfSquares(vector));
-// }
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return sum(squareAll(nums));
-    }
-
-    function Vector(valueArray) {
-        let vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        Vector.attachValues(vector, valueArray);
-
-        return vector;
-    }
-
-    Vector.attachValues = function (vector, valueArray) {
-        vector.points = valueArray;
-        valueArray.forEach((value, index) => vector[index] = value);
-    };
-
-    Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        return squareRoot(sumOfSquares(vector));
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: Vector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
 // Movement 8
 
 // Changes made:
@@ -773,8 +580,9 @@ they interact with each other.
         return nums.reduce(add, 0);
     }
 
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
+    function sumOfSquares(nums) {
+        var squares = squareAll(nums);
+        return sum(squares);
     }
 
     function sumOfSquares(nums) {
@@ -880,7 +688,8 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        return nums.valueOf().map(square).reduce(add, 0);
+        var squares = squareAll(nums);
+        return sum(squares);
     }
 
     function Vector(valueArray) {
