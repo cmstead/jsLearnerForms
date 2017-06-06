@@ -14,7 +14,7 @@ describe('Forms', function () {
             
             /*
              * function greet() {
-             *      return _something_;
+             *      return _string_;
              * }
              */
 
@@ -26,10 +26,12 @@ describe('Forms', function () {
             // (Try using an "if/else" structure. "If" is a control structure)
 
             /*
-             * if (_boolean_) {
-             *      _something_;
-             * } else {
-             *      _something_;
+             * function greet (greeting) {
+             *      if (_something_ === undefined) {
+             *          return _string_;
+             *      } else {
+             *          return _something_ + '!';
+             *      }
              * }
              */
 
@@ -92,6 +94,14 @@ describe('Forms', function () {
             // Add logic to sum 1 or two numbers
             // (An if structure might help here)
 
+            /*
+             * if(_array_.length === 1) {
+             *      return _array_[0];
+             * } else {
+             *      return _array_[0] + _array_[1];
+             * }
+             */
+
             assert.equal(jsforms.sum([2, 3]), 5);
         });
 
@@ -101,8 +111,8 @@ describe('Forms', function () {
             //  loops, like ifs, are control structures)
 
             /*
-             * for(let index = _number_; _number_ < _number_; index = index + 1) {
-             *      result[index] = _something_;
+             * for(let index = _number_; _number_ < _number_; index += 1) {
+             *      result[index] += _something_;
              * }
              */
 
@@ -113,7 +123,15 @@ describe('Forms', function () {
     describe('squareAll', function () {
 
         it('should square all numbers in a single-value array', function () {
-            // Add a cheated-out squareAll function
+            // 1 - Add a cheated-out squareAll function
+            // 2 - Perform square computation on array value
+
+            /*
+             * function squareAll (values) {
+             *      let result = square(_array_[_number_]);
+             *      return [_something_];
+             * }
+             */
 
             assert.equal(jsforms.squareAll([2]).toString(), '4');
         });
@@ -130,8 +148,8 @@ describe('Forms', function () {
     describe('sumOfSquares', function () {
 
         it('should square number in a 1-length array and return it', function () {
-            // Add sumOfSquares function with logic to square a single number
-            // (You already have a square function would that be useful?)
+            // 1 - Add cheated-out function sumOfSquares
+            // 2 - Add sumOfSquares function with logic to square a single number
 
             assert.equal(jsforms.sumOfSquares([2]), 4);
         });
@@ -167,7 +185,7 @@ describe('Forms', function () {
             // (Slice will create a new array just like the old one...)
 
             /*
-             * let myVar = [1, 2, 3].slice(_number_);
+             * let vector = _array_.slice(_number_);
              */
 
             let initialArray = [1, 2];
@@ -222,7 +240,7 @@ describe('Forms', function () {
 
         it('should return the magnitude of a two-value vector', function () {
             // Add logic to perform proper magnitude calculation for length 1 and 2 vectors
-            // (A vector's magnitude can be computed by squareRoot(vector[0]^2 + vector[1]^2))
+            // (A length 2 vector's magnitude can be computed by squareRoot(vector[0]^2 + vector[1]^2))
 
             assert.equal(jsforms.magnitude([6, 8]), 10);
         });

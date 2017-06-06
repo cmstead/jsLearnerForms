@@ -69,7 +69,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Create function called greet
 
-// function greet (greeting){
+// function greet() {
 //     return 'Hello!';
 // }
 
@@ -80,14 +80,14 @@ Even the longest journey begins with a single step. Good luck!
 (function () {
     'use strict';
 
-    function greet (greeting){
+    function greet() {
         return 'Hello!';
     }
 
     module.exports = {
         greet: greet
     };
-    
+
 })();
 
 // Run the tests!
@@ -102,10 +102,10 @@ Even the longest journey begins with a single step. Good luck!
 // Add condition to greet to handle custom greeting case
 
 // function greet(greeting) {
-//     if (greeting === undefined) {
-//         return 'Hello!';
-//     } else {
+//     if (greeting !== undefined) {
 //         return greeting + '!';
+//     } else {
+//         return 'Hello!';
 //     }
 // }
 
@@ -113,10 +113,10 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
@@ -139,34 +139,33 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add cheated-out square function
 
-// function square(x) {
+// function square (){
 //     return 1;
 // }
 
 // module.exports = {
-//     square: square,
-//     ...
+//     greet: greet,
+//     square: square
 // };
-
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (){
         return 1;
     }
 
     module.exports = {
-        square: square,
-        greet: greet
+        greet: greet,
+        square: square
     };
 
 })();
@@ -182,7 +181,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to correctly square a number
 
-// function square(x) {
+// function square (x){
 //     return x * x;
 // }
 
@@ -190,20 +189,20 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return x * x;
     }
 
     module.exports = {
-        square: square,
-        greet: greet
+        greet: greet,
+        square: square
     };
 
 })();
@@ -228,20 +227,20 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
     module.exports = {
-        square: square,
-        greet: greet
+        greet: greet,
+        square: square
     };
 
 })();
@@ -258,7 +257,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add cheated-out square root function
 
-// function squareRoot(x) {
+// function squareRoot() {
 //     return 1;
 // }
 
@@ -271,25 +270,25 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot () {
         return 1;
     }
 
     module.exports = {
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareRoot: squareRoot
     };
 
 })();
@@ -314,25 +313,25 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
     module.exports = {
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareRoot: squareRoot
     };
 
 })();
@@ -345,43 +344,45 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add cheated out sum function
 
-// function sum(nums) {
+// function sum () {
 //     return 1;
 // }
 
 // module.exports = {
-//     sum: sum,
-//     ...
+//     greet: greet,
+//     square: square,
+//     squareRoot: squareRoot,
+//     sum: sum
 // };
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
+    function sum () {
         return 1;
     }
 
     module.exports = {
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareRoot: squareRoot,
+        sum: sum
     };
 
 })();
@@ -399,7 +400,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to sum 1 or two numbers
 
-// function sum(nums) {
+// function sum (nums) {
 //     if(nums.length === 1) {
 //         return nums[0];
 //     } else {
@@ -411,22 +412,22 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
+    function sum (nums) {
         if(nums.length === 1) {
             return nums[0];
         } else {
@@ -435,10 +436,10 @@ Even the longest journey begins with a single step. Good luck!
     }
 
     module.exports = {
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareRoot: squareRoot,
+        sum: sum
     };
 
 })();
@@ -455,50 +456,50 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to sum an arbitrary length array of numbers
 
-// function sum(nums) {
-//     let finalSum = 0;
-    
-//     for(let index = 0; index < nums.length; index++) {
-//         finalSum += nums[index];
+// function sum (nums) {
+//     let result = 0;
+
+//     for(let index = 0; index < nums.length; index += 1) {
+//         result += nums[index];
 //     }
-    
-//     return finalSum;
+
+//     return result;
 // }
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
-        
-        for(let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
+    function sum (nums) {
+        let result = 0;
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
-        
-        return finalSum;
+
+        return result;
     }
 
     module.exports = {
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareRoot: squareRoot,
+        sum: sum
     };
 
 })();
@@ -511,54 +512,59 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add a cheated-out squareAll function
 
-// function squareAll(nums) {
-//     return [4];
+// function squareAll (nums) {
+//     let result = square(nums[0]);
+//     return [result];
 // }
 
 // module.exports = {
+//     greet: greet,
+//     square: square,
 //     squareAll: squareAll,
-//     ...
+//     squareRoot: squareRoot,
+//     sum: sum
 // };
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
-        return finalSum;
+        return result;
     }
 
-    function squareAll(nums) {
-        return [4];
+    function squareAll (nums) {
+        let result = square(nums[0]);
+        return [result];
     }
 
     module.exports = {
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum
     };
 
 })();
@@ -571,15 +577,13 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to square all numbers in array
 
-// function squareAll(nums) {
+// function squareAll (nums) {
 //     let result = [];
-//     let squaredNum = 0;
-    
-//     for(let index = 0; index < nums.length; index++) {
-//         squaredNum = square(nums[index]);
-//         result[index] = squaredNum;
+
+//     for(let index = 0; index < nums.length; index += 1) {
+//         result[index] = square(nums[index]);
 //     }
-    
+
 //     return result;
 // }
 
@@ -587,49 +591,47 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
-        return finalSum;
+        return result;
     }
 
-    function squareAll(nums) {
+    function squareAll (nums) {
         let result = [];
-        let squaredNum = 0;
-        
-        for(let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
         }
-        
+
         return result;
     }
 
     module.exports = {
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum
     };
 
 })();
@@ -642,67 +644,69 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add sumOfSquares function with logic to square a single number
 
-// function sumOfSquares(nums) {
+// function sumOfSquares (nums) {
 //     return square(nums[0]);
 // }
 
 // module.exports = {
-//     sumOfSquares: sumOfSquares,
-//     ...
+//     greet: greet,
+//     square: square,
+//     squareAll: squareAll,
+//     squareRoot: squareRoot,
+//     sum: sum,
+//     sumOfSquares: sumOfSquares
 // };
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         return square(nums[0]);
     }
 
     module.exports = {
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -715,7 +719,7 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to square all numbers and return the sum
 
-// function sumOfSquares(nums) {
+// function sumOfSquares (nums) {
 //     let squares = squareAll(nums);
 //     return sum(squares);
 // }
@@ -724,55 +728,53 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
     module.exports = {
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -785,73 +787,76 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add buildVector function
 
-// function buildVector(valueArray) {
-//     return valueArray;
+// function buildVector (points) {
+//     return points;
 // }
 
 // module.exports = {
 //     buildVector: buildVector,
-//     ...
+//     greet: greet,
+//     square: square,
+//     squareAll: squareAll,
+//     squareRoot: squareRoot,
+//     sum: sum,
+//     sumOfSquares: sumOfSquares
 // };
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        return valueArray;
+    function buildVector (points) {
+        return points;
     }
 
     module.exports = {
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -864,68 +869,66 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to return a copy of vector array
 
-// function buildVector(valueArray) {
-//     return valueArray.slice(0);
+// function buildVector (points) {
+//     return points.slice(0);
 // }
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        return valueArray.slice(0);
+    function buildVector (points) {
+        return points.slice(0);
     }
 
     module.exports = {
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -937,13 +940,11 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add custom valueOf function to array
 
-// function buildVector(valueArray) {
-//     let vector = valueArray.slice(0);
-    
-//     vector.valueOf = function () {
-//         return this.slice(0);
-//     };
-    
+// function buildVector (points) {
+//     let vector = points.slice(0);
+
+//     vector.valueOf = function () { return points.slice(0); };
+
 //     return vector;
 // }
 
@@ -951,66 +952,62 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
-        
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-        
+    function buildVector (points) {
+        let vector = points.slice(0);
+
+        vector.valueOf = function () { return points.slice(0); };
+
         return vector;
     }
 
     module.exports = {
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1022,17 +1019,12 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add custom toString function to array
 
-// function buildVector(valueArray) {
-//     let vector = valueArray.slice(0);
-    
-//     vector.valueOf = function () {
-//         return this.slice(0);
-//     };
-    
-//     vector.toString = function () {
-//         return '<' + this.valueOf().toString() + '>';
-//     };
-    
+// function buildVector (points) {
+//     let vector = points.slice(0);
+
+//     vector.valueOf = function () { return points.slice(0); };
+//     vector.toString = function () { return '<' + points.join(',') + '>'; };
+
 //     return vector;
 // }
 
@@ -1040,70 +1032,63 @@ Even the longest journey begins with a single step. Good luck!
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
-        
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-        
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
-        
+    function buildVector (points) {
+        let vector = points.slice(0);
+
+        vector.valueOf = function () { return points.slice(0); };
+        vector.toString = function () { return '<' + points.join(',') + '>'; };
+
         return vector;
     }
 
     module.exports = {
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        greet: greet,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1115,87 +1100,87 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add cheated-out magnitude function
 
-// function magnitude(vector) {
+// function magnitude (vector) {
 //     return vector[0];
 // }
 
 // module.exports = {
+//     buildVector: buildVector,
+//     greet: greet,
 //     magnitude: magnitude,
-//     ...
+//     square: square,
+//     squareAll: squareAll,
+//     squareRoot: squareRoot,
+//     sum: sum,
+//     sumOfSquares: sumOfSquares
 // };
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
-        
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-        
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
-        
+    function buildVector (points) {
+        let vector = points.slice(0);
+
+        vector.valueOf = function () { return points.slice(0); };
+        vector.toString = function () { return '<' + points.join(',') + '>'; };
+
         return vector;
     }
 
-    function magnitude(vector) {
+    function magnitude (vector) {
         return vector[0];
     }
 
     module.exports = {
+        buildVector: buildVector,
+        greet: greet,
         magnitude: magnitude,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1207,84 +1192,78 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to ensure magnitude is always positive
 
-// function magnitude(vector) {
-//     let squaredNum = square(vector[0]);
-//     return squareRoot(squaredNum);
+// function magnitude (vector) {
+//     let squaredMagnitude = square(vector[0]);
+//     return squareRoot(squaredMagnitude);
 // }
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
-        
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-        
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
-        
+    function buildVector (points) {
+        let vector = points.slice(0);
+
+        vector.valueOf = function () { return points.slice(0); };
+        vector.toString = function () { return '<' + points.join(',') + '>'; };
+
         return vector;
     }
 
-    function magnitude(vector) {
-        let squaredNum = square(vector[0]);
-        return squareRoot(squaredNum);
+    function magnitude (vector) {
+        let squaredMagnitude = square(vector[0]);
+        return squareRoot(squaredMagnitude);
     }
 
     module.exports = {
+        buildVector: buildVector,
+        greet: greet,
         magnitude: magnitude,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1297,98 +1276,88 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to perform proper magnitude calculation for length 1 and 2 vectors
 
-// function magnitude(vector) {
-//     let squares;
-    
-//     if(vector.length === 1) {
-//         squares = square(vector[0]);
-//         return squareRoot(squares);
-//     } else {
-//         squares = [square(vector[0]), square(vector[1])];
-//         return squareRoot(squares[0] + squares[1]);
+// function magnitude (vector) {
+//     let squaredMagnitude = square(vector[0]);
+
+//     if(vector.length === 2) {
+//         squaredMagnitude += square(vector[1]);
 //     }
+
+//     return squareRoot(squaredMagnitude);
 // }
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
-        
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-        
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
-        
+    function buildVector (points) {
+        let vector = points.slice(0);
+
+        vector.valueOf = function () { return points.slice(0); };
+        vector.toString = function () { return '<' + points.join(',') + '>'; };
+
         return vector;
     }
 
-    function magnitude(vector) {
-        let squares;
-        
-        if(vector.length === 1) {
-            squares = square(vector[0]);
-            return squareRoot(squares);
-        } else {
-            squares = [square(vector[0]), square(vector[1])];
-            return squareRoot(squares[0] + squares[1]);
+    function magnitude (vector) {
+        let squaredMagnitude = square(vector[0]);
+
+        if(vector.length === 2) {
+            squaredMagnitude += square(vector[1]);
         }
+
+        return squareRoot(squaredMagnitude);
     }
 
     module.exports = {
+        buildVector: buildVector,
+        greet: greet,
         magnitude: magnitude,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1401,84 +1370,78 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to compute the magnitude of an arbitrary length vector.
 
-// function magnitude(vector) {
-//     let summedSquares = sumOfSquares(vector);
-//     return squareRoot(summedSquares);
+// function magnitude (vector) {
+//     let squaredMagnitude = sumOfSquares(vector);
+//     return squareRoot(squaredMagnitude);
 // }
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
-        
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-        
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
-        
+    function buildVector (points) {
+        let vector = points.slice(0);
+
+        vector.valueOf = function () { return points.slice(0); };
+        vector.toString = function () { return '<' + points.join(',') + '>'; };
+
         return vector;
     }
 
-    function magnitude(vector) {
-        let summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+    function magnitude (vector) {
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
     module.exports = {
+        buildVector: buildVector,
+        greet: greet,
         magnitude: magnitude,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1491,94 +1454,94 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add cheated-out getVectorsShorterThan function
 
-// function getVectorsShorterThan(maxLength, vectors) {
+// function getVectorsShorterThan (length, vectors) {
 //     return vectors;
 // }
 
 // module.exports = {
+//     buildVector: buildVector,
 //     getVectorsShorterThan: getVectorsShorterThan,
-//     ...
+//     greet: greet,
+//     magnitude: magnitude,
+//     square: square,
+//     squareAll: squareAll,
+//     squareRoot: squareRoot,
+//     sum: sum,
+//     sumOfSquares: sumOfSquares
 // };
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
+    function buildVector (points) {
+        let vector = points.slice(0);
 
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
+        vector.valueOf = function () { return points.slice(0); };
+        vector.toString = function () { return '<' + points.join(',') + '>'; };
 
         return vector;
     }
 
-    function magnitude(vector) {
-        let summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+    function magnitude (vector) {
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
+    function getVectorsShorterThan (length, vectors) {
         return vectors;
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1591,97 +1554,90 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to handle the case where a vector is too long
 
-// function getVectorsShorterThan(maxLength, vectors) {
-//     if (magnitude(vectors[0]) < maxLength) {
+// function getVectorsShorterThan (length, vectors) {
+//     if(magnitude(vectors[0]) < length) {
 //         return vectors;
-//     } else {
-//         return [];
-//     }
+//     } 
+    
+//     return [];
 // }
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
+    function buildVector (points) {
+        let vector = points.slice(0);
 
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
+        vector.valueOf = function () { return points.slice(0); };
+        vector.toString = function () { return '<' + points.join(',') + '>'; };
 
         return vector;
     }
 
-    function magnitude(vector) {
-        let summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+    function magnitude (vector) {
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        if (magnitude(vectors[0]) < maxLength) {
+    function getVectorsShorterThan (length, vectors) {
+        if(magnitude(vectors[0]) < length) {
             return vectors;
-        } else {
-            return [];
-        }
+        } 
+        
+        return [];
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1694,109 +1650,98 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Add logic to handle 0, 1 or 2 vector cases
 
-// function getVectorsShorterThan(maxLength, vectors) {
-//     let filteredVectors = [];
+// function getVectorsShorterThan (length, vectors) {
+//     let result = [];
 
-//     if(magnitude(vectors[0]) < maxLength) {
-//         filteredVectors[0] = vectors[0];
+//     if(magnitude(vectors[0]) < length) {
+//         result[0] = vectors[0];
+//     } else if(vectors.length > 1 && magnitude(vectors[1]) < length) {
+//         result[0] = vectors[1];
 //     }
-    
-//     if(vectors.length > 1 && magnitude(vectors[1]) < maxLength) {
-//         filteredVectors[filteredVectors.length] = vectors[1];
-//     }
-    
-//     return filteredVectors;
+
+//     return result;
 // }
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
+    function buildVector (points) {
+        let vector = points.slice(0);
 
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
+        vector.valueOf = function () { return points.slice(0); };
+        vector.toString = function () { return '<' + points.join(',') + '>'; };
 
         return vector;
     }
 
-    function magnitude(vector) {
-        let summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+    function magnitude (vector) {
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        let filteredVectors = [];
+    function getVectorsShorterThan (length, vectors) {
+        let result = [];
 
-        if(magnitude(vectors[0]) < maxLength) {
-            filteredVectors[0] = vectors[0];
+        if(magnitude(vectors[0]) < length) {
+            result[0] = vectors[0];
+        } else if(vectors.length > 1 && magnitude(vectors[1]) < length) {
+            result[0] = vectors[1];
         }
-        
-        if(vectors.length > 1 && magnitude(vectors[1]) < maxLength) {
-            filteredVectors[filteredVectors.length] = vectors[1];
-        }
-        
-        return filteredVectors;
+
+        return result;
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1809,105 +1754,98 @@ Even the longest journey begins with a single step. Good luck!
 // Changes to make:
 // Move to general code for filtering vecctors
 
-// function getVectorsShorterThan(maxLength, vectors) {
-//     let filteredVectors = [];
-    
-//     for(let index = 0; index < vectors.length; index++) {
-//         if(magnitude(vectors[index]) <= maxLength) {
-//             filteredVectors[filteredVectors.length] = vectors[index];
+// function getVectorsShorterThan (length, vectors) {
+//     let result = [];
+
+//     for(let index = 0; index < vectors.length; index += 1) {
+//         if(magnitude(vectors[index]) < length) {
+//             result[result.length] = vectors[index];
 //         }
 //     }
-    
-//     return filteredVectors;
+
+//     return result;
 // }
 
 (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting === undefined) {
-            return 'Hello!';
-        } else {
+        if (greeting !== undefined) {
             return greeting + '!';
+        } else {
+            return 'Hello!';
         }
     }
 
-    function square(x) {
+    function square (x){
         return Math.pow(x, 2);
     }
 
-    function squareRoot(x) {
+    function squareRoot (x) {
         return Math.sqrt(x);
     }
 
-    function sum(nums) {
-        let finalSum = 0;
+    function sum (nums) {
+        let result = 0;
 
-        for (let index = 0; index < nums.length; index++) {
-            finalSum += nums[index];
-        }
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        let result = [];
-        let squaredNum = 0;
-
-        for (let index = 0; index < nums.length; index++) {
-            squaredNum = square(nums[index]);
-            result[index] = squaredNum;
+        for(let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
         }
 
         return result;
     }
 
-    function sumOfSquares(nums) {
+    function squareAll (nums) {
+        let result = [];
+
+        for(let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
+    }
+
+    function sumOfSquares (nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector(valueArray) {
-        let vector = valueArray.slice(0);
+    function buildVector (points) {
+        let vector = points.slice(0);
 
-        vector.valueOf = function () {
-            return this.slice(0);
-        };
-
-        vector.toString = function () {
-            return '<' + this.valueOf().toString() + '>';
-        };
+        vector.valueOf = function () { return points.slice(0); };
+        vector.toString = function () { return '<' + points.join(',') + '>'; };
 
         return vector;
     }
 
-    function magnitude(vector) {
-        let summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+    function magnitude (vector) {
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        let filteredVectors = [];
-        
-        for(let index = 0; index < vectors.length; index++) {
-            if(magnitude(vectors[index]) <= maxLength) {
-                filteredVectors[filteredVectors.length] = vectors[index];
+    function getVectorsShorterThan (length, vectors) {
+        let result = [];
+
+        for(let index = 0; index < vectors.length; index += 1) {
+            if(magnitude(vectors[index]) < length) {
+                result[result.length] = vectors[index];
             }
         }
-        
-        return filteredVectors;
+
+        return result;
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();

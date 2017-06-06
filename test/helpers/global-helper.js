@@ -1,34 +1,19 @@
 'use strict';
 
-Object.defineProperty(global, _array_, {
-    get: function () { return []; }
-});
+function addGlobal(key, outputter) {
+    if (typeof global[key] === 'undefined') {
+        Object.defineProperty(global, key, {
+            get: outputter
+        });
+    }
+}
 
-Object.defineProperty(global, _boolean_, {
-    get: function () { return false; }
-});
-
-Object.defineProperty(global, _function_, {
-    get: function () { return () => null; }
-});
-
-Object.defineProperty(global, _null_, {
-    get: function () { return null; }
-});
-
-Object.defineProperty(global, _number_, {
-    get: function () { return 0; }
-});
-
-Object.defineProperty(global, _object_, {
-    get: function () { return {}; }
-});
-
-Object.defineProperty(global, _something_, {
-    get: function () { return null; }
-});
-
-Object.defineProperty(global, _string_, {
-    get: function () { return ''; }
-});
-
+addGlobal('_array_', () => []);
+addGlobal('_boolean_', () => false);
+addGlobal('_booleanExpression_', () => false);
+addGlobal('_function_', () => () => null);
+addGlobal('_null_', () => null);
+addGlobal('_number_', () => 0);
+addGlobal('_object_', () => { return {}; });
+addGlobal('_something_', () => null);
+addGlobal('_string_', () => '');
