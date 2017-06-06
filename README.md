@@ -1,4 +1,4 @@
-# Javascript Language Forms
+# Javascript Language Forms #
 
 The concept of forms was borrowed from martial arts. Instead of solving new problems over and over in hopes that the language will stick, a form is intended to be repeated movement for movement to develop a relationship with the language and practices of a fluent developer. The student at each form level will learn to identify syntactic patterns while following an intentional and regimented process to promote fluency through a repeated process.
 
@@ -8,21 +8,52 @@ All of the first three forms will use the same tests and will address the questi
 
 As a student becomes more conversant in a particular form, they are encouraged to apply their knowledge using code katas, like the problems provided by [Exercism.io](http://exercism.io/).
 
-I have created a quick start video which you can watch here:
+## Setup ##
 
-https://youtu.be/6G3PH4vb_gc
+To use Javascript language forms, you will need to do the following:
 
-During the video, I talk about setting up Node. If you haven't done this before, please watch the following video on Node.
+- Install [Node.js](https://nodejs.org/)
+- Install [Visual Studio Code](https://code.visualstudio.com/)
+- Install the VS Code plugin [Quokka.js](https://quokkajs.com/)
+- Clone the JS Language Forms repository: [https://github.com/cmstead/jsLearnerForms](https://github.com/cmstead/jsLearnerForms)
+
+**After Installing**
+
+- Start Visual Studio Code
+- Open the folder you cloned JS Language Forms to in your editor
+- Open the test file and the associated source file (They are numbered, start at 1)
+- Go to the test file and press `ctrl+k, q` to start Quokka
+- Follow the prompts, directions and hints and start coding!
+
+### Installing Node.js ###
+
+If you haven't ever installed node before, please watch the following video on Node.
 
 https://www.youtube.com/watch?v=tlntE8fe6u4
 
 This video is geared for people installing on Windows, but if you are on a Mac the setup is effectively the same.
 
-## Skills covered per form
+### Installing Visual Studio Code ###
+
+For most operating systems, VS Code is available as a binary you simply install and run. Download the executable installer for your operating system and run it. The installer will do the rest.
+
+### Installing Quokka.js ###
+
+To open the extensions manager in VS Code, open your editor, then press `ctrl+shift+x`.
+
+Once the extensions manager is open, search for Quokka, install the plugin and reload your editor.
+
+### Project One-Time Setup ###
+
+Open a command prompt/terminal/shell, go to the directory where you cloned JS Language Forms and type `npm i`.  This will install everything the project needs in order to run.
+
+**That's it! You're all set.**
+
+## Skills covered per form ##
 
 This section will be updated as forms are completed and ready for use.
 
-### First Form
+### First Form ###
 
 Core setup concepts:
 
@@ -88,5 +119,7 @@ Third form concepts
 - Scope management
 - Partial application with bind
 - Generic functions
+- Type checking
+- Metaprogramming
 
 Reinforcement exercises to come
