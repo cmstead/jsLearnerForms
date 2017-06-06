@@ -147,6 +147,7 @@ describe('Forms', function () {
          * 2 - Replace buildVector in the module exports object and delete buildVector function
          * 
          * 3 - Extract value attachment into a function
+         *     (Note: static methods are NOT attached to the prototype)
          *      Vector.attachValues = function (vector, points) {
          *          _object_.points = _array_;
          *          _array_.forEach((value, index) => _object_[_number_] = _something_);

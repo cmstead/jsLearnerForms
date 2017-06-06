@@ -97,6 +97,7 @@ Even the longest journey begins with a single step. Good luck!
 
 // Concepts in this movement:
 // - conditional statements
+// - string concatenation
 
 // Changes to make:
 // Add condition to greet to handle custom greeting case
