@@ -42,26 +42,23 @@ they interact with each other.
 
 // Changes made:
 
-// function isType (typeStr, value){
-//     return typeof value === typeStr;
+// function isType(typeName, value) {
+//     return typeof value === typeName;
 // }
 
 // function greet(greeting) {
-//     var message = isType('string', greeting) ? greeting : 'Hello';
-//     ...
+//     return isType('string', greeting) ? greeting + '!' : 'Hello!';
 // }
 
 (function () {
     'use strict';
 
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
+    function isType(typeName, value) {
+        return typeof value === typeName;
     }
 
     function greet(greeting) {
-        var message = isType('undefined', greeting) ? greeting : 'Hello';
-
-        return message + '!';
+        return isType('string', greeting) ? greeting + '!' : 'Hello!';
     }
 
     function square(x) {
@@ -77,11 +74,11 @@ they interact with each other.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let result = 0;
 
-        nums.forEach(value => finalSum = add(finalSum, value));
+        nums.forEach((value) => result = add(result, value));
 
-        return finalSum;
+        return result;
     }
 
     function squareAll(nums) {
@@ -89,49 +86,44 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function Vector(valueArray) {
-        this.points = valueArray;
+    function Vector(points) {
+        this.points = points;
 
-        valueArray.forEach((value, index) => this[index] = value);
+        points.forEach((value, index) => this[index] = value);
     }
 
     Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
+        valueOf: function () { return this.points.valueOf(); },
+        toString: function () { return '<' + this.points.join(',') + '>'; }
     };
 
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
+    function buildVector(points) {
+        return new Vector(points);
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -143,110 +135,9 @@ they interact with each other.
 
 // Changes made:
 
-// function eitherType (typeStr, defaultValue, value){
-//     return isType(typeStr, value) ? value : defaultValue;
+// function eitherType(typeName, defaultValue, actualValue) {
+//     return isType(typeName, actualValue) ? actualValue : defaultValue;
 // }
-
-// function greet(greeting) {
-//     var message = eitherType('string', 'Hello', greeting);
-//     ...
-// }
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        var message = eitherType('string', 'Hello', greeting);
-
-        return message + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        var finalSum = 0;
-
-        nums.forEach(value => finalSum = add(finalSum, value));
-
-        return finalSum;
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        var squares = squareAll(nums);
-        return sum(squares);
-    }
-
-    function Vector(valueArray) {
-        this.points = valueArray;
-
-        valueArray.forEach((value, index) => this[index] = value);
-    }
-
-    Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
-    }
-
-    function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-
-// Movement 3
-
-// Changes made:
 
 // function greet(greeting) {
 //     return eitherType('string', 'Hello', greeting) + '!';
@@ -255,12 +146,12 @@ they interact with each other.
 (function () {
     'use strict';
 
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
+    function isType(typeName, value) {
+        return typeof value === typeName;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
     }
 
     function greet(greeting) {
@@ -280,11 +171,11 @@ they interact with each other.
     }
 
     function sum(nums) {
-        var finalSum = 0;
+        let result = 0;
 
-        nums.forEach(value => finalSum = add(finalSum, value));
+        nums.forEach((value) => result = add(result, value));
 
-        return finalSum;
+        return result;
     }
 
     function squareAll(nums) {
@@ -292,49 +183,44 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function Vector(valueArray) {
-        this.points = valueArray;
+    function Vector(points) {
+        this.points = points;
 
-        valueArray.forEach((value, index) => this[index] = value);
+        points.forEach((value, index) => this[index] = value);
     }
 
     Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
+        valueOf: function () { return this.points.valueOf(); },
+        toString: function () { return '<' + this.points.join(',') + '>'; }
     };
 
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
+    function buildVector(points) {
+        return new Vector(points);
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -347,20 +233,18 @@ they interact with each other.
 // Changes made:
 
 // function sum(nums) {
-//     var finalSum = nums.reduce(add, 0);
-
-//     return finalSum;
+//     return nums.reduce((result, value) => add(result, value), 0);
 // }
 
 (function () {
     'use strict';
 
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
+    function isType(typeName, value) {
+        return typeof value === typeName;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
     }
 
     function greet(greeting) {
@@ -380,9 +264,7 @@ they interact with each other.
     }
 
     function sum(nums) {
-        var finalSum = nums.reduce(add, 0);
-
-        return finalSum;
+        return nums.reduce((result, value) => add(result, value), 0);
     }
 
     function squareAll(nums) {
@@ -390,49 +272,44 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function Vector(valueArray) {
-        this.points = valueArray;
+    function Vector(points) {
+        this.points = points;
 
-        valueArray.forEach((value, index) => this[index] = value);
+        points.forEach((value, index) => this[index] = value);
     }
 
     Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
+        valueOf: function () { return this.points.valueOf(); },
+        toString: function () { return '<' + this.points.join(',') + '>'; }
     };
 
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
+    function buildVector(points) {
+        return new Vector(points);
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -451,12 +328,12 @@ they interact with each other.
 (function () {
     'use strict';
 
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
+    function isType(typeName, value) {
+        return typeof value === typeName;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
     }
 
     function greet(greeting) {
@@ -484,49 +361,44 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function Vector(valueArray) {
-        this.points = valueArray;
+    function Vector(points) {
+        this.points = points;
 
-        valueArray.forEach((value, index) => this[index] = value);
+        points.forEach((value, index) => this[index] = value);
     }
 
     Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
+        valueOf: function () { return this.points.valueOf(); },
+        toString: function () { return '<' + this.points.join(',') + '>'; }
     };
 
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
+    function buildVector(points) {
+        return new Vector(points);
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -539,25 +411,24 @@ they interact with each other.
 // Changes made:
 // Converted Vector object to self-instantiating factory
 
-// function Vector(valueArray) {
-//     let vector = this instanceof Vector ? this : new Vector(valueArray);
+// function Vector(points) {
+//     let vector = this instanceof Vector ? this : new Vector(points);
+//     vector.points = points;
 
-//     vector.points = valueArray;
-//     valueArray.forEach((value, index) => vector[index] = value);
+//     points.forEach((value, index) => vector[index] = value);
 
 //     return vector;
 // }
 
-
 (function () {
     'use strict';
 
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
+    function isType(typeName, value) {
+        return typeof value === typeName;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
     }
 
     function greet(greeting) {
@@ -580,57 +451,52 @@ they interact with each other.
         return nums.reduce(add, 0);
     }
 
+    function squareAll(nums) {
+        return nums.valueOf().map(square);
+    }
+
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function sumOfSquares(nums) {
-        return sum(squareAll(nums));
-    }
+    function Vector(points) {
+        let vector = this instanceof Vector ? this : new Vector(points);
+        vector.points = points;
 
-    function Vector(valueArray) {
-        let vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        vector.points = valueArray;
-        valueArray.forEach((value, index) => vector[index] = value);
+        points.forEach((value, index) => vector[index] = value);
 
         return vector;
     }
 
     Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
+        valueOf: function () { return this.points.valueOf(); },
+        toString: function () { return '<' + this.points.join(',') + '>'; }
     };
 
-    function buildVector(valueArray) {
-        return new Vector(valueArray);
+    function buildVector(points) {
+        return new Vector(points);
     }
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -646,21 +512,26 @@ they interact with each other.
 // deleted buildVector function
 
 // module.exports = {
-//     ...
 //     buildVector: Vector,
-//     ...
+//     getVectorsShorterThan: getVectorsShorterThan,
+//     greet: greet,
+//     magnitude: magnitude,
+//     square: square,
+//     squareAll: squareAll,
+//     squareRoot: squareRoot,
+//     sum: sum,
+//     sumOfSquares: sumOfSquares
 // };
-
 
 (function () {
     'use strict';
 
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
+    function isType(typeName, value) {
+        return typeof value === typeName;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
     }
 
     function greet(greeting) {
@@ -688,58 +559,43 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        var squares = squareAll(nums);
+        let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function Vector(valueArray) {
-        var vector = this instanceof Vector ? this : new Vector(valueArray);
+    function Vector(points) {
+        let vector = this instanceof Vector ? this : new Vector(points);
+        vector.points = points;
 
-        return valueArray.reduce(function (vector, value, index) {
-            vector[index] = value;
-            return vector;
-        }, vector);
+        points.forEach((value, index) => vector[index] = value);
+
+        return vector;
     }
 
     Vector.prototype = {
-        valueOf: function () {
-            var points = [];
-            var index = 0;
-
-            while (!isType('undefined', this[index])) {
-                points.push(this[index]);
-                index++;
-            }
-
-            return points;
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
+        valueOf: function () { return this.points.valueOf(); },
+        toString: function () { return '<' + this.points.join(',') + '>'; }
     };
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter(function (vector) {
-            return magnitude(vector) <= maxLength;
-        });
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     module.exports = {
+        buildVector: Vector,
         getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
         magnitude: magnitude,
-        buildVector: buildVector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -752,28 +608,26 @@ they interact with each other.
 // Changes made:
 // Created static method attachValues on Vector and extracted attach behavior
 
-// function Vector(valueArray) {
-//     let vector = this instanceof Vector ? this : new Vector(valueArray);
-
-//     Vector.attachValues(vector, valueArray);
-
+// function Vector(points) {
+//     let vector = this instanceof Vector ? this : new Vector(points);
+//     Vector.attachValues(vector, points);
 //     return vector;
 // }
 
-// Vector.attachValues = function (vector, valueArray) {
-//     vector.points = valueArray;
-//     valueArray.forEach((value, index) => vector[index] = value);
-// };
+// Vector.attachValues = function (vector, points) {
+//     vector.points = points;
+//     points.forEach((point, index) => vector[index] = point);
+// }
 
 (function () {
     'use strict';
 
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
+    function isType(typeName, value) {
+        return typeof value === typeName;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
     }
 
     function greet(greeting) {
@@ -801,51 +655,154 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        return sum(squareAll(nums));
+        let squares = squareAll(nums);
+        return sum(squares);
     }
 
-    function Vector(valueArray) {
-        let vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        Vector.attachValues(vector, valueArray);
-
+    function Vector(points) {
+        let vector = this instanceof Vector ? this : new Vector(points);
+        Vector.attachValues(vector, points);
         return vector;
     }
 
-    Vector.attachValues = function (vector, valueArray) {
-        vector.points = valueArray;
-        valueArray.forEach((value, index) => vector[index] = value);
-    };
+    Vector.attachValues = function (vector, points) {
+        vector.points = points;
+        points.forEach((point, index) => vector[index] = point);
+    }
 
     Vector.prototype = {
-        valueOf: function () {
-            return this.points.slice(0);
-        },
-
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
+        valueOf: function () { return this.points.valueOf(); },
+        toString: function () { return '<' + this.points.join(',') + '>'; }
     };
 
     function magnitude(vector) {
-        var summedSquares = sumOfSquares(vector);
-        return squareRoot(summedSquares);
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: Vector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
+    };
+
+})();
+
+// Run the tests!
+
+
+// Movement 12
+
+// Changes made:
+// Attaching immutable (writeable: false) object properties
+// Introduced partially curried attachImmutableProperty function
+// Closing over vector value in attachImmutableProperty
+
+// const setImmutablePropertyOn = (vector) => (value, key) => {
+//     Object.defineProperty(vector, key, {
+//         writable: false,
+//         value: value
+//     });
+// };
+
+// Vector.attachValues = function (vector, points) {
+//     vector.points = points;
+//     points.forEach(setImmutablePropertyOn(vector));
+// }
+
+
+(function () {
+    'use strict';
+
+    function isType(typeName, value) {
+        return typeof value === typeName;
+    }
+
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
+    }
+
+    function greet(greeting) {
+        return eitherType('string', 'Hello', greeting) + '!';
+    }
+
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function sum(nums) {
+        return nums.reduce(add, 0);
+    }
+
+    function squareAll(nums) {
+        return nums.valueOf().map(square);
+    }
+
+    function sumOfSquares(nums) {
+        let squares = squareAll(nums);
+        return sum(squares);
+    }
+
+    function Vector(points) {
+        let vector = this instanceof Vector ? this : new Vector(points);
+        Vector.attachValues(vector, points);
+        return vector;
+    }
+
+    const setImmutablePropertyOn = (vector) => (value, key) => {
+        Object.defineProperty(vector, key, {
+            writable: false,
+            value: value
+        });
+    };
+
+    Vector.attachValues = function (vector, points) {
+        vector.points = points;
+        points.forEach(setImmutablePropertyOn(vector));
+    }
+
+    Vector.prototype = {
+        valueOf: function () { return this.points.valueOf(); },
+        toString: function () { return '<' + this.points.join(',') + '>'; }
+    };
+
+    function magnitude(vector) {
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
+    }
+
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
+    }
+
+    module.exports = {
+        buildVector: Vector,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
+        square: square,
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -859,34 +816,24 @@ they interact with each other.
 // Hide points array from outside world to limit manipulation
 // ValueOf creates a closure over points variable
 
-// function Vector(valueArray) {
-//     let vector = this instanceof Vector ? this : new Vector(valueArray);
-
-//     Vector.attachValues(vector, valueArray);
-
-//     return vector;
-// }
-
 // Vector.attachValues = function (vector, points) {
 //     vector.valueOf = () => points.slice(0);
-//     points.forEach((value, index) => vector[index] = value);
+//     points.forEach(setImmutablePropertyOn(vector));
 // };
 
 // Vector.prototype = {
-//     toString: function () {
-//         return '<' + this.valueOf().toString() + '>';
-//     }
+//     toString: function () { return '<' + this.valueOf().join(',') + '>'; }
 // };
 
 (function () {
     'use strict';
 
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
+    function isType(typeName, value) {
+        return typeof value === typeName;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
     }
 
     function greet(greeting) {
@@ -914,154 +861,51 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        return sum(squareAll(nums));
+        let squares = squareAll(nums);
+        return sum(squares);
     }
 
-    function Vector(valueArray) {
-        let vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        Vector.attachValues(vector, valueArray);
-
+    function Vector(points) {
+        let vector = this instanceof Vector ? this : new Vector(points);
+        Vector.attachValues(vector, points);
         return vector;
     }
 
-    Vector.attachValues = function (vector, points) {
-        vector.valueOf = () => points.slice(0);
-        points.forEach((value, index) => vector[index] = value);
-    };
-
-    Vector.prototype = {
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function magnitude(vector) {
-        return squareRoot(sumOfSquares(vector));
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: Vector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-// Movement 12
-
-// Changes made:
-// Attaching immutable (writeable: false) object properties
-// Introduced partially curried attachImmutableProperty function
-// Closing over vector value in attachImmutableProperty
-
-// const attachImmutableProperty = (vector) => (value, key) => {
-//     Object.defineProperty(vector, key, {
-//         writeable: false,
-//         value: value
-//     });
-// };
-
-// Vector.attachValues = function (vector, points) {
-//     vector.valueOf = () => points.slice(0);
-//     points.forEach(attachImmutableProperty(vector));
-// };
-
-(function () {
-    'use strict';
-
-    function isType(typeStr, value) {
-        return typeof value === typeStr;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return sum(squareAll(nums));
-    }
-
-    function Vector(valueArray) {
-        let vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        Vector.attachValues(vector, valueArray);
-
-        return vector;
-    }
-
-    const attachImmutablePropertyTo = (vector) => (value, key) => {
+    const setImmutablePropertyOn = (vector) => (value, key) => {
         Object.defineProperty(vector, key, {
-            writeable: false,
+            writable: false,
             value: value
         });
     };
 
     Vector.attachValues = function (vector, points) {
         vector.valueOf = () => points.slice(0);
-        points.forEach(attachImmutablePropertyTo(vector));
+        points.forEach(setImmutablePropertyOn(vector));
     };
 
     Vector.prototype = {
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
+        toString: function () { return '<' + this.valueOf().join(',') + '>'; }
     };
 
     function magnitude(vector) {
-        return squareRoot(sumOfSquares(vector));
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: Vector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();
@@ -1076,7 +920,7 @@ they interact with each other.
 // implemented predicate function isArray
 
 // function isObjectInstance(value) {
-//     return isType('object', value) && value !== null;
+//     return value !== null && isType('object', value);
 // }
 
 // function isArray(value) {
@@ -1084,23 +928,31 @@ they interact with each other.
 //         Object.prototype.toString.call(value) === '[object Array]';
 // }
 
-// function Vector(valueArray) {
-//     if(!isArray(valueArray)) {
-//         throw new TypeError('Vector point array must be an array of numbers.');
+// const isNumber = (value) => isType('number', value);
+
+// function isArrayOfNumbers(value) {
+//     return isArray(value) && value.filter(isNumber).length === value.length;
+// }
+
+// function Vector(points) {
+//     if (!isArrayOfNumbers(points)) {
+//         throw new Error('Points must be an array of numbers');
 //     }
 
-//     ...
+//     let vector = this instanceof Vector ? this : new Vector(points);
+//     Vector.attachValues(vector, points);
+//     return vector;
 // }
 
 (function () {
     'use strict';
 
-    function isType(type, value) {
-        return typeof value === type;
+    function isType(typeName, value) {
+        return typeof value === typeName;
     }
 
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
     }
 
     function greet(greeting) {
@@ -1128,134 +980,12 @@ they interact with each other.
     }
 
     function sumOfSquares(nums) {
-        return sum(squareAll(nums));
+        let squares = squareAll(nums);
+        return sum(squares);
     }
 
     function isObjectInstance(value) {
-        return isType('object', value) && value !== null;
-    }
-
-    function isArray(value) {
-        return isObjectInstance(value) &&
-            Object.prototype.toString.call(value) === '[object Array]';
-    }
-
-    function Vector(valueArray) {
-        if (!isArray(valueArray)) {
-            throw new TypeError('Vector point array must be an array of numbers.');
-        }
-
-        let vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        Vector.attachValues(vector, valueArray);
-
-        return vector;
-    }
-
-    const attachImmutablePropertyTo = (vector) => (value, key) => {
-        Object.defineProperty(vector, key, {
-            writeable: false,
-            value: value
-        });
-    };
-
-    Vector.attachValues = function (vector, points) {
-        vector.valueOf = () => points.slice(0);
-        points.forEach(attachImmutablePropertyTo(vector));
-    };
-
-    Vector.prototype = {
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
-    };
-
-    function magnitude(vector) {
-        return squareRoot(sumOfSquares(vector));
-    }
-
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
-    }
-
-    module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
-        buildVector: Vector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
-        square: square,
-        greet: greet
-    };
-
-})();
-
-// Run the tests!
-
-// Movement 14
-
-// Changes made:
-// Enhanced type check on vector constructor to ensure array is valid
-// Composed isArray into implementation of predicate function isValidVectorArray
-
-// const isNumber = (value) => isType('number', value);
-
-// function isValidVectorArray(valueArray) {
-//     return isArray(valueArray) &&
-//         valueArray.filter(isNumber).length === valueArray.length;
-// }
-
-// function Vector(valueArray) {
-//     if (!isValidVectorArray(valueArray)) {
-//         throw new TypeError('Vector point array must be an array of numbers.');
-//     }
-
-//     ...
-// }
-
-(function () {
-    'use strict';
-
-    function isType(type, value) {
-        return typeof value === type;
-    }
-
-    function eitherType(typeStr, defaultValue, value) {
-        return isType(typeStr, value) ? value : defaultValue;
-    }
-
-    function greet(greeting) {
-        return eitherType('string', 'Hello', greeting) + '!';
-    }
-
-    function square(x) {
-        return Math.pow(x, 2);
-    }
-
-    function squareRoot(x) {
-        return Math.sqrt(x);
-    }
-
-    function add(a, b) {
-        return a + b;
-    }
-
-    function sum(nums) {
-        return nums.reduce(add, 0);
-    }
-
-    function squareAll(nums) {
-        return nums.valueOf().map(square);
-    }
-
-    function sumOfSquares(nums) {
-        return sum(squareAll(nums));
-    }
-
-    function isObjectInstance (value) {
-        return isType('object', value) && value !== null;
+        return value !== null && isType('object', value);
     }
 
     function isArray(value) {
@@ -1264,60 +994,204 @@ they interact with each other.
     }
 
     const isNumber = (value) => isType('number', value);
-    
-    function isValidVectorArray(valueArray) {
-        return isArray(valueArray) &&
-            valueArray.filter(isNumber).length === valueArray.length;
+
+    function isArrayOfNumbers(value) {
+        return isArray(value) && value.filter(isNumber).length === value.length;
     }
 
-    function Vector(valueArray) {
-        if (!isValidVectorArray(valueArray)) {
-            throw new TypeError('Vector point array must be an array of numbers.');
+    function Vector(points) {
+        if (!isArrayOfNumbers(points)) {
+            throw new Error('Points must be an array of numbers');
         }
 
-        let vector = this instanceof Vector ? this : new Vector(valueArray);
-
-        Vector.attachValues(vector, valueArray);
-
+        let vector = this instanceof Vector ? this : new Vector(points);
+        Vector.attachValues(vector, points);
         return vector;
     }
 
-    const attachImmutablePropertyTo = (vector) => (value, key) => {
+    const setImmutablePropertyOn = (vector) => (value, key) => {
         Object.defineProperty(vector, key, {
-            writeable: false,
+            writable: false,
             value: value
         });
     };
 
     Vector.attachValues = function (vector, points) {
         vector.valueOf = () => points.slice(0);
-        points.forEach(attachImmutablePropertyTo(vector));
+        points.forEach(setImmutablePropertyOn(vector));
     };
 
     Vector.prototype = {
-        toString: function () {
-            return '<' + this.valueOf().toString() + '>';
-        }
+        toString: function () { return '<' + this.valueOf().join(',') + '>'; }
     };
 
     function magnitude(vector) {
-        return squareRoot(sumOfSquares(vector));
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan(maxLength, vectors) {
-        return vectors.filter((vector) => magnitude(vector) <= maxLength);
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     module.exports = {
-        getVectorsShorterThan: getVectorsShorterThan,
-        magnitude: magnitude,
         buildVector: Vector,
-        sumOfSquares: sumOfSquares,
-        squareAll: squareAll,
-        sum: sum,
-        squareRoot: squareRoot,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
         square: square,
-        greet: greet
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
+    };
+
+})();
+
+// Run the tests!
+
+
+// Movement 13
+
+// Changes made:
+// Added type check on vector constructor for array
+// implemented predicate function isArray
+
+// const notNull = (value) => value !== null;
+// const isObject = (value) => isType('object', value);
+// const isNumber = (value) => isType('number', value);
+
+// function isArray(value) {
+//     return Object.prototype.toString.call(value) === '[object Array]';
+// }
+
+// function containsOnlyNumbers(values) {
+//     return values.filter(isNumber).length === values.length;
+// }
+
+// function checkAll(predicates) {
+//     return function (value) {
+//         return predicates.reduce((result, predicate) => predicate(value), true);
+//     };
+// }
+
+// const isArrayOfNumbers = checkAll([
+//     notNull,
+//     isObject,
+//     isArray,
+//     containsOnlyNumbers
+// ]);
+
+(function () {
+    'use strict';
+
+    function isType(typeName, value) {
+        return typeof value === typeName;
+    }
+
+    function eitherType(typeName, defaultValue, actualValue) {
+        return isType(typeName, actualValue) ? actualValue : defaultValue;
+    }
+
+    function greet(greeting) {
+        return eitherType('string', 'Hello', greeting) + '!';
+    }
+
+    function square(x) {
+        return Math.pow(x, 2);
+    }
+
+    function squareRoot(x) {
+        return Math.sqrt(x);
+    }
+
+    function add(a, b) {
+        return a + b;
+    }
+
+    function sum(nums) {
+        return nums.reduce(add, 0);
+    }
+
+    function squareAll(nums) {
+        return nums.valueOf().map(square);
+    }
+
+    function sumOfSquares(nums) {
+        let squares = squareAll(nums);
+        return sum(squares);
+    }
+
+    const notNull = (value) => value !== null;
+    const isObject = (value) => isType('object', value);
+    const isNumber = (value) => isType('number', value);
+
+    function isArray(value) {
+        return Object.prototype.toString.call(value) === '[object Array]';
+    }
+
+    function containsOnlyNumbers (values) {
+        return values.filter(isNumber).length === values.length;
+    }
+
+    function checkAll (predicates) {
+        return function (value) {
+            return predicates.reduce((result, predicate) => predicate(value), true);
+        };
+    }
+
+    const isArrayOfNumbers = checkAll([
+        notNull,
+        isObject,
+        isArray,
+        containsOnlyNumbers
+    ]);
+
+    function Vector(points) {
+        if (!isArrayOfNumbers(points)) {
+            throw new Error('Points must be an array of numbers');
+        }
+
+        let vector = this instanceof Vector ? this : new Vector(points);
+        Vector.attachValues(vector, points);
+        return vector;
+    }
+
+    const setImmutablePropertyOn = (vector) => (value, key) => {
+        Object.defineProperty(vector, key, {
+            writable: false,
+            value: value
+        });
+    };
+
+    Vector.attachValues = function (vector, points) {
+        vector.valueOf = () => points.slice(0);
+        points.forEach(setImmutablePropertyOn(vector));
+    };
+
+    Vector.prototype = {
+        toString: function () { return '<' + this.valueOf().join(',') + '>'; }
+    };
+
+    function magnitude(vector) {
+        let squaredMagnitude = sumOfSquares(vector);
+        return squareRoot(squaredMagnitude);
+    }
+
+    function getVectorsShorterThan(length, vectors) {
+        return vectors.filter((vector) => magnitude(vector) < length);
+    }
+
+    module.exports = {
+        buildVector: Vector,
+        getVectorsShorterThan: getVectorsShorterThan,
+        greet: greet,
+        magnitude: magnitude,
+        square: square,
+        squareAll: squareAll,
+        squareRoot: squareRoot,
+        sum: sum,
+        sumOfSquares: sumOfSquares
     };
 
 })();

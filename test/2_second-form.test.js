@@ -1,39 +1,27 @@
 'use strict';
 
+const jsforms = require('../src/2_second-form');
 const assert = require('chai').assert;
-const jsforms = require('../src/jsforms');
 
 require('./helpers/global-helper');
 
+
 describe('Forms', function () {
 
-    describe('greeter', function () {
+    /*
+     * Refactoring: the act of changing code for readability or maintainability
+     *              without changing the external behavior
+     * 
+     * Key: Make sure tests continue to pass.
+     */
 
+    describe('greeter', function () {
         /*
-         * 1 - Extract typeof expression to a function:
-         * 
-         *     function isType (typeName, value) {
-         *          return typeof _something_ === _string_;
-         *     }
-         * 
-         * 2 - Refactor greet to use isType
-         * 
-         *     function greet (greeting) {
-         *          let result = isType(_string_, _something_) ? _something_ : _something_;
-         *          return result;
-         *     }
-         * 
-         * 3 - extract ternary to a function:
-         * 
-         *     function eitherType (typeName, defaultValue, actualValue) {
-         *          return _string_ ? _something_ : _something_;
-         *     }
-         * 
-         * 4 - Refactor greet to use eitherType
-         * 
-         *     function greet (greeting) {
-         *          return eitherType(_string_, _something_, _something_) + '!';
-         *     }
+         * Refactoring steps:
+         * 1 - The else is actually not needed. Refactor it out
+         * 2 - Eliminate the if block altogether by using a ternary expression
+         *      which looks like this: boolean expression ? true value : false value
+         * 3 - Test for string type with typeof value === 'string'
          */
 
         // Keep the tests passing!
@@ -79,14 +67,11 @@ describe('Forms', function () {
     describe('sum', function () {
 
         /*
-         * 1 - Refactor forEach loop to reduce
-         * 
-         *     function (values) {
-         *          var result = _array_.reduce(_function_, _number_);
-         *          return result;
-         *     }
-         * 
-         * 2 - Return reduction directly (inline value)
+         * Refactoring steps:
+         * 1 - Create an add function and replace the plus (+) operator with a call to add
+         * 2 - Replace for loop with array.forEach(function(value) { / * do stuff with value * / });
+         * 3 - Replace function expression with a lambda expression like the following:
+         *     value => result = doStuff(value)
          */
 
         // Keep the tests passing!
@@ -105,6 +90,17 @@ describe('Forms', function () {
     });
 
     describe('squareAll', function () {
+
+        /* 
+         * Refactoring steps:
+         * 1 - Use array.push(value) to eliminate explicit setting of values to result array
+         * 2 - Replace for loop with forEach
+         * 3 - Replace forEach/push behavior with 
+         *     array.map((value) => square(_something_))
+         *     assign output to result variable
+         * 4 - Remove wrapping function and pass square function directly
+         * 5 - Return result from map operation without assigning to a variable
+         */
 
         // Keep the tests passing!
 
@@ -135,30 +131,22 @@ describe('Forms', function () {
     describe('buildVector', function () {
 
         /*
-         * 1 - Make the Vector constructor into a constructor/factory
-         *      function Vector (points) {
-         *          let vector = this instanceof Vector ? _object_ : new _function_;
-         *          
-         *          vector.points = _array_;
-         *          _array_.forEach((value, index) => _object_[_number_] = _something_);
-         * 
-         *          return vector;
-         *      }
-         * 
-         * 2 - Replace buildVector in the module exports object and delete buildVector function
-         * 
-         * 3 - Extract value attachment into a function
-         *      Vector.attachValues = function (vector, points) {
-         *          _object_.points = _array_;
-         *          _array_.forEach((value, index) => _object_[_number_] = _something_);
-         *      }
-         * 
-         *      function Vector (points) {
-         *          let vector = this instanceof Vector ? _object_ : new _function_;
-         *          Vector.attachValues(_object_, _array_);
-         *          return vector;
-         *      }
-         * 
+         * Refactoring steps:
+         * 1 - Create Vector object with attached prototype:
+         *     (This top function is called a constructor)
+         *     function Vector (points) {
+         *         this.points = _something_;
+         *         points.forEach((value, index) => _something_);
+         *     }
+         *
+         *     Vector.prototype = {
+         *         valueOf: function () { return _something_; },
+         *         toString: function () { return _something_ }
+         *     };
+         *
+         * 2 - a. Update squareAll to use array.valueOf()
+         *     b. Update buildVector to return a new Vector()
+         *        (This is called instantiating or constructing)
          */
 
         // Keep the tests passing!
@@ -192,10 +180,6 @@ describe('Forms', function () {
 
     });
 
-    describe('Immutable vector properties', function () {
-        
-    });
-
     describe('magnitude', function () {
 
         // Keep the tests passing!
@@ -219,6 +203,24 @@ describe('Forms', function () {
     });
 
     describe('getVectorsShorterThan', function () {
+
+        /*
+         * Refactoring steps:
+         * 1 - Refactor for loop to forEach with an inner if (conditional) block,
+         *     Push values into result array.
+         *
+         *     array.forEach(function (value) {
+         *          if(_boolean_) {
+         *              result.push(_something_);
+         *          }
+         *     });
+         *
+         * 2 - Refactor forEach to filter and assign output to result variable
+         *
+         *     array.filter((value) => return _something_);
+         *
+         * 3 - Return filter output directly
+         */
 
         // Keep the tests passing!
 
