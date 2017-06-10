@@ -17,7 +17,8 @@
   },
   "quokka": {
     "plugins": [
-      "quokka-mocha-bdd"
+      "quokka-mocha-bdd",
+      "quokka-signet-explorer"
     ],
     "quokka-mocha-bdd": {
       "interface": "bdd"
@@ -28,9 +29,11 @@
     "approvals": "^2.1.2",
     "approvals-config-factory": "^1.0.0",
     "chai": "^4.0.1",
+    "eslint": "^3.19.0",
     "mocha": "^3.4.2",
     "mockery": "^2.0.0",
     "quokka-mocha-bdd": "^1.1.0",
+    "quokka-signet-explorer": "^1.0.1",
     "sinon": "^2.3.2"
   }
 }
