@@ -13,7 +13,7 @@
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -34,7 +34,7 @@
         return sum(squares);
     }
 
-    function Vector (points) {
+    function Vector(points) {
         this.points = points;
 
         points.forEach((value, index) => this[index] = value);
