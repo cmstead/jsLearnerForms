@@ -1521,7 +1521,7 @@ in second form follow the same test order as first form.
         return Math.sqrt(x);
     }
 
-    function add (a, b){
+    function add(a, b) {
         return a + b;
     }
 
@@ -1542,7 +1542,7 @@ in second form follow the same test order as first form.
         return sum(squares);
     }
 
-    function Vector (points) {
+    function Vector(points) {
         this.points = points;
 
         points.forEach((value, index) => this[index] = value);

@@ -160,7 +160,7 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (){
+    function square() {
         return 1;
     }
 
@@ -197,7 +197,7 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return x * x;
     }
 
@@ -235,7 +235,7 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
@@ -278,11 +278,11 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot () {
+    function squareRoot() {
         return 1;
     }
 
@@ -321,11 +321,11 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
@@ -367,15 +367,15 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum () {
+    function sum() {
         return 1;
     }
 
@@ -420,16 +420,16 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
-        if(nums.length === 1) {
+    function sum(nums) {
+        if (nums.length === 1) {
             return nums[0];
         } else {
             return nums[0] + nums[1];
@@ -478,18 +478,18 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
@@ -537,25 +537,25 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = square(nums[0]);
         return [result];
     }
@@ -599,28 +599,28 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
@@ -669,35 +669,35 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         return square(nums[0]);
     }
 
@@ -736,35 +736,35 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
@@ -813,40 +813,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         return points;
     }
 
@@ -885,40 +885,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         return points.slice(0);
     }
 
@@ -960,40 +960,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1040,40 +1040,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1127,40 +1127,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1169,7 +1169,7 @@ Even the longest journey begins with a single step. Good luck!
         return vector;
     }
 
-    function magnitude (vector) {
+    function magnitude(vector) {
         return vector[0];
     }
 
@@ -1209,40 +1209,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1251,7 +1251,7 @@ Even the longest journey begins with a single step. Good luck!
         return vector;
     }
 
-    function magnitude (vector) {
+    function magnitude(vector) {
         let squaredMagnitude = square(vector[0]);
         return squareRoot(squaredMagnitude);
     }
@@ -1298,40 +1298,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1340,10 +1340,10 @@ Even the longest journey begins with a single step. Good luck!
         return vector;
     }
 
-    function magnitude (vector) {
+    function magnitude(vector) {
         let squaredMagnitude = square(vector[0]);
 
-        if(vector.length === 2) {
+        if (vector.length === 2) {
             squaredMagnitude += square(vector[1]);
         }
 
@@ -1387,40 +1387,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1429,7 +1429,7 @@ Even the longest journey begins with a single step. Good luck!
         return vector;
     }
 
-    function magnitude (vector) {
+    function magnitude(vector) {
         let squaredMagnitude = sumOfSquares(vector);
         return squareRoot(squaredMagnitude);
     }
@@ -1482,40 +1482,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1524,12 +1524,12 @@ Even the longest journey begins with a single step. Good luck!
         return vector;
     }
 
-    function magnitude (vector) {
+    function magnitude(vector) {
         let squaredMagnitude = sumOfSquares(vector);
         return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan (length, vectors) {
+    function getVectorsShorterThan(length, vectors) {
         return vectors;
     }
 
@@ -1559,7 +1559,7 @@ Even the longest journey begins with a single step. Good luck!
 //     if(magnitude(vectors[0]) < length) {
 //         return vectors;
 //     } 
-    
+
 //     return [];
 // }
 
@@ -1574,40 +1574,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1616,16 +1616,16 @@ Even the longest journey begins with a single step. Good luck!
         return vector;
     }
 
-    function magnitude (vector) {
+    function magnitude(vector) {
         let squaredMagnitude = sumOfSquares(vector);
         return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan (length, vectors) {
-        if(magnitude(vectors[0]) < length) {
+    function getVectorsShorterThan(length, vectors) {
+        if (magnitude(vectors[0]) < length) {
             return vectors;
-        } 
-        
+        }
+
         return [];
     }
 
@@ -1674,40 +1674,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1716,17 +1716,17 @@ Even the longest journey begins with a single step. Good luck!
         return vector;
     }
 
-    function magnitude (vector) {
+    function magnitude(vector) {
         let squaredMagnitude = sumOfSquares(vector);
         return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan (length, vectors) {
+    function getVectorsShorterThan(length, vectors) {
         let result = [];
 
-        if(magnitude(vectors[0]) < length) {
+        if (magnitude(vectors[0]) < length) {
             result[0] = vectors[0];
-        } else if(vectors.length > 1 && magnitude(vectors[1]) < length) {
+        } else if (vectors.length > 1 && magnitude(vectors[1]) < length) {
             result[0] = vectors[1];
         }
 
@@ -1778,40 +1778,40 @@ Even the longest journey begins with a single step. Good luck!
         }
     }
 
-    function square (x){
+    function square(x) {
         return Math.pow(x, 2);
     }
 
-    function squareRoot (x) {
+    function squareRoot(x) {
         return Math.sqrt(x);
     }
 
-    function sum (nums) {
+    function sum(nums) {
         let result = 0;
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result += nums[index];
         }
 
         return result;
     }
 
-    function squareAll (nums) {
+    function squareAll(nums) {
         let result = [];
 
-        for(let index = 0; index < nums.length; index += 1) {
+        for (let index = 0; index < nums.length; index += 1) {
             result[index] = square(nums[index]);
         }
 
         return result;
     }
 
-    function sumOfSquares (nums) {
+    function sumOfSquares(nums) {
         let squares = squareAll(nums);
         return sum(squares);
     }
 
-    function buildVector (points) {
+    function buildVector(points) {
         let vector = points.slice(0);
 
         vector.valueOf = function () { return points.slice(0); };
@@ -1820,16 +1820,16 @@ Even the longest journey begins with a single step. Good luck!
         return vector;
     }
 
-    function magnitude (vector) {
+    function magnitude(vector) {
         let squaredMagnitude = sumOfSquares(vector);
         return squareRoot(squaredMagnitude);
     }
 
-    function getVectorsShorterThan (length, vectors) {
+    function getVectorsShorterThan(length, vectors) {
         let result = [];
 
-        for(let index = 0; index < vectors.length; index += 1) {
-            if(magnitude(vectors[index]) < length) {
+        for (let index = 0; index < vectors.length; index += 1) {
+            if (magnitude(vectors[index]) < length) {
                 result[result.length] = vectors[index];
             }
         }

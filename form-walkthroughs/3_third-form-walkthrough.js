@@ -1130,11 +1130,11 @@ they interact with each other.
         return Object.prototype.toString.call(value) === '[object Array]';
     }
 
-    function containsOnlyNumbers (values) {
+    function containsOnlyNumbers(values) {
         return values.filter(isNumber).length === values.length;
     }
 
-    function checkAll (predicates) {
+    function checkAll(predicates) {
         return function (value) {
             return predicates.reduce((result, predicate) => predicate(value), true);
         };
