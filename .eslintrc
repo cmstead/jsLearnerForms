@@ -17,6 +17,8 @@
         "module": false,
         "console": false,
         "jfp": true,
-        "signet": true
+        "signet": true,
+        "global": false,
+        "runQuokkaMochaBdd": false
     }
 }
