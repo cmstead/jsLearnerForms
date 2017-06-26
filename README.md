@@ -49,6 +49,22 @@ Open a command prompt/terminal/shell, go to the directory where you cloned JS La
 
 **That's it! You're all set.**
 
+## Running JS Forms ##
+
+### In Visual Studio Code with Quokka ###
+
+Open the test file and press `ctrl+k, q` in Windows and `cmd+k, q` in OS X. This will start Quokka, which will automatically update as you modify the source code for each form.
+
+### In Another Editor ###
+
+Open the test file to for reference and open a command prompt or terminal.  At the prompt type `node run-form #` where # is the number of the form you are working on.
+
+Example of running first form:
+
+`node run-form 1`
+
+The test runner will rerun as you update your source code.  It will run all tests until it reaches a failing test.
+
 ## Skills covered per form ##
 
 This section will be updated as forms are completed and ready for use.
