@@ -1,6 +1,7 @@
 'use strict';
+const http = require('./http');
 
-function getContactNameList (userId, callback){
+function getContactNameList(userId, callback) {
     let request = {
         url: '/getContactNameList/:userId',
         urlData: {
@@ -9,9 +10,13 @@ function getContactNameList (userId, callback){
     };
 
     http.get(request)
-    .send()
-    .then((recordset) => callback(null, recordset))
-    .catch((error) => callback(error, null));
+        .send()
+        .then(function (recordset) {
+            callback(null, recordset);
+        })
+        .catch(function (error) {
+            callback(error, null);
+        });
 }
 
 module.exports = {

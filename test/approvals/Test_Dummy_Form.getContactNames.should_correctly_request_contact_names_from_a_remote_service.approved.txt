@@ -1,0 +1,10 @@
+[
+    [
+        {
+            "url": "/getContactNameList/:userId",
+            "urlData": {
+                "userId": 12345
+            }
+        }
+    ]
+]

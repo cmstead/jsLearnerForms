@@ -22,7 +22,7 @@ function compareContactRecords(record1, record2) {
 function sortByContactName(contactRecords) {
     return isArray(contactRecords) ?
         contactRecords.sort(compareContactRecords) :
-        null;
+        [];
 }
 
 function getContactNames(callback) {
@@ -31,7 +31,7 @@ function getContactNames(callback) {
     contactService.getContactNameList(userId, sortRecordsAndCallBack);
 
     function sortRecordsAndCallBack(error, contactNameRecords) {
-        let sortedRecords = sortByContactName(contactNameRecords);
+        let sortedRecords = Boolean(error) ? null : sortByContactName(contactNameRecords);
         callback(error, sortedRecords);
     }
 }

@@ -10,11 +10,13 @@ const testNames = {
 };
 
 const formKey = process.argv[2];
+const runOnce = typeof process.argv[3] === 'string' && process.argv[3].toLowerCase() === 'once';
+
 if(typeof testNames[formKey] === 'undefined') {
     throw new Error('Unknown form ' + formKey + '. Options are: ' + Object.keys(testNames));
 }
 
-const commandTokens = ['--bail', '--watch'];
+const commandTokens = runOnce ? ['--bail'] : ['--bail', '--watch'];
 const args = commandTokens.concat(['./test/' + testNames[formKey]]);
 
 const runner = childProcess.fork('./node_modules/mocha/bin/mocha', args, function (result) {

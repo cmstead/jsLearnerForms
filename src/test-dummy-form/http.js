@@ -1,16 +1,20 @@
 'use strict';
 
-function send(callback) {
+function send() {
     return new Promise(function (resolve, reject) {
         setTimeout(function () {
-            throw new Error('Unable to establish network connection!');
+            reject('Unable to establish network connection!');
         }, 75);
     });
 }
 
+const httpApi = {
+    send: send
+}
+
 module.exports = {
-    delete: () => () => send(),
-    get: () => () => send(),
-    post: () => () => send(),
-    put: () => () => send()
+    delete: () => httpApi,
+    get: () => httpApi,
+    post: () => httpApi,
+    put: () => httpApi
 };
