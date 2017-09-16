@@ -65,6 +65,14 @@ Example of running first form:
 
 The test runner will rerun as you update your source code.  It will run all tests until it reaches a failing test.
 
+### Starting a Form Over ###
+
+These forms are intended to be done more than once.  In order to make this easy to do, there is a reset script.  At the prompt type `node reset-form #` where # is the number of the form to reset.
+
+Example of resetting first form:
+
+`node reset-form 1`
+
 ## Skills covered per form ##
 
 This section will be updated as forms are completed and ready for use.
