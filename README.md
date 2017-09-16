@@ -154,4 +154,16 @@ Third form concepts
 - Type checking
 - Metaprogramming
 
-Reinforcement exercises to come
+### Fourth Form -- Test Dummy Form
+
+Fourth form concepts
+
+- Writing unit tests
+- Creating vice tests around existing code
+- Mocks, stubs and spies
+- Code seams
+- Promises and async programming
+- Pure and impure functions
+- Programming patterns
+- Code deduplication
+- Testing libraries - Mocha, Chai, Sinon and Mockery
