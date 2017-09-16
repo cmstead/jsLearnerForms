@@ -19,6 +19,4 @@ if(typeof testNames[formKey] === 'undefined') {
 const commandTokens = runOnce ? ['--bail'] : ['--bail', '--watch'];
 const args = commandTokens.concat(['./test/' + testNames[formKey]]);
 
-const runner = childProcess.fork('./node_modules/mocha/bin/mocha', args, function (result) {
-    console.log(result);
-});
+const runner = childProcess.fork('./node_modules/mocha/bin/mocha', args);
