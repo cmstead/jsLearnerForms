@@ -73,6 +73,14 @@ Example of resetting first form:
 
 `node reset-form 1`
 
+### Resetting and Running ###
+
+There is also a script which will allow you to reset and run a form -- `node reset-and-run-form #`
+
+Example of resetting and running first form:
+
+`node reset-and-run-form 1`
+
 ## Skills covered per form ##
 
 This section will be updated as forms are completed and ready for use.
