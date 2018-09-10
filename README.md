@@ -14,7 +14,6 @@ To use Javascript language forms, you will need to do the following:
 
 - Install [Node.js](https://nodejs.org/)
 - Install [Visual Studio Code](https://code.visualstudio.com/)
-- Install the VS Code plugin [Quokka.js](https://quokkajs.com/)
 - Clone the JS Language Forms repository: [https://github.com/cmstead/jsLearnerForms](https://github.com/cmstead/jsLearnerForms)
 
 **After Installing**
@@ -22,7 +21,6 @@ To use Javascript language forms, you will need to do the following:
 - Start Visual Studio Code
 - Open the folder you cloned JS Language Forms to in your editor
 - Open the test file and the associated source file (They are numbered, start at 1)
-- Go to the test file and press `ctrl+k, q` to start Quokka
 - Follow the prompts, directions and hints and start coding!
 
 ### Installing Node.js ###
@@ -37,12 +35,6 @@ This video is geared for people installing on Windows, but if you are on a Mac t
 
 For most operating systems, VS Code is available as a binary you simply install and run. Download the executable installer for your operating system and run it. The installer will do the rest.
 
-### Installing Quokka.js ###
-
-To open the extensions manager in VS Code, open your editor, then press `ctrl+shift+x`.
-
-Once the extensions manager is open, search for Quokka, install the plugin and reload your editor.
-
 ### Project One-Time Setup ###
 
 Open a command prompt/terminal/shell, go to the directory where you cloned JS Language Forms and type `npm i`.  This will install everything the project needs in order to run.
@@ -50,12 +42,6 @@ Open a command prompt/terminal/shell, go to the directory where you cloned JS La
 **That's it! You're all set.**
 
 ## Running JS Forms ##
-
-### In Visual Studio Code with Quokka ###
-
-Open the test file and press `ctrl+k, q` in Windows and `cmd+k, q` in OS X. This will start Quokka, which will automatically update as you modify the source code for each form.
-
-### In Another Editor ###
 
 Open the test file to for reference and open a command prompt or terminal.  At the prompt type `node run-form #` where # is the number of the form you are working on.
 

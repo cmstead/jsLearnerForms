@@ -325,6 +325,3 @@ describe('Forms', function () {
 
 });
 
-if (typeof global.runQuokkaMochaBdd === 'function') {
-    runQuokkaMochaBdd();
-}

@@ -1,12 +1,29 @@
 {
-	"version": "0.1.0",
-	"command": "npm",
-	"isShellCommand": true,
+	"version": "2.0.0",
 	"tasks": [
 		{
-			"taskName": "test",
-			"isBuildCommand": false,
-			"showOutput": "always"
-		}
+      "label": "Run Form 1",
+      "type": "shell",
+			"command": "node ./run-form 1",
+			"group": "test"
+		},
+		{
+      "label": "Run Form 2",
+      "type": "shell",
+			"command": "node ./run-form 2",
+			"group": "test"
+		},
+		{
+      "label": "Run Form 3",
+      "type": "shell",
+			"command": "node ./run-form 3",
+			"group": "test"
+		},
+		{
+      "label": "Run Form 4",
+      "type": "shell",
+			"command": "node ./run-form 4",
+			"group": "test"
+		},
 	]
 }

@@ -1,9 +1,5 @@
 'use strict';
 
-if (typeof exploreFunction !== 'function') {
-    require('quokka-signet-explorer').before();
-}
-
 const assert = require('chai').assert;
 const sinon = require('sinon');
 const mockery = require('mockery');
@@ -81,7 +77,6 @@ describe('Test Dummy Form', function () {
     describe('sortByContactName', function () {
 
         // In this test we want to approve the output from the sort method.
-        // We are using a plugin called quokka-mocha-approvals-helper which makes
         // the verify method available globally. Try the following to see how
         // to use it:
         // console.log(exploreFunction(verify));
@@ -124,6 +119,3 @@ describe('Test Dummy Form', function () {
 
 });
 
-if (typeof global.runQuokkaMochaBdd === 'function') {
-    runQuokkaMochaBdd();
-}

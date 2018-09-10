@@ -19,7 +19,6 @@
         "jfp": true,
         "signet": true,
         "global": false,
-        "runQuokkaMochaBdd": false,
         "verify": false,
         "setTimeout": false,
         "Promise": false,

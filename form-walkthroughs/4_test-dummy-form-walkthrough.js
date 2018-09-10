@@ -441,10 +441,6 @@ it('should call callback with a null error and an array of sorted names on succe
 
 'use strict';
 
-if (typeof exploreFunction !== 'function') {
-    require('quokka-signet-explorer').before();
-}
-
 const assert = require('chai').assert;
 const sinon = require('sinon');
 const mockery = require('mockery');
@@ -620,6 +616,3 @@ describe('Test Dummy Form', function () {
 
 });
 
-if (typeof global.runQuokkaMochaBdd === 'function') {
-    runQuokkaMochaBdd();
-}
