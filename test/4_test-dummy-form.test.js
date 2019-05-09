@@ -94,7 +94,7 @@ describe('Test Dummy Form', function () {
         // To fix this issue you will need to understand how the Mockery
         // library works. The beforeEach at the very top of this test will
         // give you a place to start.
-        // Assert has a method "doesNothThrow." This would be quite useful here
+        // Assert has a method "doesNotThrow." This would be quite useful here
         it('should not throw error immediately when called');
 
         // Sinon is a library built for handling cases where you want to get a view
