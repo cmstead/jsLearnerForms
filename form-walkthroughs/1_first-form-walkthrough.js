@@ -5,11 +5,11 @@ Javascript First Form
 The Javascript first form student should aim to follow the movements
 outlined below to pass all unit tests. The process is outlined
 precisely because the goal is not to muddle your way through passing
-tests though trial and error, but instead to grow fluencey through
+tests though trial and error, but instead to grow fluency through
 language immersion.
 
 A first form student can come to this process without ever having
-programmed before, or as a desciple of another language, looking
+programmed before, or as a disciple of another language, looking
 to broaden their exposure to programming languages in general.
 
 A first form student who is ready to progress to second form should
