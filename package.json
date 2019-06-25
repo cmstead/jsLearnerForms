@@ -24,5 +24,10 @@
     "mocha": "^3.4.2",
     "mockery": "^2.1.0",
     "sinon": "^2.3.5"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^6.4.1",
+    "open": "^6.3.0"
   }
 }

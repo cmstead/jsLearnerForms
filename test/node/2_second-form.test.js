@@ -1,40 +1,36 @@
 'use strict';
 
-const jsforms = require('../src/1_first-form');
+const jsforms = require('../../src/node/2_second-form');
 const assert = require('chai').assert;
 
-require('./helpers/global-helper');
+require('../helpers/global-helper');
+
 
 describe('Forms', function () {
 
+    /*
+     * Refactoring: the act of changing code for readability or maintainability
+     *              without changing the external behavior
+     * 
+     * Key: Make sure tests continue to pass.
+     */
+
     describe('greeter', function () {
+        /*
+         * Refactoring steps:
+         * 1 - The else is actually not needed. Refactor it out
+         * 2 - Eliminate the if block altogether by using a ternary expression
+         *      which looks like this: boolean expression ? true value : false value
+         * 3 - Test for string type with typeof value === 'string'
+         */
+
+        // Keep the tests passing!
 
         it('should say "Hello!" by default', function () {
-            // Create function called greet
-
-            /*
-             * function greet() {
-             *      return _string_;
-             * }
-             */
-
             assert.equal(jsforms.greet(), 'Hello!');
         });
 
         it('should say "Salutations!" when Salutations is passed', function () {
-            // Add condition to greet to handle custom greeting case
-            // (Try using an "if/else" structure. "If" is a control structure)
-
-            /*
-             * function greet (greeting) {
-             *      if (_something_ === undefined) {
-             *          return _string_;
-             *      } else {
-             *          return _something_ + '!';
-             *      }
-             * }
-             */
-
             assert.equal(jsforms.greet('Salutations'), 'Salutations!');
         });
 
@@ -42,24 +38,13 @@ describe('Forms', function () {
 
     describe('square', function () {
 
+        // Keep the tests passing!
+
         it('should square 1', function () {
-            // Add cheated-out square function
-            // (Cheating out means just passing the current tests, don't go crazy!)
-
-            /*
-             * function (value) {
-             *      return _number_;
-             * }
-             */
-
             assert.equal(jsforms.square(1), 1);
         });
 
         it('should square 3', function () {
-            // 1 - Add logic to correctly square a number (remember n^2 <=> n * n)
-            // 2 - Move to library function to perform square operation
-            //      (Math is a built in library...)
-
             assert.equal(jsforms.square(3), 9);
         });
 
@@ -67,16 +52,13 @@ describe('Forms', function () {
 
     describe('squareRoot', function () {
 
-        it('should take the square root of 1', function () {
-            // Add cheated-out square root function
+        // Keep the tests passing!
 
+        it('should take the square root of 1', function () {
             assert.equal(jsforms.squareRoot(1), 1);
         });
 
         it('should take the square root of 4', function () {
-            // Add logic to properly take square root
-            // (There is more than one way to solve this in one line, maybe with Math)
-
             assert.equal(jsforms.squareRoot(4), 2);
         });
 
@@ -84,62 +66,49 @@ describe('Forms', function () {
 
     describe('sum', function () {
 
-        it('should take the sum of one number', function () {
-            // Add cheated out sum function
+        /*
+         * Refactoring steps:
+         * 1 - Create an add function and replace the plus (+) operator with a call to add
+         * 2 - Replace for loop with array.forEach(function(value) { / * do stuff with value * / });
+         * 3 - Replace function expression with a lambda expression like the following:
+         *     value => result = doStuff(value)
+         */
 
+        // Keep the tests passing!
+
+        it('should take the sum of one number', function () {
             assert.equal(jsforms.sum([1]), 1);
         });
 
         it('should add two numbers', function () {
-            // Add logic to sum 1 or two numbers
-            // (An if structure might help here)
-
-            /*
-             * if(_array_.length === 1) {
-             *      return _array_[0];
-             * } else {
-             *      return _array_[0] + _array_[1];
-             * }
-             */
-
             assert.equal(jsforms.sum([2, 3]), 5);
         });
 
         it('should add multiple numbers', function () {
-            // Add logic to sum an arbitrary length array of numbers
-            // (A for loop might help to accomplish this
-            //  loops, like ifs, are control structures)
-
-            /*
-             * for(let index = _number_; _number_ < _number_; index += 1) {
-             *      result[index] += _something_;
-             * }
-             */
-
             assert.equal(jsforms.sum([1, 3, 5, 7]), 16);
         });
     });
 
     describe('squareAll', function () {
 
+        /* 
+         * Refactoring steps:
+         * 1 - Use array.push(value) to eliminate explicit setting of values to result array
+         * 2 - Replace for loop with forEach
+         * 3 - Replace forEach/push behavior with 
+         *     array.map((value) => square(_something_))
+         *     assign output to result variable
+         * 4 - Remove wrapping function and pass square function directly
+         * 5 - Return result from map operation without assigning to a variable
+         */
+
+        // Keep the tests passing!
+
         it('should square all numbers in a single-value array', function () {
-            // 1 - Add a cheated-out squareAll function
-            // 2 - Perform square computation on array value
-
-            /*
-             * function squareAll (values) {
-             *      let result = square(_array_[_number_]);
-             *      return [_something_];
-             * }
-             */
-
             assert.equal(jsforms.squareAll([2]).toString(), '4');
         });
 
         it('should square multiple numbers', function () {
-            // Add logic to square all numbers in array
-            // (How did you solve sum?)
-
             assert.equal(jsforms.squareAll([1, 2, 3, 5]).toString(), '1,4,9,25');
         });
 
@@ -147,17 +116,13 @@ describe('Forms', function () {
 
     describe('sumOfSquares', function () {
 
-        it('should square number in a 1-length array and return it', function () {
-            // 1 - Add cheated-out function sumOfSquares
-            // 2 - Add sumOfSquares function with logic to square a single number
+        // Keep the tests passing!
 
+        it('should square number in a 1-length array and return it', function () {
             assert.equal(jsforms.sumOfSquares([2]), 4);
         });
 
         it('should take the sum of squares of multiple numbers', function () {
-            // Add logic to square all numbers and return the sum
-            // (squareAll and sum might be useful to accomplish this)
-
             assert.equal(jsforms.sumOfSquares([1, 2, 3]), 14);
         });
 
@@ -165,14 +130,28 @@ describe('Forms', function () {
 
     describe('buildVector', function () {
 
-        // A vector is an ordered set of points which 
-        // describes a "directed line segment," in other
-        // words, a vector is a line segment with an arrow
+        /*
+         * Refactoring steps:
+         * 1 - Create Vector object with attached prototype:
+         *     (This top function is called a constructor)
+         *     function Vector (points) {
+         *         this.points = _something_;
+         *         points.forEach((value, index) => _something_);
+         *     }
+         *
+         *     Vector.prototype = {
+         *         valueOf: function () { return _something_; },
+         *         toString: function () { return _something_ }
+         *     };
+         *
+         * 2 - a. Update squareAll to use array.valueOf()
+         *     b. Update buildVector to return a new Vector()
+         *        (This is called instantiating or constructing)
+         */
+
+        // Keep the tests passing!
 
         it('should return a vector matching original values', function () {
-            // Add buildVector function
-            // (Would it be possible to just return something?)
-
             let initialArray = [1, 2];
             let vector = jsforms.buildVector(initialArray);
             let resultValues = [vector[0], vector[1]];
@@ -181,13 +160,6 @@ describe('Forms', function () {
         });
 
         it('should return a vector given an array which is not the original array', function () {
-            // Add logic to return a copy of vector array
-            // (Slice will create a new array just like the old one...)
-
-            /*
-             * let vector = _array_.slice(_number_);
-             */
-
             let initialArray = [1, 2];
             let vector = jsforms.buildVector(initialArray);
 
@@ -195,24 +167,12 @@ describe('Forms', function () {
         });
 
         it('should return vector with valueOf function which does not return vector', function () {
-            // Add custom valueOf function to array
-            // (valueOf is a built in function for every object in Javascript.
-            //  It is possible to override functions...)
-
-            /*
-             * // Overriding looks like this:
-             * _array_.valueOf = _function_;
-             */
-
             let vector = jsforms.buildVector([1, 2, 3]);
 
             assert.equal(vector.valueOf() !== vector, true);
         });
 
         it('should return a vector where toString returns a vector string', function () {
-            // Add custom toString function to array
-            // (toString is also built in.)
-
             let vector = jsforms.buildVector([1, 2, 3]);
 
             assert.equal(vector.toString(), '<1,2,3>');
@@ -222,34 +182,21 @@ describe('Forms', function () {
 
     describe('magnitude', function () {
 
-        // A magnitude is the length of a vector. We will explore
-        // computing the magnitude in the following tests
+        // Keep the tests passing!
 
         it('should return the magnitude of a one-value vector', function () {
-            // Add cheated-out magnitude function
-
             assert.equal(jsforms.magnitude([5]), 5);
         });
 
         it('should return only positive magnitude values', function () {
-            // Add logic to ensure magnitude is always positive
-            // (Hint: squaring a negative number makes it positive)
-
             assert.equal(jsforms.magnitude([-3]), 3);
         });
 
         it('should return the magnitude of a two-value vector', function () {
-            // Add logic to perform proper magnitude calculation for length 1 and 2 vectors
-            // (A length 2 vector's magnitude can be computed by squareRoot(vector[0]^2 + vector[1]^2))
-
             assert.equal(jsforms.magnitude([6, 8]), 10);
         });
 
         it('should return the magnitude of a multi-value vector', function () {
-            // Add logic to compute the magnitude of an arbitrary length vector.
-            // (The general magnitude formula is the square root of the sum of the squares
-            //  Can we apply functions we have already created?)
-
             assert.equal(jsforms.magnitude([0, 12, 3, 4]), 13);
         });
 
@@ -257,11 +204,27 @@ describe('Forms', function () {
 
     describe('getVectorsShorterThan', function () {
 
-        // We will now compare the length (magnitude) of a vector to a value.
+        /*
+         * Refactoring steps:
+         * 1 - Refactor for loop to forEach with an inner if (conditional) block,
+         *     Push values into result array.
+         *
+         *     array.forEach(function (value) {
+         *          if(_boolean_) {
+         *              result.push(_something_);
+         *          }
+         *     });
+         *
+         * 2 - Refactor forEach to filter and assign output to result variable
+         *
+         *     array.filter((value) => return _something_);
+         *
+         * 3 - Return filter output directly
+         */
+
+        // Keep the tests passing!
 
         it('should return single vector when the only vector magnitude is acceptably short', function () {
-            // Add cheated-out getVectorsShorterThan function
-
             let vectors = [jsforms.buildVector([1, 2])];
             let result = jsforms.getVectorsShorterThan(5, vectors);
 
@@ -270,9 +233,6 @@ describe('Forms', function () {
         });
 
         it('should return an empty array when the only vector magnitude is too long', function () {
-            // Add logic to handle the case where a vector is too long
-            // (How might we compare the magnitude of a vector to a length value?)
-
             let length = 4;
             let vectors = [jsforms.buildVector([3, 4])];
             let result = jsforms.getVectorsShorterThan(length, vectors);
@@ -281,8 +241,6 @@ describe('Forms', function () {
         });
 
         it('should only filter vectors which are too long', function () {
-            // Add logic to handle 0, 1 or 2 vector cases
-
             let length = 10;
             let vectors = [
                 jsforms.buildVector([10, 10]),
@@ -296,10 +254,6 @@ describe('Forms', function () {
         });
 
         it('should filter all vectors which are too long', function () {
-            // Move to general code for filtering vecctors
-            // (Is there a way we can use a known control structure
-            //  to check all vectors?)
-
             let vectors = [
                 jsforms.buildVector([1, 2, 2]),
                 jsforms.buildVector([10, 20]),

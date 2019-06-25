@@ -43,6 +43,7 @@ Open a command prompt/terminal/shell, go to the directory where you cloned JS La
 
 ## Running JS Forms ##
 
+### In Node ###
 Open the test file to for reference and open a command prompt or terminal.  At the prompt type `node run-form #` where # is the number of the form you are working on.
 
 Example of running first form:

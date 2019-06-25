@@ -3,11 +3,11 @@
 const assert = require('chai').assert;
 const sinon = require('sinon');
 const mockery = require('mockery');
-const prettyJson = require('./helpers/prettyJson');
+const prettyJson = require('../helpers/prettyJson');
 
 describe('Test Dummy Form', function () {
 
-    require('./helpers/approvalsConfig');
+    require('../helpers/approvalsConfig');
 
     let testDummyForm;
 
@@ -17,7 +17,7 @@ describe('Test Dummy Form', function () {
             warnOnUnregistered: false
         });
 
-        testDummyForm = require('../src/4_test-dummy-form');
+        testDummyForm = require('../../src/node/4_test-dummy-form');
     });
 
     afterEach(function () {
