@@ -1,7 +1,7 @@
 const jsforms = (function () {
     'use strict';
 
-    function greet(greeting) {
+    function greet() {
         return 'Hello!';
     }
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>First Form</title>
-    
+
     <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
     <script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
     <script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
@@ -24,6 +24,11 @@
 
     <script>
         mocha.run();
+    </script>
+
+    <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>')
     </script>
 </body>
 

@@ -42,4 +42,6 @@ inquirer
         } else {
             throw new Error('Only forms 1, 2, and 3 are available for the browser');
         }
+
+        console.log('Press ctrl+c to exit');
     });
