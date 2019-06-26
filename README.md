@@ -31,13 +31,17 @@ To use JS Learner Forms, you will need to do the following:
 
 ### Running A Form ###
 
-1. Start Visual Studio Code
-2. Open the folder you cloned JS Learner Forms to in your editor
-3. Open a terminal/command line in the JS Learner Forms directory (like when you ran the setup)
-4. Run the start script: `npm start`
-5. Select run from the main menu
-6. Select Node or Browser
-7. Choose the form number (start at 1 if this is your first time)
+1. Open a terminal/command line in the JS Learner Forms directory (like when you ran the setup)
+2. Run the start script: `npm start`
+3. Select run from the main menu
+4. Select Node or Browser
+5. Choose the form number (start at 1 if this is your first time)
+6. Start Visual Studio Code
+7. Open the folder you cloned JS Learner Forms to in your editor
+8. Open the test and source files:
+    - Test files are found in the `test` directory
+    - Source files are found in the `src` directory
+    - Choose files from the `node` or `browser` directory depending on the mode in which the forms are run
 
 ### Starting a Form Over ###
 
