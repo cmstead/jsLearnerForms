@@ -36,6 +36,7 @@ function displayMainMenu() {
                     displayMainMenu();
                 });
             } else {
+                clear();
                 console.log('See you next time!');
             }
         });
