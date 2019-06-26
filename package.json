@@ -4,7 +4,8 @@
   "description": "JS muscle memory building forms",
   "main": "index.js",
   "scripts": {
-    "start": "node ./start.js"
+    "start": "node ./start.js",
+    "setup": "npm install"
   },
   "repository": {
     "type": "git",

@@ -38,10 +38,8 @@ inquirer
         if (runMode === 'Node') {
             childProcess.fork('./runner-utils/node-runners/run-form.js', [finalFormNumber]);
         } else if (finalFormNumber < 4) {
-            childProcess.fork('./serve-client-form.js', [finalFormNumber]);
+            const currentProcess = childProcess.fork('./serve-client-form.js', [finalFormNumber]);
         } else {
             throw new Error('Only forms 1, 2, and 3 are available for the browser');
         }
-
-        console.log('Press ctrl+c to exit');
     });

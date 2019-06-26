@@ -2,8 +2,8 @@
 
 const fs = require('fs');
 
-const resetRoot = './.form-src/client/';
-const destinationRoot = './src/client/';
+const resetRoot = './.form-src/browser/';
+const destinationRoot = './src/browser/';
 
 const formResetPaths = {
     1: {

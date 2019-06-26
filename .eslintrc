@@ -22,6 +22,8 @@
         "verify": false,
         "setTimeout": false,
         "Promise": false,
-        "exploreFunction": false
+        "exploreFunction": false,
+        "process": false,
+        "__dirname": false
     }
 }

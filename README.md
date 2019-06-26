@@ -10,7 +10,7 @@ As a student becomes more conversant in a particular form, they are encouraged t
 
 ## Setup ##
 
-To use Javascript language forms, you will need to do the following:
+To use JS Learner Forms, you will need to do the following:
 
 - Install [Node.js](https://nodejs.org/)
 - Install [Visual Studio Code](https://code.visualstudio.com/)
@@ -18,55 +18,40 @@ To use Javascript language forms, you will need to do the following:
 
 **After Installing**
 
-- Start Visual Studio Code
-- Open the folder you cloned JS Language Forms to in your editor
-- Open the test file and the associated source file (They are numbered, start at 1)
-- Follow the prompts, directions and hints and start coding!
-
-### Installing Node.js ###
-
-If you haven't ever installed node before, please watch the following video on Node.
-
-https://www.youtube.com/watch?v=tlntE8fe6u4
-
-This video is geared for people installing on Windows, but if you are on a Mac the setup is effectively the same.
-
-### Installing Visual Studio Code ###
-
-For most operating systems, VS Code is available as a binary you simply install and run. Download the executable installer for your operating system and run it. The installer will do the rest.
-
-### Project One-Time Setup ###
-
-Open a command prompt/terminal/shell, go to the directory where you cloned JS Language Forms and type `npm i`.  This will install everything the project needs in order to run.
+- Set up project
+    - open a terminal/command line
+    - go to the directory where the JS Learner Forms project is stored
+        - Windows: `cd c:\path\to\jsLearnerForms`
+        - Mac: `cd /path/to/jsLearnerForms`
+    - Run the setup script: `npm run setup`
 
 **That's it! You're all set.**
 
-## Running JS Forms ##
+## Using JS Learner Forms ##
 
-### In Node ###
-Open the test file to for reference and open a command prompt or terminal.  At the prompt type `node run-form #` where # is the number of the form you are working on.
+### Running A Form ###
 
-Example of running first form:
-
-`node run-form 1`
-
-The test runner will rerun as you update your source code.  It will run all tests until it reaches a failing test.
+1. Start Visual Studio Code
+2. Open the folder you cloned JS Learner Forms to in your editor
+3. Open a terminal/command line in the JS Learner Forms directory (like when you ran the setup)
+4. Run the start script: `npm start`
+5. Select run from the main menu
+6. Select Node or Browser
+7. Choose the form number (start at 1 if this is your first time)
 
 ### Starting a Form Over ###
 
-These forms are intended to be done more than once.  In order to make this easy to do, there is a reset script.  At the prompt type `node reset-form #` where # is the number of the form to reset.
+1. From the start script menu, select the reset option.
+2. Choose Node or Browser depending on how you have been working
+3. Choose the form number to update
 
-Example of resetting first form:
+### Completing Each Task ###
 
-`node reset-form 1`
-
-### Resetting and Running ###
-
-There is also a script which will allow you to reset and run a form -- `node reset-and-run-form #`
-
-Example of resetting and running first form:
-
-`node reset-and-run-form 1`
+1. Read description of the current failing test
+    - Look in the test file, find the text that matches the description of the failing test
+    - Read and try to understand what the test is doing
+2. Write code to make the test pass.
+3. All tests will automatically rerun as you save your code updates.
 
 ## Skills covered per form ##
 

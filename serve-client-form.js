@@ -2,6 +2,7 @@ const express = require('express');
 const open = require('open');
 const app = express();
 var livereload = require('livereload');
+const inquirer = require('inquirer');
 
 const port = 7331;
 
@@ -36,4 +37,18 @@ app.listen(port, function () {
     server.watch(__dirname + "/src");
 
     open(`http://localhost:${port}/form-${formNumber}`);
+
+
+    inquirer.prompt([
+        {
+            message: 'When ready, press enter to quit:',
+            name: 'quit',
+            type: 'list',
+            choices: ['quit'],
+            validate: response => response.trim().toLowerCase() === 'q'
+        }
+    ]).then(function () {
+        process.exit();
+    });
+
 });
