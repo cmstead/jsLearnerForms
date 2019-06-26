@@ -1,11 +1,69 @@
 'use strict';
 
+const staticAnalyzer = require('../../static-analyzer/staticAnalyzer');
+const getSourceFile = require('../../static-analyzer/getSourceFile');
+
 const jsforms = require('../../src/node/1_first-form');
 const assert = require('chai').assert;
+
+const sourcePath = `${__dirname}/../../src/node/1_first-form.js`;
 
 require('../helpers/global-helper');
 
 describe('Forms', function () {
+    const codeAnalyzer = staticAnalyzer.getModuleAnalyzer();
+
+    describe('variables', function() {
+        it('should have a variable called "a"', function() {
+            const sourceCode = getSourceFile(sourcePath);
+            const variableDefinition = {
+                kinds: ['let', 'var'],
+                name: 'a'
+            };
+
+            const variableExists =
+                codeAnalyzer.containsVariable(
+                    sourceCode,
+                    variableDefinition
+                );
+
+            assert.isTrue(variableExists);
+        });
+        
+        it('variable "a" should have 5 assigned to it (initialize with 5)', function() {
+            const sourceCode = getSourceFile(sourcePath);
+            const variableDefinition = {
+                kinds: ['let', 'var'],
+                name: 'a',
+                value: 5
+            };
+
+            const variableExists =
+                codeAnalyzer.containsVariable(
+                    sourceCode,
+                    variableDefinition
+                );
+
+            assert.isTrue(variableExists);
+        });
+
+        it.skip('a should be assigned the sum of 3 and 7 (3 + 7)', function () {
+            const sourceCode = getSourceFile(sourcePath);
+            const variableDefinition = {
+                kinds: ['let', 'var'],
+                name: 'a',
+                expression: [3, '+', 7]
+            };
+
+            const variableExists =
+                codeAnalyzer.containsAssignment(
+                    sourceCode,
+                    variableDefinition
+                );
+
+            assert.isTrue(variableExists);
+        })
+    });
 
     describe('greeter', function () {
 
