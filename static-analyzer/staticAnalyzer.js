@@ -10,14 +10,13 @@ function staticAnalyzer(parser) {
         };
     }
 
-    const containsVariable = buildAction(analyzer.containsVariable);
+    const analyzerApi = Object.keys(analyzer)
+        .reduce(function(apiObject, key){
+            apiObject[key] = buildAction(analyzer[key]);
+            return apiObject;
+        }, {});
 
-    return {
-        containsVariable:
-            (source, variableDefinition) =>
-                containsVariable(source, variableDefinition)
-
-    };
+    return analyzerApi;
 }
 
 const parserOptions = {

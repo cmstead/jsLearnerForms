@@ -1,7 +1,6 @@
 'use strict';
 
 const childProcess = require('child_process');
-const inquirer = require('inquirer');
 
 const testNames = {
     1: '1_first-form.test.js',
@@ -21,15 +20,3 @@ const commandTokens = runOnce ? ['--bail'] : ['--bail', '--watch'];
 const args = commandTokens.concat(['./test/node/' + testNames[formKey]]);
 
 childProcess.fork('./node_modules/mocha/bin/mocha', args);
-
-inquirer.prompt([
-    {
-        message: 'When ready, press enter to quit:',
-        name: 'quit',
-        type: 'list',
-        choices: ['quit'],
-        validate: response => response.trim().toLowerCase() === 'q'
-    }
-]).then(function () {
-    process.exit();
-});

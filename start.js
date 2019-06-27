@@ -32,7 +32,6 @@ function displayMainMenu() {
                 const process = childProcess.fork(selectedAction);
 
                 process.on('close', function() {
-                    console.log('\n\n\n');
                     displayMainMenu();
                 });
             } else {

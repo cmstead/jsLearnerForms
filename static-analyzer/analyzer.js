@@ -7,6 +7,10 @@ function buildFinder(analyzer) {
     }
 }
 
-module.exports = {
-    containsVariable: buildFinder(analyzers.containsVariable)
-}
+const analyzerApi = Object.keys(analyzers)
+.reduce(function(apiObject, key){
+    apiObject[key] = buildFinder(analyzers[key]);
+    return apiObject;
+}, {});
+
+module.exports = analyzerApi;

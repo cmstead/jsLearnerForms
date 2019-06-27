@@ -7,7 +7,10 @@ function containsVariable({
 
     function checkValue(node) {
         return value === null ||
-            node.init.value === value;
+        (
+            node.init !== null &&
+            node.init.value === value
+        );
     }
 
     function isMatchingDeclarator(node, parentNode) {
@@ -45,8 +48,6 @@ function containsVariable({
         predicate: isMatchingVariableNode,
         onExit: onExit
     };
-
-    // return findByPredicate(ast, isMatchingVariableNode, onExit);
 }
 
 module.exports = containsVariable;
