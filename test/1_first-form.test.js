@@ -1,104 +1,116 @@
 'use strict';
 
-const staticAnalyzer = require('../../static-analyzer/staticAnalyzer');
-const getSourceFile = require('../../static-analyzer/getSourceFile');
-
-const jsforms = require('../../src/node/1_first-form');
-const assert = require('chai').assert;
-
-const sourcePath = `${__dirname}/../../src/node/1_first-form.js`;
-
-require('../helpers/global-helper');
+const assert = chai.assert;
 
 describe('Forms', function () {
-    const codeAnalyzer = staticAnalyzer.getModuleAnalyzer();
 
-    describe.only('variables', function() {
-        it('should have a variable called "a"', function() {
-            const sourceCode = getSourceFile(sourcePath);
+    describe('variables and operations', function () {
+        it('should have a variable called "a"', function () {
             const variableDefinition = {
                 kinds: ['let', 'var'],
                 name: 'a'
             };
 
-            const variableExists =
-                codeAnalyzer.containsVariable(
-                    sourceCode,
-                    variableDefinition
-                );
+            const analyzerOptions = {
+                formNumber: 1,
+                analyzerName: 'containsVariable',
+                analyzerOptions: variableDefinition
+            }
 
-            assert.isTrue(variableExists);
+            return analyzer
+                .analyze(analyzerOptions)
+                .then(function (response) {
+                    const result = response.result;
+                    assert.isTrue(result);
+                });
         });
-        
-        it('should initialize "a" with the value 5', function() {
-            const sourceCode = getSourceFile(sourcePath);
+
+        it('should initialize "a" with the value 5', function () {
             const variableDefinition = {
                 kinds: ['let', 'var'],
                 name: 'a',
                 value: 5
             };
 
-            const variableExists =
-                codeAnalyzer.containsVariable(
-                    sourceCode,
-                    variableDefinition
-                );
+            const analyzerOptions = {
+                formNumber: 1,
+                analyzerName: 'containsVariable',
+                analyzerOptions: variableDefinition
+            }
 
-            assert.isTrue(variableExists);
+            return analyzer
+                .analyze(analyzerOptions)
+                .then(function (response) {
+                    const result = response.result;
+                    assert.isTrue(result);
+                });
         });
 
         it('should assign the sum of 3 and 7 (3 + 7) to "a"', function () {
-            const sourceCode = getSourceFile(sourcePath);
             const variableDefinition = {
                 kinds: ['let', 'var'],
                 name: 'a',
                 expression: [3, '+', 7]
             };
 
-            const variableExists =
-                codeAnalyzer.containsAssignment(
-                    sourceCode,
-                    variableDefinition
-                );
+            const analyzerOptions = {
+                formNumber: 1,
+                analyzerName: 'containsAssignment',
+                analyzerOptions: variableDefinition
+            }
 
-            assert.isTrue(variableExists);
+            return analyzer
+                .analyze(analyzerOptions)
+                .then(function (response) {
+                    const result = response.result;
+                    assert.isTrue(result);
+                });
+
         });
 
-        it('should have a variable "b" initialized to "Hello, World!"', function() {
-            const sourceCode = getSourceFile(sourcePath);
+        it('should have a variable "b" initialized to "Hello, World!"', function () {
             const variableDefinition = {
                 kinds: ['const', 'let', 'var'],
                 name: 'b',
                 value: 'Hello, World!'
             };
+            
+            const analyzerOptions = {
+                formNumber: 1,
+                analyzerName: 'containsVariable',
+                analyzerOptions: variableDefinition
+            }
 
-            const variableExists =
-                codeAnalyzer.containsVariable(
-                    sourceCode,
-                    variableDefinition
-                );
-
-            assert.isTrue(variableExists);
+            return analyzer
+                .analyze(analyzerOptions)
+                .then(function (response) {
+                    const result = response.result;
+                    assert.isTrue(result);
+                });
         });
 
-        it('should log variable "b" to the console', function() {
-            const sourceCode = getSourceFile(sourcePath);
+        it('should log variable "b" to the console', function () {
             const methodCall = {
                 objectName: 'console',
                 methodName: 'log',
                 variableName: 'b'
             };
 
-            const callExists = 
-                codeAnalyzer.containsCall(
-                    sourceCode,
-                    methodCall
-                );
-            
-            assert.isTrue(callExists);
+            const analyzerOptions = {
+                formNumber: 1,
+                analyzerName: 'containsCall',
+                analyzerOptions: methodCall
+            }
+
+            return analyzer
+                .analyze(analyzerOptions)
+                .then(function (response) {
+                    const result = response.result;
+                    assert.isTrue(result);
+                });
         });
 
-        it('should export variable "b" to be read outside of the module', function () {
+        it('should expose variable "b" to be read outside of the module', function () {
             assert.equal(jsforms.b, 'Hello, World!');
         });
     });

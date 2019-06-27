@@ -1,28 +1,17 @@
-'use strict';
+/* global httpService, pluginApi, asyncContacts */
 
-const assert = require('chai').assert;
-const sinon = require('sinon');
-const mockery = require('mockery');
-const prettyJson = require('../helpers/prettyJson');
+'use strict';
 
 describe('Test Dummy Form', function () {
 
-    require('../helpers/approvalsConfig');
-
-    let testDummyForm;
+    let contactService;
 
     beforeEach(function () {
-        mockery.enable({
-            warnOnReplace: false,
-            warnOnUnregistered: false
-        });
-
-        testDummyForm = require('../../src/node/4_test-dummy-form');
-    });
-
-    afterEach(function () {
-        mockery.deregisterAll();
-        mockery.disable();
+        const httpInstance = httpService();
+        const contactServiceInstance = contactService(httpInstance);
+        const pluginApiInstance = pluginApi();
+    
+        return asyncContacts(contactServiceInstance, pluginApiInstance);
     });
 
     // For this first suite of tests, we are going to work with comparing strings
