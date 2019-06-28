@@ -14,7 +14,9 @@ To use JS Learner Forms, you will need to do the following:
 
 - Install [Node.js](https://nodejs.org/)
 - Install [Visual Studio Code](https://code.visualstudio.com/)
-- Clone the JS Language Forms repository: [https://github.com/cmstead/jsLearnerForms](https://github.com/cmstead/jsLearnerForms)
+- Clone the JS Language Forms repository:
+    - From the terminal run the following:
+        - `git clone https://github.com/cmstead/jsLearnerForms.git`
 
 **After Installing**
 

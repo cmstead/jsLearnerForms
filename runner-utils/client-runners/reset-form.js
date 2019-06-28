@@ -18,10 +18,14 @@ const formResetPaths = {
         'source': resetRoot + '3_third-form.js',
         'destination': destinationRoot + '3_third-form.js'
     },
+    4: {
+        'source': resetRoot + '4_test-dummy-form.test.js',
+        'destination': './test/4_test-dummy-form.test.js'
+    },
     6: {
         'source': resetRoot + '6_async-test-dummy-form.test.js',
         'destination': './test/6_async-test-dummy-form.test.js'
-    },
+    }
 }
 
 const formKey = process.argv[2];

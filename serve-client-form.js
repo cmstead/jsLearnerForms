@@ -16,8 +16,10 @@ const port = 7331;
 
 const formNumber = process.argv[2];
 
-if ([1, 2, 3, 6].includes(formNumber)) {
-    throw new Error('Form numbers may only be between 1 and 3.');
+const formNumbers = [1, 2, 3, 4, 6];
+
+if (formNumbers.find(value => value === formNumber) === null) {
+    throw new Error(`Form numbers may only be ${formNumbers.join(', ')}.`);
 }
 
 app.use(express.static(__dirname));

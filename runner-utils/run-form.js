@@ -7,7 +7,7 @@ const formNumberPrompt = {
     message: 'Which form do you want to run?',
     type: 'list',
     name: 'formNumber',
-    choices: [1, 2, 3, 6]  // need to update form 4
+    choices: [1, 2, 3, 4, 6]
 }
 
 let prompts = [formNumberPrompt];
