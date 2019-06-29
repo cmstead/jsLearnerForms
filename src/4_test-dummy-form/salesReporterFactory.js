@@ -1,9 +1,10 @@
-const salesReporterFactory = (function () {
-    function getReporter() {
-
+// eslint-disable-next-line
+function salesReporterFactory(dataLoader) {
+    function getReport() {
+        return dataLoader.getSalesData();
     }
 
     return {
-        getReporter: getReporter
-    };
-})();
+        getReport: getReport
+    }
+}
