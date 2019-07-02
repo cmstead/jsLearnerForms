@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./start.js",
-    "setup": "npm install"
+    "setup": "node ./setup.js"
   },
   "repository": {
     "type": "git",
