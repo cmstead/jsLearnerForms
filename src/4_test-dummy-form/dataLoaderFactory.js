@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 function dataLoaderFactory(dataSourceAccess) {
     function getProductData() {
-        return dataSourceAccess.loadProductData();
+        return dataSourceAccess.loadProductTypes();
     }
 
     function getTransactionData() {

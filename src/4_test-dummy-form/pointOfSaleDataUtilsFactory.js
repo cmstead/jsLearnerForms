@@ -39,4 +39,5 @@ function pointOfSaleDataUtilsFactory(transactionStatuses) {
             (transactionData) =>
                 getProductCountByStatus(transactionStatuses.Sale, transactionData)
     };
+
 }
