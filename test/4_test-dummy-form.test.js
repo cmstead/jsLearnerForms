@@ -1,9 +1,8 @@
 /* global
     salesReporterFactory,
     dataLoaderFactory,
-    pointOfSaleDataUtilsFactory,
-    reportDataBuilderFactory,
-    transactionRecordUtilsFactory
+    pointOfSaleDataUtilsFactoryBuilder,
+    reportDataBuilderFactory
 */
 
 'use strict';
@@ -67,11 +66,16 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
 
         const dataSourceAccess = getDataSourceAccessFake(testData);
         const dataLoader = dataLoaderFactory(dataSourceAccess);
-        const transactionRecordUtils = transactionRecordUtilsFactory();
-        const reportDataBuiler = reportDataBuilderFactory(transactionRecordUtils);
+        const reportDataBuiler = reportDataBuilderFactory();
+        const pointOfSaleDataUtilsFactory = pointOfSaleDataUtilsFactoryBuilder();
 
         pointOfSaleDataUtils = pointOfSaleDataUtilsFactory(transactionTypes);
-        salesReporter = salesReporterFactory(dataLoader, reportDataBuiler);
+
+        salesReporter = salesReporterFactory(
+            dataLoader,
+            pointOfSaleDataUtilsFactory,
+            reportDataBuiler
+        );
     });
 
     describe('Point of Sale Data Utilities', function () {
@@ -274,7 +278,8 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
             it('should return a sales report with one sale', function () {
                 testData.transactionData.push({
                     productId: 1,
-                    quantity: 1
+                    quantity: 1,
+                    transactionStatus: 1
                 });
 
                 const reportResult = salesReporter.getReport();
@@ -292,12 +297,14 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
             it('should return a sales report with two sales of different products', function () {
                 testData.transactionData.push({
                     productId: 1,
-                    quantity: 1
+                    quantity: 1,
+                    transactionStatus: 1
                 });
 
                 testData.transactionData.push({
                     productId: 2,
-                    quantity: 1
+                    quantity: 1,
+                    transactionStatus: 1
                 });
 
                 const reportResult = salesReporter.getReport();
@@ -320,12 +327,14 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
             it('should return a sales report with two sales of the same product', function () {
                 testData.transactionData.push({
                     productId: 1,
-                    quantity: 1
+                    quantity: 1,
+                    transactionStatus: 1
                 });
 
                 testData.transactionData.push({
                     productId: 1,
-                    quantity: 2
+                    quantity: 2,
+                    transactionStatus: 1
                 });
 
                 const reportResult = salesReporter.getReport();

@@ -1,32 +1,31 @@
 // eslint-disable-next-line
-function reportDataBuilderFactory(transactionRecordUtils) {
-    
-    function getProductById(productData, productId) {
-        return productData.find(product => product.id === productId);
+function reportDataBuilderFactory() {
+
+    function buildTransactionTotalsRecord(quantity, product) {
+        return {
+            productName: product.name,
+            quantity: quantity,
+            total: product.price * quantity
+        };
     }
 
-    function buildReportData(transactionData, productData) {
-        if (transactionData.length === 0) {
-            return [];
-        } else {
-            const totalTransactionData =
-                transactionData.reduce(
-                    function (totalData, nextTransaction) {
-                        const productId = nextTransaction.productId;
-                        const productRecord = getProductById(productData, productId);
-                        const transactionRecord = totalData[productId];
+    return function (pointOfSaleDataUtils) {
+        function buildReportData(transactionData, productData) {
+            const productCountsBySale = pointOfSaleDataUtils.getProductCountBySale(transactionData);
 
-                        totalData[productId] = transactionRecordUtils.buildUpdatedTransaction(nextTransaction, productRecord, transactionRecord)
-
-                        return totalData
-                    },
-                    {});
-
-            return Object.keys(totalTransactionData).map(key => totalTransactionData[key]);
+            return Object.keys(productData)
+                .map(key => productData[key])
+                .filter(product => typeof productCountsBySale[product.id] !== 'undefined')
+                .map(function(product) {
+                    const quantity = productCountsBySale[product.id];
+                    return buildTransactionTotalsRecord(quantity, product);
+                })
         }
-    }  
-    
-    return {
-        buildReportData: buildReportData
+
+        return {
+            buildReportData: buildReportData
+        };
     };
+
+
 }

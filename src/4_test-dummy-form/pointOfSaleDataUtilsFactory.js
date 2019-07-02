@@ -1,43 +1,46 @@
 // eslint-disable-next-line
-function pointOfSaleDataUtilsFactory(transactionStatuses) {
+function pointOfSaleDataUtilsFactoryBuilder() {
 
-    function initializeProductCount(finalCounts, transactionRecord) {
-        const productId = transactionRecord.productId;
+    return function (transactionStatuses) {
 
-        if (typeof finalCounts[productId] === 'undefined') {
-            finalCounts[productId] = 0;
+        function initializeProductCount(finalCounts, transactionRecord) {
+            const productId = transactionRecord.productId;
+    
+            if (typeof finalCounts[productId] === 'undefined') {
+                finalCounts[productId] = 0;
+            }
         }
-    }
-
-    function incrementProductCount(finalCounts, transactionRecord) {
-        finalCounts[transactionRecord.productId] += transactionRecord.quantity;
-    }
-
-    function getProductCountByStatus(transactionStatus, transactionData) {
-        function transactionStatusMatchesUserSelection(transaction) {
-            return transaction.transactionStatus === transactionStatus;
+    
+        function incrementProductCount(finalCounts, transactionRecord) {
+            finalCounts[transactionRecord.productId] += transactionRecord.quantity;
         }
-
-        function captureProductCounts(finalCounts, transactionRecord) {
-            initializeProductCount(finalCounts, transactionRecord);
-            incrementProductCount(finalCounts, transactionRecord);
-
-            return finalCounts;
+    
+        function getProductCountByStatus(transactionStatus, transactionData) {
+            function transactionStatusMatchesUserSelection(transaction) {
+                return transaction.transactionStatus === transactionStatus;
+            }
+    
+            function captureProductCounts(finalCounts, transactionRecord) {
+                initializeProductCount(finalCounts, transactionRecord);
+                incrementProductCount(finalCounts, transactionRecord);
+    
+                return finalCounts;
+            }
+    
+            return transactionData
+                .filter(transactionStatusMatchesUserSelection)
+                .reduce(captureProductCounts, {});
         }
-
-        return transactionData
-            .filter(transactionStatusMatchesUserSelection)
-            .reduce(captureProductCounts, {});
+    
+        return {
+            getProductCountByReturn:
+                (transactionData) =>
+                    getProductCountByStatus(transactionStatuses.Return, transactionData),
+    
+            getProductCountBySale:
+                (transactionData) =>
+                    getProductCountByStatus(transactionStatuses.Sale, transactionData)
+        };
     }
-
-    return {
-        getProductCountByReturn:
-            (transactionData) =>
-                getProductCountByStatus(transactionStatuses.Return, transactionData),
-
-        getProductCountBySale:
-            (transactionData) =>
-                getProductCountByStatus(transactionStatuses.Sale, transactionData)
-    };
 
 }
