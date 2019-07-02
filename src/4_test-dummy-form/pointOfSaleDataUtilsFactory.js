@@ -1,6 +1,5 @@
 // eslint-disable-next-line
-function pointOfSaleDataUtilsFactory(dataLoader) {
-    const transactionStatuses = dataLoader.getTransactionTypes();
+function pointOfSaleDataUtilsFactory(transactionStatuses) {
 
     function initializeProductCount(finalCounts, transactionRecord) {
         const productId = transactionRecord.productId;

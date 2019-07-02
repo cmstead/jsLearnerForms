@@ -8,17 +8,18 @@ function verifyOutput(actual, expected) {
     assert.equal(JSON.stringify(actual), JSON.stringify(expected));
 }
 
-function getDataSourceAccessFake() {
+function getDataSourceAccessFake(testData) {
     return {
+        loadProductData: function() {
+            return testData.productData;
+        },
+
         loadTransactionTypes: function () {
-            return {
-                Sale: 1,
-                Return: 2
-            };
+            return testData.transactionTypes;
         },
 
         loadTransactionData: function () {
-            return [];
+            return testData.transactionData;
         }
     };
 }
@@ -27,12 +28,32 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
 
     let pointOfSaleDataUtils;
     let salesReporter;
+    let testData;
 
     beforeEach(function () {
-        const dataSourceAccess = getDataSourceAccessFake();
+        const transactionTypes = {
+            Sale: 1,
+            Return: 2
+        };
+
+        const productData = [
+            {
+                id: 1,
+                name: 'Pirate Costume',
+                price: 39.99
+            }
+        ];
+
+        testData = {
+            productData: productData,
+            transactionTypes: transactionTypes,
+            transactionData: []
+        };
+
+        const dataSourceAccess = getDataSourceAccessFake(testData);
         const dataLoader = dataLoaderFactory(dataSourceAccess);
 
-        pointOfSaleDataUtils = pointOfSaleDataUtilsFactory(dataLoader);
+        pointOfSaleDataUtils = pointOfSaleDataUtilsFactory(transactionTypes);
         salesReporter = salesReporterFactory(dataLoader);
     });
 
@@ -234,12 +255,45 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
             });
 
             it('should return a sales report with one sale', function () {
+                testData.transactionData.push({
+                    productId: 1,
+                    quantity: 1
+                });
+
                 const reportResult = salesReporter.getReport();
                 const expectedResult = [
                     {
                         productName: 'Pirate Costume',
                         quantity: 1,
                         total: 39.99
+                    }
+                ];
+
+                verifyOutput(reportResult, expectedResult);
+            });
+
+            it('should return a sales report with two sales of different products', function () {
+                testData.transactionData.push({
+                    productId: 1,
+                    quantity: 1
+                });
+
+                testData.transactionData.push({
+                    productId: 2,
+                    quantity: 1
+                });
+
+                const reportResult = salesReporter.getReport();
+                const expectedResult = [
+                    {
+                        productName: 'Pirate Costume',
+                        quantity: 1,
+                        total: 39.99
+                    },
+                    {
+                        productName: 'Robot Costume',
+                        quantity: 1,
+                        total: 59.99
                     }
                 ];
 

@@ -1,15 +1,20 @@
 // eslint-disable-next-line
 function dataLoaderFactory(dataSourceAccess) {
-    function getSalesData () {
+    function getProductData() {
+        return dataSourceAccess.loadProductData();
+    }
+
+    function getTransactionData() {
         return dataSourceAccess.loadTransactionData()
     }
 
-    function getTransactionTypes () {
+    function getTransactionTypes() {
         return dataSourceAccess.loadTransactionTypes();
     }
 
     return {
-        getSalesData: getSalesData,
+        getProductData: getProductData,
+        getTransactionData: getTransactionData,
         getTransactionTypes: getTransactionTypes
     };
 }
