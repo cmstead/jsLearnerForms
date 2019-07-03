@@ -30,7 +30,7 @@ describe('Forms', function () {
                     formNumber: 2,
                     analyzerName: 'containsElse',
                     analyzerOptions: {
-                        name: 'greet'
+                        parentName: 'greet'
                     }
                 }
 
@@ -47,7 +47,7 @@ describe('Forms', function () {
                     formNumber: 2,
                     analyzerName: 'containsIf',
                     analyzerOptions: {
-                        name: 'greet'
+                        parentName: 'greet'
                     }
                 }
 
@@ -79,7 +79,7 @@ describe('Forms', function () {
                     formNumber: 2,
                     analyzerName: 'containsTypeofComparison',
                     analyzerOptions: {
-                        name: 'greet'
+                        parentName: 'greet'
                     }
                 };
 
@@ -149,7 +149,74 @@ describe('Forms', function () {
 
             // Keep the tests passing!
 
+            it('has an add function', function () {
+                const analyzerOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsFunction',
+                    analyzerOptions: {
+                        parentName: null,
+                        functionName: 'add'
+                    }
+                }
 
+                return analyzer
+                    .analyze(analyzerOptions)
+                    .then(function (response) {
+                        const result = response.result;
+                        assert.isFalse(result);
+                    });
+            });
+
+            it('is refactored to replace += with a call to the add function', function () {
+                const analyzerMethodCallOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'sum',
+                        methodName: 'add'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerMethodCallOptions)
+                    .then(function (response) {
+                        assert.isTrue(response.result);
+                    });
+            });
+
+            it('is refactored to replace for loop with nums.forEach', function () {
+                const analyzerMethodCallOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'sum',
+                        objectName: 'nums',
+                        methodName: 'forEach'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerMethodCallOptions)
+                    .then(function (response) {
+                        assert.isTrue(response.result);
+                    });
+            });
+
+            it('is refactored to replace the function expression with an arrow function', function () {
+                const analyzerMethodCallOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsArrowFunction',
+                    analyzerOptions: {
+                        parentName: 'sum'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerMethodCallOptions)
+                    .then(function (response) {
+                        assert.isTrue(response.result);
+                    });
+            });
         });
 
         it('should take the sum of one number', function () {

@@ -1,9 +1,9 @@
 function containsElse({
-    name = null
+    parentName = null
 }) {
 
     function nodeNameMatchesExpected(node) {
-        return name === null || node.id.name === name;
+        return parentName === null || node.id.name === parentName;
     }
 
     function isMatchingCall(node) {

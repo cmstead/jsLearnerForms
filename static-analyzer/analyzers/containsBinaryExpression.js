@@ -1,5 +1,6 @@
 function containsTernary({
-    parentName = null
+    parentName = null,
+    operator = null
 }) {
 
     function nodeNameMatchesExpected(node) {
@@ -12,17 +13,19 @@ function containsTernary({
             && nodeNameMatchesExpected(node);
     }
 
-    function isConditionalExpression(node) {
-        return node.type === 'ConditionalExpression';
+    function isBinaryExpression(node) {
+        return node.type === 'BinaryExpression'
+            && node.operator === operator;
     }
 
     let parentNode = null;
 
-    function isMatchingVariableNode(node) {
+    function isMatchingBinaryNode(node) {
 
         if (isMatchingFunction(node)) {
             parentNode = node;
-        } else if(parentNode !== null && isConditionalExpression(node)) {
+        } else if(parentNode !== null && isBinaryExpression(node)) {
+            console.log(node);
             return true;
         }
     }
@@ -34,7 +37,7 @@ function containsTernary({
     }
 
     return {
-        predicate: isMatchingVariableNode,
+        predicate: isMatchingBinaryNode,
         onExit: clearParentNode
     };
 }
