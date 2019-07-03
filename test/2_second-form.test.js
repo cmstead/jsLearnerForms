@@ -1,3 +1,5 @@
+/* global analyzer, chai, jsforms */
+
 'use strict';
 
 const assert = chai.assert;
@@ -12,13 +14,83 @@ describe('Forms', function () {
      */
 
     describe('greeter', function () {
-        /*
-         * Refactoring steps:
-         * 1 - The else is actually not needed. Refactor it out
-         * 2 - Eliminate the if block altogether by using a ternary expression
-         *      which looks like this: boolean expression ? true value : false value
-         * 3 - Test for string type with typeof value === 'string'
-         */
+
+
+        describe('Refactoring steps', function () {
+            /*
+             * Refactoring steps:
+             * 1 - The else is actually not needed. Refactor it out
+             * 2 - Eliminate the if block altogether by using a ternary expression
+             *      which looks like this: boolean expression ? true value : false value
+             * 3 - Test for string type with typeof value === 'string'
+             */
+
+            it('is refactored to remove the unnecessary else', function () {
+                const analyzerOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsElse',
+                    analyzerOptions: {
+                        name: 'greet'
+                    }
+                }
+
+                return analyzer
+                    .analyze(analyzerOptions)
+                    .then(function (response) {
+                        const result = response.result;
+                        assert.isFalse(result);
+                    });
+            });
+
+            it('is refactored to remove if and replace with a ternary expression', function () {
+                const analyzerIfOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsIf',
+                    analyzerOptions: {
+                        name: 'greet'
+                    }
+                }
+
+                const analyzerTernaryOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsTernary',
+                    analyzerOptions: {
+                        name: 'greet'
+                    }
+                }
+
+                return analyzer
+                    .analyze(analyzerIfOptions)
+                    .then(function (response) {
+                        if (response.result === false) {
+                            return analyzer.analyze(analyzerTernaryOptions);
+                        } else {
+                            return Promise.resolve({ result: false });
+                        }
+                    })
+                    .then(function (response) {
+                        const result = response.result;
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('is refactored to use typeof comparison to "string"', function () {
+                const analyzerTypeofOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsTypeofComparison',
+                    analyzerOptions: {
+                        name: 'greet'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerTypeofOptions)
+                    .then(function (response) {
+                        const result = response.result;
+                        assert.isTrue(result);
+                    });
+            });
+        });
 
         // Keep the tests passing!
 
@@ -62,15 +134,23 @@ describe('Forms', function () {
 
     describe('sum', function () {
 
-        /*
-         * Refactoring steps:
-         * 1 - Create an add function and replace the plus (+) operator with a call to add
-         * 2 - Replace for loop with array.forEach(function(value) { / * do stuff with value * / });
-         * 3 - Replace function expression with a lambda expression like the following:
-         *     value => result = doStuff(value)
-         */
 
-        // Keep the tests passing!
+        describe('Refactoring steps', function () {
+
+            /*
+             * Refactoring steps:
+             * 1 - Create an add function
+             * 2 - Replace the plus (+=) operator with a call to add
+             *     result = add(value, value)
+             * 3 - Replace for loop with array.forEach(function(value) { / * do stuff with value * / });
+             * 4 - Replace function expression with a lambda expression like the following:
+             *     value => result = add(value, value)
+             */
+
+            // Keep the tests passing!
+
+
+        });
 
         it('should take the sum of one number', function () {
             assert.equal(jsforms.sum([1]), 1);

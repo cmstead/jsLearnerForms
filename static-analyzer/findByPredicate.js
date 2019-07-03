@@ -14,7 +14,7 @@ function findByPredicate(ast, { predicate, onExit = defaultOnExit }) {
             leave: onExit
         });
 
-    return variableNodeFound;
+    return Boolean(variableNodeFound);
 }
 
 module.exports = findByPredicate;

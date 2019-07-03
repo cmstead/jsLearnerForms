@@ -2,11 +2,9 @@ const jsforms = (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting !== undefined) {
-            return greeting + '!';
-        } else {
-            return 'Hello!';
-        }
+        return typeof greeting === 'string'
+            ? greeting + '!'
+            : 'Hello!';
     }
 
     function square(x) {
