@@ -8,6 +8,15 @@ console.log('Installing required libraries...\n');
 
 childProcess.execSync('npm install');
 
+console.log('Setting up a working environment...');
+
+try{
+    childProcess.execSync('git stash');
+    childProcess.execSync('git checkout workspace');
+} catch (e) {
+    childProcess.execSync('git checkout -b workspace');
+}
+
 console.log('\n');
 console.log('Setup is complete.\n\n');
 
