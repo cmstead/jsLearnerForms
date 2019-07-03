@@ -2,7 +2,7 @@ let inquirer, childProcess, clear;
 
 function logSetupError(setupErrorMessage) {
     console.log(setupErrorMessage + '\n');
-    console.log('Please run `npm run setup\' to ensure your project is properly set up.');
+    console.log('Please run `npm run setup\' to ensure your project is properly set up.\n\n');
 }
 
 try {
@@ -11,12 +11,14 @@ try {
     clear = require('clear');
 } catch (e) {
     logSetupError('It looks like the libraries we need aren\'t installed yet.');
+    process.exit(1);
 }
 
 try {
     childProcess.execSync('git checkout workspace');
 } catch (e) {
     logSetupError('It looks like your workspace is not set up yet.');
+    process.exit(1);
 }
 
 const pathRoot = __dirname + '/runner-utils/'
