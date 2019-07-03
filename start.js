@@ -1,6 +1,23 @@
-const inquirer = require('inquirer');
-const childProcess = require('child_process');
-const clear = require('clear');
+let inquirer, childProcess, clear;
+
+function logSetupError(setupErrorMessage) {
+    console.log(setupErrorMessage + '\n');
+    console.log('Please run `npm run setup\' to ensure your project is properly set up.');
+}
+
+try {
+    inquirer = require('inquirer');
+    childProcess = require('child_process');
+    clear = require('clear');
+} catch (e) {
+    logSetupError('It looks like the libraries we need aren\'t installed yet.');
+}
+
+try {
+    childProcess.execSync('git checkout workspace');
+} catch (e) {
+    logSetupError('It looks like your workspace is not set up yet.');
+}
 
 const pathRoot = __dirname + '/runner-utils/'
 
@@ -17,7 +34,6 @@ const menuPrompt = {
     choices: Object.keys(options)
 };
 
-
 function displayMainMenu() {
     clear();
     console.log('--- JS Learner Forms Main Menu ---\n\n');
@@ -31,7 +47,7 @@ function displayMainMenu() {
             if (typeof selectedAction === 'string') {
                 const process = childProcess.fork(selectedAction);
 
-                process.on('close', function() {
+                process.on('close', function () {
                     displayMainMenu();
                 });
             } else {
