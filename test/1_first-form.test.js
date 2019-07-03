@@ -1,3 +1,4 @@
+/* global analyzer, chai, jsforms */
 'use strict';
 
 const assert = chai.assert;
