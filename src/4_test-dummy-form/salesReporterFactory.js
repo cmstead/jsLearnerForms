@@ -5,7 +5,7 @@ function salesReporterFactory(
     reportDataBuilderFactory
 ) {
 
-    function getReport() {
+    function getReport(transactionType) {
         const productData = dataLoader.getProductData();
         const transactionData = dataLoader.getTransactionData();
         const transactionTypes = dataLoader.getTransactionTypes();
@@ -13,7 +13,7 @@ function salesReporterFactory(
         const pointOfSaleDataUtils = pointOfSaleDataUtilsFactory(transactionTypes);
         const reportDataBuilder = reportDataBuilderFactory(pointOfSaleDataUtils);
 
-        return reportDataBuilder.buildReportData(transactionData, productData);
+        return reportDataBuilder.buildReportData(transactionType, transactionData, productData);
     }
 
     return {

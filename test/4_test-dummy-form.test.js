@@ -268,21 +268,21 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
 
     describe('sales report', function () {
         describe('get sales report', function () {
-            it('should return a sales report with no sales', function () {
-                const reportResult = salesReporter.getReport();
+            it('returns a sales report with no sales', function () {
+                const reportResult = salesReporter.getReport('Sale');
                 const expectedResult = [];
 
                 verifyOutput(reportResult, expectedResult);
             });
 
-            it('should return a sales report with one sale', function () {
+            it('returns a sales report with one sale', function () {
                 testData.transactionData.push({
                     productId: 1,
                     quantity: 1,
                     transactionStatus: 1
                 });
 
-                const reportResult = salesReporter.getReport();
+                const reportResult = salesReporter.getReport('Sale');
                 const expectedResult = [
                     {
                         productName: 'Pirate Costume',
@@ -294,7 +294,7 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
                 verifyOutput(reportResult, expectedResult);
             });
 
-            it('should return a sales report with two sales of different products', function () {
+            it('returns a sales report with two sales of different products', function () {
                 testData.transactionData.push({
                     productId: 1,
                     quantity: 1,
@@ -307,7 +307,7 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
                     transactionStatus: 1
                 });
 
-                const reportResult = salesReporter.getReport();
+                const reportResult = salesReporter.getReport('Sale');
                 const expectedResult = [
                     {
                         productName: 'Pirate Costume',
@@ -324,7 +324,7 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
                 verifyOutput(reportResult, expectedResult);
             });
 
-            it('should return a sales report with two sales of the same product', function () {
+            it('returns a sales report with two sales of the same product', function () {
                 testData.transactionData.push({
                     productId: 1,
                     quantity: 1,
@@ -337,7 +337,7 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
                     transactionStatus: 1
                 });
 
-                const reportResult = salesReporter.getReport();
+                const reportResult = salesReporter.getReport('Sale');
                 const expectedResult = [
                     {
                         productName: 'Pirate Costume',
@@ -348,6 +348,70 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
 
                 verifyOutput(reportResult, expectedResult);
             });
+
+            it('returns a sales report with no "returns" data', function () {
+                testData.transactionData.push({
+                    productId: 1,
+                    quantity: 1,
+                    transactionStatus: 1
+                });
+
+                testData.transactionData.push({
+                    productId: 1,
+                    quantity: 1,
+                    transactionStatus: 2
+                });
+
+                testData.transactionData.push({
+                    productId: 1,
+                    quantity: 2,
+                    transactionStatus: 1
+                });
+
+                const reportResult = salesReporter.getReport('Sale');
+                const expectedResult = [
+                    {
+                        productName: 'Pirate Costume',
+                        quantity: 3,
+                        total: 39.99 * 3
+                    }
+                ];
+
+                verifyOutput(reportResult, expectedResult);
+            });
+        });
+    });
+
+    describe('returns report', function () {
+        it('returns a "returns" report with no "sales" data', function () {
+            testData.transactionData.push({
+                productId: 1,
+                quantity: 1,
+                transactionStatus: 2
+            });
+
+            testData.transactionData.push({
+                productId: 1,
+                quantity: 1,
+                transactionStatus: 1
+            });
+
+            testData.transactionData.push({
+                productId: 1,
+                quantity: 2,
+                transactionStatus: 2
+            });
+
+            const reportResult = salesReporter.getReport('Return');
+            const expectedResult = [
+                {
+                    productName: 'Pirate Costume',
+                    quantity: 3,
+                    total: -39.99 * 3
+                }
+            ];
+
+            verifyOutput(reportResult, expectedResult);
         });
     });
 
