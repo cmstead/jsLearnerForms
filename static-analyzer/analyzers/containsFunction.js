@@ -3,36 +3,28 @@ function containsFunction({
     functionName = null
 }) {
 
-    function isMatchingName(node) {
-        return functionName === null
-            || (
-                node.id
-                && node.id.name === functionName
-            )
+    function hasMatchingName(node, name) {
+        return name === null
+            || ( node.id && node.id.name === name);
     }
 
-    function isMatchingFunction(node) {
+    function isMatchingFunction(node, name) {
         return node.type === 'FunctionDeclaration'
-            && isMatchingName(node);
-    }
-
-    function isMatchingParentFunction(node) {
-        return parentName === null
-            || (
-                node.id
-                && node.id.name
-            );
+            && hasMatchingName(node, name);
     }
 
     let parentNode = null;
 
     function isMatchingVariableNode(node) {
-
-        if (isMatchingParentFunction(node)) {
+        if (parentName === null && parentNode === null) {
             parentNode = node;
-        } else if (parentNode !== null && isMatchingFunction(node)) {
+        } else if (parentName !== null && isMatchingFunction(node, parentName)) {
+            parentNode = node;
+        } else if (parentNode !== null && isMatchingFunction(node, functionName)) {
             return true;
         }
+
+        return false
     }
 
     function clearParentNode(node) {

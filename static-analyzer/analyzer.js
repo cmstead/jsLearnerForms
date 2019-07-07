@@ -8,9 +8,9 @@ function buildFinder(analyzer) {
 }
 
 const analyzerApi = Object.keys(analyzers)
-.reduce(function(apiObject, key){
-    apiObject[key] = buildFinder(analyzers[key]);
-    return apiObject;
-}, {});
+    .reduce(function (apiObject, key) {
+        apiObject[key] = buildFinder(analyzers[key]);
+        return apiObject;
+    }, {});
 
 module.exports = analyzerApi;

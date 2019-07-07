@@ -163,7 +163,7 @@ describe('Forms', function () {
                     .analyze(analyzerOptions)
                     .then(function (response) {
                         const result = response.result;
-                        assert.isFalse(result);
+                        assert.isTrue(result);
                     });
             });
 
@@ -234,18 +234,69 @@ describe('Forms', function () {
 
     describe('squareAll', function () {
 
-        /* 
-         * Refactoring steps:
-         * 1 - Use array.push(value) to eliminate explicit setting of values to result array
-         * 2 - Replace for loop with forEach
-         * 3 - Replace forEach/push behavior with 
-         *     array.map((value) => square(_something_))
-         *     assign output to result variable
-         * 4 - Remove wrapping function and pass square function directly
-         * 5 - Return result from map operation without assigning to a variable
-         */
+        describe('Refactoring steps', function () {
+            /* 
+             * Refactoring steps:
+             * 1 - Replace for loop behavior with 
+             *     array.map((value) => square(_something_))
+             *     assign output to result variable
+             * 2 - Remove wrapping function and pass square function directly
+             * 3 - Return result from map operation without assigning to a variable
+             */
 
-        // Keep the tests passing!
+            // Keep the tests passing!
+
+            it('is refactored to replace for loop with nums.map', function () {
+                const analyzerMethodCallOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'squareAll',
+                        objectName: 'nums',
+                        methodName: 'map'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerMethodCallOptions)
+                    .then(function (response) {
+                        assert.isTrue(response.result);
+                    });
+            });
+
+            it('is refactored to remove function wrapping `square`', function () {
+                const analyzerMethodCallOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'squareAll',
+                        methodName: 'square'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerMethodCallOptions)
+                    .then(function (response) {
+                        assert.isFalse(response.result);
+                    });
+            });
+
+            it('is refactored to return result of map operation without assigning output to result', function () {
+                const analyzerAssignmentOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsAssignment',
+                    analyzerOptions: {
+                        parentName: 'squareAll'
+                    }
+                }
+
+                return analyzer
+                    .analyze(analyzerAssignmentOptions)
+                    .then(function (response) {
+                        assert.isFalse(response.result);
+                    });
+            });
+        });
 
         it('should square all numbers in a single-value array', function () {
             assert.equal(jsforms.squareAll([2]).toString(), '4');
@@ -273,26 +324,44 @@ describe('Forms', function () {
 
     describe('buildVector', function () {
 
-        /*
-         * Refactoring steps:
-         * 1 - Create Vector object with attached prototype:
-         *     (This top function is called a constructor)
-         *     function Vector (points) {
-         *         this.points = _something_;
-         *         points.forEach((value, index) => _something_);
-         *     }
-         *
-         *     Vector.prototype = {
-         *         valueOf: function () { return _something_; },
-         *         toString: function () { return _something_ }
-         *     };
-         *
-         * 2 - a. Update squareAll to use array.valueOf()
-         *     b. Update buildVector to return a new Vector()
-         *        (This is called instantiating or constructing)
-         */
+        describe('Refactoring steps', function () {
+            /*
+             * Refactoring steps:
+             * 1 - Create Vector object with attached prototype:
+             *     (This top function is called a constructor)
+             *     function Vector (points) {
+             *         this.points = _something_;
+             *         points.forEach((value, index) => _something_);
+             *     }
+             *
+             *     Vector.prototype = {
+             *         valueOf: function () { return _something_; },
+             *         toString: function () { return _something_ }
+             *     };
+             *
+             * 2 - a. Update squareAll to use array.valueOf()
+             *     b. Update buildVector to return a new Vector()
+             *        (This is called instantiating or constructing)
+             */
 
-        // Keep the tests passing!
+            // Keep the tests passing!
+
+            it('contains a constructor for an object called Vector', function () {
+                const analyzerFunctionOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsFunction',
+                    analyzerOptions: {
+                        parentName: null,
+                        functionName: 'Vector'
+                    }
+                };
+
+                return analyzer.analyze(analyzerFunctionOptions)
+                    .then(function(response){
+                        assert.isTrue(response.result);
+                    });
+            });
+        });
 
         it('should return a vector matching original values', function () {
             let initialArray = [1, 2];

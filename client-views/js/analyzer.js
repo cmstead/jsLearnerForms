@@ -1,7 +1,5 @@
 const analyzer = (function () {
     function analyze({ formNumber, analyzerName, analyzerOptions }) {
-        console.log(analyzerOptions);
-
         return fetch(`/analyze/${formNumber}/${analyzerName}`, {
             method: 'POST',
             headers: {

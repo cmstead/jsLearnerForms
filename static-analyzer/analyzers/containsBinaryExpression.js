@@ -25,7 +25,6 @@ function containsTernary({
         if (isMatchingFunction(node)) {
             parentNode = node;
         } else if(parentNode !== null && isBinaryExpression(node)) {
-            console.log(node);
             return true;
         }
     }

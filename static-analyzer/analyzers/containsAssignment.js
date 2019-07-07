@@ -1,5 +1,6 @@
 function containsAssignment({
-    name,
+    parentName = null,
+    name = null,
     value = null,
     expression = null
 }) {
@@ -22,25 +23,48 @@ function containsAssignment({
 
     function isMatchingAssignment(node) {
         return node.type === 'AssignmentExpression' &&
-            node.left.name === name &&
+            (
+                name === null
+                || node.left.name === name
+            ) &&
             (
                 checkValue(node) ||
                 checkExpression(node)
             );
     }
 
+    function nodeNameMatchesExpected(node) {
+        return parentName === null 
+            || (node.id && node.id.name === parentName);
+    }
+
+    function isMatchingFunction(node) {
+        return node.type === 'FunctionDeclaration'
+            && nodeNameMatchesExpected(node);
+    }
+
+    let parentNode = null;
+
     function isMatchingVariableNode(node) {
 
-        if (isMatchingAssignment(node)) {
+        if (isMatchingFunction(node)) {
+            parentNode = node;
+        } else if (parentNode !== null && isMatchingAssignment(node)) {
             return true
         }
 
         return false;
     }
 
+    function clearParentNode(node) {
+        if(node === parentNode) {
+            parentNode = null;
+        }
+    }
+
     return {
         predicate: isMatchingVariableNode,
-        onExit: () => null
+        onExit: clearParentNode
     };
 }
 

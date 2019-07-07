@@ -5,8 +5,9 @@ function staticAnalyzer(parser) {
     function buildAction(action) {
         return function (source, ...args) {
             const ast = parser.parse(source);
+            const result = action.apply(null, [ast].concat(args));
 
-            return action.apply(null, [ast].concat(args));
+            return result;
         };
     }
 
