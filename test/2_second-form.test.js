@@ -361,6 +361,23 @@ describe('Forms', function () {
                         assert.isTrue(response.result);
                     });
             });
+
+            it('overrides the valueOf function on the Vector prototype', function () {
+                const analyzerPrototypeOptions = {
+                    formNumber: 2,
+                    analyzerName: 'prototypeContainsMethod',
+                    analyzerOptions: {
+                        objectName: 'Vector',
+                        methodName: 'valueOf'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerPrototypeOptions)
+                    .then(function(response) {
+                        assert.isTrue(response.result);
+                    })
+            });
         });
 
         it('should return a vector matching original values', function () {
