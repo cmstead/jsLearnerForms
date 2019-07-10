@@ -26,6 +26,7 @@ const pathRoot = __dirname + '/runner-utils/'
 const options = {
     'Run a form': `${pathRoot}run-form.js`,
     'Reset a form': `${pathRoot}reset-form.js`,
+    'Update JS Learner Forms': `${pathRoot}update-forms.js`,
     'Quit': null
 };
 
