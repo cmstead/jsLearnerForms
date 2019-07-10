@@ -4,6 +4,7 @@ const fs = require('fs');
 
 const resetRoot = './.form-src/';
 const destinationRoot = './src/';
+const testRoot = './test/'
 
 const formResetPaths = {
     1: {
@@ -20,11 +21,15 @@ const formResetPaths = {
     },
     4: {
         'source': resetRoot + '4_test-dummy-form.test.js',
-        'destination': './test/4_test-dummy-form.test.js'
+        'destination': testRoot + '4_test-dummy-form.test.js'
+    },
+    5: {
+        'source': resetRoot + '5_async-form.js',
+        'destination': destinationRoot + '5_async-form.js'
     },
     6: {
         'source': resetRoot + '6_async-test-dummy-form.test.js',
-        'destination': './test/6_async-test-dummy-form.test.js'
+        'destination': testRoot + '6_async-test-dummy-form.test.js'
     }
 }
 
