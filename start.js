@@ -23,11 +23,25 @@ try {
 
 const pathRoot = __dirname + '/runner-utils/'
 
-function isOutOfDate(){
+function isOutOfDate() {
+    const fileStatus = childProcess.execSync('git status').toString();
+    const changesExist = fileStatus.includes('Changes');
+
+    if (changesExist) {
+        childProcess.execSync('git stash');
+    }
+
     childProcess.execSync('git checkout master');
-    const status = childProcess.execSync('git status');
-    const outOfDateStatus = status.includes('up to date');
+    const status = childProcess.execSync('git status').toString();
+
+    const outOfDateStatus = status.includes('up to date')
+        || status.includes('is ahead of');
+
     childProcess.execSync('git checkout workspace');
+
+    if (changesExist) {
+        childProcess.execSync('git stash pop');
+    }
 
     return !outOfDateStatus;
 }
@@ -37,7 +51,7 @@ const options = {
     'Reset a form': `${pathRoot}reset-form.js`
 };
 
-if(isOutOfDate()) {
+if (isOutOfDate()) {
     options['Update JS Learner Forms'] = `${pathRoot}update-forms.js`;
 }
 
