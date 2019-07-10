@@ -23,12 +23,25 @@ try {
 
 const pathRoot = __dirname + '/runner-utils/'
 
+function isOutOfDate(){
+    childProcess.execSync('git checkout master');
+    const status = childProcess.execSync('git status');
+    const outOfDateStatus = status.includes('up to date');
+    childProcess.execSync('git checkout workspace');
+
+    return outOfDateStatus;
+}
+
 const options = {
     'Run a form': `${pathRoot}run-form.js`,
-    'Reset a form': `${pathRoot}reset-form.js`,
-    'Update JS Learner Forms': `${pathRoot}update-forms.js`,
-    'Quit': null
+    'Reset a form': `${pathRoot}reset-form.js`
 };
+
+if(isOutOfDate) {
+    options['Update JS Learner Forms'] = `${pathRoot}update-forms.js`;
+}
+
+options['Quit'] = null;
 
 const menuPrompt = {
     name: 'selectedKey',
