@@ -3,12 +3,24 @@ function prototypeContainsMethod({
     methodName = null
 }) {
 
+    function isObjectPrototype(node) {
+        return node.type === 'MemberExpression'
+            && node.object.name === objectName
+            && node.property.name === 'prototype';
+    }
+
     function isPrototypeObjectAssignment(node) {
         return node.type === 'AssignmentExpression'
-            && node.left.type === 'MemberExpression'
-            && node.left.object.name === objectName
-            && node.left.property.name === 'prototype'
+            && isObjectPrototype(node.left)
             && node.right.type === 'ObjectExpression';
+    }
+
+    function isPrototypePropertyAssignment(node) {
+        return node.type === 'AssignmentExpression'
+            && node.left.type === 'MemberExpression'
+            && isObjectPrototype(node.left.object)
+            && node.left.property.name === methodName
+            && node.right.type === 'FunctionExpression';
     }
 
     function doesObjectContainMethod(node) {
@@ -26,8 +38,11 @@ function prototypeContainsMethod({
     }
 
     function isMethodOnPrototype(node) {
-        return isPrototypeObjectAssignment(node)
-            && doesObjectContainMethod(node.right);
+        return (
+            isPrototypeObjectAssignment(node)
+            && doesObjectContainMethod(node.right)
+        )
+            || isPrototypePropertyAssignment(node);
     }
 
     return {
