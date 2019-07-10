@@ -16,9 +16,11 @@ function updateForms() {
     childProcess.execSync('git reset --hard HEAD');
     childProcess.execSync('git checkout master');
     childProcess.execSync('git pull origin master');
-    childProcess.execSync('npm i');
     removeWorkspace();
-    childProcess.execSync('git checkout -b workspace');
+
+    childProcess.execSync('npm run setup');
+    // childProcess.execSync('npm i');
+    // childProcess.execSync('git checkout -b workspace');
 
     console.log('Form updates complete.');
 }
