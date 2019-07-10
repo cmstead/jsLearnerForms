@@ -29,7 +29,7 @@ function isOutOfDate(){
     const outOfDateStatus = status.includes('up to date');
     childProcess.execSync('git checkout workspace');
 
-    return outOfDateStatus;
+    return !outOfDateStatus;
 }
 
 const options = {
@@ -37,7 +37,7 @@ const options = {
     'Reset a form': `${pathRoot}reset-form.js`
 };
 
-if(isOutOfDate) {
+if(isOutOfDate()) {
     options['Update JS Learner Forms'] = `${pathRoot}update-forms.js`;
 }
 
