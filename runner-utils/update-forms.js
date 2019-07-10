@@ -2,13 +2,21 @@ const childProcess = require('child_process');
 const clear = require('clear');
 const inquirer = require('inquirer');
 
+function removeWorkspace() {
+    try{
+        childProcess.execSync('git branch -D workspace');
+    } catch (e) {
+        // if workspace is gone, we're fine
+    }
+}
+
 function updateForms() {
     console.log('Updating forms ...\n');
 
     childProcess.execSync('git checkout master');
-    childProcess.execSync('git branch -D workspace');
     childProcess.execSync('git pull origin master');
     childProcess.execSync('npm i');
+    removeWorkspace();
     childProcess.execSync('git checkout -b workspace');
 
     console.log('Form updates complete.');
@@ -31,6 +39,5 @@ inquirer
             updateForms();
         } else {
             console.log('Aborted forms update.');
-            setTimeout(() => null, 1000);
         }
     });
