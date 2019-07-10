@@ -23,16 +23,23 @@ console.log('Installing required libraries...\n');
 
 childProcess.execSync('npm install');
 
+let fileStashSuccessful = false;
+
 try{
     console.log('Setting up a working environment...');
 
     childProcess.execSync('git stash');
+    fileStashSuccessful = true;
     childProcess.execSync('git checkout workspace');
 } catch (e) {
 
     console.log('Workspace branch does not exist yet, creating it now...');
 
     childProcess.execSync('git checkout -b workspace');
+}
+
+if(fileStashSuccessful) {
+    childProcess.execSync('git stash pop');
 }
 
 console.log('\nSetup is complete.\n\n');
