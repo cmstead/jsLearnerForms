@@ -13,6 +13,7 @@ function removeWorkspace() {
 function updateForms() {
     console.log('Updating forms ...\n');
 
+    childProcess.execSync('git reset --hard HEAD');
     childProcess.execSync('git checkout master');
     childProcess.execSync('git pull origin master');
     childProcess.execSync('npm i');
