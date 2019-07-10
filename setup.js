@@ -1,8 +1,23 @@
 const childProcess = require('child_process');
 const inquirer = require('inquirer');
 const clear = require('clear');
+const fs = require('fs');
 
 clear();
+
+console.log('Removing miscellaneous files...');
+
+const miscellaneousFiles = [
+    'package-lock.json'
+]
+
+try{
+    miscellaneousFiles.forEach(function(filePath) {
+        fs.unlinkSync(`${__dirname}/${filePath}`);
+    });
+} catch (e) {
+    // doing nothing -- if files are gone, the work is done.
+}
 
 console.log('Installing required libraries...\n');
 
