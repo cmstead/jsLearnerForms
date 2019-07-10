@@ -54,8 +54,8 @@ To use JS Learner Forms, you will need to do the following:
 ### Solving Each Form ###
 
 1. First Form -- Write code to pass each test
-2. Second Form -- Refactor the code, keep tests green, and adhere to the walkthrough
-3. Third Form -- Refactor second form code, keep tests green, and adhere to the walkthrough
+2. Second Form -- Refactor the code, keep tests green
+3. Third Form -- Refactor second form code, keep tests green
 4. Test Dummy Form (Fourth Form) -- Write tests matching each description and get all of the code under test (modify ONLY the test code)
 6. Async Test Dummy Form (Sixth Form) -- Write tests matching each description and get all of the code under test (modify ONLY the test code)
 
