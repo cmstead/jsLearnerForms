@@ -45,9 +45,6 @@ const jsforms = (function () {
     function buildVector(points) {
         let vector = points.slice(0);
 
-        vector.valueOf = function () { return points.slice(0); };
-        vector.toString = function () { return '<' + points.join(',') + '>'; };
-
         return vector;
     }
 
