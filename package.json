@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./start.js",
     "setup": "node ./setup.js",
-    "update": "node ./runner-utils/update-forms.js"
+    "update-forms": "node ./runner-utils/update-forms.js"
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,9 @@
   "devDependencies": {
     "approvals": "^2.1.2",
     "approvals-config-factory": "^1.0.0",
-    "chai": "^4.0.2",
+    "chai": "^4.2.0",
     "eslint": "^3.19.0",
-    "mocha": "^3.4.2",
+    "mocha": "^3.5.3",
     "mockery": "^2.1.0",
     "sinon": "^2.3.5"
   },
@@ -34,6 +34,6 @@
     "express": "^4.17.1",
     "inquirer": "^6.4.1",
     "livereload": "^0.8.0",
-    "open": "^6.3.0"
+    "open": "^6.4.0"
   }
 }
