@@ -1,29 +1,31 @@
 function todoToolsFactory(dataStore) {
 
-    function getTaskNamesByCompleteStatus(todoList, status) {
+    function getTasksByCompleteStatus(todoList, status) {
         return todoList
-            .filter(taskItem => taskItem.complete === status)
-            .map(taskItem => taskItem.name);
+            .filter(task => task.complete === status);
+    }
+
+    function buildTaskObject(todoList) {
+        return {
+            complete: getTasksByCompleteStatus(todoList, true),
+            incomplete: getTasksByCompleteStatus(todoList, false)
+        };
     }
 
     function getTodoListData() {
         return dataStore
             .getTodoList()
             .then(function (todoList) {
-                let responseData = {
-                    complete: todoList
-                        .filter(taskitem => taskitem.complete)
-                        .map(taskItem => taskItem.name),
-                    incomplete: todoList
-                        .filter(taskItem => !taskItem.complete)
-                        .map(taskItem => taskItem.name)
-                };
-
-                return Promise.resolve(responseData);
+                return buildTaskObject(todoList);
             });
     }
 
+    function saveTask(task) {
+        return dataStore.saveTask(task);
+    }
+
     return {
-        getTodoListData
+        getTodoListData,
+        saveTask
     };
 }
