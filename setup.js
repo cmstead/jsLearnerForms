@@ -1,9 +1,5 @@
 const childProcess = require('child_process');
-const inquirer = require('inquirer');
-const clear = require('clear');
 const fs = require('fs');
-
-clear();
 
 console.log('Removing miscellaneous files...');
 
@@ -43,6 +39,11 @@ if(fileStashSuccessful) {
 }
 
 console.log('\nSetup is complete.\n\n');
+
+const inquirer = require('inquirer');
+const clear = require('clear');
+
+clear();
 
 inquirer.prompt([
     {
