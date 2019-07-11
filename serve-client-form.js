@@ -36,7 +36,8 @@ app.get('/form/:formId', function (request, response) {
 const formAnalyzerFileNames = {
     1: '1_first-form.js',
     2: '2_second-form.js',
-    3: '3_third-form.js'
+    3: '3_third-form.js',
+    5: '5_async-form.js'
 };
 
 app.post('/analyze/:formNumber/:analyzer', function (request, response) {

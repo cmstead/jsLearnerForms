@@ -1,9 +1,10 @@
 /*
 global
 
+analyzer,
 chai,
-todoToolsFactory,
-fakeDataStoreFactory
+fakeDataStoreFactory,
+todoToolsFactory
 */
 
 const assert = chai.assert;
@@ -42,14 +43,14 @@ describe('Forms - Async Form', function () {
 
         it('loads a todo list with only an incomplete item', function () {
             const incompleteTask = {
-                task: 'Capture incomplete items',
+                name: 'Capture incomplete items',
                 complete: false
             };
 
             testData.push(incompleteTask)
             const expectedData = {
                 complete: [],
-                incomplete: [incompleteTask.task]
+                incomplete: [incompleteTask.name]
             };
 
             return todoTools
@@ -61,13 +62,13 @@ describe('Forms - Async Form', function () {
 
         it('loads a todo list with only a complete item', function () {
             const completeTask = {
-                task: 'Capture complete items',
+                name: 'Capture complete items',
                 complete: true
             };
 
             testData.push(completeTask)
             const expectedData = {
-                complete: [completeTask.task],
+                complete: [completeTask.name],
                 incomplete: []
             };
 
@@ -80,12 +81,12 @@ describe('Forms - Async Form', function () {
 
         it('loads a todo list with a complete item and an incomplete item', function () {
             const completeTask = {
-                task: 'Capture complete items',
+                name: 'Capture complete items',
                 complete: true
             };
 
             const incompleteTask = {
-                task: 'Capture incomplete items',
+                name: 'Capture incomplete items',
                 complete: false
             };
 
@@ -93,8 +94,8 @@ describe('Forms - Async Form', function () {
             testData.push(incompleteTask);
 
             const expectedData = {
-                complete: [completeTask.task],
-                incomplete: [incompleteTask.task]
+                complete: [completeTask.name],
+                incomplete: [incompleteTask.name]
             };
 
             return todoTools
@@ -102,6 +103,26 @@ describe('Forms - Async Form', function () {
                 .then(function(todoListData) {
                     verifyOutput(todoListData, expectedData);
                 });
+        });
+
+        describe('Refactoring Steps', function () {
+            it('has a function getTaskNamesByCompleteStatus with parameters "todoList" and "status"', function () {
+                const analyzerFunctionOptions = {
+                    formNumber: 5,
+                    analyzerName: 'containsFunction',
+                    analyzerOptions: {
+                        parentName: 'todoToolsFactory',
+                        functionName: 'getTaskNamesByCompleteStatus',
+                        parameters: ['todoList', 'status']
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerFunctionOptions)
+                    .then(function({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
         });
 
     });
