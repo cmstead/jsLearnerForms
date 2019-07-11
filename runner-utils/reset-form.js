@@ -7,7 +7,14 @@ const formNumberPrompt = {
     message: 'Which form do you want to reset?',
     type: 'list',
     name: 'formNumber',
-    choices: [1, 2, 3, 4, 5, 6]
+    choices: [
+        '1 - First Form',
+        '2 - Second Form',
+        '3 - Third Form',
+        '4 - Test Dummy Form',
+        '5 - Async Form',
+        '6 - Async Test Dummy Form'
+    ]
 }
 
 let prompts = [formNumberPrompt];
