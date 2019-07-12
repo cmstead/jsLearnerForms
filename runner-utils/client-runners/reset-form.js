@@ -2,8 +2,8 @@
 
 const fs = require('fs');
 
-const resetRoot = './.form-src/';
-const destinationRoot = './src/';
+const resetRoot = './.reset-files/';
+const destinationRoot = './jsforms-source/';
 const testRoot = './test/'
 
 const formResetPaths = {

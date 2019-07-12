@@ -46,7 +46,7 @@ app.post('/analyze/:formNumber/:analyzer', function (request, response) {
     const formFileName = formAnalyzerFileNames[formNumber];
     const analyzerOptions = request.body;
 
-    const source = fs.readFileSync(`./src/${formFileName}`, { encoding: 'utf8' });
+    const source = fs.readFileSync(`./jsforms-source/${formFileName}`, { encoding: 'utf8' });
     const analysisResult = analyzer[analyzerName](source, analyzerOptions);
 
     response.json({ result: analysisResult });
