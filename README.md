@@ -37,26 +37,23 @@ To use JS Learner Forms, you will need to do the following:
 1. Open a terminal/command line in the JS Learner Forms directory (like when you ran the setup)
 2. Run the start script: `npm start`
 3. Select run from the main menu
-4. Select Node or Browser
 5. Choose the form number (start at 1 if this is your first time)
 6. Start Visual Studio Code
 7. Open the folder you cloned JS Learner Forms to in your editor
 8. Open the test and source files:
     - Test files are found in the `test` directory
-    - Source files are found in the `src` directory
-    - Choose files from the `node` or `browser` directory depending on the mode in which the forms are run
+    - Source files are found in the `jsforms-source` directory
 
 ### Starting a Form Over ###
 
 1. From the start script menu, select the reset option.
-2. Choose Node or Browser depending on how you have been working
 3. Choose the form number to update
 
 ### Solving Each Form ###
 
 1. First Form -- Write code to pass each test
-2. Second Form -- Refactor the code, keep tests green
-3. Third Form -- Refactor second form code, keep tests green
+2. Second Form -- Update code to pass new tests, keep old tests green
+3. Third Form -- Update code to pass new tests, keep tests old green
 4. Test Dummy Form (Fourth Form) -- Write tests matching each description and get all of the code under test (modify ONLY the test code)
 6. Async Test Dummy Form (Sixth Form) -- Write tests matching each description and get all of the code under test (modify ONLY the test code)
 
@@ -113,6 +110,9 @@ Strong first form students will be challenged by these exercises:
 Second form concepts
 
 - Inner looping functions
+    - Array.prototype.forEach
+    - Array.prototype.filter
+    - Array.prototype.map
 - Ternary expressions
 - Instantiable objects
 - Closures
@@ -129,17 +129,10 @@ Reinforcement exercises from Exercism.io are to refactor the following using sec
 
 Third form concepts
 
-- Reduce
-- Recursion
-- Function chaining
-- Instantiable objects as types
-- Creating static methods on types
-- Executing prototypal methods as static
+- Array.prototype.reduce
 - Scope management
-- Partial application with bind
 - Generic functions
 - Type checking
-- Metaprogramming
 
 ### Fourth Form -- Test Dummy Form
 
@@ -149,7 +142,6 @@ Fourth form concepts
 - Creating vice tests around existing code
 - Mocks, stubs and spies
 - Code seams
-- Promises and async programming
 - Pure and impure functions
 - Programming patterns
 - Code deduplication
