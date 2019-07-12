@@ -1,3 +1,10 @@
+/*
+global
+
+chai,
+jsforms,
+analyzer
+*/
 'use strict';
 
 const assert = chai.assert;
@@ -41,6 +48,30 @@ describe('Forms - Third Form', function () {
 
         it('should say "Salutations!" when Salutations is passed', function () {
             assert.equal(jsforms.greet('Salutations'), 'Salutations!');
+        });
+
+        describe('Refactoring steps', function () {
+            /*
+            1 - Create function called isTypeOf
+            */
+
+            it('has a function isTypeOf which takes parameters "type" and "value"', function () {
+                const analyzerFunctionOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsFunction',
+                    analyzerOptions: {
+                        functionName: 'isTypeOf',
+                        parameters: ['type', 'value']
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerFunctionOptions)
+                    .then(function({result}){
+                        assert.isTrue(result);
+                    });
+            });
+
         });
 
     });
