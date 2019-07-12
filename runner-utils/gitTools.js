@@ -56,7 +56,6 @@ function hasGitInstalled() {
         gitCommands.getStatus();
         return true;
     } catch (e) {
-        console.log(e);
         return false;
     }
 }
@@ -74,8 +73,6 @@ function checkOutBranch(branchName) {
 function runIfGitIsInstalled(command) {
     return function (...args) {
         let result = false;
-
-        console.log(hasGitInstalled());
 
         if (hasGitInstalled()) {
             result = command(...args);
