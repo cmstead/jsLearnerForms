@@ -1,6 +1,6 @@
 'use strict';
 
-const jsforms = require('../../jsforms-sourcenode/2_second-form');
+const jsforms = require('../../jsforms-source/node/2_second-form');
 const assert = require('chai').assert;
 
 require('../helpers/global-helper');

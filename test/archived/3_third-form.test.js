@@ -1,7 +1,7 @@
 'use strict';
 
 const assert = require('chai').assert;
-const jsforms = require('../../jsforms-sourcenode/3_third-form');
+const jsforms = require('../../jsforms-source/node/3_third-form');
 
 require('../helpers/global-helper');
 

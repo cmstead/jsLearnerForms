@@ -3,7 +3,7 @@
 const fs = require('fs');
 
 const resetRoot = './.reset-files/';
-const destinationRoot = './jsforms-source';
+const destinationRoot = './jsforms-source/';
 
 const formResetPaths = {
     1: {
