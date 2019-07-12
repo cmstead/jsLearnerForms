@@ -6,9 +6,8 @@ function containsCall({
 }) {
 
     function isMatchingParent(node) {
-        return parentName === null
-            || (node.id
-                && node.id.name === parentName);
+        return node.id
+            && node.id.name === parentName;
     }
 
     function isMatchingMethodCall(node) {
@@ -43,7 +42,7 @@ function containsCall({
 
     function isMatchingVariableNode(node) {
 
-        if (isMatchingParent(node)) {
+        if ((parentName === null && parentNode === null) || isMatchingParent(node)) {
             parentNode = node;
         } else if (parentNode !== null && isMatchingCall(node)) {
             return true
