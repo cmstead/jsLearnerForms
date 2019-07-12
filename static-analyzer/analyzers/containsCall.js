@@ -42,8 +42,7 @@ function containsCall({
     let parentNode = null;
 
     function isMatchingVariableNode(node) {
-
-        if (isMatchingParent(node)) {
+        if((parentNode === null && parentName === null) || isMatchingParent(node)) {
             parentNode = node;
         } else if (parentNode !== null && isMatchingCall(node)) {
             return true

@@ -1,8 +1,16 @@
 const jsforms = (function () {
     'use strict';
 
+    function isTypeOf(type, value) {
+        return typeof value === type;
+    }
+
+    function eitherOnType(type, testValue, defaultValue) {
+        return isTypeOf(type, testValue) ? testValue : defaultValue;
+    }
+
     function greet(greeting) {
-        return typeof greeting === 'string' ? greeting + '!' : 'Hello!';
+        return eitherOnType('string', greeting, 'Hello') + '!';
     }
 
     function square(x) {

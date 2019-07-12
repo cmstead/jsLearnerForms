@@ -13,35 +13,6 @@ describe('Forms - Third Form', function () {
 
     describe('greeter', function () {
 
-        /*
-         * 1 - Refactor typeof in greet:
-         *      a. Extract typeof expression to a function:
-         *      b. Refactor greet to use isType
-         * 
-         *     function isType (typeName, value) {
-         *          return typeof _something_ === _string_;
-         *     }
-         * 
-         * 
-         *     function greet (greeting) {
-         *          return isType(_string_, _something_) ? _something_ : _something_;
-         *     }
-         * 
-         * 2 - Refactor ternary in greet:
-         *      a. Extract ternary to function
-         *      b. Refactor greet to use eitherType
-         * 
-         *     function eitherType (typeName, defaultValue, actualValue) {
-         *          return _string_ ? _something_ : _something_;
-         *     }
-         * 
-         *     function greet (greeting) {
-         *          return eitherType(_string_, _something_, _something_) + '!';
-         *     }
-         */
-
-        // Keep the tests passing!
-
         it('should say "Hello!" by default', function () {
             assert.equal(jsforms.greet(), 'Hello!');
         });
@@ -53,9 +24,14 @@ describe('Forms - Third Form', function () {
         describe('Refactoring steps', function () {
             /*
             1 - Create function called isTypeOf
+            2 - Replace typeof check in greet function with isTypeOf
+            3 - Create function called eitherOnType
+            4 - Replace ternary in greet function with eitherOnType
             */
 
-            it('has a function isTypeOf which takes parameters "type" and "value"', function () {
+            // Keep the tests passing!
+
+            it('has a function called "isTypeOf" which takes parameters "type" and "value"', function () {
                 const analyzerFunctionOptions = {
                     formNumber: 3,
                     analyzerName: 'containsFunction',
@@ -67,7 +43,75 @@ describe('Forms - Third Form', function () {
 
                 return analyzer
                     .analyze(analyzerFunctionOptions)
-                    .then(function({result}){
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('calls isTypeOf from greet', function () {
+                const analyzerCallOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'greet',
+                        methodName: 'isTypeOf'
+                    }
+                };
+
+                const analyzerRefactorCallOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'eitherOnType',
+                        methodName: 'isTypeOf'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerCallOptions)
+                    .then(function ({ result }) {
+                        if (!result) {
+                            return analyzer
+                                .analyze(analyzerRefactorCallOptions);
+                        } else {
+                            return Promise.resolve(result);
+                        }
+                    })
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('has a function called "eitherOnType" with parameters "type", "testValue", "defaultValue" -- return testValue if it matches type, otherwise return defaultValue', function () {
+                const analyzerFunctionOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsFunction',
+                    analyzerOptions: {
+                        functionName: 'eitherOnType',
+                        parameters: ['type', 'testValue', 'defaultValue']
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerFunctionOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('calls eitherOnType from greet', function () {
+                const analyzerCallOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'greet',
+                        methodName: 'eitherOnType'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerCallOptions)
+                    .then(function ({ result }) {
                         assert.isTrue(result);
                     });
             });

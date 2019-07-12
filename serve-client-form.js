@@ -56,7 +56,7 @@ app.listen(port, function () {
     console.log(`App started on port ${port}`);
 
     var server = livereload.createServer();
-    server.watch(__dirname + "/src");
+    server.watch(__dirname + "/jsforms-source");
     server.watch(__dirname + "/test");
 
     open(`http://localhost:${port}/form/${formNumber}`);
