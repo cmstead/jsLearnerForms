@@ -49,7 +49,7 @@ function setUpWorkspaceBranch() {
 
         gitCommands.stash();
         fileStashSuccessful = true;
-        checkoutOrCreate('workspace');
+        gitCommands.createBranch('workspace');
     } catch (e) {
         console.log('Uh oh! Something unexpected happened: ', e);
     }
