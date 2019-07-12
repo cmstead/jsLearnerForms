@@ -68,13 +68,13 @@ describe('Forms - Third Form', function () {
                 };
 
                 return analyzer
-                    .analyze(analyzerCallOptions)
+                    .analyze(analyzerRefactorCallOptions)
                     .then(function ({ result }) {
                         if (!result) {
                             return analyzer
-                                .analyze(analyzerRefactorCallOptions);
+                                .analyze(analyzerCallOptions);
                         } else {
-                            return Promise.resolve(result);
+                            return Promise.resolve({ result: true });
                         }
                     })
                     .then(function ({ result }) {
@@ -150,18 +150,6 @@ describe('Forms - Third Form', function () {
 
     describe('sum', function () {
 
-        /*
-         * 1 - Refactor forEach loop to reduce and return
-         * 
-         *     function (values) {
-         *          return _array_.reduce((result, value) => _function_(_number_, _number_), _number_);
-         *     }
-         * 
-         * 2 - Remove wrapping function
-         */
-
-        // Keep the tests passing!
-
         it('should take the sum of one number', function () {
             assert.equal(jsforms.sum([1]), 1);
         });
@@ -172,6 +160,86 @@ describe('Forms - Third Form', function () {
 
         it('should add multiple numbers', function () {
             assert.equal(jsforms.sum([1, 3, 5, 7]), 16);
+        });
+
+        describe('Refactoring steps', function () {
+
+            /*
+            1 - Replace forEach with reduce -- assign calculated sum to "result" variable
+            2 - Remove wrapping function from reduce -- pass add function directly to reduce
+            3 - Remove assignment and return calculated result directly to caller
+            */
+
+            // Keep the tests passing!
+
+            it('has been refactored to use reduce in the place of forEach, assigning the output to result', function () {
+                const analyzerReduceOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'sum',
+                        objectName: 'nums',
+                        methodName: 'reduce'
+                    }
+                };
+
+                const analyzerForEachOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'sum',
+                        objectName: 'nums',
+                        methodName: 'forEach'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerReduceOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result, 'Reduce is not being used in the sum function.');
+                        return analyzer
+                            .analyze(analyzerForEachOptions);
+                    })
+                    .then(function ({ result }) {
+                        assert.isFalse(result, 'ForEach is still being used in the sum function.')
+                    });
+            });
+
+            it('has been refactored to pass the add function directly to reduce', function () {
+                const analyzerReduceOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'sum',
+                        objectName: 'nums',
+                        methodName: 'reduce',
+                        variableName: 'add'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerReduceOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result, 'Add is not being passed directly to reduce, yet.');
+                    });
+            });
+
+            it('has been refactored to not assign the sum before returning it', function () {
+                const analyzerAssignmentOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsAssignment',
+                    analyzerOptions: {
+                        parentName: 'sum'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerAssignmentOptions)
+                    .then(function ({ result }) {
+                        assert.isFalse(result, 'Sum still contains an assignment. Is the reduced value being returned directly?');
+                    });
+            });
+
         });
     });
 
