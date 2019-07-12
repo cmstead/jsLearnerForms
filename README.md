@@ -130,8 +130,9 @@ Reinforcement exercises from Exercism.io are to refactor the following using sec
 Third form concepts
 
 - Array.prototype.reduce
-- Scope management
+- Object immutability
 - Generic functions
+- Scope management
 - Type checking
 
 ### Fourth Form -- Test Dummy Form
