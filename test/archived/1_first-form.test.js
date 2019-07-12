@@ -3,10 +3,10 @@
 const staticAnalyzer = require('../../static-analyzer/staticAnalyzer');
 const getSourceFile = require('../../static-analyzer/getSourceFile');
 
-const jsforms = require('../../src/node/1_first-form');
+const jsforms = require('../../jsforms-sourcenode/1_first-form');
 const assert = require('chai').assert;
 
-const sourcePath = `${__dirname}/../../src/node/1_first-form.js`;
+const sourcePath = `${__dirname}/../../jsforms-sourcenode/1_first-form.js`;
 
 require('../helpers/global-helper');
 
