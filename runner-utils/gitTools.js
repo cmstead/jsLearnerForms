@@ -1,15 +1,6 @@
 const sharedUtils = require('./sharedUtils');
 const gitCommands = require('./gitCommands');
 
-function checkoutOrCreate(branchName) {
-    try {
-        gitCommands.checkout(branchName);
-    } catch (e) {
-        console.log(`Branch ${branchName} doesn't exist yet. Creating it now.`);
-        gitCommands.createBranch(branchName);
-    }
-}
-
 function safePop() {
     try{
         gitCommands.popFromStash();
