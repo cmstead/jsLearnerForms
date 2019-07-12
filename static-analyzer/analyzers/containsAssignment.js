@@ -20,7 +20,6 @@ function containsAssignment({
     }
 
     function binaryExpressionMatches(node) {
-        console.log(node);
         return node.left
             && node.left.value === expression[0]
             && node.operator === expression[1]
