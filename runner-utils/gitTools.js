@@ -10,6 +10,14 @@ function checkoutOrCreate(branchName) {
     }
 }
 
+function safePop() {
+    try{
+        gitCommands.popFromStash();
+    } catch(e) {
+        // do nothing and move along.
+    }
+}
+
 function isOutOfDate() {
     const fileStatus = gitCommands.getStatus().toString();
     const changesExist = fileStatus.includes('Changes');
@@ -27,7 +35,7 @@ function isOutOfDate() {
     gitCommands.checkout('workspace');
 
     if (changesExist) {
-        gitCommands.popFromStash();
+        safePop();
     }
 
     return !outOfDateStatus;
@@ -47,7 +55,7 @@ function setUpWorkspaceBranch() {
     }
 
     if (fileStashSuccessful) {
-        gitCommands.popFromStash();
+        safePop();
     }
 }
 
