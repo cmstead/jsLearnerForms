@@ -20,14 +20,18 @@ function containsAssignment({
     }
 
     function binaryExpressionMatches(node) {
-        return node.left.value === expression[0]
+        console.log(node);
+        return node.left
+            && node.left.value === expression[0]
             && node.operator === expression[1]
+            && node.right
             && node.right.value === expression[2];
     }
 
     function checkExpression(node) {
         return expression !== null
-            && binaryExpressionMatches(node);
+            && node.right
+            && binaryExpressionMatches(node.right);
     }
 
     function leftHandMatches(node) {
