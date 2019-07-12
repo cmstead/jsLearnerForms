@@ -1,78 +1,34 @@
-let inquirer, childProcess, clear;
+const childProcess = require('child_process');
+const menuBuilder = require('./runner-utils/menuBuilder');
+const sharedUtils = require('./runner-utils/sharedUtils');
+const gitTools = require('./runner-utils/gitTools');
 
-function logSetupError(setupErrorMessage) {
-    console.log(setupErrorMessage + '\n');
-    console.log('Please run `npm run setup\' to ensure your project is properly set up.\n\n');
-}
+let inquirer, clear;
 
 try {
     inquirer = require('inquirer');
-    childProcess = require('child_process');
     clear = require('clear');
 } catch (e) {
-    logSetupError('It looks like the libraries we need aren\'t installed yet.');
+    sharedUtils.logSetupError('It looks like the libraries we need aren\'t installed yet.');
     process.exit(1);
 }
 
-try {
-    childProcess.execSync('git checkout workspace');
-} catch (e) {
-    logSetupError('It looks like your workspace is not set up yet.');
-    process.exit(1);
-}
 
-const pathRoot = __dirname + '/runner-utils/'
-
-function isOutOfDate() {
-    const fileStatus = childProcess.execSync('git status').toString();
-    const changesExist = fileStatus.includes('Changes');
-
-    if (changesExist) {
-        childProcess.execSync('git stash');
-    }
-
-    childProcess.execSync('git checkout master');
-    const status = childProcess.execSync('git status').toString();
-
-    const outOfDateStatus = status.includes('up to date')
-        || status.includes('is ahead of');
-
-    childProcess.execSync('git checkout workspace');
-
-    if (changesExist) {
-        childProcess.execSync('git stash pop');
-    }
-
-    return !outOfDateStatus;
-}
-
-const options = {
-    'Run a form': `${pathRoot}run-form.js`,
-    'Reset a form': `${pathRoot}reset-form.js`
-};
-
-if (isOutOfDate()) {
-    options['Update JS Learner Forms'] = `${pathRoot}update-forms.js`;
-}
-
-options['Quit'] = null;
-
-const menuPrompt = {
-    name: 'selectedKey',
-    message: 'What would you like to do?',
-    type: 'list',
-    choices: Object.keys(options)
-};
+gitTools.checkOutBranch('workspace');
 
 function displayMainMenu() {
     clear();
     console.log('--- JS Learner Forms Main Menu ---\n\n');
+
+    const menuOptions = menuBuilder.buildMenuOptions();
+    const menuPrompt = menuBuilder.buildMenuPrompt(menuOptions);
+
     inquirer
         .prompt([
             menuPrompt
         ])
         .then(function (data) {
-            const selectedAction = options[data.selectedKey];
+            const selectedAction = menuOptions[data.selectedKey];
 
             if (typeof selectedAction === 'string') {
                 const process = childProcess.fork(selectedAction);
