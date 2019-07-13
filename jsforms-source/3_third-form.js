@@ -36,8 +36,6 @@ const jsforms = (function () {
 
     function Vector(points) {
         this.points = points;
-
-        points.forEach((value, index) => this[index] = value);
     }
 
     Vector.prototype = {
