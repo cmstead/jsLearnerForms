@@ -1,16 +1,8 @@
 const jsforms = (function () {
     'use strict';
 
-    function isTypeOf(type, value) {
-        return typeof value === type;
-    }
-
-    function eitherOnType(type, testValue, defaultValue) {
-        return isTypeOf(type, testValue) ? testValue : defaultValue;
-    }
-
     function greet(greeting) {
-        return eitherOnType('string', greeting, 'Hello') + '!';
+        return typeof greeting === 'string' ? greeting + '!' : 'Hello!';
     }
 
     function square(x) {
@@ -26,7 +18,11 @@ const jsforms = (function () {
     }
 
     function sum(nums) {
-        return nums.reduce(add);
+        let result = 0;
+
+        nums.forEach((value) => result = add(result, value));
+
+        return result;
     }
 
     function squareAll(nums) {

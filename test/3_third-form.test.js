@@ -273,50 +273,7 @@ describe('Forms - Third Form', function () {
 
     describe('buildVector', function () {
 
-        /*
-         * 1 - Make the Vector constructor into a constructor/factory
-         *      function Vector (points) {
-         *          let vector = this instanceof Vector ? _object_ : new _function_;
-         *          
-         *          vector.points = _array_;
-         *          _array_.forEach((value, index) => _object_[_number_] = _something_);
-         * 
-         *          return vector;
-         *      }
-         * 
-         * 2 - Replace buildVector in the module exports object and delete buildVector function
-         * 
-         * 3 - Extract value attachment into a function
-         *     (Note: static methods are NOT attached to the prototype)
-         *      Vector.attachValues = function (vector, points) {
-         *          _object_.points = _array_;
-         *          _array_.forEach((value, index) => _object_[_number_] = _something_);
-         *      }
-         * 
-         *      function Vector (points) {
-         *          let vector = this instanceof Vector ? _object_ : new _function_;
-         *          Vector.attachValues(_object_, _array_);
-         *          return vector;
-         *      }
-         * 
-         */
-
         // Keep the tests passing!
-
-        it('should return a vector matching original values', function () {
-            let initialArray = [1, 2];
-            let vector = jsforms.buildVector(initialArray);
-            let resultValues = [vector[0], vector[1]];
-
-            assert.equal(resultValues.toString(), initialArray.toString());
-        });
-
-        it('should return a vector given an array which is not the original array', function () {
-            let initialArray = [1, 2];
-            let vector = jsforms.buildVector(initialArray);
-
-            assert.equal(initialArray !== vector, true);
-        });
 
         it('should return vector with valueOf function which does not return vector', function () {
             let vector = jsforms.buildVector([1, 2, 3]);
@@ -330,29 +287,81 @@ describe('Forms - Third Form', function () {
             assert.equal(vector.toString(), '<1,2,3>');
         });
 
-    });
+        describe('Immutable object properties and values', function () {
 
-    describe('Immutable Object Properties and Data Hiding', function () {
+            it('should not be possible to modify vector.points', function () {
+                /*
+                 * // Setting an immutable property on an object:
+                 * Object.defineProperty(obj, key, {
+                 *      writeable: false,
+                 *      value: value
+                 * });
+                 */
 
-        it('should not be possible to modify values in a vector', function () {
-            /*
-             * // Setting an immutable property on an object:
-             * Object.defineProperty(obj, key, {
-             *      writeable: false,
-             *      value: value
-             * });
-             */
+                let vector = jsforms.buildVector([1, 2, 3]);
+                assert.throws(() => vector.points = [4, 5, 6]);
+            });
 
-            let vector = jsforms.buildVector([1, 2, 3]);
-            assert.throws(() => vector[2] = 5);
+            it('should not be possible to modify vector.points', function () {
+                let vector = jsforms.buildVector([1, 2, 3]);
+                assert.throws(() => vector.points.push(4));
+            });
+
         });
 
-        it('should not be possible to access vector.points', function () {
-            // Closures are a means for data hiding...
+        describe('Constructor type check', function () {
 
-            let vector = jsforms.buildVector([1, 2, 3]);
-            assert.equal(vector.points, undefined);
+            it('throws an error if constructor is called with a value which is not an array', function () {
+                assert.throws(() => jsforms.buildVector('not an array'));
+            });
+
+            it('throws an error if constructor is called with an array of one value which is not a number', function () {
+                assert.throws(() => jsforms.buildVector(['bad value']));
+            });
+
+            it('throws an error if constructor is called with an array which contains values other than numbers', function () {
+                assert.throws(() => jsforms.buildVector([1, '2', 5, {}]));
+            });
+
+            describe('Refactoring steps', function () {
+                it('has a function called "isArrayOfNumbers" with a parameter "values"', function () {
+                    const analyzerFunction = {
+                        formNumber: 3,
+                        analyzerName: 'containsFunction',
+                        analyzerOptions: {
+                            functionName: 'isArrayOfNumbers',
+                            parameters: ['values']
+                        }
+                    }
+
+                    return analyzer
+                        .analyze(analyzerFunction)
+                        .then(function ({ result }) {
+                            assert.isTrue(result, 'Cannot find a function  called "isArrayOfNumbers"');
+                        });
+                });
+
+                it('has a call in Vector constructor to "isArrayOfNumbers" with "points" as an argument', function() {
+                    const analyzerCallOptions = {
+                        formNumber: 3,
+                        analyzerName: 'containsCall',
+                        analyzerOptions: {
+                            parentName: 'Vector',
+                            methodName: 'isArrayOfNumbers',
+                            variableName: 'points'
+                        }
+                    };
+
+                    return analyzer
+                        .analyze(analyzerCallOptions)
+                        .then(function({result}){
+                            assert.isTrue(result, 'Cannot find call to isArrayOfNumbers');
+                        });
+                });
+            });
+
         });
+
 
     });
 
@@ -431,34 +440,6 @@ describe('Forms - Third Form', function () {
 
     });
 
-    describe('Vector construction check', function () {
-
-        // Add value type check to ensure points is an array of numbers
-
-        /*
-         * 1 - Test if value is an array of numbers:
-         *      a. test if value is an object and not null
-         *      b. test if value is an array
-         *      c. test if each element is a number
-         * 
-         * // Checking value is an array:
-         * Object.prototype.toString.call(value) === '[object Array]'
-         * 
-         * 2 - Refactor to evaluate chained type checks
-         *     (Making type relation and order explicit)
-         *      b. reduce over predicate array
-         *         (A predicate is a function which returns a boolean value)
-         *      c. construct isArrayOfNumbers with type check reducer
-         */
-
-        it('should throw an error if constructor is called with bad array', function () {
-            assert.throws(
-                jsforms.buildVector.bind(null, [1, 2, 3, 'bad', {}]),
-                'Points must be an array of numbers'
-            );
-        });
-
-    });
 
     // You're done!
     // Good job! I like what you got.
