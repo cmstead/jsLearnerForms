@@ -26,7 +26,7 @@ const jsforms = (function () {
     }
 
     function squareAll(nums) {
-        return nums.valueOf().map(square);
+        return nums.map(square);
     }
 
     function sumOfSquares(nums) {
@@ -39,7 +39,7 @@ const jsforms = (function () {
     }
 
     Vector.prototype = {
-        valueOf: function () { return this.points.valueOf(); },
+        valueOf: function () { return this.points.slice(0); },
         toString: function () { return '<' + this.points.join(',') + '>'; }
     };
 
@@ -48,12 +48,16 @@ const jsforms = (function () {
     }
 
     function magnitude(vector) {
-        let squaredMagnitude = sumOfSquares(vector);
+        let squaredMagnitude = sumOfSquares(vector.valueOf());
         return squareRoot(squaredMagnitude);
     }
 
+    function isMagnitudeShorterThanLength(length, vector) {
+        return magnitude(vector) < length;
+    }
+
     function getVectorsShorterThan(length, vectors) {
-        return vectors.filter((vector) => magnitude(vector) < length);
+        return vectors.filter((vector) => isMagnitudeShorterThanLength(length, vector));
     }
 
     return {

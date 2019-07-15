@@ -478,7 +478,7 @@ describe('Forms - Second Form', function () {
             assert.equal(initialArray !== vector, true);
         });
 
-        it('should return vector with valueOf function which does not return vector', function () {
+        it('should return vector with valueOf function which does not return original array of points', function () {
             let vector = jsforms.buildVector([1, 2, 3]);
 
             assert.equal(vector.valueOf() !== vector, true);
