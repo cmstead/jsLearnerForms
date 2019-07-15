@@ -36,7 +36,8 @@ app.get('/form/:formId', function (request, response) {
 const formAnalyzerFileNames = {
     1: '1_first-form.js',
     2: '2_second-form.js',
-    3: '3_third-form.js'
+    3: '3_third-form.js',
+    5: '5_async-form.js'
 };
 
 app.post('/analyze/:formNumber/:analyzer', function (request, response) {
@@ -45,7 +46,7 @@ app.post('/analyze/:formNumber/:analyzer', function (request, response) {
     const formFileName = formAnalyzerFileNames[formNumber];
     const analyzerOptions = request.body;
 
-    const source = fs.readFileSync(`./src/${formFileName}`, { encoding: 'utf8' });
+    const source = fs.readFileSync(`./jsforms-source/${formFileName}`, { encoding: 'utf8' });
     const analysisResult = analyzer[analyzerName](source, analyzerOptions);
 
     response.json({ result: analysisResult });
@@ -55,7 +56,7 @@ app.listen(port, function () {
     console.log(`App started on port ${port}`);
 
     var server = livereload.createServer();
-    server.watch(__dirname + "/src");
+    server.watch(__dirname + "/jsforms-source");
     server.watch(__dirname + "/test");
 
     open(`http://localhost:${port}/form/${formNumber}`);

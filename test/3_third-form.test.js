@@ -1,39 +1,21 @@
+/*
+global
+
+chai,
+jsforms,
+analyzer
+*/
 'use strict';
 
 const assert = chai.assert;
 
-describe('Forms', function () {
+function verifyOutput(actual, expected) {
+    assert.equal(JSON.stringify(actual), JSON.stringify(expected));
+}
+
+describe('Forms - Third Form', function () {
 
     describe('greeter', function () {
-
-        /*
-         * 1 - Refactor typeof in greet:
-         *      a. Extract typeof expression to a function:
-         *      b. Refactor greet to use isType
-         * 
-         *     function isType (typeName, value) {
-         *          return typeof _something_ === _string_;
-         *     }
-         * 
-         * 
-         *     function greet (greeting) {
-         *          return isType(_string_, _something_) ? _something_ : _something_;
-         *     }
-         * 
-         * 2 - Refactor ternary in greet:
-         *      a. Extract ternary to function
-         *      b. Refactor greet to use eitherType
-         * 
-         *     function eitherType (typeName, defaultValue, actualValue) {
-         *          return _string_ ? _something_ : _something_;
-         *     }
-         * 
-         *     function greet (greeting) {
-         *          return eitherType(_string_, _something_, _something_) + '!';
-         *     }
-         */
-
-        // Keep the tests passing!
 
         it('should say "Hello!" by default', function () {
             assert.equal(jsforms.greet(), 'Hello!');
@@ -41,6 +23,103 @@ describe('Forms', function () {
 
         it('should say "Salutations!" when Salutations is passed', function () {
             assert.equal(jsforms.greet('Salutations'), 'Salutations!');
+        });
+
+        describe('Refactoring steps', function () {
+            /*
+            1 - Create function called isTypeOf
+            2 - Replace typeof check in greet function with isTypeOf
+            3 - Create function called eitherOnType
+            4 - Replace ternary in greet function with eitherOnType
+            */
+
+            // Keep the tests passing!
+
+            it('has a function called "isTypeOf" which takes parameters "type" and "value"', function () {
+                const analyzerFunctionOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsFunction',
+                    analyzerOptions: {
+                        functionName: 'isTypeOf',
+                        parameters: ['type', 'value']
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerFunctionOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('calls isTypeOf from greet', function () {
+                const analyzerCallOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'greet',
+                        methodName: 'isTypeOf'
+                    }
+                };
+
+                const analyzerRefactorCallOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'eitherOnType',
+                        methodName: 'isTypeOf'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerRefactorCallOptions)
+                    .then(function ({ result }) {
+                        if (!result) {
+                            return analyzer
+                                .analyze(analyzerCallOptions);
+                        } else {
+                            return Promise.resolve({ result: true });
+                        }
+                    })
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('has a function called "eitherOnType" with parameters "type", "testValue", "defaultValue" -- return testValue if it matches type, otherwise return defaultValue', function () {
+                const analyzerFunctionOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsFunction',
+                    analyzerOptions: {
+                        functionName: 'eitherOnType',
+                        parameters: ['type', 'testValue', 'defaultValue']
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerFunctionOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('calls eitherOnType from greet', function () {
+                const analyzerCallOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'greet',
+                        methodName: 'eitherOnType'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerCallOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
         });
 
     });
@@ -75,18 +154,6 @@ describe('Forms', function () {
 
     describe('sum', function () {
 
-        /*
-         * 1 - Refactor forEach loop to reduce and return
-         * 
-         *     function (values) {
-         *          return _array_.reduce((result, value) => _function_(_number_, _number_), _number_);
-         *     }
-         * 
-         * 2 - Remove wrapping function
-         */
-
-        // Keep the tests passing!
-
         it('should take the sum of one number', function () {
             assert.equal(jsforms.sum([1]), 1);
         });
@@ -97,6 +164,86 @@ describe('Forms', function () {
 
         it('should add multiple numbers', function () {
             assert.equal(jsforms.sum([1, 3, 5, 7]), 16);
+        });
+
+        describe('Refactoring steps', function () {
+
+            /*
+            1 - Replace forEach with reduce -- assign calculated sum to "result" variable
+            2 - Remove wrapping function from reduce -- pass add function directly to reduce
+            3 - Remove assignment and return calculated result directly to caller
+            */
+
+            // Keep the tests passing!
+
+            it('has been refactored to use reduce in the place of forEach, assigning the output to result', function () {
+                const analyzerReduceOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'sum',
+                        objectName: 'nums',
+                        methodName: 'reduce'
+                    }
+                };
+
+                const analyzerForEachOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'sum',
+                        objectName: 'nums',
+                        methodName: 'forEach'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerReduceOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result, 'Reduce is not being used in the sum function.');
+                        return analyzer
+                            .analyze(analyzerForEachOptions);
+                    })
+                    .then(function ({ result }) {
+                        assert.isFalse(result, 'ForEach is still being used in the sum function.')
+                    });
+            });
+
+            it('has been refactored to pass the add function directly to reduce', function () {
+                const analyzerReduceOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'sum',
+                        objectName: 'nums',
+                        methodName: 'reduce',
+                        variableName: 'add'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerReduceOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result, 'Add is not being passed directly to reduce, yet.');
+                    });
+            });
+
+            it('has been refactored to not assign the sum before returning it', function () {
+                const analyzerAssignmentOptions = {
+                    formNumber: 3,
+                    analyzerName: 'containsAssignment',
+                    analyzerOptions: {
+                        parentName: 'sum'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerAssignmentOptions)
+                    .then(function ({ result }) {
+                        assert.isFalse(result, 'Sum still contains an assignment. Is the reduced value being returned directly?');
+                    });
+            });
+
         });
     });
 
@@ -130,50 +277,7 @@ describe('Forms', function () {
 
     describe('buildVector', function () {
 
-        /*
-         * 1 - Make the Vector constructor into a constructor/factory
-         *      function Vector (points) {
-         *          let vector = this instanceof Vector ? _object_ : new _function_;
-         *          
-         *          vector.points = _array_;
-         *          _array_.forEach((value, index) => _object_[_number_] = _something_);
-         * 
-         *          return vector;
-         *      }
-         * 
-         * 2 - Replace buildVector in the module exports object and delete buildVector function
-         * 
-         * 3 - Extract value attachment into a function
-         *     (Note: static methods are NOT attached to the prototype)
-         *      Vector.attachValues = function (vector, points) {
-         *          _object_.points = _array_;
-         *          _array_.forEach((value, index) => _object_[_number_] = _something_);
-         *      }
-         * 
-         *      function Vector (points) {
-         *          let vector = this instanceof Vector ? _object_ : new _function_;
-         *          Vector.attachValues(_object_, _array_);
-         *          return vector;
-         *      }
-         * 
-         */
-
         // Keep the tests passing!
-
-        it('should return a vector matching original values', function () {
-            let initialArray = [1, 2];
-            let vector = jsforms.buildVector(initialArray);
-            let resultValues = [vector[0], vector[1]];
-
-            assert.equal(resultValues.toString(), initialArray.toString());
-        });
-
-        it('should return a vector given an array which is not the original array', function () {
-            let initialArray = [1, 2];
-            let vector = jsforms.buildVector(initialArray);
-
-            assert.equal(initialArray !== vector, true);
-        });
 
         it('should return vector with valueOf function which does not return vector', function () {
             let vector = jsforms.buildVector([1, 2, 3]);
@@ -187,29 +291,97 @@ describe('Forms', function () {
             assert.equal(vector.toString(), '<1,2,3>');
         });
 
-    });
+        describe('Getter properties and value immutability', function () {
 
-    describe('Immutable Object Properties and Data Hiding', function () {
+            it('should have access to read, but not write, vector.points', function () {
+                /*
+                 * // Setting a getter on an object:
+                 * Object.defineProperty(obj, key, {
+                 *      get: () => value
+                 * });
+                 */
 
-        it('should not be possible to modify values in a vector', function () {
-            /*
-             * // Setting an immutable property on an object:
-             * Object.defineProperty(obj, key, {
-             *      writeable: false,
-             *      value: value
-             * });
-             */
+                const originalPoints = [1, 2, 3];
 
-            let vector = jsforms.buildVector([1, 2, 3]);
-            assert.throws(() => vector[2] = 5);
+                let vector = jsforms.buildVector(originalPoints);
+
+                verifyOutput(vector.points, originalPoints);
+                assert.throws(() => vector.points = [4, 5, 6]);
+            });
+
+
+            it('should not change vector object when the original array is modified', function () {
+                let originalArray = [1, 2, 3];
+                let vector = jsforms.buildVector(originalArray);
+
+                originalArray.push(4);
+
+                assert.notEqual(vector.points.length, originalArray.length);
+            });
+            
+            it('should not be possible to modify vector.points', function () {
+                /*
+                It's possible to disable modifying an object usig Object.freeze
+                */
+                let vector = jsforms.buildVector([1, 2, 3]);
+                assert.throws(() => vector.points.push(4));
+            });
+
         });
 
-        it('should not be possible to access vector.points', function () {
-            // Closures are a means for data hiding...
+        describe('Constructor type check', function () {
 
-            let vector = jsforms.buildVector([1, 2, 3]);
-            assert.equal(vector.points, undefined);
+            it('throws an error if constructor is called with a value which is not an array', function () {
+                assert.throws(() => jsforms.buildVector('not an array'));
+            });
+
+            it('throws an error if constructor is called with an array of one value which is not a number', function () {
+                assert.throws(() => jsforms.buildVector(['bad value']));
+            });
+
+            it('throws an error if constructor is called with an array which contains values other than numbers', function () {
+                assert.throws(() => jsforms.buildVector([1, '2', 5, {}]));
+            });
+
+            describe('Refactoring steps', function () {
+                it('has a function called "isArrayOfNumbers" with a parameter "values"', function () {
+                    const analyzerFunction = {
+                        formNumber: 3,
+                        analyzerName: 'containsFunction',
+                        analyzerOptions: {
+                            functionName: 'isArrayOfNumbers',
+                            parameters: ['values']
+                        }
+                    }
+
+                    return analyzer
+                        .analyze(analyzerFunction)
+                        .then(function ({ result }) {
+                            assert.isTrue(result, 'Cannot find a function  called "isArrayOfNumbers"');
+                        });
+                });
+
+                it('has a call in Vector constructor to "isArrayOfNumbers" with "points" as an argument', function () {
+                    const analyzerCallOptions = {
+                        formNumber: 3,
+                        analyzerName: 'containsCall',
+                        analyzerOptions: {
+                            parentName: 'Vector',
+                            methodName: 'isArrayOfNumbers',
+                            variableName: 'points'
+                        }
+                    };
+
+                    return analyzer
+                        .analyze(analyzerCallOptions)
+                        .then(function ({ result }) {
+                            assert.isTrue(result, 'Cannot find call to isArrayOfNumbers');
+                        });
+                });
+            });
+
         });
+
 
     });
 
@@ -288,34 +460,6 @@ describe('Forms', function () {
 
     });
 
-    describe('Vector construction check', function () {
-
-        // Add value type check to ensure points is an array of numbers
-
-        /*
-         * 1 - Test if value is an array of numbers:
-         *      a. test if value is an object and not null
-         *      b. test if value is an array
-         *      c. test if each element is a number
-         * 
-         * // Checking value is an array:
-         * Object.prototype.toString.call(value) === '[object Array]'
-         * 
-         * 2 - Refactor to evaluate chained type checks
-         *     (Making type relation and order explicit)
-         *      b. reduce over predicate array
-         *         (A predicate is a function which returns a boolean value)
-         *      c. construct isArrayOfNumbers with type check reducer
-         */
-
-        it('should throw an error if constructor is called with bad array', function () {
-            assert.throws(
-                jsforms.buildVector.bind(null, [1, 2, 3, 'bad', {}]),
-                'Points must be an array of numbers'
-            );
-        });
-
-    });
 
     // You're done!
     // Good job! I like what you got.

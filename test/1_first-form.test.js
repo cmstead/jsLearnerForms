@@ -3,7 +3,7 @@
 
 const assert = chai.assert;
 
-describe('Forms', function () {
+describe('Forms - First Form', function () {
 
     describe('variables and operations', function () {
         it('should have a variable called "a"', function () {
@@ -302,31 +302,6 @@ describe('Forms', function () {
 
             assert.equal(initialArray !== vector, true);
         });
-
-        it('should return vector with valueOf function which does not return vector', function () {
-            // Add custom valueOf function to array
-            // (valueOf is a built in function for every object in Javascript.
-            //  It is possible to override functions...)
-
-            /*
-             * // Overriding looks like this:
-             * _array_.valueOf = _function_;
-             */
-
-            let vector = jsforms.buildVector([1, 2, 3]);
-
-            assert.equal(vector.valueOf() !== vector, true);
-        });
-
-        it('should return a vector where toString returns a vector string', function () {
-            // Add custom toString function to array
-            // (toString is also built in.)
-
-            let vector = jsforms.buildVector([1, 2, 3]);
-
-            assert.equal(vector.toString(), '<1,2,3>');
-        });
-
     });
 
     describe('magnitude', function () {
@@ -366,6 +341,10 @@ describe('Forms', function () {
 
     describe('getVectorsShorterThan', function () {
 
+        function vectorToString(vector) {
+            return '<' + vector.toString() + '>';
+        }
+
         // We will now compare the length (magnitude) of a vector to a value.
 
         it('should return single vector when the only vector magnitude is acceptably short', function () {
@@ -375,7 +354,7 @@ describe('Forms', function () {
             let result = jsforms.getVectorsShorterThan(5, vectors);
 
             assert.equal(result.length, 1);
-            assert.equal(result[0].toString(), '<1,2>');
+            assert.equal(vectorToString(result[0]), '<1,2>');
         });
 
         it('should return an empty array when the only vector magnitude is too long', function () {
@@ -401,7 +380,7 @@ describe('Forms', function () {
             let result = jsforms.getVectorsShorterThan(length, vectors);
 
             assert.equal(result.length, 1);
-            assert.equal(result[0].toString(), '<3,4>');
+            assert.equal(vectorToString(result[0]), '<3,4>');
         });
 
         it('should filter all vectors which are too long', function () {
@@ -419,8 +398,8 @@ describe('Forms', function () {
             let result = jsforms.getVectorsShorterThan(10, vectors);
 
             let resultValues = [
-                result[0].toString(),
-                result[1].toString()
+                vectorToString(result[0]),
+                vectorToString(result[1]),
             ];
 
             assert.equal(resultValues.toString(), '<1,2,2>,<3,4>');

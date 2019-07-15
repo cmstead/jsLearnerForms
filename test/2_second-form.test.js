@@ -4,7 +4,7 @@
 
 const assert = chai.assert;
 
-describe('Forms', function () {
+describe('Forms - Second Form', function () {
 
     /*
      * Refactoring: the act of changing code for readability or maintainability
@@ -36,8 +36,7 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerOptions)
-                    .then(function (response) {
-                        const result = response.result;
+                    .then(function ({ result }) {
                         assert.isFalse(result);
                     });
             });
@@ -61,15 +60,14 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerIfOptions)
-                    .then(function (response) {
-                        if (response.result === false) {
+                    .then(function ({ result }) {
+                        if (result === false) {
                             return analyzer.analyze(analyzerTernaryOptions);
                         } else {
                             return Promise.resolve({ result: false });
                         }
                     })
-                    .then(function (response) {
-                        const result = response.result;
+                    .then(function ({ result }) {
                         assert.isTrue(result);
                     });
             });
@@ -85,8 +83,7 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerTypeofOptions)
-                    .then(function (response) {
-                        const result = response.result;
+                    .then(function ({ result }) {
                         assert.isTrue(result);
                     });
             });
@@ -161,8 +158,7 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerOptions)
-                    .then(function (response) {
-                        const result = response.result;
+                    .then(function ({ result }) {
                         assert.isTrue(result);
                     });
             });
@@ -179,8 +175,8 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerMethodCallOptions)
-                    .then(function (response) {
-                        assert.isTrue(response.result);
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
                     });
             });
 
@@ -197,8 +193,8 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerMethodCallOptions)
-                    .then(function (response) {
-                        assert.isTrue(response.result);
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
                     });
             });
 
@@ -213,8 +209,8 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerMethodCallOptions)
-                    .then(function (response) {
-                        assert.isTrue(response.result);
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
                     });
             });
         });
@@ -259,8 +255,8 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerMethodCallOptions)
-                    .then(function (response) {
-                        assert.isTrue(response.result);
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
                     });
             });
 
@@ -276,8 +272,8 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerMethodCallOptions)
-                    .then(function (response) {
-                        assert.isFalse(response.result);
+                    .then(function ({ result }) {
+                        assert.isFalse(result);
                     });
             });
 
@@ -292,8 +288,8 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerAssignmentOptions)
-                    .then(function (response) {
-                        assert.isFalse(response.result);
+                    .then(function ({ result }) {
+                        assert.isFalse(result);
                     });
             });
         });
@@ -346,6 +342,24 @@ describe('Forms', function () {
 
             // Keep the tests passing!
 
+            it('has a refactoring in magnitude function to replace vector value with vector.valueOf()', function () {
+                const analyzerCallOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        objectName: 'vector',
+                        methodName: 'valueOf',
+                        parentName: 'magnitude'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerCallOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
             it('contains a constructor for an object called Vector', function () {
                 const analyzerFunctionOptions = {
                     formNumber: 2,
@@ -357,8 +371,43 @@ describe('Forms', function () {
                 };
 
                 return analyzer.analyze(analyzerFunctionOptions)
-                    .then(function(response){
-                        assert.isTrue(response.result);
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('accepts a parameter "points" into Vector constructor', function () {
+                const analyzerParameterOptions = {
+                    formNumber: 2,
+                    analyzerName: 'hasParameters',
+                    analyzerOptions: {
+                        functionName: 'Vector',
+                        parameterNames: ['points']
+                    }
+                };
+
+                return analyzer.analyze(analyzerParameterOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('assigns "points" variable to "this.points" in Vector constructor', function () {
+                const analyzerAssignmentOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsAssignment',
+                    analyzerOptions: {
+                        parentName: 'Vector',
+                        objectName: 'this',
+                        variableName: 'points',
+                        name: 'points'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerAssignmentOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
                     });
             });
 
@@ -374,15 +423,49 @@ describe('Forms', function () {
 
                 return analyzer
                     .analyze(analyzerPrototypeOptions)
-                    .then(function(response) {
-                        assert.isTrue(response.result);
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    })
+            });
+
+            it('overrides the toString function on the Vector prototype', function () {
+                const analyzerPrototypeOptions = {
+                    formNumber: 2,
+                    analyzerName: 'prototypeContainsMethod',
+                    analyzerOptions: {
+                        objectName: 'Vector',
+                        methodName: 'toString'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerPrototypeOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    })
+            });
+
+            it('returns a new Vector object instead of an array', function () {
+                const analyzerNewObjectOptions = {
+                    formNumber: 2,
+                    analyzerName: 'newObject',
+                    analyzerOptions: {
+                        parentName: 'buildVector',
+                        objectName: 'Vector'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerNewObjectOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
                     })
             });
         });
 
         it('should return a vector matching original values', function () {
             let initialArray = [1, 2];
-            let vector = jsforms.buildVector(initialArray);
+            let vector = jsforms.buildVector(initialArray).valueOf();
             let resultValues = [vector[0], vector[1]];
 
             assert.equal(resultValues.toString(), initialArray.toString());
@@ -433,25 +516,86 @@ describe('Forms', function () {
 
     describe('getVectorsShorterThan', function () {
 
-        /*
-         * Refactoring steps:
-         * 1 - Refactor for loop to forEach with an inner if (conditional) block,
-         *     Push values into result array.
-         *
-         *     array.forEach(function (value) {
-         *          if(_boolean_) {
-         *              result.push(_something_);
-         *          }
-         *     });
-         *
-         * 2 - Refactor forEach to filter and assign output to result variable
-         *
-         *     array.filter((value) => return _something_);
-         *
-         * 3 - Return filter output directly
-         */
+        describe('Refactoring steps', function () {
+            /*
+                     * Refactoring steps:
+                     * 1 - Create new function "isMagnitudeShorterThanLength"
+                     *     which checks if the magnitude of a vector is shorter than 
+                     *     the vector length provided
+                     * 2 - Replace for loop with "vectors.filter(isMagnitudeShorterThanLength)"
+                     *     and assign output to results
+                     * 3 - Return results directly
+                     */
 
-        // Keep the tests passing!
+            // Keep the tests passing!
+
+            it('has a function called "isMagnitudeShorterThanLength"', function () {
+                const analyzerFunctionOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsFunction',
+                    analyzerOptions: {
+                        functionName: 'isMagnitudeShorterThanLength'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerFunctionOptions)
+                    .then(function({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('has "vector" and "length" as parameters of "isMagnitudeShorterThanLength"', function () {
+                const analyzerParametersOptions = {
+                    formNumber: 2,
+                    analyzerName: 'hasParameters',
+                    analyzerOptions: {
+                        functionName: 'isMagnitudeShorterThanLength',
+                        parameterNames: ['vector', 'length']
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerParametersOptions)
+                    .then(function({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('is refactored to use "vectors.filter()" instead of for loop', function () {
+                const analyzerCallOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'getVectorsShorterThan',
+                        objectName: 'vectors',
+                        methodName: 'filter'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerCallOptions)
+                    .then(function({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('does not assign filter to results, it just returns directly', function () {
+                const analyzerAssignmentOptions = {
+                    formNumber: 2,
+                    analyzerName: 'containsAssignment',
+                    analyzerOptions: {
+                        parentName: 'getVectorsShorterThan'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerAssignmentOptions)
+                    .then(function({ result }) {
+                        assert.isFalse(result);
+                    });
+            });
+        });
 
         it('should return single vector when the only vector magnitude is acceptably short', function () {
             let vectors = [jsforms.buildVector([1, 2])];

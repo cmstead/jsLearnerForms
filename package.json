@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./start.js",
-    "setup": "node ./setup.js"
+    "setup": "node ./setup.js",
+    "update-forms": "node ./runner-utils/update-forms.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/cmstead/jsLearnerForms.git"
   },
   "author": "Chris Stead <cmstead@gmail.com> (http://www.chrisstead.com/)",
-  "license": "MPL",
+  "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/cmstead/jsLearnerForms/issues"
   },
@@ -20,11 +21,11 @@
   "devDependencies": {
     "approvals": "^2.1.2",
     "approvals-config-factory": "^1.0.0",
-    "chai": "^4.0.2",
+    "chai": "^4.2.0",
     "eslint": "^3.19.0",
-    "mocha": "^3.4.2",
+    "mocha": "^3.5.3",
     "mockery": "^2.1.0",
-    "sinon": "^2.3.5"
+    "sinon": "^2.4.1"
   },
   "dependencies": {
     "clear": "^0.1.0",
@@ -33,6 +34,6 @@
     "express": "^4.17.1",
     "inquirer": "^6.4.1",
     "livereload": "^0.8.0",
-    "open": "^6.3.0"
+    "open": "^6.4.0"
   }
 }

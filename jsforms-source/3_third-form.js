@@ -2,11 +2,7 @@ const jsforms = (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting !== undefined) {
-            return greeting + '!';
-        } else {
-            return 'Hello!';
-        }
+        return typeof greeting === 'string' ? greeting + '!' : 'Hello!';
     }
 
     function square(x) {
@@ -17,24 +13,20 @@ const jsforms = (function () {
         return Math.sqrt(x);
     }
 
+    function add(a, b) {
+        return a + b;
+    }
+
     function sum(nums) {
         let result = 0;
 
-        for (let index = 0; index < nums.length; index += 1) {
-            result += nums[index];
-        }
+        nums.forEach((value) => result = add(result, value));
 
         return result;
     }
 
     function squareAll(nums) {
-        let result = [];
-
-        for (let index = 0; index < nums.length; index += 1) {
-            result[index] = square(nums[index]);
-        }
-
-        return result;
+        return nums.valueOf().map(square);
     }
 
     function sumOfSquares(nums) {
@@ -42,13 +34,17 @@ const jsforms = (function () {
         return sum(squares);
     }
 
+    function Vector(points) {
+        this.points = points;
+    }
+
+    Vector.prototype = {
+        valueOf: function () { return this.points.valueOf(); },
+        toString: function () { return '<' + this.points.join(',') + '>'; }
+    };
+
     function buildVector(points) {
-        let vector = points.slice(0);
-
-        vector.valueOf = function () { return points.slice(0); };
-        vector.toString = function () { return '<' + points.join(',') + '>'; };
-
-        return vector;
+        return new Vector(points);
     }
 
     function magnitude(vector) {
@@ -57,15 +53,7 @@ const jsforms = (function () {
     }
 
     function getVectorsShorterThan(length, vectors) {
-        let result = [];
-
-        for (let index = 0; index < vectors.length; index += 1) {
-            if (magnitude(vectors[index]) < length) {
-                result[result.length] = vectors[index];
-            }
-        }
-
-        return result;
+        return vectors.filter((vector) => magnitude(vector) < length);
     }
 
     return {

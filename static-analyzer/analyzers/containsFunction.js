@@ -1,6 +1,7 @@
 function containsFunction({
     parentName = null,
-    functionName = null
+    functionName = null,
+    parameters = null
 }) {
 
     function hasMatchingName(node, name) {
@@ -8,9 +9,21 @@ function containsFunction({
             || ( node.id && node.id.name === name);
     }
 
+function checkAllParameters(node) {
+    return node.params.reduce(function (result, parameter, index){
+        return result && parameter.name === parameters[index];
+    }, true);
+}
+
+    function hasMatchingParameters(node) {
+        return parameters === null
+            || checkAllParameters(node);
+    }
+
     function isMatchingFunction(node, name) {
         return node.type === 'FunctionDeclaration'
-            && hasMatchingName(node, name);
+            && hasMatchingName(node, name)
+            && hasMatchingParameters(node);
     }
 
     let parentNode = null;

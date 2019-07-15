@@ -2,7 +2,11 @@ const jsforms = (function () {
     'use strict';
 
     function greet(greeting) {
-        return typeof greeting === 'string' ? greeting + '!' : 'Hello!';
+        if (greeting !== undefined) {
+            return greeting + '!';
+        } else {
+            return 'Hello!';
+        }
     }
 
     function square(x) {
@@ -13,20 +17,24 @@ const jsforms = (function () {
         return Math.sqrt(x);
     }
 
-    function add(a, b) {
-        return a + b;
-    }
-
     function sum(nums) {
         let result = 0;
 
-        nums.forEach((value) => result = add(result, value));
+        for (let index = 0; index < nums.length; index += 1) {
+            result += nums[index];
+        }
 
         return result;
     }
 
     function squareAll(nums) {
-        return nums.valueOf().map(square);
+        let result = [];
+
+        for (let index = 0; index < nums.length; index += 1) {
+            result[index] = square(nums[index]);
+        }
+
+        return result;
     }
 
     function sumOfSquares(nums) {
@@ -34,19 +42,10 @@ const jsforms = (function () {
         return sum(squares);
     }
 
-    function Vector(points) {
-        this.points = points;
-
-        points.forEach((value, index) => this[index] = value);
-    }
-
-    Vector.prototype = {
-        valueOf: function () { return this.points.valueOf(); },
-        toString: function () { return '<' + this.points.join(',') + '>'; }
-    };
-
     function buildVector(points) {
-        return new Vector(points);
+        let vector = points.slice(0);
+
+        return vector;
     }
 
     function magnitude(vector) {
@@ -55,7 +54,15 @@ const jsforms = (function () {
     }
 
     function getVectorsShorterThan(length, vectors) {
-        return vectors.filter((vector) => magnitude(vector) < length);
+        let result = [];
+
+        for (let index = 0; index < vectors.length; index += 1) {
+            if (magnitude(vectors[index]) < length) {
+                result[result.length] = vectors[index];
+            }
+        }
+
+        return result;
     }
 
     return {
