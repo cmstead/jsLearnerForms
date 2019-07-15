@@ -9,6 +9,10 @@ analyzer
 
 const assert = chai.assert;
 
+function verifyOutput(actual, expected) {
+    assert.equal(JSON.stringify(actual), JSON.stringify(expected));
+}
+
 describe('Forms - Third Form', function () {
 
     describe('greeter', function () {
@@ -287,22 +291,38 @@ describe('Forms - Third Form', function () {
             assert.equal(vector.toString(), '<1,2,3>');
         });
 
-        describe('Immutable object properties and values', function () {
+        describe('Getter properties and value immutability', function () {
 
-            it('should not be possible to modify vector.points', function () {
+            it('should have access to read, but not write, vector.points', function () {
                 /*
-                 * // Setting an immutable property on an object:
+                 * // Setting a getter on an object:
                  * Object.defineProperty(obj, key, {
-                 *      writeable: false,
-                 *      value: value
+                 *      get: () => value
                  * });
                  */
 
-                let vector = jsforms.buildVector([1, 2, 3]);
+                const originalPoints = [1, 2, 3];
+
+                let vector = jsforms.buildVector(originalPoints);
+
+                verifyOutput(vector.points, originalPoints);
                 assert.throws(() => vector.points = [4, 5, 6]);
             });
 
+
+            it('should not change vector object when the original array is modified', function () {
+                let originalArray = [1, 2, 3];
+                let vector = jsforms.buildVector(originalArray);
+
+                originalArray.push(4);
+
+                assert.notEqual(vector.points.length, originalArray.length);
+            });
+            
             it('should not be possible to modify vector.points', function () {
+                /*
+                It's possible to disable modifying an object usig Object.freeze
+                */
                 let vector = jsforms.buildVector([1, 2, 3]);
                 assert.throws(() => vector.points.push(4));
             });
@@ -341,7 +361,7 @@ describe('Forms - Third Form', function () {
                         });
                 });
 
-                it('has a call in Vector constructor to "isArrayOfNumbers" with "points" as an argument', function() {
+                it('has a call in Vector constructor to "isArrayOfNumbers" with "points" as an argument', function () {
                     const analyzerCallOptions = {
                         formNumber: 3,
                         analyzerName: 'containsCall',
@@ -354,7 +374,7 @@ describe('Forms - Third Form', function () {
 
                     return analyzer
                         .analyze(analyzerCallOptions)
-                        .then(function({result}){
+                        .then(function ({ result }) {
                             assert.isTrue(result, 'Cannot find call to isArrayOfNumbers');
                         });
                 });
