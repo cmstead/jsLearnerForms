@@ -12,7 +12,7 @@ const formNumberPrompt = {
         '2 - Second Form',
         '3 - Third Form',
         '4 - Test Dummy Form',
-        // '5 - Async Form',
+        '5 - Async Form',
         '6 - Async Test Dummy Form'
     ]
 }
