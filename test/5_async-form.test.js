@@ -4,6 +4,7 @@ global
 analyzer,
 chai,
 fakeDataStoreFactory,
+fakeTodoDataServiceFactory,
 todoToolsFactory
 */
 
@@ -16,20 +17,70 @@ function verifyOutput(actual, expected) {
 describe('Forms - Async Form', function () {
 
     let testData;
+    let remoteData;
     let todoTools;
+    let fakeDataStore;
+    let fakeExternalDataService;
 
     beforeEach(function () {
         testData = {
             todoList: [],
-            taskId: 1
+            taskId: 1,
+            deleteRowCount: 1
         };
 
-        const fakeDataStore = fakeDataStoreFactory(testData);
+        remoteData = {
+            error: null,
+            data: null
+        };
 
-        todoTools = todoToolsFactory(fakeDataStore);
+        fakeDataStore = fakeDataStoreFactory(testData);
+        fakeExternalDataService = fakeTodoDataServiceFactory(remoteData);
+
+        todoTools = todoToolsFactory(fakeDataStore, fakeExternalDataService);
     });
 
-    describe('Load todos', function () {
+    describe('1 - Create todo task', function () {
+        it('should save a new task (dataStore.saveTask)', function () {
+            const taskValue = 'Create a new task';
+
+            todoTools
+                .saveTask(taskValue)
+
+            assert.equal(fakeDataStore.saveTask.getCall(0).args[0], taskValue);
+        });
+
+        it('should expose the insert id on save completion', function () {
+            return todoTools
+                .saveTask('Create another new task')
+                .then(function (insertId) {
+                    assert.equal(insertId, 1);
+                });
+        });
+    });
+
+    describe('2 - Delete todo task', function () {
+        it('should delete a task by id (dataStore.deleteTask)', function () {
+            const taskId = 999;
+
+            todoTools
+                .deleteTask(taskId)
+
+            assert.equal(fakeDataStore.deleteTask.getCall(0).args[0], taskId);
+        });
+
+        it('should expose the affected row count on completion', function () {
+            const taskId = 999;
+
+            return todoTools
+                .deleteTask(taskId)
+                .then(function (rowCount) {
+                    assert.equal(rowCount, 1);
+                });
+        });
+    });
+
+    describe('3 - Load todos', function () {
 
         it('loads empty data from data store (dataStore.getTodoList)', function () {
             const expectedData = {
@@ -250,13 +301,178 @@ describe('Forms - Async Form', function () {
 
     });
 
-    describe('Create todo task', function () {
-        it('should save a new task (dataStore.saveTask)', function () {
+    describe('4 - Get external todo data from a callback-calling API', function () {
+        it('fetches todo memo from remote service (externalDataService.getRemoteMemoById)', function () {
+            const memoId = 123;
+            remoteData.data = {
+                memo: 'This is a memo'
+            };
+
+            todoTools
+                .getRemoteMemoById(memoId)
+
+            assert.equal(fakeExternalDataService.getRemoteMemoById.getCall(0).args[0], memoId);
+            assert.equal(typeof fakeExternalDataService.getRemoteMemoById.getCall(0).args[1], 'function');
+        });
+
+        it('resolves when remote data is returned successfully', function () {
+            const memoId = 123;
+            remoteData.data = {
+                memo: 'This is a memo'
+            };
+
             return todoTools
-                .saveTask('Create a new task')
-                .then(function (taskId) {
-                    assert.equal(typeof taskId, 'number');
+                .getRemoteMemoById(memoId)
+                .then(function (memo) {
+                    verifyOutput(memo, remoteData.data);
                 });
+
+        });
+
+        it('rejects when remote query fails', function () {
+            const memoId = 123;
+            remoteData.error = new Error('Something went wrong -- Unable to retrieve memo.');
+
+            return todoTools
+                .getRemoteMemoById(memoId)
+                .then(function () {
+                    assert.isTrue(false, 'Promise must not resolve when an error occurs');
+                })
+                .catch(function (error) {
+                    assert.equal(error.message, remoteData.error.message);
+                });
+
+        });
+
+        describe('Refactoring steps', function () {
+            it('has a function called "promisify" which takes parameters "callbackCallingMethod" and "callArguments"', function () {
+                const analyzerFunctionOptions = {
+                    formNumber: 5,
+                    analyzerName: 'containsFunction',
+                    analyzerOptions: {
+                        parentName: 'todoToolsFactory',
+                        functionName: 'promisify',
+                        parameters: [
+                            'callbackCallingMethod',
+                            'callArguments'
+                        ]
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerFunctionOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result);
+                    });
+            });
+
+            it('uses promisify in getRemoteMemoById to handle callback-calling method', function () {
+                const analyzerNewCallOptions = {
+                    formNumber: 5,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'getRemoteMemoById',
+                        methodName: 'promisify'
+                    }
+                };
+
+                const analyzerOldCallOptions = {
+                    formNumber: 5,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'getRemoteMemoById',
+                        objectName: 'externalDataService',
+                        methodName: 'getRemoteMemoById'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerNewCallOptions)
+                    .then(function ({ result }) {
+                        if (result === true) {
+                            return analyzer
+                                .analyze(analyzerOldCallOptions)
+                                .then(function ({ result }) {
+                                    return Promise.resolve({ result: !result });
+                                });
+                        } else {
+                            return Promise.resolve({ result: false });
+                        }
+                    })
+                    .then(function ({ result }) {
+                        assert.isTrue(result, 'Function "promisify" is not being used in getRemoteMemoById');
+                    });
+            });
         });
     });
+
+    describe('5 - Get external todo memo data from a set of ids from a callback-calling API', function () {
+        it('fetches todo memo from remote service (externalDataService.getRemoteMemos)', function () {
+            const memoIds = [1, 2, 3];
+            remoteData.data = {
+                1: {
+                    memo: 'This is memo 1'
+                },
+                2: {
+                    memo: 'This is memo 2'
+                },
+                3: {
+                    memo: 'This is memo 3'
+                },
+            };
+
+            return todoTools
+                .getRemoteMemos(memoIds)
+                .then(function (memos) {
+                    const expectedMemos = [
+                        remoteData.data[1],
+                        remoteData.data[2],
+                        remoteData.data[3]
+                    ];
+
+                    verifyOutput(memos, expectedMemos);
+                });
+        });
+
+        describe('Refactoring steps', function () {
+            it('maps over all memoIds to make calls', function () {
+                const analyzerCallOptions = {
+                    formNumber: 5,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'getRemoteMemos',
+                        objectName: 'memoIds',
+                        methodName: 'map'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerCallOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result, 'Memo Ids are not being mapped over');
+                    });
+
+            });
+
+            it('uses Promise.all to manage all memo requests', function () {
+                const analyzerCallOptions = {
+                    formNumber: 5,
+                    analyzerName: 'containsCall',
+                    analyzerOptions: {
+                        parentName: 'getRemoteMemos',
+                        objectName: 'Promise',
+                        methodName: 'all'
+                    }
+                };
+
+                return analyzer
+                    .analyze(analyzerCallOptions)
+                    .then(function ({ result }) {
+                        assert.isTrue(result, 'Memo Ids are not being mapped over');
+                    });
+
+            });
+        });
+    });
+
 });

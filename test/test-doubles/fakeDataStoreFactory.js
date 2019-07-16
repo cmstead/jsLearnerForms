@@ -13,13 +13,16 @@ function resolveOrReject(data, key) {
     });
 }
 
+// eslint-disable-next-line
 function stubify(callThroughFunction) {
     return sinon.stub().callsFake(callThroughFunction);
 }
 
+// eslint-disable-next-line
 function fakeDataStoreFactory(testData) {
     return {
         getTodoList: resolveOrReject(testData, 'todoList'),
-        saveTask: resolveOrReject(testData, 'taskId')
+        saveTask: resolveOrReject(testData, 'taskId'),
+        deleteTask: resolveOrReject(testData, 'deleteRowCount')
     }
 }

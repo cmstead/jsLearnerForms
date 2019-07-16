@@ -1,4 +1,5 @@
-function todoToolsFactory(dataStore) {
+// eslint-disable-next-line
+function todoToolsFactory(dataStore, externalDataService) {
 
     function getTasksByCompleteStatus(todoList, status) {
         return todoList
@@ -12,6 +13,14 @@ function todoToolsFactory(dataStore) {
         };
     }
 
+    function saveTask(task) {
+        return dataStore.saveTask(task);
+    }
+
+    function deleteTask(taskId) {
+        return dataStore.deleteTask(taskId);
+    }
+
     function getTodoListData() {
         return dataStore
             .getTodoList()
@@ -20,11 +29,39 @@ function todoToolsFactory(dataStore) {
             });
     }
 
-    function saveTask(task) {
-        return dataStore.saveTask(task);
+    function promisify(callbackCallingMethod, callArguments) {
+        return new Promise(function(resolve, reject) {
+            function callbackToPromise(error, data) {
+                if(error) {
+                    reject(error)
+                } else {
+                    resolve(data);
+                }
+            }
+
+            const allMethodArgs = callArguments.concat(callbackToPromise);
+
+            callbackCallingMethod.apply(null, allMethodArgs);
+        });
+    }
+
+    function getRemoteMemoById(memoId) {
+        return promisify(
+            externalDataService.getRemoteMemoById,
+            [memoId]
+        )
+    }
+
+    function getRemoteMemos(memoIds) {
+        const promises = memoIds.map(memoId => getRemoteMemoById(memoId));
+
+        return Promise.all(promises);
     }
 
     return {
+        deleteTask,
+        getRemoteMemoById,
+        getRemoteMemos,
         getTodoListData,
         saveTask
     };

@@ -1,43 +1,45 @@
+const {
+    isMatchingFunctionName,
+    hasMatchingParentState,
+    hasNullParentState
+} = require('../analyzerUtilities/analyzerHelpers');
+
 function containsFunction({
     parentName = null,
     functionName = null,
     parameters = null
 }) {
 
-    function hasMatchingName(node, name) {
-        return name === null
-            || ( node.id && node.id.name === name);
+    function checkAllParameters(node) {
+        return parameters === null
+            || (
+                node.params.length === parameters.length
+                && node.params.reduce(function (result, parameter, index) {
+                    return result && parameter.name === parameters[index];
+                }, true)
+            );
     }
-
-function checkAllParameters(node) {
-    return node.params.reduce(function (result, parameter, index){
-        return result && parameter.name === parameters[index];
-    }, true);
-}
 
     function hasMatchingParameters(node) {
         return parameters === null
             || checkAllParameters(node);
     }
 
-    function isMatchingFunction(node, name) {
-        return node.type === 'FunctionDeclaration'
-            && hasMatchingName(node, name)
+    let parentNode = null;
+
+    function hasMatchingFunctionState(node, functionName, parentNode) {
+        return parentNode !== null
+            && isMatchingFunctionName(node, functionName)
             && hasMatchingParameters(node);
     }
 
-    let parentNode = null;
+    function isMatchingFunctionNode(node) {
+        const isParentNodeSetState = hasNullParentState(parentName, parentNode)
+            || hasMatchingParentState(node, parentName, parentNode)
 
-    function isMatchingVariableNode(node) {
-        if (parentName === null && parentNode === null) {
-            parentNode = node;
-        } else if (parentName !== null && isMatchingFunction(node, parentName)) {
-            parentNode = node;
-        } else if (parentNode !== null && isMatchingFunction(node, functionName)) {
-            return true;
-        }
+        parentNode = isParentNodeSetState ? node : parentNode;
 
-        return false
+        return parentNode !== null && hasMatchingFunctionState(node, functionName, parentNode);
     }
 
     function clearParentNode(node) {
@@ -47,7 +49,7 @@ function checkAllParameters(node) {
     }
 
     return {
-        predicate: isMatchingVariableNode,
+        predicate: isMatchingFunctionNode,
         onExit: clearParentNode
     };
 }
