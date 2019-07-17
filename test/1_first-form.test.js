@@ -278,7 +278,7 @@ describe('Forms - First Form', function () {
         // describes a "directed line segment," in other
         // words, a vector is a line segment with an arrow
 
-        it('should return a vector matching original values', function () {
+        it('should return a vector (array) matching original values', function () {
             // Add buildVector function
             // (Would it be possible to just return something?)
 
@@ -289,7 +289,7 @@ describe('Forms - First Form', function () {
             assert.equal(resultValues.toString(), initialArray.toString());
         });
 
-        it('should return a vector given an array which is not the original array', function () {
+        it('returns a vector which contains the same values as initialArray, but is a new array', function () {
             // Add logic to return a copy of vector array
             // (Slice will create a new array just like the old one...)
 
@@ -300,7 +300,7 @@ describe('Forms - First Form', function () {
             let initialArray = [1, 2];
             let vector = jsforms.buildVector(initialArray);
 
-            assert.equal(initialArray !== vector, true);
+            assert.notEqual(initialArray, vector);
         });
     });
 
@@ -308,6 +308,11 @@ describe('Forms - First Form', function () {
 
         // A magnitude is the length of a vector. We will explore
         // computing the magnitude in the following tests
+
+        // the magnitude of a vector is computed by:
+        // 1 - Square all numbers in the array
+        // 2 - Add all squared values together
+        // 3 - Take the square root of the sum of squares
 
         it('should return the magnitude of a one-value vector', function () {
             // Add cheated-out magnitude function
