@@ -9,19 +9,6 @@ pluginApi
 
 'use strict';
 
-Object.defineProperty(chai.assert, 'verify', {
-    writeable: false,
-    value: function (actual, expected) {
-        chai.assert(
-            JSON.stringify(actual) === JSON.stringify(expected),
-            'expected #{act} to equal #{exp}',
-            '',
-            expected,
-            actual
-        );
-    }
-});
-
 describe('Async Test Dummy Form', function () {
 
     let contactService;

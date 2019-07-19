@@ -10,19 +10,6 @@ todoToolsFactory
 
 const assert = chai.assert;
 
-Object.defineProperty(chai.assert, 'verify', {
-    writeable: false,
-    value: function (actual, expected) {
-        chai.assert(
-            JSON.stringify(actual) === JSON.stringify(expected),
-            'expected #{act} to equal #{exp}',
-            '',
-            expected,
-            actual
-        );
-    }
-});
-
 describe('Forms - Async Form', function () {
 
     let testData;
