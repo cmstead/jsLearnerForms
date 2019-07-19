@@ -10,9 +10,18 @@ todoToolsFactory
 
 const assert = chai.assert;
 
-function verifyOutput(actual, expected) {
-    assert.equal(JSON.stringify(actual), JSON.stringify(expected));
-}
+Object.defineProperty(chai.assert, 'verify', {
+    writeable: false,
+    value: function (actual, expected) {
+        chai.assert(
+            JSON.stringify(actual) === JSON.stringify(expected),
+            'expected #{act} to equal #{exp}',
+            '',
+            expected,
+            actual
+        );
+    }
+});
 
 describe('Forms - Async Form', function () {
 
@@ -91,7 +100,7 @@ describe('Forms - Async Form', function () {
             return todoTools
                 .getTodoListData()
                 .then(function (todoListData) {
-                    verifyOutput(todoListData, expectedData);
+                    assert.verify(todoListData, expectedData);
                 });
         });
 
@@ -111,7 +120,7 @@ describe('Forms - Async Form', function () {
             return todoTools
                 .getTodoListData()
                 .then(function (todoListData) {
-                    verifyOutput(todoListData, expectedData);
+                    assert.verify(todoListData, expectedData);
                 });
         })
 
@@ -131,7 +140,7 @@ describe('Forms - Async Form', function () {
             return todoTools
                 .getTodoListData()
                 .then(function (todoListData) {
-                    verifyOutput(todoListData, expectedData);
+                    assert.verify(todoListData, expectedData);
                 });
         });
 
@@ -159,7 +168,7 @@ describe('Forms - Async Form', function () {
             return todoTools
                 .getTodoListData()
                 .then(function (todoListData) {
-                    verifyOutput(todoListData, expectedData);
+                    assert.verify(todoListData, expectedData);
                 });
         });
 
@@ -324,7 +333,7 @@ describe('Forms - Async Form', function () {
             return todoTools
                 .getRemoteMemoById(memoId)
                 .then(function (memo) {
-                    verifyOutput(memo, remoteData.data);
+                    assert.verify(memo, remoteData.data);
                 });
 
         });
@@ -430,7 +439,7 @@ describe('Forms - Async Form', function () {
                         remoteData.data[3]
                     ];
 
-                    verifyOutput(memos, expectedMemos);
+                    assert.verify(memos, expectedMemos);
                 });
         });
 

@@ -1,4 +1,6 @@
 /* global
+
+    chai,
     salesReporterFactory,
     dataLoaderFactory,
     pointOfSaleDataUtilsFactoryBuilder,
@@ -10,9 +12,18 @@
 const assert = chai.assert;
 
 // Use this to compare two objects in tests that need it
-function verifyOutput(actual, expected) {
-    assert.equal(JSON.stringify(actual), JSON.stringify(expected));
-}
+Object.defineProperty(chai.assert, 'verify', {
+    writeable: false,
+    value: function (actual, expected) {
+        chai.assert(
+            JSON.stringify(actual) === JSON.stringify(expected),
+            'expected #{act} to equal #{exp}',
+            '',
+            expected,
+            actual
+        );
+    }
+});
 
 function buildProductData() {
     return [
