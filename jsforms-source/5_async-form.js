@@ -1,5 +1,11 @@
 // eslint-disable-next-line
 function todoToolsFactory(dataStore, externalDataService) {
 
-    return {};
+    function getTodoListData() {
+        return Promise.resolve({});
+    }
+
+    return {
+        getTodoListData
+    };
 }
