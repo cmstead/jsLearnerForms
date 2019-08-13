@@ -289,7 +289,7 @@ describe('Forms - Third Form', function () {
 
         describe('Getter properties and value immutability', function () {
 
-            it.only('should have access to read, but not write, vector.points', function () {
+            it('should have access to read, but not write, vector.points', function () {
                 /*
                  * // Setting a getter on an object:
                  * Object.defineProperty(obj, key, {
