@@ -1,16 +1,5 @@
+# Javascript Language Forms #
 
-<!-- GENERATED DOCUMENT! DO NOT EDIT! -->
-# JS Learner Forms #
-
-
-## Table Of Contents ##
-
-- [Section 1: Introduction](#user-content-introduction)
-- [Section 2: Environment Setup](#user-content-environment-setup)
-- [Section 3: Using JS Learner Forms](#user-content-using-js-learner-forms)
-- [Section 4: Skills Covered](#user-content-skills-covered)
-
-## Introduction ##
 The concept of forms was borrowed from martial arts. Instead of solving new problems over and over in hopes that the language will stick, a form is intended to be repeated movement for movement to develop a relationship with the language and practices of a fluent developer. The student at each form level will learn to identify syntactic patterns while following an intentional and regimented process to promote fluency through a repeated process.
 
 A student of any form will know they are ready to move to the next form when they can demonstrate proficiency in the current form by applying the techniques presented without referring to the example materials. No two programmers are alike so it is understood that the steps someone would follow may vary slightly. This variance is good as it demonstrates a deeper understanding of the ideas presented in the form.
@@ -19,12 +8,7 @@ All of the first three forms will use the same tests and will address the questi
 
 As a student becomes more conversant in a particular form, they are encouraged to apply their knowledge using code katas, like the problems provided by [Exercism.io](http://exercism.io/).
 
-    
-
-## Environment Setup ##
-
-
-### Environment Setup ###
+## Setup ##
 
 To use JS Learner Forms, you will need to do the following:
 
@@ -35,9 +19,8 @@ To use JS Learner Forms, you will need to do the following:
     - After downloading, double-click the zip file in your downloads directory
     - Copy the unzipped files to a directory/folder you can remember and find later
 
-    
+**After Installing**
 
-### Forms Setup ###
 - Set up project
     - open a terminal/command line
     - go to the directory where the JS Learner Forms project is stored
@@ -45,14 +28,12 @@ To use JS Learner Forms, you will need to do the following:
         - Mac: `cd /path/to/jsLearnerForms`
     - Run the setup script: `npm run setup`
 
-    
-
-    
+**That's it! You're all set.**
 
 ## Using JS Learner Forms ##
 
+### Running A Form ###
 
-### Running a Form ###
 1. Open a terminal/command line in the JS Learner Forms directory (like when you ran the setup)
 2. Run the start script: `npm start`
 3. Select run from the main menu
@@ -63,31 +44,41 @@ To use JS Learner Forms, you will need to do the following:
     - Test files are found in the `test` directory
     - Source files are found in the `jsforms-source` directory
 
-    
-
 ### Starting a Form Over ###
-1. From the start script menu, select the reset option.
-2. Choose the form number to update
 
-    
+1. From the start script menu, select the reset option.
+3. Choose the form number to update
 
 ### Solving Each Form ###
+
 1. First Form -- Write code to pass each test
 2. Second Form -- Update code to pass new tests, keep old tests green
 3. Third Form -- Update code to pass new tests, keep tests old green
 4. Test Dummy Form (Fourth Form) -- Write tests matching each description and get all of the code under test (modify ONLY the test code)
-5. Async Form -- Write code to pass each test; don't forget the refactoring steps!
 6. Async Test Dummy Form (Sixth Form) -- Write tests matching each description and get all of the code under test (modify ONLY the test code)
 
-    
+### Completing Each Task ###
 
-    
+1. Read description of the current failing test
+    - Look in the test file, find the text that matches the description of the failing test
+    - Read and try to understand what the test is doing
+2. Write code to make the test pass.
+3. All tests will automatically rerun as you save your code updates.
 
-## Skills Covered ##
+## Skills covered per form ##
+
 This section will be updated as forms are completed and ready for use.
 
-
 ### First Form ###
+
+Core setup concepts:
+
+- Strict mode Javascript
+- Immediately Invoked Function Expressions
+- Exporting a module
+
+Ideas to build upon:
+
 - Function creation
 - Conditional statements
 - Calling a function
@@ -101,9 +92,23 @@ This section will be updated as forms are completed and ready for use.
 - Arrays
 - Nested logic
 
-    
+Good reinforcement exercises from Exercism.io include:
 
-### Second Form ###
+- Leap
+- Hamming
+- RNA-Transcription
+- Bob
+
+Strong first form students will be challenged by these exercises:
+
+- Gigasecond (The Date api is necessary for this problem)
+- Word-count
+- Pangram
+
+### Second Form
+
+Second form concepts
+
 - Inner looping functions
     - Array.prototype.forEach
     - Array.prototype.filter
@@ -114,39 +119,31 @@ This section will be updated as forms are completed and ready for use.
 - Factory functions
 - Higher-order functions
 
-    
+Reinforcement exercises from Exercism.io are to refactor the following using second form concepts:
 
-### Third Form ###
+- Hamming
+- Word-count
+- Pangram
+
+### Third Form
+
+Third form concepts
+
 - Array.prototype.reduce
 - Object immutability
 - Generic functions
 - Scope management
 - Type checking
 
-    
+### Fourth Form -- Test Dummy Form
 
-### Test Dummy Form (Fourth Form) ###
-**Testing Concepts**
+Fourth form concepts
 
 - Writing unit tests
-- Getting a test harness around untested code
-- Test Doubles -- Mocks, fakes, stubs and spies
+- Creating vice tests around existing code
+- Mocks, stubs and spies
 - Code seams
 - Pure and impure functions
-- Testing libraries - Mocha, Chai
-
-**Code Concepts**
-
-- Design Patterns
-    - Factories
-    - Higher-Order Functions
-- Data Access Layers
-- Code Organization
-
-    
-
-    
-
-
-<!-- GENERATED DOCUMENT! DO NOT EDIT! -->
-    
+- Programming patterns
+- Code deduplication
+- Testing libraries - Mocha, Chai, Sinon and Mockery
