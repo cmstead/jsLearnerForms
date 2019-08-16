@@ -1,4 +1,6 @@
 /* global
+
+    chai,
     salesReporterFactory,
     dataLoaderFactory,
     pointOfSaleDataUtilsFactoryBuilder,
@@ -8,11 +10,6 @@
 'use strict';
 
 const assert = chai.assert;
-
-// Use this to compare two objects in tests that need it
-function verifyOutput(actual, expected) {
-    assert.equal(JSON.stringify(actual), JSON.stringify(expected));
-}
 
 function buildProductData() {
     return [
