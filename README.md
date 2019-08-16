@@ -25,10 +25,6 @@ As a student becomes more conversant in a particular form, they are encouraged t
 
 ## Environment Setup ##
 
-For a video walkthrough of the setup process, check out the following video:
-
-[![JS Learner Forms Setup On YouTube](https://img.youtube.com/vi/H0YLk-pVdPI/0.jpg)](https://www.youtube.com/watch?v=H0YLk-pVdPI)
-
 
 ### Environment Setup ###
 
@@ -52,6 +48,10 @@ To use JS Learner Forms, you will need to do the following:
     - Run the setup script: `npm run setup`
 
     
+
+For a video walkthrough of the setup process, check out the following video:
+
+[![JS Learner Forms Setup On YouTube](https://img.youtube.com/vi/H0YLk-pVdPI/0.jpg)](https://www.youtube.com/watch?v=H0YLk-pVdPI)
 
     
 
