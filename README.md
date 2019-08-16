@@ -19,9 +19,15 @@ All of the first three forms will use the same tests and will address the questi
 
 As a student becomes more conversant in a particular form, they are encouraged to apply their knowledge using code katas, like the problems provided by [Exercism.io](http://exercism.io/).
 
+[![JS Learner Forms Introduction Video](https://img.youtube.com/vi/I-iKs3ahU40/0.jpg)](https://www.youtube.com/watch?v=I-iKs3ahU40)
+
     
 
 ## Environment Setup ##
+
+For a video walkthrough of the setup process, check out the following video:
+
+[![JS Learner Forms Setup On YouTube](https://img.youtube.com/vi/H0YLk-pVdPI/0.jpg)](https://www.youtube.com/watch?v=H0YLk-pVdPI)
 
 
 ### Environment Setup ###

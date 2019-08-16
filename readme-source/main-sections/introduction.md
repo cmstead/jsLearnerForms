@@ -10,3 +10,5 @@ A student of any form will know they are ready to move to the next form when the
 All of the first three forms will use the same tests and will address the questions posed in the tests in the same order. For any proficiency check, the student will be expected to work through the tests by reading them and then providing an appropriate response.
 
 As a student becomes more conversant in a particular form, they are encouraged to apply their knowledge using code katas, like the problems provided by [Exercism.io](http://exercism.io/).
+
+[![JS Learner Forms Introduction Video](https://img.youtube.com/vi/I-iKs3ahU40/0.jpg)](https://www.youtube.com/watch?v=I-iKs3ahU40)

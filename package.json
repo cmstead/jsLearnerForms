@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./start.js",
     "setup": "node ./setup.js",
+    "build-readme": "node ./node_modules/booklisp/ ./readme-source/readme.md README.md",
     "update-forms": "node ./runner-utils/update-forms.js"
   },
   "repository": {
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/cmstead/jsLearnerForms",
   "devDependencies": {
+    "booklisp": "^2.0.0",
     "chai": "^4.2.0",
     "eslint": "^3.19.0",
     "mocha": "^3.5.3",
