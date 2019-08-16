@@ -1,6 +1,7 @@
 /* global
 
     chai,
+    fourthFormHelpers,
     salesReporterFactory,
     dataLoaderFactory,
     pointOfSaleDataUtilsFactoryBuilder,
@@ -11,35 +12,15 @@
 
 const assert = chai.assert;
 
-function buildProductData() {
-    return [
-        {
-            id: 1,
-            name: 'Pirate Costume',
-            price: 39.99
-        },
-        {
-            id: 2,
-            name: 'Robot Costume',
-            price: 59.99
-        }
-    ];
-}
-
-function buildTransactionTypes() {
-    return {
-        Sale: 1,
-        Return: 2
-    };
-}
-
-function buildTestData(productData, transactionTypes) {
-    return {
-        productData: productData,
-        transactionTypes: transactionTypes,
-        transactionData: []
-    };
-}
+// Look in 4_test-dummy-helpers.js to see 
+// these helper functions. You'll need them.
+const {
+    buildProductData,
+    buildTransactionTypes,
+    buildTransactionData,
+    buildTestData,
+    buildSalesReporter
+} = fourthFormHelpers;
 
 describe('Test Dummy Form - Costume Shop Sales', function () {
 

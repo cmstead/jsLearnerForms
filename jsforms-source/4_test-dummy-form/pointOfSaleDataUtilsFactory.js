@@ -16,8 +16,8 @@ function pointOfSaleDataUtilsFactoryBuilder() {
         }
     
         function getProductCountByStatus(transactionStatus, transactionData) {
-            function transactionStatusMatchesUserSelection(transaction) {
-                return transaction.transactionStatus === transactionStatus;
+            function transactionStatusMatchesUserSelection(transactionRecord) {
+                return transactionRecord.transactionStatus === transactionStatus;
             }
     
             function captureProductCounts(finalCounts, transactionRecord) {
