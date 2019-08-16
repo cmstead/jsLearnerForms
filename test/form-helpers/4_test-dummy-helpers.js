@@ -1,3 +1,12 @@
+/* global
+
+    salesReporterFactory,
+    dataLoaderFactory,
+    pointOfSaleDataUtilsFactoryBuilder,
+    reportDataBuilderFactory
+*/
+
+// eslint-disable-next-line
 const fourthFormHelpers = (function () {
     function buildProductData() {
         return [
@@ -14,14 +23,14 @@ const fourthFormHelpers = (function () {
         ];
     }
     
-    function buildTransactionTypes() {
+    function buildTransactionStatuses() {
         return {
             Sale: 1,
             Return: 2
         };
     }
     
-    function buildTransactionData(
+    function buildTransactionRecord(
         productId,
         transactionStatus,
         quantity
@@ -33,12 +42,16 @@ const fourthFormHelpers = (function () {
         };
     }
     
-    function buildTestData(productData, transactionTypes) {
+    function buildTestData(productData, transactionStatuses, transactionData = []) {
         return {
             productData: productData,
-            transactionTypes: transactionTypes,
-            transactionData: []
+            transactionTypes: transactionStatuses,
+            transactionData: transactionData
         };
+    }
+    
+    function buildSimpleTestData() {
+        return buildTestData(buildProductData(), buildTransactionStatuses());
     }
     
     function buildSalesReporter(dataSourceAccess) {
@@ -57,9 +70,10 @@ const fourthFormHelpers = (function () {
 
     return {
         buildProductData,
-        buildTransactionTypes,
-        buildTransactionData,
+        buildSalesReporter,
+        buildSimpleTestData,
         buildTestData,
-        buildSalesReporter
+        buildTransactionRecord,
+        buildTransactionStatuses
     };
 })();

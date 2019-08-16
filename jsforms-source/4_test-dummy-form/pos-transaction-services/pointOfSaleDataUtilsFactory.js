@@ -15,7 +15,7 @@ function pointOfSaleDataUtilsFactoryBuilder() {
             finalCounts[transactionRecord.productId] += transactionRecord.quantity;
         }
     
-        function getProductCountByStatus(transactionStatus, transactionData) {
+        function getProductCountByTransactionStatus(transactionStatus, transactionData) {
             function transactionStatusMatchesUserSelection(transactionRecord) {
                 return transactionRecord.transactionStatus === transactionStatus;
             }
@@ -35,11 +35,11 @@ function pointOfSaleDataUtilsFactoryBuilder() {
         return {
             getProductCountByReturn:
                 (transactionData) =>
-                    getProductCountByStatus(transactionStatuses.Return, transactionData),
+                    getProductCountByTransactionStatus(transactionStatuses.Return, transactionData),
     
             getProductCountBySale:
                 (transactionData) =>
-                    getProductCountByStatus(transactionStatuses.Sale, transactionData)
+                    getProductCountByTransactionStatus(transactionStatuses.Sale, transactionData)
         };
     }
 

@@ -12,31 +12,38 @@
 
 const assert = chai.assert;
 
-// Look in 4_test-dummy-helpers.js to see 
+// Look in ./form-helpers/4_test-dummy-helpers.js to see 
 // these helper functions. You'll need them.
 const {
     buildProductData,
-    buildTransactionTypes,
-    buildTransactionData,
+    buildSalesReporter,
+    buildSimpleTestData,
     buildTestData,
-    buildSalesReporter
+    buildTransactionRecord,
+    buildTransactionStatuses
 } = fourthFormHelpers;
 
 describe('Test Dummy Form - Costume Shop Sales', function () {
 
-    let pointOfSaleDataUtils;
+    let pointOfSaleDataUtilsFactory;
     let salesReporter;
-    let testData;
 
     beforeEach(function () {
-        const transactionTypes = buildTransactionTypes();
-        const productData = buildProductData();
-
-        testData = buildTestData(productData, transactionTypes);
+        pointOfSaleDataUtilsFactory = pointOfSaleDataUtilsFactoryBuilder();
     });
 
     describe('Point of Sale Data Utilities', function () {
-        describe('get product count by sale status', function () {
+        describe('get product count by sale', function () {
+
+            let pointOfSaleDataUtilities;
+            let transactionStatuses;
+            let testData;
+
+            beforeEach(function(){
+                testData = buildSimpleTestData();
+                transactionStatuses = buildTransactionStatuses();
+                pointOfSaleDataUtilities = pointOfSaleDataUtilsFactory(transactionStatuses);
+            });
 
             it('returns an empty object for sale counts if no sale data exists');
 
