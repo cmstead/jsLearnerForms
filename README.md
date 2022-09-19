@@ -1,3 +1,26 @@
+Dostosowane do programu technikum ćwiczenia z JavaScript
+
+The concept of forms was borrowed from martial arts. Instead of solving new problems over and over in hopes that the language will stick, a form is intended to be repeated movement for movement to develop a relationship with the language and practices of a fluent developer. The student at each form level will learn to identify syntactic patterns while following an intentional and regimented process to promote fluency through a repeated process.
+
+A student of any form will know they are ready to move to the next form when they can demonstrate proficiency in the current form by applying the techniques presented without referring to the example materials. No two programmers are alike so it is understood that the steps someone would follow may vary slightly. This variance is good as it demonstrates a deeper understanding of the ideas presented in the form.
+	@@ -8,18 +10,21 @@ All of the first three forms will use the same tests and will address the questi
+
+As a student becomes more conversant in a particular form, they are encouraged to apply their knowledge using code katas, like the problems provided by [Exercism.io](http://exercism.io/).
+
+## Ustawienie ##
+
+Wykonaj po koleji:
+
+- Zainstaluj [Node.js](https://nodejs.org/)
+- Zainstaluj [Visual Studio Code](https://code.visualstudio.com/)
+- Sklonuj to repozytorium: [https://github.com/senpl/jsLearnerForms](https://github.com/senpl/jsLearnerForms) 
+
+**Po zainstalowaniu**
+
+- Uruchom Visual Studio Code
+- Otwórz sklonowany folder "jsLearnerForms" w VS code
+- Otwórz pierwszy plik w edytorze ( /jsLearnerForms/jsforms-source/1_first-form.js )
+- Uruchom cały projekt w terminalu `npm start`
 
 <!-- GENERATED DOCUMENT! DO NOT EDIT! -->
 # JS Learner Forms #
