@@ -41,7 +41,7 @@ describe('Forms - Eight Form', function () {
             assert.equal(jsforms.usunPrzedostawni("Ala ma kota"), 'Ala kota');
         });
 
-        it('zamien wszystkie sredniki" ', function () {
+        it('usun przedostatni wyraz z ciagu znakow" ', function () {
             let abc = (Math.random() + 1).toString(36).substring(7);
             assert.equal(jsforms.zamienPrzecinkiNaSredniki(abc +" " +abc+ " "+ abc + " "+abc), abc +" " +abc+ " "+abc);
         });
@@ -59,7 +59,7 @@ describe('Forms - Eight Form', function () {
             assert.equal(jsforms.zamienNaDuze(abc), checker);
         });
 
-        it('zamien na duze litery" ', function () {
+        it('zamien na duze litery a znak dolara na znak euro €" ', function () {
             let abc = (Math.random() + 1).toString(36).substring(7);
             let checker=abc.toUpperCase()+" €";
             assert.equal(jsforms.zamienNaDuze(abc + " $"), checker);
