@@ -13,7 +13,8 @@ const formNumberPrompt = {
         '3 - Third Form',
         '4 - Test Dummy Form',
         '5 - Async Form',
-        '6 - Async Test Dummy Form'
+        '6 - Async Test Dummy Form',
+        '7 - Guarding clauses'
     ]
 }
 

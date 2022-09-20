@@ -16,7 +16,7 @@ const port = 7331;
 
 const formNumber = process.argv[2];
 
-const formNumbers = [1, 2, 3, 4, 6];
+const formNumbers = [1, 2, 3, 4, 6, 7];
 
 if (formNumbers.find(value => value === formNumber) === null) {
     throw new Error(`Form numbers may only be ${formNumbers.join(', ')}.`);
@@ -37,7 +37,8 @@ const formAnalyzerFileNames = {
     1: '1_first-form.js',
     2: '2_second-form.js',
     3: '3_third-form.js',
-    5: '5_async-form.js'
+    5: '5_async-form.js',
+    7: '7_seven-form.js'
 };
 
 app.post('/analyze/:formNumber/:analyzer', function (request, response) {
