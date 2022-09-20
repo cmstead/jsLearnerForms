@@ -38,7 +38,8 @@ const formAnalyzerFileNames = {
     2: '2_second-form.js',
     3: '3_third-form.js',
     5: '5_async-form.js',
-    7: '7_seven-form.js'
+    7: '7_seven-form.js',
+    8: '8_eight-form.js'
 };
 
 app.post('/analyze/:formNumber/:analyzer', function (request, response) {

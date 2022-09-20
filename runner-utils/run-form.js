@@ -14,7 +14,8 @@ const formNumberPrompt = {
         '4 - Test Dummy Form',
         '5 - Async Form',
         '6 - Async Test Dummy Form',
-        '7 - Guarding clauses'
+        '7 - Guarding clauses',
+        '8 - Words'
     ]
 }
 
