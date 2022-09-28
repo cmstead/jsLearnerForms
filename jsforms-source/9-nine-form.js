@@ -7,8 +7,8 @@ const jsforms = (function () {
         return tablicaLiczb;
     }
 
-    function zamieniCoDruga(tablicaLiter){
-        tablicaLiter[1].toUpperCase();
+    function zamienCoDruga(tablicaLiter){
+        //tablicaLiter[1].toUpperCase();
         return tablicaLiter
     }
 
