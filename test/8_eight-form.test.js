@@ -25,11 +25,11 @@ describe('Forms - Eight Form', function () {
 
     describe('zamienPrzecinkiNaSredniki', function () {
 
-        it('zamienPrzecinkiNaSredniki" ', function () {
+        it('zamienPrzecinkiNaSredniki.', function () {
             assert.equal(jsforms.zamienPrzecinkiNaSredniki(","), ';');
         });
 
-        it('zamien wszystkie sredniki" ', function () {
+        it('zamien wszystkie sredniki.', function () {
             let abc = (Math.random() + 1).toString(36).substring(7);
             assert.equal(jsforms.zamienPrzecinkiNaSredniki("Witaj, "+abc+ ",,,"), 'Witaj; '+abc+";;;");
         });
@@ -37,11 +37,11 @@ describe('Forms - Eight Form', function () {
 
     describe('usunPrzedostatni', function () {
 
-        it('W ciągu znaków usuń przedostatni wyraz" ', function () {
+        it('W ciągu znaków usuń przedostatni wyraz.', function () {
             assert.equal(jsforms.usunPrzedostawni("Ala ma kota"), 'Ala kota');
         });
 
-        it('usun przedostatni wyraz z ciagu znakow" ', function () {
+        it('usun przedostatni wyraz z ciagu znakow.', function () {
             let abc = (Math.random() + 1).toString(36).substring(7);
             assert.equal(jsforms.zamienPrzecinkiNaSredniki(abc +" " +abc+ " "+ abc + " "+abc), abc +" " +abc+ " "+abc);
         });
@@ -49,7 +49,7 @@ describe('Forms - Eight Form', function () {
 
     describe('zamien na duże litery', function () {
 
-        it('W ciągu znaków usuń przedostatni wyraz" ', function () {
+        it('W ciągu znaków usuń przedostatni wyraz.', function () {
             assert.equal(jsforms.zamienNaDuze("Ala ma kota"), 'ALA MA KOTA');
         });
 
@@ -59,7 +59,7 @@ describe('Forms - Eight Form', function () {
             assert.equal(jsforms.zamienNaDuze(abc), checker);
         });
 
-        it('zamien na duze litery a znak dolara na znak euro €" ', function () {
+        it('zamien na duze litery a znak dolara na znak euro €.', function () {
             let abc = (Math.random() + 1).toString(36).substring(7);
             let checker=abc.toUpperCase()+" €";
             assert.equal(jsforms.zamienNaDuze(abc + " $"), checker);
