@@ -9,15 +9,12 @@
         "validator": "^.{1,45}$",
         "prefixes": {
             "feat:": "Feature work",
-            "fix:": "Bug fix",
             "refactor:": "Refactoring",
             "test:": "Test",
+            "fix:": "Bug fix",
             "chore:": "Chore",
             "docs:": "Documentation updated/added",
-            "style:": "Code style",
-            "build:": "Build",
-            "ci:": "CI configuration",
-            "perf:": "Performance improvement"
+            "style:": "Code style"
         }
     },
     "verboseMode": false,
