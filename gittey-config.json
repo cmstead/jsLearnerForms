@@ -25,6 +25,10 @@
         {
             "name": "undo",
             "command": "git checkout . && git clean -xfd && npm i"
+        },
+        {
+            "name": "push",
+            "command": "git commit && git push"
         }
     ],
     "collaborators": []
