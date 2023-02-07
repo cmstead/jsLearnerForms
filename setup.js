@@ -8,28 +8,30 @@ const inquirer = require('inquirer');
 const clear = require('clear');
 const gitTools = require('./runner-utils/gitTools');
 
-gitTools.setUpWorkspaceBranch();
 
-console.log('\nSetup is complete.\n\n');
+gitTools.setupInitialBranch();
+// gitTools.setUpWorkspaceBranch();
 
-inquirer.prompt([
-    {
-        name: 'startForms',
-        type: 'list',
-        choices: ['yes', 'no'],
-        message: 'Would you like to run the forms now?'
-    }
-])
-    .then(function (responses) {
-        const startForms = responses.startForms;
+// console.log('\nSetup is complete.\n\n');
 
-        if (startForms === 'yes') {
-            childProcess.fork('./start.js');
-        } else {
-            clear();
+// inquirer.prompt([
+//     {
+//         name: 'startForms',
+//         type: 'list',
+//         choices: ['yes', 'no'],
+//         message: 'Would you like to run the forms now?'
+//     }
+// ])
+//     .then(function (responses) {
+//         const startForms = responses.startForms;
 
-            console.log('In the future, to run JS Learner Forms, run the command "npm start".\n');
-            console.log('See you next time!\n');
+//         if (startForms === 'yes') {
+//             childProcess.fork('./start.js');
+//         } else {
+//             clear();
 
-        }
-    });
+//             console.log('In the future, to run JS Learner Forms, run the command "npm start".\n');
+//             console.log('See you next time!\n');
+
+//         }
+//     });

@@ -1,6 +1,7 @@
 const childProcess = require('child_process');
 const clear = require('clear');
 const inquirer = require('inquirer');
+const gitTools = require('./gitTools');
 
 function removeWorkspace() {
     try{
@@ -13,9 +14,10 @@ function removeWorkspace() {
 function updateForms() {
     console.log('Updating forms ...\n');
 
-    childProcess.execSync('git reset --hard HEAD');
-    childProcess.execSync('git checkout master');
-    childProcess.execSync('git pull origin master');
+    gitTools.resetCurrentBranch();
+    gitTools.checkoutInitialBranch();
+    gitTools.pullInitialBranch();
+
     removeWorkspace();
 
     childProcess.execSync('npm i');
