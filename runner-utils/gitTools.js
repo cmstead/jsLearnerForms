@@ -18,7 +18,9 @@ function getInitialBranch() {
         return start;
     }
 
-    return 'main';
+    let branch = gitCommands.getBranchName();
+
+    return branch ?? 'main';
 }
 
 function checkoutOrCreate(branchName) {
