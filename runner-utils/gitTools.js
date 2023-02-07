@@ -5,15 +5,15 @@ const configTools = require('./configTools');
 const initialBranch = runIfGitIsInstalled(getInitialBranch)() ?? 'main';
 
 function safePop() {
-    try{
+    try {
         gitCommands.popFromStash();
-    } catch(e) {
+    } catch (e) {
         // do nothing and move along.
     }
 }
 
 function getInitialBranch() {
-    let {start} = configTools.getConfig();
+    let { start } = configTools.getConfig();
     if (start) {
         return start;
     }
@@ -38,8 +38,10 @@ function checkoutOrCreate(branchName) {
 
 function setupInitialBranch() {
     console.log('getting initial branch name..');
-    
+
     const branchName = gitCommands.getBranchName();
+
+    console.log(`found branch: ${branchName}`);
 
     if (branchName && branchName !== initialBranch) {
         console.log(`checking out branch ${initialBranch}`);
@@ -49,7 +51,7 @@ function setupInitialBranch() {
     if (!branchName) {
         console.log(`creating repository @ ${initialBranch}`);
         gitCommands.init(initialBranch);
-        
+
         console.log(`commit @ ${initialBranch}`)
         gitCommands.commit('initial commit');
     }

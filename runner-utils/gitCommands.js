@@ -3,12 +3,14 @@ const childProcess = require('child_process');
 function getBranchName() {
     if (hasGitInstalled()) {
         try {
-            return childProcess.execSync('git rev-parse --abbrev-ref HEAD').toString();
+            return childProcess.execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
         } catch (error) {
+            console.log(`error: ${error}`);
             return undefined;
         }
     }
 
+    console.log('no git installed');
     return undefined;
 }
 
@@ -51,7 +53,7 @@ function init(branchName) {
     }
 
     let more = true;
-    while(more) {
+    while (more) {
         try {
             getBranchName()
             more = false;
@@ -79,7 +81,7 @@ function commit(comment) {
 
 function hasGitInstalled() {
     try {
-        gitCommands.version();
+        version();
         return true;
     } catch (e) {
         return false;
