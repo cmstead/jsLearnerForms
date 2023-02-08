@@ -5,12 +5,10 @@ function getBranchName() {
         try {
             return childProcess.execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
         } catch (error) {
-            console.log(`error: ${error}`);
             return undefined;
         }
     }
-
-    console.log('no git installed');
+    
     return undefined;
 }
 
@@ -55,10 +53,9 @@ function init(branchName) {
     let more = true;
     while (more) {
         try {
-            getBranchName()
-            more = false;
+            let t = getBranchName()
+            more = Boolean(t);
         } catch {
-            console.log('------ Waiting --------');
             // do nothing until it works.
         }
     }

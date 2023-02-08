@@ -39,22 +39,15 @@ function checkoutOrCreate(branchName) {
 }
 
 function setupInitialBranch() {
-    console.log('getting initial branch name..');
-
+    console.log('setting up source control');
     const branchName = gitCommands.getBranchName();
 
-    console.log(`found branch: ${branchName}`);
-
     if (branchName && branchName !== initialBranch) {
-        console.log(`checking out branch ${initialBranch}`);
         checkoutOrCreate(initialBranch);
     }
 
     if (!branchName) {
-        console.log(`creating repository @ ${initialBranch}`);
         gitCommands.init(initialBranch);
-
-        console.log(`commit @ ${initialBranch}`)
         gitCommands.commit('initial commit');
     }
 
@@ -114,7 +107,6 @@ function hasGitInstalled() {
         gitCommands.version();
         return true;
     } catch (e) {
-        console.log(`returning false`);
         return false;
     }
 }
