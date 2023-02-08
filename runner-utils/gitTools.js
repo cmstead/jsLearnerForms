@@ -52,6 +52,11 @@ function setupInitialBranch() {
     }
 
     configTools.writeConfig({ start: initialBranch });
+    try {
+        gitCommands.commit('updated config file');
+    } catch {
+        // do nothing as all is okay
+    }
 
     return 'ok';
 }
