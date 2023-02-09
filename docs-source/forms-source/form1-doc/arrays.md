@@ -9,7 +9,7 @@ We will use functions to work with arrays and loops.
 
 We are going to create a function called `sum` that adds numbers together.
 
-##### should take the sum of one number
+#### should take the sum of one number
 
 Create a `sum` function that accepts an array and returns 1.
 
@@ -29,7 +29,7 @@ Create a `sum` function that accepts an array and returns 1.
 
 </details>
 
-##### should add two numbers
+#### should add two numbers
 
 Modify the `sum` function so that it adds the first two numbers in an array.
 
@@ -53,7 +53,7 @@ Modify the `sum` function so that it adds the first two numbers in an array.
 
 </details>
 
-##### should add multiple numbers
+#### should add multiple numbers
 
 Modify the `sum` function to add all numbers in an array.
 
@@ -101,7 +101,7 @@ Modify the `sum` function to add all numbers in an array.
 
 Create a function that squares each number in an array.
 
-##### should square all numbers in a single-value array
+#### should square all numbers in a single-value array
 
 Create a function called `squareAll` that takes an array and returns the square of the first element.
 
@@ -122,7 +122,7 @@ Create a function called `squareAll` that takes an array and returns the square 
 
 </details>
 
-##### should square multiple numbers
+#### should square multiple numbers
 
 Modify the `squareAll` function so that it now squares each number in the array.
 
@@ -141,103 +141,6 @@ Modify the `squareAll` function so that it now squares each number in the array.
 
     return {
         squareAll,
-    };
-```
-
-</details>
-
-### combining complex functions
-
-We will use previous functions chained to gether to give us new results.
-
-#### \*\*sumOfSquares function\*\*
-
-Create a function that takes an array of numbers, squares each number and then returns the sum of those squares.
-
-##### should square number in a 1-length array and return it
-
-Create a function called `sumOfSquares` that takes an array and returns the square of the first element.
-
-<details><summary>Hints</summary>
-
-**Hint**
-
-```javascript
-    function sumOfSquares(_something_) {
-        return square(?[0]);
-    }
-
-    return {
-        sumOfSquares,
-    };
-```
-
-</details>
-
-##### should take the sum of squares of multiple numbers
-
-Modify the `sumOfSquares` function so that it squares all numbers in the array.
-
-<details><summary>Hints</summary>
-
-**Hint**
-
-```javascript
-    function sumOfSquares(_something_) {
-        return add(squareAll(?));
-    }
-
-    return {
-        sumOfSquares,
-    };
-```
-
-</details>
-
-### copying arrays [array.slice]
-
-We are going to use functions to explore the `Array.prototype.slice` method.
-
-#### \*\*buildVector function\*\*
-
-We will now create a function called `buildVector` that returns a copy of the array as it was passed.
-
-##### returns a vector (array) containing the same numbers as the original -- try returning the array you get in your function
-
-Create a function called `buildVector` that returns the same array passed to it.
-
-<details><summary>Hints</summary>
-
-**Hint**
-
-```javascript
-    function buildVector (values) {
-        return ?;
-    }
-
-    return {
-        buildVector,
-    };
-```
-
-</details>
-
-##### returns a copy of the original vector
-
-Modify the `buildVector` function so that it returns a copy of the array passed to it. (note: use the `slice` method on array.)
-
-<details><summary>Hints</summary>
-
-**Hint**
-
-```javascript
-    function buildVector (values) {
-        let vector = _array_.slice(_number_);
-        return vector;
-    }
-
-    return {
-        buildVector,
     };
 ```
 
