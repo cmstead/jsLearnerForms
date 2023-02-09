@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./start.js",
     "setup": "node ./setup.js",
-    "build-readme": "node ./node_modules/booklisp/ ./readme-source/readme.md README.md",
+    "build-readme": "node ./node_modules/booklisp/ ./docs-source/readme-source/readme.md README.md",
+    "build-form1-docs": "node ./node_modules/booklisp/ ./docs-source/forms-source/form1-doc/_main.md ./docs/FIRST-FORM.md",
     "update-forms": "node ./runner-utils/update-forms.js"
   },
   "repository": {
