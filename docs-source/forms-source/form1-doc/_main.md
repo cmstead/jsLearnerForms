@@ -13,5 +13,6 @@
         (section-main "./arrays.md")
         (section-main "./complex.md")
         (section-main "./copying-arrays.md")
+        (section-main "./combining.md")
     )
 /bl-->
