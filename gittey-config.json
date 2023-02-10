@@ -25,7 +25,19 @@
         },
         {
             "name": "push",
-            "command": "gittey commit && git push"
+            "command": "gittey docs && gittey commit && git push"
+        },
+        {
+            "name": "docs:form1",
+            "command": "npm run build-form1-docs"
+        },
+        {
+            "name": "docs:readme",
+            "command": "npm run build-readme"
+        },
+        {
+            "name": "docs",
+            "command": "gittey docs:form1 && gittey docs:readme"
         }
     ],
     "collaborators": []
