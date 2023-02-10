@@ -29,11 +29,15 @@
         },
         {
             "name": "docs:form1",
-            "command": "npm run build-form1-docs"
+            "command": "npm run docs:form1"
         },
         {
             "name": "docs:readme",
-            "command": "npm run build-readme"
+            "command": "npm run docs:readme"
+        },
+        {
+            "name": "docs:forms",
+            "command": "npm run docs:forms"
         },
         {
             "name": "docs",
