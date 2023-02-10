@@ -8,6 +8,8 @@ const inquirer = require('inquirer');
 const clear = require('clear');
 const gitTools = require('./runner-utils/gitTools');
 
+
+gitTools.setupInitialBranch();
 gitTools.setUpWorkspaceBranch();
 
 console.log('\nSetup is complete.\n\n');

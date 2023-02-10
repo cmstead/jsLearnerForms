@@ -1,12 +1,69 @@
 const sharedUtils = require('./sharedUtils');
 const gitCommands = require('./gitCommands');
+const configTools = require('./configTools');
+
+const initialBranch = runIfGitIsInstalled(getInitialBranch)() ?? 'main';
 
 function safePop() {
-    try{
+    try {
         gitCommands.popFromStash();
-    } catch(e) {
+    } catch (e) {
         // do nothing and move along.
     }
+}
+
+function getInitialBranch() {
+    let { start } = configTools.getConfig();
+    if (start) {
+        return start;
+    }
+
+    let branch = gitCommands.getBranchName();
+
+    return branch ?? 'main';
+}
+
+function checkoutOrCreate(branchName) {
+    let result = null;
+    try {
+        result = gitCommands.checkout(branchName).toString();
+    } catch {
+        // do nothing and move on
+    }
+
+    if (!result || result.includes('error: ')) {
+        return gitCommands.createBranch(branchName);
+    }
+
+    return result;
+}
+
+function setupInitialBranch() {
+    console.log('setting up source control');
+    const branchName = gitCommands.getBranchName();
+
+    if (branchName && branchName !== initialBranch) {
+        checkoutOrCreate(initialBranch);
+    }
+
+    if (!branchName) {
+        gitCommands.init(initialBranch);
+        gitCommands.commit('initial commit');
+    }
+
+    configTools.writeConfig({ start: initialBranch });
+    try {
+        gitCommands.commit('updated config file');
+    } catch {
+        // do nothing as all is okay
+    }
+
+    return 'ok';
+}
+
+function checkoutInitialBranch() {
+    gitCommands.checkout(initialBranch);
+    gitCommands.pull(initialBranch);
 }
 
 function isOutOfDate() {
@@ -17,7 +74,7 @@ function isOutOfDate() {
         gitCommands.stash();
     }
 
-    gitCommands.checkout('master');
+    gitCommands.checkout(initialBranch);
     const status = gitCommands.getStatus();
 
     const outOfDateStatus = status.includes('up to date')
@@ -52,7 +109,7 @@ function setUpWorkspaceBranch() {
 
 function hasGitInstalled() {
     try {
-        gitCommands.getStatus();
+        gitCommands.version();
         return true;
     } catch (e) {
         return false;
@@ -81,10 +138,22 @@ function runIfGitIsInstalled(command) {
     }
 }
 
+function resetCurrentBranch() {
+    childProcess.execSync('git reset --hard HEAD');
+}
+
+function pullInitialBranch() {
+    gitCommands.pull(initialBranch);
+}
+
 module.exports = {
     checkOutBranch: runIfGitIsInstalled(checkOutBranch),
     hasGitInstalled,
     isOutOfDate: runIfGitIsInstalled(isOutOfDate),
-    setUpWorkspaceBranch: runIfGitIsInstalled(setUpWorkspaceBranch)
+    setUpWorkspaceBranch: runIfGitIsInstalled(setUpWorkspaceBranch),
+    resetCurrentBranch: runIfGitIsInstalled(resetCurrentBranch),
+    setupInitialBranch: runIfGitIsInstalled(setupInitialBranch),
+    checkoutInitialBranch: runIfGitIsInstalled(checkoutInitialBranch),
+    pullInitialBranch: runIfGitIsInstalled(pullInitialBranch),
 }
 
