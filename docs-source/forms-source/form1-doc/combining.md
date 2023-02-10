@@ -41,7 +41,7 @@ Can you just return a value from the array?
 
 <details><summary>Code</summary>
 
-**Hint**
+**Example**
 
 ```javascript
     function magnitude(_something_) {
@@ -74,7 +74,7 @@ Currently the magnitude of a vector is computed by:
 
 <details><summary>Code</summary>
 
-**Hint**
+**Example**
 
 ```javascript
     function magnitude(_something_) {
@@ -108,7 +108,7 @@ Currently the magnitude of a vector is computed by:
 
 <details><summary>Code</summary>
 
-**Hint**
+**Example**
 
 ```javascript
     function magnitude(_something_) {
@@ -146,7 +146,7 @@ The magnitude of a vector is computed by:
 
 <details><summary>Code</summary>
 
-**Hint**
+**Example**
 
 ```javascript
     function magnitude(_something_) {

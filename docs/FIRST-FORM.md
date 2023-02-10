@@ -763,7 +763,7 @@ Can you just return a value from the array?
 
 <details><summary>Code</summary>
 
-**Hint**
+**Example**
 
 ```javascript
     function magnitude(_something_) {
@@ -796,7 +796,7 @@ Currently the magnitude of a vector is computed by:
 
 <details><summary>Code</summary>
 
-**Hint**
+**Example**
 
 ```javascript
     function magnitude(_something_) {
@@ -830,7 +830,7 @@ Currently the magnitude of a vector is computed by:
 
 <details><summary>Code</summary>
 
-**Hint**
+**Example**
 
 ```javascript
     function magnitude(_something_) {
@@ -868,7 +868,7 @@ The magnitude of a vector is computed by:
 
 <details><summary>Code</summary>
 
-**Hint**
+**Example**
 
 ```javascript
     function magnitude(_something_) {
@@ -907,7 +907,11 @@ Create a the function `getVectorsShorterThan` where the first parameter is `leng
 
 <details><summary>Hints</summary>
 
-**Hint**
+Can we just return the first value of the array?
+
+<details><summary>Code</summary>
+
+**Example**
 
 ```javascript
     function getVectorsShorterThan(length, arrayOfVectors) {
@@ -918,6 +922,8 @@ Create a the function `getVectorsShorterThan` where the first parameter is `leng
         getVectorsShorterThan,
     };
 ```
+
+</details>
 
 </details>
 
@@ -927,7 +933,11 @@ Modify the `getVectorsShorterThan` function so that it will return an empty arra
 
 <details><summary>Hints</summary>
 
-**Hint 1 (let)**
+Add logic to handle the case where a vector is too long (How might we compare the magnitude of a vector to a length value?)
+
+<details><summary>Code</summary>
+
+**Example 1 (let)**
 
 ```javascript
     function getVectorsShorterThan(length, arrayOfVectors) {
@@ -945,7 +955,7 @@ Modify the `getVectorsShorterThan` function so that it will return an empty arra
     };
 ```
 
-**Hint 2 (var)**
+**Example 2 (var)**
 
 ```javascript
     function getVectorsShorterThan(length, arrayOfVectors) {
@@ -962,6 +972,8 @@ Modify the `getVectorsShorterThan` function so that it will return an empty arra
         getVectorsShorterThan,
     };
 ```
+
+</details>
 
 </details>
 
@@ -971,7 +983,11 @@ Modify the `getVectorsShorterThan` function so that it returns all vectors if th
 
 <details><summary>Hints</summary>
 
-**Hint 1 (let)**
+Add logic to handle 0, 1 or 2 vector cases
+
+<details><summary>Code</summary>
+
+**Example 1 (let)**
 
 ```javascript
     function getVectorsShorterThan(length, arrayOfVectors) {
@@ -989,7 +1005,7 @@ Modify the `getVectorsShorterThan` function so that it returns all vectors if th
     };
 ```
 
-**Hint 2 (var)**
+**Example 2 (var)**
 
 ```javascript
     function getVectorsShorterThan(length, arrayOfVectors) {
@@ -1009,13 +1025,19 @@ Modify the `getVectorsShorterThan` function so that it returns all vectors if th
 
 </details>
 
+</details>
+
 ### returns only vectors which are not too long
 
 Modify the `getVectorsShorterThan` function so that it now returns only those vectors with a magnitude less then the length.
 
 <details><summary>Hints</summary>
 
-**Hint 1 (let)**
+Move to general code for filtering vecctors (Is there a way we can use a known control structure to check all vectors?)
+
+<details><summary>Code</summary>
+
+**Example 1 (let)**
 
 ```javascript
     function getVectorsShorterThan(length, arrayOfVectors) {
@@ -1036,7 +1058,7 @@ Modify the `getVectorsShorterThan` function so that it now returns only those ve
     };
 ```
 
-**Hint 2 (var)**
+**Example 2 (var)**
 
 ```javascript
    function getVectorsShorterThan(length, arrayOfVectors) {
@@ -1059,6 +1081,7 @@ Modify the `getVectorsShorterThan` function so that it now returns only those ve
 
 </details>
 
+</details>
     
 
 <!-- GENERATED DOCUMENT! DO NOT EDIT! -->
