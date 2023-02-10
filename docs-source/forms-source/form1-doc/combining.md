@@ -13,9 +13,9 @@ We will create a function called `magnitude` that will calculate the magnitude o
 
 such that given:
 
-> a = 0
-> b = 3
-> c = 4
+> a = 1
+> b = 2
+> c = 2
 
 the magnitude is:
 
@@ -23,13 +23,13 @@ the magnitude is:
 
 or
 
-> √d = √(0² + 3² + 4²)
+> √d = √(1² + 2² + 2²)
 >
-> √d = √(0 + 9 + 16)
+> √d = √(1 + 4 + 4)
 >
-> √d = √25
+> √d = √9
 >
-> d = 5
+> d = 3
 
 #### returns the magnitude of a vector with only one number
 
