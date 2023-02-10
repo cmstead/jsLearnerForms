@@ -8,6 +8,7 @@
     "setup": "node ./setup.js",
     "docs:readme": "node ./node_modules/booklisp/ ./docs-source/readme-source/readme.md README.md",
     "docs:form1": "node ./node_modules/booklisp/ ./docs-source/forms-source/form1-doc/_main.md ./docs/FIRST-FORM.md",
+    "docs:form2": "node ./node_modules/booklisp/ ./docs-source/forms-source/form2-doc/_main.md ./docs/SECOND-FORM.md",
     "docs:forms": "node ./node_modules/booklisp/ ./docs-source/forms-source/_main.md ./FORMS.md",
     "update-forms": "node ./runner-utils/update-forms.js"
   },
