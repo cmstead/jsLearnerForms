@@ -89,7 +89,7 @@ describe('Forms - First Form', function () {
                     .analyze(analyzerOptions)
                     .then(function (response) {
                         const result = response.result;
-                        assert.isTrue(result, 'Assignment uses equals, like initialization does');
+                        assert.isTrue(result, 'Initialize a variable with equals: "var b = ..."');
                     });
             });
         });

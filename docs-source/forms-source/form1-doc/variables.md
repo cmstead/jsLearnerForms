@@ -15,7 +15,11 @@ Create a variable at the top of the block called "a". You will need to use `let`
 
 <details><summary>Hints</summary>
 
-**Hint 1**
+Be sure you use "var" or "let" to declare your variable
+
+<details><summary>Code</summary>
+
+**Example 1**
 
 ```javascript
 const jsforms = (function () {
@@ -27,7 +31,7 @@ const jsforms = (function () {
 })();
 ```
 
-**Hint 2**
+**Example 2**
 
 ```javascript
 const jsforms = (function () {
@@ -41,13 +45,19 @@ const jsforms = (function () {
 
 </details>
 
+</details>
+
 #### should initialize "a" with the value 5
 
 Set the initial value of a to 5.
 
 <details><summary>Hints</summary>
 
-**Hint 1**
+Initialize a variable with equals: `var a = ...`
+
+<details><summary>Code</summary>
+
+**Example 1**
 
 ```javascript
 const jsforms = (function () {
@@ -59,7 +69,7 @@ const jsforms = (function () {
 })();
 ```
 
-**Hint 2**
+**Example 2**
 
 ```javascript
 const jsforms = (function () {
@@ -73,6 +83,8 @@ const jsforms = (function () {
 
 </details>
 
+</details>
+
 ### assignment and operators
 
 Now that we have a variable we will assign it a value different then what it was initialized with.
@@ -83,25 +95,31 @@ Now assign variable `a` with the value of `3 + 7`.
 
 <details><summary>Hints</summary>
 
-**Hint 1**
+Add two numbers using the plus (+) operator
+
+<details><summary>Code</summary>
+
+**Example 1**
 
 ```javascript
     let a = 5;
-    a = ?;
+    a = ? + ?;
 
     return {
     };
 ```
 
-**Hint 2**
+**Example 2**
 
 ```javascript
     var a = 5;
-    a = ?;
+    a = ? + ?;
 
     return {
     };
 ```
+
+</details>
 
 </details>
 
@@ -111,7 +129,11 @@ Create a variable called `b` and initialize it with the value `"Hello, World!"
 
 <details><summary>Hints</summary>
 
-**Hint 1**
+Initialize a variable with equals: `var b = ...`
+
+<details><summary>Code</summary>
+
+**Example 1**
 
 ```javascript
     let b = ?;
@@ -120,7 +142,7 @@ Create a variable called `b` and initialize it with the value `"Hello, World!"
     };
 ```
 
-**Hint 2**
+**Example 2**
 
 ```javascript
     var b = ?;
@@ -128,6 +150,8 @@ Create a variable called `b` and initialize it with the value `"Hello, World!"
     return {
     };
 ```
+
+</details>
 
 </details>
 
@@ -141,7 +165,11 @@ Use the `console.log` method to log the value contained in variable `b` to the c
 
 <details><summary>Hints</summary>
 
-**Hint 1**
+Console.log might be just the ticket...
+
+<details><summary>Code</summary>
+
+**Example 1**
 
 ```javascript
     console.log(?);
@@ -150,7 +178,7 @@ Use the `console.log` method to log the value contained in variable `b` to the c
     };
 ```
 
-**Hint 2**
+**Example 2**
 
 ```javascript
     console.log(?);
@@ -158,6 +186,8 @@ Use the `console.log` method to log the value contained in variable `b` to the c
     return {
     };
 ```
+
+</details>
 
 </details>
 
@@ -171,12 +201,18 @@ Expose the variable `b` to the outside world, by adding it the the object being 
 
 <details><summary>Hints</summary>
 
-**Hint**
+Find `return {};` add a "b" -> `return {b};`
+
+<details><summary>Code</summary>
+
+**Example**
 
 ```javascript
     return {
         ?,
     };
 ```
+
+</details>
 
 </details>
