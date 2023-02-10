@@ -9,7 +9,7 @@ We will explore the creation and use of variables.
 
 Here we will declare and initialize variables.
 
-#### should have a variable called "a"
+#### It should have a variable called "a"
 
 Create a variable at the top of the block called "a". You will need to use `let` or `var`.
 
@@ -47,7 +47,7 @@ const jsforms = (function () {
 
 </details>
 
-#### should initialize "a" with the value 5
+#### It should initialize "a" with the value 5
 
 Set the initial value of a to 5.
 
@@ -89,7 +89,7 @@ const jsforms = (function () {
 
 Now that we have a variable we will assign it a value different then what it was initialized with.
 
-#### should assign the sum of 3 and 7 (3 + 7) to "a"
+#### It should assign the sum of 3 and 7 (3 + 7) to "a"
 
 Now assign variable `a` with the value of `3 + 7`.
 
@@ -123,7 +123,7 @@ Add two numbers using the plus (+) operator
 
 </details>
 
-#### should have a variable "b" initialized to "Hello, World!"
+#### It should have a variable "b" initialized to "Hello, World!"
 
 Create a variable called `b` and initialize it with the value `"Hello, World!"
 
@@ -159,7 +159,7 @@ Initialize a variable with equals: `var b = ...`
 
 We will make a call to a method on an object.
 
-#### should log variable "b" to the console
+#### It should log variable "b" to the console
 
 Use the `console.log` method to log the value contained in variable `b` to the console.
 
@@ -195,7 +195,7 @@ Console.log might be just the ticket...
 
 We well now expose values to the outside world.
 
-#### should expose variable "b" to be read outside of the module
+#### It should expose variable "b" to be read outside of the module
 
 Expose the variable `b` to the outside world, by adding it the the object being exported.
 

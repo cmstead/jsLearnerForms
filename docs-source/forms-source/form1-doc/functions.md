@@ -8,7 +8,7 @@ Time to create functions and have them return a value.
 
 ### \*\*greeter function\*\*
 
-##### should say "Hello!" by default
+##### It should say "Hello!" by default
 
 Write a function called `greet` that returns the value "Hello!". (note: don't forget the "!")
 
@@ -36,7 +36,7 @@ Functions start with the keyword `function` followed by the name of the function
 
 #### conditional logic [if/else]
 
-##### should say "Salutations!" when Salutations is passed
+##### It should say "Salutations!" when Salutations is passed
 
 Modify the greet function to take a greeting and return the greeting if it was passed.
 
@@ -73,7 +73,7 @@ Add condition to greet to handle custom greeting case.
 
 Create a function that takes a number and returns its square.
 
-##### should square 1
+##### It should square 1
 
 The function called `square` will be passed 1 and should return 1.
 
@@ -99,7 +99,7 @@ Add square function that returns a simple value rather then worrying about actua
 
 </details>
 
-##### should square 3
+##### It should square 3
 
 Modify the `square` function such that it returns the square of the value passed in.
 
@@ -143,7 +143,7 @@ Modify the `square` function such that it returns the square of the value passed
 
 Create a function that takes a number and returns the square root of that number. (note: use the Math library).
 
-##### should take the square root of 1
+##### It should take the square root of 1
 
 Create a function called `squareRoot` that will be passed 1 and return 1.
 
@@ -169,7 +169,7 @@ Create a function that returns a simple value rather then worrying about actuall
 
 </details>
 
-##### should take the square root of 4
+##### It should take the square root of 4
 
 Modify the `squareRoot` function to return the square root of the value passed.
 

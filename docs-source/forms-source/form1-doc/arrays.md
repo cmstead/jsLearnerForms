@@ -9,7 +9,7 @@ We will use functions to work with arrays and loops.
 
 We are going to create a function called `sum` that adds numbers together.
 
-#### should take the sum of one number
+#### It should take the sum of one number
 
 Create a `sum` function that accepts an array and returns 1.
 
@@ -35,7 +35,7 @@ Create a function that returns a simple number instead of worrying about actuall
 
 </details>
 
-#### should add two numbers
+#### It should add two numbers
 
 Modify the `sum` function so that it adds the first two numbers in an array.
 
@@ -65,7 +65,7 @@ Add logic to sum 1 or two numbers (An `if` structure might help here)
 
 </details>
 
-#### should add multiple numbers
+#### It should add multiple numbers
 
 Modify the `sum` function to add all numbers in an array.
 
@@ -119,7 +119,7 @@ Add logic to sum an arbitrary length array of numbers (A for loop might help to 
 
 Create a function that squares each number in an array.
 
-#### should square all numbers in a single-value array
+#### It should square all numbers in a single-value array
 
 Create a function called `squareAll` that takes an array and returns the square of the first element.
 
@@ -146,7 +146,7 @@ Create a function that only squares the first value of an array and returns that
 
 </details>
 
-#### should square multiple numbers
+#### It should square multiple numbers
 
 Modify the `squareAll` function so that it now squares each number in the array.
 
