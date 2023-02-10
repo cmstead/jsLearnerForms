@@ -8,7 +8,7 @@
 
 <!--bl
     (table-of-contents
-        (section-main "./declarationInitialization.md")
+        (section-main "./variables.md")
         (section-main "./functions.md")
         (section-main "./arrays.md")
         (section-main "./complex.md")
