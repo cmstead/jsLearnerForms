@@ -15,7 +15,11 @@ Create a `sum` function that accepts an array and returns 1.
 
 <details><summary>Hints</summary>
 
-**Hint**
+Create a function that returns a simple number instead of worrying about actually adding numbers together.
+
+<details><summary>Code</summary>
+
+**Example**
 
 ```javascript
     function sum(_something_) {
@@ -29,13 +33,19 @@ Create a `sum` function that accepts an array and returns 1.
 
 </details>
 
+</details>
+
 #### should add two numbers
 
 Modify the `sum` function so that it adds the first two numbers in an array.
 
 <details><summary>Hints</summary>
 
-**Hint**
+Add logic to sum 1 or two numbers (An `if` structure might help here)
+
+<details><summary>Code</summary>
+
+**Example**
 
 ```javascript
     function sum(_array_) {
@@ -53,13 +63,19 @@ Modify the `sum` function so that it adds the first two numbers in an array.
 
 </details>
 
+</details>
+
 #### should add multiple numbers
 
 Modify the `sum` function to add all numbers in an array.
 
 <details><summary>Hints</summary>
 
-**Hint 1 (let)**
+Add logic to sum an arbitrary length array of numbers (A for loop might help to accomplish this loops, like ifs, are control structures)
+
+<details><summary>Code</summary>
+
+**Example 1 (let)**
 
 ```javascript
     function sum(_array_) {
@@ -77,7 +93,7 @@ Modify the `sum` function to add all numbers in an array.
     };
 ```
 
-**Hint 2 (var)**
+**Example 2 (var)**
 
 ```javascript
     function sum(_array_) {
@@ -97,6 +113,8 @@ Modify the `sum` function to add all numbers in an array.
 
 </details>
 
+</details>
+
 ### \*\*squareAll function\*\*
 
 Create a function that squares each number in an array.
@@ -107,7 +125,11 @@ Create a function called `squareAll` that takes an array and returns the square 
 
 <details><summary>Hints</summary>
 
-**Hint**
+Create a function that only squares the first value of an array and returns that value as an array.
+
+<details><summary>Code</summary>
+
+**Example**
 
 ```javascript
     function squareAll (values) {
@@ -122,18 +144,24 @@ Create a function called `squareAll` that takes an array and returns the square 
 
 </details>
 
+</details>
+
 #### should square multiple numbers
 
 Modify the `squareAll` function so that it now squares each number in the array.
 
 <details><summary>Hints</summary>
 
-**Hint**
+Add logic to square all numbers in array (How did you solve sum?)
+
+<details><summary>Code</summary>
+
+**Example**
 
 ```javascript
     function squareAll (values) {
         for(let index = _number_; _number_ < _number_; index += 1) {
-            values[index] = square(_something_);
+            result[index] = square(_something_[index]);
         }
 
         return ?;
@@ -143,5 +171,7 @@ Modify the `squareAll` function so that it now squares each number in the array.
         squareAll,
     };
 ```
+
+</details>
 
 </details>
