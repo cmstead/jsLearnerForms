@@ -10,5 +10,6 @@ We will be working with solutions to the problems presented in the [First Form](
 <!--bl
     (table-of-contents
         (section-main "./greeter.md")
+        (section-main "./sum.md")
     )
 /bl-->
