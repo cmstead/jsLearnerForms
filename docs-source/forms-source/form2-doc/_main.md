@@ -12,5 +12,6 @@ We will be working with solutions to the problems presented in the [First Form](
         (section-main "./greeter.md")
         (section-main "./sum.md")
         (section-main "./squareAll.md")
+        (section-main "./buildVector.md")
     )
 /bl-->
