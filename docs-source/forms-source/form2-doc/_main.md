@@ -11,5 +11,6 @@ We will be working with solutions to the problems presented in the [First Form](
     (table-of-contents
         (section-main "./greeter.md")
         (section-main "./sum.md")
+        (section-main "./squareAll.md")
     )
 /bl-->

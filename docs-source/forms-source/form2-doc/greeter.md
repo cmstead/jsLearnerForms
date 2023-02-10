@@ -49,6 +49,8 @@ A ternary operator has the following form
 
 <details><summary>Code</summary>
 
+**Example**
+
 ```javascript
     function greet(greeting) {
         return greeting === undefined ? _something_ : _other_thing_;
