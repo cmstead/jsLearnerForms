@@ -3,10 +3,10 @@ const jsforms = (function () {
     'use strict';
 
     function greet(greeting) {
-        if (greeting !== undefined) {
-            return greeting + '!';
-        } else {
+        if (greeting === undefined) {
             return 'Hello!';
+        } else {
+            return greeting + '!';
         }
     }
 
