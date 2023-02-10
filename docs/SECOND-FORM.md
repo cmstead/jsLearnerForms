@@ -10,6 +10,7 @@ We will be working with solutions to the problems presented in the [First Form](
 - [Section 1: Greeter](#user-content-greeter)
 - [Section 2: Sum](#user-content-sum)
 - [Section 3: Square All](#user-content-square-all)
+- [Section 4: Build Vector](#user-content-build-vector)
 
 ## Greeter ##
 Let us change the `greet` function.
@@ -279,6 +280,43 @@ Instead of an assignment, maybe just return the result of map.
 ```
 
 </details>
+
+</details>
+    
+
+## Build Vector ##
+Now we will refactor the `buildVector` function changing its shape.
+
+### Refactoring steps
+
+These are the steps we will use to change the shape of the `buildVector` function without changing its behavior.
+
+#### It has a refactoring in magnitude function to replace vector value with `vector.valueOf()`
+
+Now modify the `magnitude` function by not passing the vector directly but passing the result of the `valueOf` method on vector. Currently the `valueOf` function just returns the original array. However this will make space for later changes that will happen to the `buildVector` function.
+
+<details><summary>Hints</summary>
+
+Just add a `.valueOf()` call after the vector in the call to `sumOfSquares`.
+
+<details><summary>Code</summary>
+
+```javascript
+    function magnitude(vector) {
+        let squaredMagnitude = sumOfSquares(?.valueOf());
+        return squareRoot(squaredMagnitude);
+    }
+```
+
+</details>
+
+</details>
+
+### It contains a constructor for an object called Vector
+
+Now we will create a constructor for an object called `Vector`. We are not yet exporting that constructor.
+
+<details><summary>Code</summary>
 
 </details>
     
