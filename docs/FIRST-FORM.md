@@ -6,15 +6,15 @@
 
 ## Table Of Contents ##
 
-- [Section 1: declaration and initialization](#user-content-declaration-and-initialization)
-- [Section 2: function creation](#user-content-function-creation)
+- [Section 1: Declaration and Initialization](#user-content-declaration-and-initialization)
+- [Section 2: Function Creation](#user-content-function-creation)
 - [Section 3: Arrays, Loops, and Function Calls](#user-content-arrays,-loops,-and-function-calls)
 - [Section 4: Combining Complex Functions](#user-content-combining-complex-functions)
 - [Section 5: Copying Arrays](#user-content-copying-arrays)
 - [Section 6: Combining existing code to solve new problems](#user-content-combining-existing-code-to-solve-new-problems)
 - [Section 7: Looping and inequality comparison](#user-content-looping-and-inequality-comparison)
 
-## declaration and initialization ##
+## Declaration and Initialization ##
 ### should have a variable called "a"
 
 Create a variable at the top of the block called "a". You will need to use `let` or `var`.
@@ -80,7 +80,7 @@ const jsforms = (function () {
 </details>
     
 
-## function creation ##
+## Function Creation ##
 #### [function declaration, return statement] ####
 Time to create functions and have them return a value.
 

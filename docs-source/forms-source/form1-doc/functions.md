@@ -1,6 +1,6 @@
 <!--bl
     (filemeta
-        (title "function creation")
+        (title "Function Creation")
         (subtitle "[function declaration, return statement]")
     )
 /bl-->

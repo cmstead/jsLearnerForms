@@ -1,6 +1,6 @@
 <!--bl
     (filemeta
-        (title "declaration and initialization")
+        (title "Declaration and Initialization")
     )
 /bl-->
 ### should have a variable called "a"
