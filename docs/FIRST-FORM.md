@@ -613,7 +613,11 @@ Create a function called `sumOfSquares` that takes an array and returns the squa
 
 <details><summary>Hints</summary>
 
-**Hint**
+Add sumOfSquares function with logic to square the first element of the parameter.
+
+<details><summary>Code</summary>
+
+**Example**
 
 ```javascript
     function sumOfSquares(_something_) {
@@ -627,13 +631,19 @@ Create a function called `sumOfSquares` that takes an array and returns the squa
 
 </details>
 
+</details>
+
 #### should take the sum of squares of multiple numbers
 
 Modify the `sumOfSquares` function so that it squares all numbers in the array.
 
 <details><summary>Hints</summary>
 
-**Hint**
+Add logic to square all numbers and return the sum (squareAll and sum might be useful to accomplish this)
+
+<details><summary>Code</summary>
+
+**Example**
 
 ```javascript
     function sumOfSquares(_something_) {
@@ -644,6 +654,8 @@ Modify the `sumOfSquares` function so that it squares all numbers in the array.
         sumOfSquares,
     };
 ```
+
+</details>
 
 </details>
 
