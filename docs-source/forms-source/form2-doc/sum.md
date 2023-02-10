@@ -63,7 +63,33 @@ Now modify the `sum` method to remove the `for` loop, and use the [`Array.protot
 
 <details><summary>Hints</summary>
 
-`values.forEach(fn)` will call the `fn` function on each item in the collection `values`. You can use an anonymous function in place of `fn` as well as a named function. The way the call would look if you used an anonymous function to log each value would be `values.forEach(value => console.log(value))` or simply `values.forEach(console.log)`.
+`values.forEach(fn)` will call the `fn` function on each item in the collection `values`. You can use an anonymous function in place of `fn` as well as a named function. The way the call would look if you used an anonymous function to log each value would be `values.forEach(function(value){ console.log(value); })`.
+
+<details><summary>Code</summary>
+
+```javascript
+    function sum(nums) {
+        let result = 0;
+
+        ?.forEach(function(?) {
+            result = add(result, ?);
+        });
+
+        return result;
+    }
+```
+
+</details>
+
+</details>
+
+#### It is refactored to replace the function expression with an arrow function
+
+Now modify the `sum` function to replace the function expression with an [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+
+<details><summary>Hints</summary>
+
+An arrow function expression to log a value to the console looks like `value => console.log(value)`.
 
 <details><summary>Code</summary>
 
