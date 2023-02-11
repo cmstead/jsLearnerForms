@@ -428,12 +428,6 @@ describe('Forms - Second Form', function () {
                     })
             });
 
-            it('should return vector with valueOf function which does not return original array of points', function () {
-                let vector = jsforms.buildVector([1, 2, 3]);
-
-                assert.equal(vector.valueOf() !== vector, true);
-            });
-
             it('overrides the toString function on the Vector prototype', function () {
                 const analyzerPrototypeOptions = {
                     formNumber: 2,
@@ -451,12 +445,6 @@ describe('Forms - Second Form', function () {
                     })
             });
 
-            it('should return a vector where toString returns a vector string', function () {
-                let vector = jsforms.buildVector([1, 2, 3]);
-
-                assert.equal(vector.toString(), '<1,2,3>');
-            });
-
             it('returns a new Vector object instead of an array', function () {
                 const analyzerNewObjectOptions = {
                     formNumber: 2,
@@ -472,6 +460,18 @@ describe('Forms - Second Form', function () {
                     .then(function ({ result }) {
                         assert.isTrue(result);
                     })
+            });
+
+            it('should return vector with valueOf function which does not return original array of points', function () {
+                let vector = jsforms.buildVector([1, 2, 3]);
+
+                assert.equal(vector.valueOf() !== vector, true);
+            });
+
+            it('should return a vector where toString returns a vector string', function () {
+                let vector = jsforms.buildVector([1, 2, 3]);
+
+                assert.equal(vector.toString(), '<1,2,3>');
             });
         });
 
@@ -650,4 +650,3 @@ describe('Forms - Second Form', function () {
     // Good job! I like what you got.
 
 });
-
