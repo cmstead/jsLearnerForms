@@ -10,6 +10,8 @@ We are going to use functions to explore the `Array.prototype.slice` method.
 
 We will now create a function called `buildVector` that returns a copy of the array as it was passed.
 
+> A vector is an ordered set of points which describes a "directed line segment," in other words, a vector is a line segment with an arrow
+
 #### It returns a vector (array) containing the same numbers as the original -- try returning the array you get in your function
 
 Create a function called `buildVector` that returns the same array passed to it.

@@ -15,7 +15,10 @@ Create a function called `sumOfSquares` that takes an array and returns the squa
 
 <details><summary>Hints</summary>
 
-Add sumOfSquares function with logic to square the first element of the parameter.
+Try to do the following:
+
+1. Add function `sumOfSquares` that returns the first element of the parameter
+2. Then add logic to square a single number inside the `sumOfSquares` function
 
 <details><summary>Code</summary>
 

@@ -7,9 +7,15 @@ We will now take code we wrote and use it define more complex behaviors
 
 ### \*\*magnitude function\*\*
 
-We will create a function called `magnitude` that will calculate the magnitude of all given numbers. Magnitude is calculated as the:
+We will create a function called `magnitude` that will calculate the magnitude of all given numbers.
 
-> Square root of the sum of squares for all given numbers.
+A magnitude is the length of a vector. We will explore computing the magnitude in the following tests
+
+The magnitude of a vector is computed by:
+
+1. Square all numbers in the array
+2. Add all squared values together
+3. Take the square root of the sum of squares
 
 such that given:
 
