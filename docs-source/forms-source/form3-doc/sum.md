@@ -27,13 +27,70 @@ In short you can use this similarly to the `forEach` method but without the need
 
 <details><summary>Code</summary>
 
-**Example**
+**Example 1**
+```javascript
+    function sum(nums) {
+        let result = nums.reduce(function (previous, current) {
+            return add(?, ?);
+        });
+
+        return result;
+    }
+```
+
+**Example 2**
 
 ```javascript
     function sum(nums) {
         let result = nums.reduce((previous, current) => add(?, ?));
 
         return result;
+    }
+```
+
+</details>
+
+</details>
+
+#### It has been refactored to pass the add function directly to reduce
+
+Modify the `sum` function to no longer use a function expression and instead just directly use the `add` function.
+
+<details><summary>Hints</summary>
+
+The `reduce` method takes a function with two parameters, `add` takes two parameters.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    function sum(nums) {
+        let result = nums.reduce(add);
+
+        return result;
+    }
+```
+
+</details>
+
+</details>
+
+#### It has been refactored to not assign the sum before returning it
+
+Modify the `sum` function to just return the result instead of assigning it to a variable.
+
+<details><summary>Hints</summary>
+
+Get rid of the `result` variable and just return the result of the call to reduce.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    function sum(nums) {
+        return nums.reduce(add);
     }
 ```
 
