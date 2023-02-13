@@ -3,7 +3,7 @@
         (title "Combining Complex Functions")
     )
 /bl-->
-We will use previous functions chained to gether to give us new results.
+You will use previous functions chained to gether to give us new results.
 
 ### \*\*sumOfSquares function\*\*
 

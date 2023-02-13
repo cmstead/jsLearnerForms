@@ -3,11 +3,11 @@
         (title "Sum")
     )
 /bl-->
-We are going to refactor and change the shape of the `sum` method.
+You are going to refactor and change the shape of the `sum` method.
 
 ### Refactoring steps
 
-These are the steps we will use to change the shape of the `sum` method, thereby changing how it does its work, while not changing the work it does.
+These are the steps you will use to change the shape of the `sum` method, thereby changing how it does its work, while not changing the work it does.
 
 #### It has an add function
 

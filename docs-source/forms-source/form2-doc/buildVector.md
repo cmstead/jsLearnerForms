@@ -3,11 +3,11 @@
         (title "Build Vector")
     )
 /bl-->
-Now we will refactor the `buildVector` function changing its shape.
+Now you will refactor the `buildVector` function changing its shape.
 
 ### Refactoring steps
 
-These are the steps we will use to change the shape of the `buildVector` function without changing its behavior.
+These are the steps you will use to change the shape of the `buildVector` function without changing its behavior.
 
 #### It has a refactoring in magnitude function to replace vector value with `vector.valueOf()`
 
@@ -34,11 +34,11 @@ Just add a `.valueOf()` call after the vector in the call to `sumOfSquares`.
 
 #### It contains a constructor for an object called Vector
 
-Now we will create a constructor for an object called `Vector`. We are not yet exporting that constructor. This constructor can just be an empty function.
+Now you will create a constructor for an object called `Vector`. You are not yet exporting that constructor. This constructor can just be an empty function.
 
 <details><summary>Hints</summary>
 
-We will not be using JavaScripts class objects. Instead work from the original way to build a constructor as a specially named function.
+You will not be using JavaScripts class objects. Instead work from the original way to build a constructor as a specially named function.
 
 <details><summary>Code</summary>
 

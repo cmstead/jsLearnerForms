@@ -2,7 +2,7 @@
 <!-- GENERATED DOCUMENT! DO NOT EDIT! -->
 # JS Learner Forms &mdash; Second Form #
 #### The Explanation ####
-We will be working with solutions to the problems presented in the [First Form](./FIRST-FORM.md) and refactoring these provided solutions into different shapes.
+You will be working with solutions to the problems presented in the [First Form](./FIRST-FORM.md) and refactoring these provided solutions into different shapes.
 
 
 ## Table Of Contents ##
@@ -73,7 +73,7 @@ A ternary operator has the following form
 
 #### It is refactored to use typeof comparison to "string"
 
-We will now modify the `greet` function to remove the `greeting === undefined` comparison and instead use the [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator to prove whether or not what was passed in was a string.
+You will now modify the `greet` function to remove the `greeting === undefined` comparison and instead use the [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator to prove whether or not what was passed in was a string.
 
 <details><summary>Hints</summary>
 
@@ -96,11 +96,11 @@ The `typeof` operator returns a string with the name of the type. Maybe you can 
     
 
 ## Sum ##
-We are going to refactor and change the shape of the `sum` method.
+You are going to refactor and change the shape of the `sum` method.
 
 ### Refactoring steps
 
-These are the steps we will use to change the shape of the `sum` method, thereby changing how it does its work, while not changing the work it does.
+These are the steps you will use to change the shape of the `sum` method, thereby changing how it does its work, while not changing the work it does.
 
 #### It has an add function
 
@@ -202,11 +202,11 @@ An arrow function expression to log a value to the console looks like `value => 
     
 
 ## Square All ##
-We will now refactor and change the shape of the `squareAll` method.
+You will now refactor and change the shape of the `squareAll` method.
 
 ### Refactoring steps
 
-These are the steps we will take in changing the shape of the `squareAll` method, to ensure we do not change its behavior.
+These are the steps you will take in changing the shape of the `squareAll` method, to ensure you do not change its behavior.
 
 #### It is refactored to replace for loop with `nums.map`
 
@@ -285,11 +285,11 @@ Instead of an assignment, maybe just return the result of map.
     
 
 ## Build Vector ##
-Now we will refactor the `buildVector` function changing its shape.
+Now you will refactor the `buildVector` function changing its shape.
 
 ### Refactoring steps
 
-These are the steps we will use to change the shape of the `buildVector` function without changing its behavior.
+These are the steps you will use to change the shape of the `buildVector` function without changing its behavior.
 
 #### It has a refactoring in magnitude function to replace vector value with `vector.valueOf()`
 
@@ -316,11 +316,11 @@ Just add a `.valueOf()` call after the vector in the call to `sumOfSquares`.
 
 #### It contains a constructor for an object called Vector
 
-Now we will create a constructor for an object called `Vector`. We are not yet exporting that constructor. This constructor can just be an empty function.
+Now you will create a constructor for an object called `Vector`. You are not yet exporting that constructor. This constructor can just be an empty function.
 
 <details><summary>Hints</summary>
 
-We will not be using JavaScripts class objects. Instead work from the original way to build a constructor as a specially named function.
+You will not be using JavaScripts class objects. Instead work from the original way to build a constructor as a specially named function.
 
 <details><summary>Code</summary>
 

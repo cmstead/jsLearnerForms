@@ -4,11 +4,11 @@
         (subtitle "Using Array.slice")
     )
 /bl-->
-We are going to use functions to explore the `Array.prototype.slice` method.
+You are going to use functions to explore the `Array.prototype.slice` method.
 
 ### \*\*buildVector function\*\*
 
-We will now create a function called `buildVector` that returns a copy of the array as it was passed.
+You will now create a function called `buildVector` that returns a copy of the array as it was passed.
 
 > A vector is an ordered set of points which describes a "directed line segment," in other words, a vector is a line segment with an arrow
 

@@ -3,11 +3,11 @@
         (title "Variables and Operations")
     )
 /bl-->
-We will explore the creation and use of variables.
+You will explore the creation and use of variables.
 
 ### declaration and initialization
 
-Here we will declare and initialize variables.
+Here you will declare and initialize variables.
 
 #### It should have a variable called "a"
 
@@ -87,7 +87,7 @@ const jsforms = (function () {
 
 ### assignment and operators
 
-Now that we have a variable we will assign it a value different then what it was initialized with.
+Now that you have a variable you will assign it a value different then what it was initialized with.
 
 #### It should assign the sum of 3 and 7 (3 + 7) to "a"
 
@@ -157,7 +157,7 @@ Initialize a variable with equals: `var b = ...`
 
 ### method call
 
-We will make a call to a method on an object.
+YOu will make a call to a method on an object.
 
 #### It should log variable "b" to the console
 
@@ -193,7 +193,7 @@ Console.log might be just the ticket...
 
 ### exposing values
 
-We well now expose values to the outside world.
+You well now expose values to the outside world.
 
 #### It should expose variable "b" to be read outside of the module
 

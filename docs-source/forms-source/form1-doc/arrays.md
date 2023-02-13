@@ -3,11 +3,11 @@
         (title "Arrays, Loops, and Function Calls")
     )
 /bl-->
-We will use functions to work with arrays and loops.
+You will use functions to work with arrays and loops.
 
 ### \*\*sum function\*\*
 
-We are going to create a function called `sum` that adds numbers together.
+You are going to create a function called `sum` that adds numbers together.
 
 #### It should take the sum of one number
 
@@ -119,7 +119,7 @@ Add logic to sum an arbitrary length array of numbers (A for loop might help to 
 
 Create a function that squares each number in an array.
 
-The steps we will take to building the `squareAll` function are:
+The steps you will take to building the `squareAll` function are:
 
 1. Add a `squareAll` function that returns a constant value.
 2. Chang the `squareAll` function to perform square computation on array value
