@@ -316,7 +316,7 @@ describe('Forms - Third Form', function () {
 
             it('should not be possible to modify vector.points', function () {
                 /*
-                It's possible to disable modifying an object usig Object.freeze
+                It's possible to disable modifying an object using Object.freeze
                 */
                 let vector = jsforms.buildVector([1, 2, 3]);
                 assert.throws(() => vector.points.push(4));

@@ -10,6 +10,7 @@ You are going to continue refactoring code that was presented in the first and s
 - [Section 1: Greeter](#user-content-greeter)
 - [Section 2: Sum](#user-content-sum)
 - [Section 3: Build Vector](#user-content-build-vector)
+- [Section 4: Constructor type check](#user-content-constructor-type-check)
 
 ## Greeter ##
 You are going to start by refactoring the `greet` function.
@@ -234,7 +235,7 @@ The `Vector` object's internal `points` array should be read only. This is accom
 
 <details><summary>Hints</summary>
 
-The way you add a getter to an object defined without the `class` keyword is by using the `Object.defineProperty`. Also, to ensure non-write ability, ensure you use the `slice` method on points before returning it.
+The way you add a getter to an object defined without the `class` keyword is by using the `Object.defineProperty`. Also, to ensure non-write ability.
 
 ```javascript
 Object.defineProperty(obj, key, {
@@ -249,7 +250,7 @@ Object.defineProperty(obj, key, {
 ```javascript
 function Vector(points) {
         Object.defineProperty(this, 'points', {
-            get: () => points.slice();
+            get: () => points;
         });
     }
 ```
@@ -257,6 +258,64 @@ function Vector(points) {
 </details>
 
 </details>
+
+#### It should not change `Vector` object when the original array is modified
+
+Now you will modify the `Vector` function to return a copy of the array passed into it. This will isolate the `Vector` object from changes that happen outside of the object.
+
+<details><summary>Hints</summary>
+
+Maybe the `Array.prototype.slice` method might be useful.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    function Vector(points) {
+        let pts = ?.slice();
+        Object.defineProperty(this, 'points', {
+            get: () => pts;
+        });
+    }
+```
+
+</details>
+
+</details>
+
+#### It should not be possible to modify `vector.points`
+
+Modify the `Vector` method to make the copy of the `points` array read only.
+
+<details><summary>Hints</summary>
+
+It might help to use the [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) method.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    function Vector(points) {
+        let pts = Object.freeze(?.slice());
+        Object.defineProperty(this, 'points', {
+            get: () => pts;
+        });
+    }
+```
+
+</details>
+
+</details>
+    
+
+## Constructor type check ##
+You will be modifying the `Vector` function to have better type checking. This will include type validation and throwing of errors.
+
+### It throws an error if constructor is called with a value which is not an array
+
+Modify the `Vector` function to throw an error if the `points` parameter is not a type of an array.
     
 
 <!-- GENERATED DOCUMENT! DO NOT EDIT! -->
