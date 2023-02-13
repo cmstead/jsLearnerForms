@@ -1,15 +1,8 @@
-
-<!-- GENERATED DOCUMENT! DO NOT EDIT! -->
-# JS Learner Forms &mdash; Third Form #
-#### The Explanation ####
-You are going to continue refactoring code that was presented in the first and second form. Again, what you are given is one of several possible solutions to the previous exercises.
-
-
-## Table Of Contents ##
-
-- [Section 1: Greeter](#user-content-greeter)
-
-## Greeter ##
+<!--bl
+    (filemeta
+        (title "Greeter")
+    )
+/bl-->
 You are going to start by refactoring the `greet` function.
 
 ### Refactoring steps
@@ -120,7 +113,3 @@ The trinary operator has effectively moved to the `eitherOnType` method. The one
 </details>
 
 </details>
-    
-
-<!-- GENERATED DOCUMENT! DO NOT EDIT! -->
-    
