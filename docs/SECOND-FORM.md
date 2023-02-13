@@ -357,7 +357,7 @@ The `Vector` constructor is just a function. All functions can have a name repre
 
 </details>
 
-#### It assigns "points" variable to "this.points" in `Vector` constructor
+#### It assigns `points` variable to "this.points" in `Vector` constructor
 
 Modify the `Vector` constructor to save the `points` parameter.
 
@@ -430,13 +430,13 @@ You will modify the overridden `toString` method on `Vector` such that:
 >
 > the `toString` method should return
 >
-> \<1,2,3\>
+> <1,2,3>
 
 <details><summary>Hints</summary>
 
 You will need to use the internal `points` value.
 
-You can use the `forEach` method on array to do this but the `reduce` method will be easier.
+You can use the [`Array.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) method on array to do this but the [`Array.prototype.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) method will be easier.
 
 <details><summary>Code</summary>
 
