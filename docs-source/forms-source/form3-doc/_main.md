@@ -11,5 +11,6 @@ You are going to continue refactoring code that was presented in the first and s
     (table-of-contents
         (section-main "./greeter.md")
         (section-main "./sum.md")
+        (section-main "./buildVector.md")
     )
 /bl-->
