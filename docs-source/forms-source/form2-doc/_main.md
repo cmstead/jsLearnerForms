@@ -13,5 +13,6 @@ You will be working with solutions to the problems presented in the [First Form]
         (section-main "./sum.md")
         (section-main "./squareAll.md")
         (section-main "./buildVector.md")
+        (section-main "./getVectorsShorterThan.md")
     )
 /bl-->
