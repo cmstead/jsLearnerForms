@@ -3,11 +3,11 @@
         (title "Square All")
     )
 /bl-->
-We will now refactor and change the shape of the `squareAll` method.
+You will now refactor and change the shape of the `squareAll` method.
 
 ### Refactoring steps
 
-These are the steps we will take in changing the shape of the `squareAll` method, to ensure we do not change its behavior.
+These are the steps you will take in changing the shape of the `squareAll` method, to ensure you do not change its behavior.
 
 #### It is refactored to replace for loop with `nums.map`
 

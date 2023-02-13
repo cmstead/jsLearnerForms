@@ -445,6 +445,12 @@ describe('Forms - Second Form', function () {
                     })
             });
 
+            it('should return a vector where toString returns a vector string', function () {
+                let vector = jsforms.buildVector([1, 2, 3]);
+
+                assert.equal(vector.toString(), '<1,2,3>');
+            });
+
             it('returns a new Vector object instead of an array', function () {
                 const analyzerNewObjectOptions = {
                     formNumber: 2,
@@ -466,12 +472,6 @@ describe('Forms - Second Form', function () {
                 let vector = jsforms.buildVector([1, 2, 3]);
 
                 assert.equal(vector.valueOf() !== vector, true);
-            });
-
-            it('should return a vector where toString returns a vector string', function () {
-                let vector = jsforms.buildVector([1, 2, 3]);
-
-                assert.equal(vector.toString(), '<1,2,3>');
             });
         });
 

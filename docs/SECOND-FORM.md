@@ -2,7 +2,7 @@
 <!-- GENERATED DOCUMENT! DO NOT EDIT! -->
 # JS Learner Forms &mdash; Second Form #
 #### The Explanation ####
-We will be working with solutions to the problems presented in the [First Form](./FIRST-FORM.md) and refactoring these provided solutions into different shapes.
+You will be working with solutions to the problems presented in the [First Form](./FIRST-FORM.md) and refactoring these provided solutions into different shapes.
 
 
 ## Table Of Contents ##
@@ -11,6 +11,7 @@ We will be working with solutions to the problems presented in the [First Form](
 - [Section 2: Sum](#user-content-sum)
 - [Section 3: Square All](#user-content-square-all)
 - [Section 4: Build Vector](#user-content-build-vector)
+- [Section 5: Get Vectors Shorter Than](#user-content-get-vectors-shorter-than)
 
 ## Greeter ##
 Let us change the `greet` function.
@@ -73,7 +74,7 @@ A ternary operator has the following form
 
 #### It is refactored to use typeof comparison to "string"
 
-We will now modify the `greet` function to remove the `greeting === undefined` comparison and instead use the [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator to prove whether or not what was passed in was a string.
+You will now modify the `greet` function to remove the `greeting === undefined` comparison and instead use the [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator to prove whether or not what was passed in was a string.
 
 <details><summary>Hints</summary>
 
@@ -96,11 +97,11 @@ The `typeof` operator returns a string with the name of the type. Maybe you can 
     
 
 ## Sum ##
-We are going to refactor and change the shape of the `sum` method.
+You are going to refactor and change the shape of the `sum` method.
 
 ### Refactoring steps
 
-These are the steps we will use to change the shape of the `sum` method, thereby changing how it does its work, while not changing the work it does.
+These are the steps you will use to change the shape of the `sum` method, thereby changing how it does its work, while not changing the work it does.
 
 #### It has an add function
 
@@ -202,11 +203,11 @@ An arrow function expression to log a value to the console looks like `value => 
     
 
 ## Square All ##
-We will now refactor and change the shape of the `squareAll` method.
+You will now refactor and change the shape of the `squareAll` method.
 
 ### Refactoring steps
 
-These are the steps we will take in changing the shape of the `squareAll` method, to ensure we do not change its behavior.
+These are the steps you will take in changing the shape of the `squareAll` method, to ensure you do not change its behavior.
 
 #### It is refactored to replace for loop with `nums.map`
 
@@ -285,11 +286,11 @@ Instead of an assignment, maybe just return the result of map.
     
 
 ## Build Vector ##
-Now we will refactor the `buildVector` function changing its shape.
+Now you will refactor the `buildVector` function changing its shape.
 
 ### Refactoring steps
 
-These are the steps we will use to change the shape of the `buildVector` function without changing its behavior.
+These are the steps you will use to change the shape of the `buildVector` function without changing its behavior.
 
 #### It has a refactoring in magnitude function to replace vector value with `vector.valueOf()`
 
@@ -300,6 +301,8 @@ Now modify the `magnitude` function by not passing the vector directly but passi
 Just add a `.valueOf()` call after the vector in the call to `sumOfSquares`.
 
 <details><summary>Code</summary>
+
+**Example**
 
 ```javascript
     function magnitude(vector) {
@@ -312,11 +315,285 @@ Just add a `.valueOf()` call after the vector in the call to `sumOfSquares`.
 
 </details>
 
-### It contains a constructor for an object called Vector
+#### It contains a constructor for an object called Vector
 
-Now we will create a constructor for an object called `Vector`. We are not yet exporting that constructor.
+Now you will create a constructor for an object called `Vector`. You are not yet exporting that constructor. This constructor can just be an empty function.
+
+<details><summary>Hints</summary>
+
+You will not be using JavaScripts class objects. Instead work from the original way to build a constructor as a specially named function.
 
 <details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    Function Vector() {
+    }
+```
+
+</details>
+
+</details>
+
+#### It accepts a parameter "points" into Vector constructor
+
+Modify the `Vector` function to take a parameter called points. There is no need to do anything with this parameter yet.
+
+<details><summary>Hints</summary>
+
+The `Vector` constructor is just a function. All functions can have a name representing a parameter between the parenthesis.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    Function Vector(?) {
+    }
+```
+
+</details>
+
+</details>
+
+#### It assigns `points` variable to "this.points" in `Vector` constructor
+
+Modify the `Vector` constructor to save the `points` parameter.
+
+<details><summary>Hints</summary>
+
+Remember in JavaScript, you do not have to predefine member variables before you set them.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    Function Vector(?) {
+        this.? = ?;
+    }
+```
+
+</details>
+
+</details>
+
+#### It overrides the valueOf function on the Vector prototype
+
+Now you will need to override the internal `valueOf` function on `Vector`. Remember that `valueOf` comes from object and by default just returns the object. You will now change the behavior of this function to return a copy of its internal points.
+
+<details><summary>Hints</summary>
+
+The way to override an internal function in JavaScript without the use of the `class` keyword is to change its prototype. So if you had an `Animal` object prototype for a `Human` constructor you could override the `say` method on `Human` like so: `Human.prototype.say = function () {}`.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    Vector.prototype.? = function () {
+        return this.points.slice();
+    };
+```
+
+</details>
+
+</details>
+
+#### It overrides the `toString` function on the `Vector` prototype
+
+Now you will need to override the internal `toString` function on `Vector`. Remember what you learned above.
+
+<details><summary>Hints</summary>
+
+The way to override an internal function in JavaScript without the use of the `class` keyword is to change its prototype. So if you had an `Animal` object prototype for a `Human` constructor you could override the `say` method on `Human` like so: `Human.prototype.say = function () {}`.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    Vector.prototype.? = function () {
+    };
+```
+
+</details>
+
+</details>
+
+#### It should return a vector where toString returns a vector string
+
+You will modify the overridden `toString` method on `Vector` such that:
+
+> given `new Vector([1, 2, 3]);`
+>
+> the `toString` method should return
+>
+> <1,2,3>
+
+<details><summary>Hints</summary>
+
+You will need to use the internal `points` value.
+
+You can use the [`Array.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) method on array to do this but the [`Array.prototype.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) method will be easier.
+
+<details><summary>Code</summary>
+
+**Example 1 (`forEach`)**
+
+```javascript
+    Vector.prototype.toString = function () {
+        let result = "";
+
+        this.?.forEach(point => {
+            if (0 < result.length) {
+                result += ',';
+            }
+
+            result += point;
+        });
+
+        return result;
+    };
+```
+
+**Example 2 (`reduce`)**
+
+```javascript
+    Vector.prototype.toString = function() {
+        return this.?.reduce((previous, current) => previous + ',' + current);
+    }
+```
+
+</details>
+
+</details>
+
+#### It returns a new Vector object instead of an array
+
+You will now modify the `buildVector` function to return a new `Vector` instead of an array of values.
+
+<details><summary>Hints</summary>
+
+Remember to use the `new` keyword in your return value.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    function buildVector(points) {
+        return new ?(points);
+    }
+```
+
+</details>
+
+</details>
+    
+
+## Get Vectors Shorter Than ##
+
+You will now modify the `getVectorsShorterThan` function changing its shape without changing its behavior.
+
+### Refactoring steps
+
+This is how you will modify the `getVectorsShorterThan` function such that it ensures you do not change its external behavior.
+
+1. Create new function `isMagnitudeShorterThanLength` which checks if the magnitude of a vector is shorter than the vector length provided
+2. Replace for loop with `vectors.filter(isMagnitudeShorterThanLength)` and assign output to results
+3. Return results directly
+
+_**KEEP THE TESTS PASSING!**_
+
+#### It has a function called `isMagnitudeShorterThanLength`
+
+Create a function called `isMagnitudeShorterThanLength`. This can be an empty function right now. You are also _not_ exporting that function.
+
+<details><summary>Hints</summary>
+
+Create a function that calculates the magnitude and then just return the value of the comparison.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    function isMagnitudeShorterThanLength() {
+    }
+```
+
+</details>
+
+</details>
+
+#### It has `vector` and `length` as parameters of `isMagnitudeShorterThanLength`
+
+You will modify the `isMagnitudeShorterThanLength` function to take the two parameters `vector` and `length`. You will also modify the function to return a [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) `true` if the vector's magnitude is less then the provided length and false if it is equal to or greater.
+
+<details><summary>Hints</summary>
+
+You will need to calculate the magnitude (there is a function to help with this) and then return the comparison to the length.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    function isMagnitudeShorterThanLength(?, ?) {
+        let currentMagnitude = magnitude(?);
+        return currentMagnitude < ?;
+    }
+```
+
+</details>
+
+</details>
+
+#### It is refactored to use `vectors.filter()` instead of for loop
+
+You will modify the `getVectorsShorterThan` function to use the internal [`Array.prototype.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) instead of recreating the functionality in a for loop.
+
+<details><summary>Hints</summary>
+
+The filter method takes  a function as a parameter that returns a Boolean. If that boolean returns true, then that item is added to the return value. If the function returns false then the value is not added to the return set.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    function getVectorsShorterThan(length, vectors) {
+        let result = ?.filter(isMagnitudeShorterThanLength);
+
+        return result;
+    }
+```
+
+</details>
+
+</details>
+
+#### It does not assign filter to results, it just returns directly
+
+Now modify the `getVectorsShorterThan` not to use the unnecessary variable `result`.
+
+<details><summary>Hint</summary>
+
+Can you just return the result of the `filter` method?
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    function getVectorsShorterThan(length, vectors) {
+        return ?.filter(isMagnitudeShorterThanLength);
+    }
+```
+
+</details>
 
 </details>
     

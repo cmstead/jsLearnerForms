@@ -15,11 +15,11 @@
 - [Section 7: Looping and inequality comparison](#user-content-looping-and-inequality-comparison)
 
 ## Variables and Operations ##
-We will explore the creation and use of variables.
+You will explore the creation and use of variables.
 
 ### declaration and initialization
 
-Here we will declare and initialize variables.
+Here you will declare and initialize variables.
 
 #### It should have a variable called "a"
 
@@ -99,7 +99,7 @@ const jsforms = (function () {
 
 ### assignment and operators
 
-Now that we have a variable we will assign it a value different then what it was initialized with.
+Now that you have a variable you will assign it a value different then what it was initialized with.
 
 #### It should assign the sum of 3 and 7 (3 + 7) to "a"
 
@@ -169,7 +169,7 @@ Initialize a variable with equals: `var b = ...`
 
 ### method call
 
-We will make a call to a method on an object.
+YOu will make a call to a method on an object.
 
 #### It should log variable "b" to the console
 
@@ -205,7 +205,7 @@ Console.log might be just the ticket...
 
 ### exposing values
 
-We well now expose values to the outside world.
+You well now expose values to the outside world.
 
 #### It should expose variable "b" to be read outside of the module
 
@@ -426,11 +426,11 @@ Add logic to properly take square root
     
 
 ## Arrays, Loops, and Function Calls ##
-We will use functions to work with arrays and loops.
+You will use functions to work with arrays and loops.
 
 ### \*\*sum function\*\*
 
-We are going to create a function called `sum` that adds numbers together.
+You are going to create a function called `sum` that adds numbers together.
 
 #### It should take the sum of one number
 
@@ -542,7 +542,7 @@ Add logic to sum an arbitrary length array of numbers (A for loop might help to 
 
 Create a function that squares each number in an array.
 
-The steps we will take to building the `squareAll` function are:
+The steps you will take to building the `squareAll` function are:
 
 1. Add a `squareAll` function that returns a constant value.
 2. Chang the `squareAll` function to perform square computation on array value
@@ -606,7 +606,7 @@ Add logic to square all numbers in array (How did you solve sum?)
     
 
 ## Combining Complex Functions ##
-We will use previous functions chained to gether to give us new results.
+You will use previous functions chained to gether to give us new results.
 
 ### \*\*sumOfSquares function\*\*
 
@@ -671,11 +671,11 @@ Add logic to square all numbers and return the sum (squareAll and sum might be u
 
 ## Copying Arrays ##
 #### Using Array.slice ####
-We are going to use functions to explore the `Array.prototype.slice` method.
+You are going to use functions to explore the `Array.prototype.slice` method.
 
 ### \*\*buildVector function\*\*
 
-We will now create a function called `buildVector` that returns a copy of the array as it was passed.
+You will now create a function called `buildVector` that returns a copy of the array as it was passed.
 
 > A vector is an ordered set of points which describes a "directed line segment," in other words, a vector is a line segment with an arrow
 
@@ -735,13 +735,13 @@ Add logic to return a copy of vector array (Slice will create a new array just l
     
 
 ## Combining existing code to solve new problems ##
-We will now take code we wrote and use it define more complex behaviors
+You will now take code you wrote and use it define more complex behaviors
 
 ### \*\*magnitude function\*\*
 
-We will create a function called `magnitude` that will calculate the magnitude of all given numbers.
+You will create a function called `magnitude` that will calculate the magnitude of all given numbers.
 
-A magnitude is the length of a vector. We will explore computing the magnitude in the following tests
+A magnitude is the length of a vector. You will explore computing the magnitude in the following tests
 
 The magnitude of a vector is computed by:
 
@@ -803,7 +803,7 @@ Modify the `magnitude` function that returns the positive value of the first ite
 
 Add logic to ensure magnitude is always positive (Hint: squaring a negative number makes it positive)
 
-A magnitude is the length of a vector. We will explore computing the magnitude in the following tests.
+A magnitude is the length of a vector. you will explore computing the magnitude in the following tests.
 
 Currently the magnitude of a vector is computed by:
 
@@ -836,7 +836,7 @@ Modify the `magnitude` function so that it returns the magnitude of the first 2 
 
 Add logic to perform proper magnitude calculation for length 1 and 2 vectors (A length 2 vector's magnitude can be computed by `squareRoot(vector[0]^2 + vector[1]^2))`
 
-A magnitude is the length of a vector. We will explore computing the magnitude in the following tests.
+A magnitude is the length of a vector. You will explore computing the magnitude in the following tests.
 
 Currently the magnitude of a vector is computed by:
 
@@ -872,9 +872,9 @@ Modify the `magnitude` function so that it returns the magnitude of all the valu
 
 <details><summary>Hints</summary>
 
-Add logic to compute the magnitude of an arbitrary length vector. (The general magnitude formula is the square root of the sum of the squares. Can we apply functions we have already created?)
+Add logic to compute the magnitude of an arbitrary length vector. (The general magnitude formula is the square root of the sum of the squares. Can you apply functions you have already created?)
 
-A magnitude is the length of a vector. We will explore computing the magnitude in the following tests.
+A magnitude is the length of a vector. You will explore computing the magnitude in the following tests.
 
 The magnitude of a vector is computed by:
 
@@ -907,7 +907,7 @@ Now it is time to use functions to examine looping and comparisons.
 
 ### \*\*getVectorsShorterThan\*\*
 
-We will now create a function called `getVectorsShorterThan` that will take an array of arrays. It will compare each array based on its magnitude and return all arrays that have a magnitude smaller then the number provided.
+You will now create a function called `getVectorsShorterThan` that will take an array of arrays. It will compare each array based on its magnitude and return all arrays that have a magnitude smaller then the number provided.
 
 the signature will be:
 
@@ -915,7 +915,7 @@ the signature will be:
 getVectorsShorterThan(length, arrayOfVectors)
 ```
 
-Such that `length` is the number for which we will compare magnitudes against, and `arrayOfVectors` is the array of arrays, where then inner arrays are to contain numbers.
+Such that `length` is the number for which You will compare magnitudes against, and `arrayOfVectors` is the array of arrays, where then inner arrays are to contain numbers.
 
 #### It returns an array of one vector when the vector is shorter than 5 -- arguments are: length, arrayOfVectors
 
@@ -923,7 +923,7 @@ Create a the function `getVectorsShorterThan` where the first parameter is `leng
 
 <details><summary>Hints</summary>
 
-Can we just return the first value of the array?
+Can you just return the first value of the array?
 
 <details><summary>Code</summary>
 
@@ -949,7 +949,7 @@ Modify the `getVectorsShorterThan` function so that it will return an empty arra
 
 <details><summary>Hints</summary>
 
-Add logic to handle the case where a vector is too long (How might we compare the magnitude of a vector to a length value?)
+Add logic to handle the case where a vector is too long (How might you compare the magnitude of a vector to a length value?)
 
 <details><summary>Code</summary>
 
@@ -1049,7 +1049,7 @@ Modify the `getVectorsShorterThan` function so that it now returns only those ve
 
 <details><summary>Hints</summary>
 
-Move to general code for filtering vecctors (Is there a way we can use a known control structure to check all vectors?)
+Move to general code for filtering vecctors (Is there a way you can use a known control structure to check all vectors?)
 
 <details><summary>Code</summary>
 

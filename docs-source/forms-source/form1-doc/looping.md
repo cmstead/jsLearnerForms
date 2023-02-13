@@ -7,7 +7,7 @@ Now it is time to use functions to examine looping and comparisons.
 
 ### \*\*getVectorsShorterThan\*\*
 
-We will now create a function called `getVectorsShorterThan` that will take an array of arrays. It will compare each array based on its magnitude and return all arrays that have a magnitude smaller then the number provided.
+You will now create a function called `getVectorsShorterThan` that will take an array of arrays. It will compare each array based on its magnitude and return all arrays that have a magnitude smaller then the number provided.
 
 the signature will be:
 
@@ -15,7 +15,7 @@ the signature will be:
 getVectorsShorterThan(length, arrayOfVectors)
 ```
 
-Such that `length` is the number for which we will compare magnitudes against, and `arrayOfVectors` is the array of arrays, where then inner arrays are to contain numbers.
+Such that `length` is the number for which You will compare magnitudes against, and `arrayOfVectors` is the array of arrays, where then inner arrays are to contain numbers.
 
 #### It returns an array of one vector when the vector is shorter than 5 -- arguments are: length, arrayOfVectors
 
@@ -23,7 +23,7 @@ Create a the function `getVectorsShorterThan` where the first parameter is `leng
 
 <details><summary>Hints</summary>
 
-Can we just return the first value of the array?
+Can you just return the first value of the array?
 
 <details><summary>Code</summary>
 
@@ -49,7 +49,7 @@ Modify the `getVectorsShorterThan` function so that it will return an empty arra
 
 <details><summary>Hints</summary>
 
-Add logic to handle the case where a vector is too long (How might we compare the magnitude of a vector to a length value?)
+Add logic to handle the case where a vector is too long (How might you compare the magnitude of a vector to a length value?)
 
 <details><summary>Code</summary>
 
@@ -149,7 +149,7 @@ Modify the `getVectorsShorterThan` function so that it now returns only those ve
 
 <details><summary>Hints</summary>
 
-Move to general code for filtering vecctors (Is there a way we can use a known control structure to check all vectors?)
+Move to general code for filtering vecctors (Is there a way you can use a known control structure to check all vectors?)
 
 <details><summary>Code</summary>
 
