@@ -32,8 +32,19 @@ Just add a `.valueOf()` call after the vector in the call to `sumOfSquares`.
 
 ### It contains a constructor for an object called Vector
 
-Now we will create a constructor for an object called `Vector`. We are not yet exporting that constructor.
+Now we will create a constructor for an object called `Vector`. We are not yet exporting that constructor. This constructor can just be an empty function.
+
+<details><summary>Hints</summary>
+
+We will not be using JavaScripts class objects. Instead work from the original way to build a constructor as a specially named function.
 
 <details><summary>Code</summary>
+
+```javascript
+    Function Vector() {
+    }
+```
+
+</details>
 
 </details>
