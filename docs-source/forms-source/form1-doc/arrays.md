@@ -119,6 +119,11 @@ Add logic to sum an arbitrary length array of numbers (A for loop might help to 
 
 Create a function that squares each number in an array.
 
+The steps we will take to building the `squareAll` function are:
+
+1. Add a `squareAll` function that returns a constant value.
+2. Chang the `squareAll` function to perform square computation on array value
+
 #### It should square all numbers in a single-value array
 
 Create a function called `squareAll` that takes an array and returns the square of the first element.

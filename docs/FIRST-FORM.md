@@ -542,6 +542,11 @@ Add logic to sum an arbitrary length array of numbers (A for loop might help to 
 
 Create a function that squares each number in an array.
 
+The steps we will take to building the `squareAll` function are:
+
+1. Add a `squareAll` function that returns a constant value.
+2. Chang the `squareAll` function to perform square computation on array value
+
 #### It should square all numbers in a single-value array
 
 Create a function called `squareAll` that takes an array and returns the square of the first element.
@@ -613,7 +618,10 @@ Create a function called `sumOfSquares` that takes an array and returns the squa
 
 <details><summary>Hints</summary>
 
-Add sumOfSquares function with logic to square the first element of the parameter.
+Try to do the following:
+
+1. Add function `sumOfSquares` that returns the first element of the parameter
+2. Then add logic to square a single number inside the `sumOfSquares` function
 
 <details><summary>Code</summary>
 
@@ -668,6 +676,8 @@ We are going to use functions to explore the `Array.prototype.slice` method.
 ### \*\*buildVector function\*\*
 
 We will now create a function called `buildVector` that returns a copy of the array as it was passed.
+
+> A vector is an ordered set of points which describes a "directed line segment," in other words, a vector is a line segment with an arrow
 
 #### It returns a vector (array) containing the same numbers as the original -- try returning the array you get in your function
 
@@ -729,9 +739,15 @@ We will now take code we wrote and use it define more complex behaviors
 
 ### \*\*magnitude function\*\*
 
-We will create a function called `magnitude` that will calculate the magnitude of all given numbers. Magnitude is calculated as the:
+We will create a function called `magnitude` that will calculate the magnitude of all given numbers.
 
-> Square root of the sum of squares for all given numbers.
+A magnitude is the length of a vector. We will explore computing the magnitude in the following tests
+
+The magnitude of a vector is computed by:
+
+1. Square all numbers in the array
+2. Add all squared values together
+3. Take the square root of the sum of squares
 
 such that given:
 
