@@ -10,5 +10,6 @@ You are going to continue refactoring code that was presented in the first and s
 <!--bl
     (table-of-contents
         (section-main "./greeter.md")
+        (section-main "./sum.md")
     )
 /bl-->
