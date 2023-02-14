@@ -339,38 +339,72 @@ describe('Forms - Third Form', function () {
             });
 
             describe('Refactoring steps', function () {
-                it('has a function called "isArrayOfNumbers" with a parameter "values"', function () {
+                it('has a function called `assertArray` with parameter `values`', () => {
                     const analyzerFunction = {
                         formNumber: 3,
                         analyzerName: 'containsFunction',
                         analyzerOptions: {
-                            functionName: 'isArrayOfNumbers',
+                            functionName: 'assertArray',
                             parameters: ['values']
+                        }
+                    };
+
+                    return analyzer
+                        .analyze(analyzerFunction)
+                        .then(function ({ result }) {
+                            assert.isTrue(result, 'Cannot find a function  called "assertArray"');
+                        });
+                });
+
+                it('has a function called `assertArrayOfType` with a parameter `type` `values`', function () {
+                    const analyzerFunction = {
+                        formNumber: 3,
+                        analyzerName: 'containsFunction',
+                        analyzerOptions: {
+                            functionName: 'assertArrayOfType',
+                            parameters: ['type', 'values']
                         }
                     }
 
                     return analyzer
                         .analyze(analyzerFunction)
                         .then(function ({ result }) {
-                            assert.isTrue(result, 'Cannot find a function  called "isArrayOfNumbers"');
+                            assert.isTrue(result, 'Cannot find a function  called "assertArrayOfType"');
                         });
                 });
 
-                it('has a call in Vector constructor to "isArrayOfNumbers" with "points" as an argument', function () {
+                it('has a call in `assertArrayOfType` function to `assertArray` with `values` as an argument', function () {
                     const analyzerCallOptions = {
                         formNumber: 3,
                         analyzerName: 'containsCall',
                         analyzerOptions: {
-                            parentName: 'Vector',
-                            methodName: 'isArrayOfNumbers',
-                            variableName: 'points'
+                            parentName: 'assertArrayOfType',
+                            methodName: 'assertArray',
+                            variableName: 'values'
                         }
                     };
 
                     return analyzer
                         .analyze(analyzerCallOptions)
                         .then(function ({ result }) {
-                            assert.isTrue(result, 'Cannot find call to isArrayOfNumbers');
+                            assert.isTrue(result, 'Cannot find call to assertArrayOfType');
+                        });
+                });
+
+                it('has a call in Vector constructor to `assertArrayOfType`', function () {
+                    const analyzerCallOptions = {
+                        formNumber: 3,
+                        analyzerName: 'containsCall',
+                        analyzerOptions: {
+                            parentName: 'Vector',
+                            methodName: 'assertArrayOfType'
+                        }
+                    };
+
+                    return analyzer
+                        .analyze(analyzerCallOptions)
+                        .then(function ({ result }) {
+                            assert.isTrue(result, 'Cannot find call to assertArrayOfType');
                         });
                 });
             });
