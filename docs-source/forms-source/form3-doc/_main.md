@@ -12,6 +12,5 @@ You are going to continue refactoring code that was presented in the first and s
         (section-main "./greeter.md")
         (section-main "./sum.md")
         (section-main "./buildVector.md")
-        (section-main "./constructor.md")
     )
 /bl-->

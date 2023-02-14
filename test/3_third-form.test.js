@@ -391,7 +391,7 @@ describe('Forms - Third Form', function () {
                         });
                 });
 
-                it('has a call in Vector constructor to `assertArrayOfType`', function () {
+                it('has a call in `Vector` constructor to `assertArrayOfType`', function () {
                     const analyzerCallOptions = {
                         formNumber: 3,
                         analyzerName: 'containsCall',
