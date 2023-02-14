@@ -10,6 +10,7 @@
     "docs:form1": "node ./node_modules/booklisp/ ./docs-source/forms-source/form1-doc/_main.md ./docs/FIRST-FORM.md",
     "docs:form2": "node ./node_modules/booklisp/ ./docs-source/forms-source/form2-doc/_main.md ./docs/SECOND-FORM.md",
     "docs:form3": "node ./node_modules/booklisp/ ./docs-source/forms-source/form3-doc/_main.md ./docs/THIRD-FORM.md",
+    "docs:form4": "node ./node_modules/booklisp/ ./docs-source/forms-source/form4-doc/_main.md ./docs/TEST-DUMMY-FORM.md",
     "docs:forms": "node ./node_modules/booklisp/ ./docs-source/forms-source/_main.md ./FORMS.md",
     "update-forms": "node ./runner-utils/update-forms.js"
   },

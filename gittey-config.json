@@ -40,6 +40,10 @@
             "command": "npm run docs:form3"
         },
         {
+            "name": "docs:form4",
+            "command": "npm run docs:form4"
+        },
+        {
             "name": "docs:readme",
             "command": "npm run docs:readme"
         },
@@ -49,7 +53,7 @@
         },
         {
             "name": "docs",
-            "command": "gittey docs:form1 && gittey docs:form2 && gittey docs:form3 && gittey docs:forms && gittey docs:readme"
+            "command": "gittey docs:form1 && gittey docs:form2 && gittey docs:form3 && gittey docs:form4 && gittey docs:forms && gittey docs:readme"
         }
     ],
     "collaborators": []
