@@ -2,7 +2,9 @@
 <!-- GENERATED DOCUMENT! DO NOT EDIT! -->
 # JS Learner Forms &mdash; Third Form #
 #### The Explanation ####
-You are going to continue refactoring code that was presented in the first and second form. Again, what you are given is one of several possible solutions to the previous exercises.
+You are going to continue refactoring code that was presented in the [first](./FIRST-FORM.md) and [second](./SECOND-FORM.md) form. Again, what you are given is one of several possible solutions to the previous exercises.
+
+You can also look at [JS Learner Forms documentation](../FORMS.md) for other forms.
 
 
 ## Table Of Contents ##
@@ -10,6 +12,7 @@ You are going to continue refactoring code that was presented in the first and s
 - [Section 1: Greeter](#user-content-greeter)
 - [Section 2: Sum](#user-content-sum)
 - [Section 3: Build Vector](#user-content-build-vector)
+- [Section 4: The Other JS Learner Forms](#user-content-the-other-js-learner-forms)
 
 ## Greeter ##
 You are going to start by refactoring the `greet` function.
@@ -557,6 +560,11 @@ You will delete all the type checking code and replace it with the call to `asse
 </details>
 
 </details>
+    
+
+## The Other JS Learner Forms ##
+
+[JS Learner Forms documentation](../FORMS.md)
     
 
 <!-- GENERATED DOCUMENT! DO NOT EDIT! -->

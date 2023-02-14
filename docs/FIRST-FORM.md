@@ -3,6 +3,8 @@
 # JS Learner Forms &mdash; First Form #
 #### The Explanation ####
 
+You can also look at [JS Learner Forms documentation](../FORMS.md) for other forms.
+
 
 ## Table Of Contents ##
 
@@ -13,6 +15,7 @@
 - [Section 5: Copying Arrays](#user-content-copying-arrays)
 - [Section 6: Combining existing code to solve new problems](#user-content-combining-existing-code-to-solve-new-problems)
 - [Section 7: Looping and inequality comparison](#user-content-looping-and-inequality-comparison)
+- [Section 8: The Other JS Learner Forms](#user-content-the-other-js-learner-forms)
 
 ## Variables and Operations ##
 You will explore the creation and use of variables.
@@ -1098,6 +1101,11 @@ Move to general code for filtering vecctors (Is there a way you can use a known 
 </details>
 
 </details>
+    
+
+## The Other JS Learner Forms ##
+
+[JS Learner Forms documentation](../FORMS.md)
     
 
 <!-- GENERATED DOCUMENT! DO NOT EDIT! -->

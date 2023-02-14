@@ -4,6 +4,8 @@
 #### The Explanation ####
 You will be working with solutions to the problems presented in the [First Form](./FIRST-FORM.md) and refactoring these provided solutions into different shapes.
 
+You can also look at [JS Learner Forms documentation](../FORMS.md) for other forms.
+
 
 ## Table Of Contents ##
 
@@ -12,6 +14,7 @@ You will be working with solutions to the problems presented in the [First Form]
 - [Section 3: Square All](#user-content-square-all)
 - [Section 4: Build Vector](#user-content-build-vector)
 - [Section 5: Get Vectors Shorter Than](#user-content-get-vectors-shorter-than)
+- [Section 6: The Other JS Learner Forms](#user-content-the-other-js-learner-forms)
 
 ## Greeter ##
 Let us change the `greet` function.
@@ -596,6 +599,11 @@ Can you just return the result of the `filter` method?
 </details>
 
 </details>
+    
+
+## The Other JS Learner Forms ##
+
+[JS Learner Forms documentation](../FORMS.md)
     
 
 <!-- GENERATED DOCUMENT! DO NOT EDIT! -->
