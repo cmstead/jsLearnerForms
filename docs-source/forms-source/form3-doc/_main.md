@@ -10,6 +10,8 @@ You are going to continue refactoring code that was presented in the [first](./F
 
 You can also look at [JS Learner Forms documentation](../FORMS.md) for other forms.
 
+You will be working in the [jsforms-source/3_third-form.js](../jsforms-source/3_third-form.js) file.
+
 <!--bl
     (table-of-contents
         (section-main "./greeter.md")

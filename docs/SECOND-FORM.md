@@ -7,6 +7,8 @@ You will be working with solutions to the problems presented in the [First Form]
 
 You can also look at [JS Learner Forms documentation](../FORMS.md) for other forms.
 
+You will be working in the [jsforms-source/2_second-form.js](../jsforms-source/2_second-form.js) file.
+
 
 ## Table Of Contents ##
 
