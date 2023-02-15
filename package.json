@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/cmstead/jsLearnerForms",
   "devDependencies": {
+    "all-contributors-cli": "^6.24.0",
     "booklisp": "^2.0.0",
     "chai": "^4.2.0",
     "eslint": "^3.19.0",

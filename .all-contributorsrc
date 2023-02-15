@@ -1,0 +1,44 @@
+{
+  "projectName": "jsLearnerForms",
+  "projectOwner": "cmstead",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "./docs-source/readme-source/main-sections/thanks.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "hunterinderstries",
+      "name": "hunterinderstries",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22056883?v=4",
+      "profile": "https://github.com/hunterinderstries",
+      "contributions": [
+        "financial"
+      ]
+    },
+    {
+      "login": "edf-re",
+      "name": "EDF Renewables",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13739273?v=4",
+      "profile": "https://github.com/edf-re",
+      "contributions": [
+        "financial"
+      ]
+    },
+    {
+      "login": "jason-kerney",
+      "name": "Jason Kerney",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5097968?v=4",
+      "profile": "https://github.com/jason-kerney",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": false
+}
