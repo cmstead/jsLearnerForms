@@ -66,7 +66,7 @@ This method takes the parameter `transactionRecords` which is an array of transa
 
 ```javascript
 {
-    productId, // integer number
+    productId, // integer number unique to the product
     transactionStatus, // integer number representing Sale or Return
     quantity // integer number representing the total number of the item sold or returned
 }
@@ -115,7 +115,7 @@ This method takes the parameter `transactionRecords` which is an array of transa
 
 ```javascript
 {
-    productId, // integer number
+    productId, // integer number unique to the product
     transactionStatus, // integer number representing Sale or Return
     quantity // integer number representing the total number of the item sold or returned
 }
