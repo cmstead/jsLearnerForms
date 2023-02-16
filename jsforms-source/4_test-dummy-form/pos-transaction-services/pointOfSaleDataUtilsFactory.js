@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-function pointOfSaleDataUtilsFactoryBuilder() {
+function pointOfSaleDataUtilityFactoryBuilder() {
 
     return function (transactionStatuses) {
 
