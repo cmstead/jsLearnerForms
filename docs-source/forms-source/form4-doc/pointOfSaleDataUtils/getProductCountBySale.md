@@ -460,7 +460,7 @@ The intent of this test is to verify that the `quantity` field of the transactio
 
 So now you will create a test that looks very similar to the previous one but will use a quantity of 2.
 
-he process you will follow is:
+The process you will follow is:
 
 1. Enable the test
 2. Add guide comments
@@ -546,6 +546,277 @@ The last two lines of this test should look almost exactly like the test above e
 
         assert.deepEqual(result, {
             [?]: 2
+        });
+    });
+```
+
+</details>
+
+</details>
+
+#### It returns an object with a two counts of 1 when two transactions of 1 qty each are passed ####
+
+Now you will be seeing what happens when you pass 2 different transaction records to the `getProductCountBySale` each one with a different product IDs.
+
+The process you will follow is:
+
+1. Enable the test
+2. Add guide comments
+   1. Arrange
+   2. Act
+   3. Assert
+3. Implement the arrange
+4. Implement the act
+5. Implement the assert
+6. Remove Guide comments
+
+From this point on we will not cover any of the individual steps, but focus on the outcome of following those steps. Also for simplicity, this guide will only show examples for `let` variable statements as they are slightly more dependable.
+
+What you are going to want to do, is to modify the the test such that you create 2 different transactions records using the `buildTransactionRecord` function.
+
+> Make sure these have different product IDs.
+
+So given:
+
+Product ID 314
+and
+Product ID 42
+
+then the result should look like:
+
+```javascript
+{
+    [314]: 1
+    [42]: 1
+}
+```
+
+<details><summary>Hints</summary>
+
+All three parts of the test that change. In the "Arrange" you will want to create the two transactions records.
+
+In the "Act" you will pass both of the transaction records to the `getProductCountBySale` function.
+
+In the "Assert" you want to ensure the resulting object has those record quantities.
+
+<details><summary>Code</summary>
+
+**Example 1 (explicit variables)**
+
+```javascript
+    it('returns an object with a two counts of 1 when two transactions of 1 qty each are passed', () => {
+        let transactionP1 = buildTransactionRecord(?, transactionStatuses.Sale, 1);
+        let transactionP2 = buildTransactionRecord(?, transactionStatuses.Sale, 1);
+
+        let result = getProductCountBySale([
+            transactionP1,
+            transactionP2
+        ]);
+
+        assert.deepEqual(result, {
+            [?]: 1
+            [?]: 1
+        });
+    });
+```
+
+**Example 2 (implicit variables)**
+
+```javascript
+    it('returns an object with a two counts of 1 when two transactions of 1 qty each are passed', () => {
+        let transactions = [
+            buildTransactionRecord(?, transactionStatuses.Sale, 1)
+            buildTransactionRecord(?, transactionStatuses.Sale, 1)
+        ];
+
+        let result = getProductCountBySale(transactions);
+
+        assert.deepEqual(result, {
+            [?]: 1
+            [?]: 1
+        });
+    });
+```
+
+</details>
+
+</details>
+
+#### It returns an object with a two counts when 4 transactions of two different items are passed ####
+
+The intent of this test is to see if the `getProductCountBySale` function will sum quantities across two different products.
+
+The process you will follow is:
+
+1. Enable the test
+2. Add guide comments
+   1. Arrange
+   2. Act
+   3. Assert
+3. Implement the arrange
+4. Implement the act
+5. Implement the assert
+6. Remove Guide comments
+
+You will need to create 2 different products, each with two transaction records. The test does not specify what the quantities are, so you will have to determine that.
+
+> **NOTE:** Make sure that the totals of the quantities across both products are different, or else you do not know if the function is summing one and duplicating it.
+
+> **GUIDE:** It would be helpful to create a variable that holds each product ID as you will need that in at least three different places. Also this variable will help make your code more readable.
+
+<details><summary>Hints</summary>
+
+Again all the portions of the test have changed.
+
+In the "Arrange" you will need to create four different transaction records across two different product IDs. You will need to ensure that the totals of the `quantities` across the products are different.
+
+In the "Act", you will be passing all four transaction records to the `getProductCountBySale` function.
+
+In the "Assert" you will verify that then resulting object has only the two product IDs passed and it has the correct summation of their quantities.
+
+<details><summary>Code</summary>
+
+**Example 1 (explicit variables)**
+
+```javascript
+    it('returns an object with a two counts when 4 transactions of two different items are passed', () => {
+        let product1 = ?; // ID for product 1
+        let product2 = ?; // ID for product 2
+
+        let transaction1A = buildTransactionRecord(product1, transactionStatuses.Sale, ?);
+        let transaction1B = buildTransactionRecord(product1, transactionStatuses.Sale, ?);
+        let transaction2A = buildTransactionRecord(product2, transactionStatuses.Sale, ?);
+        let transaction2B = buildTransactionRecord(product2, transactionStatuses.Sale, ?);
+
+        let result = getProductCountBySale([
+            transaction1A,
+            transaction2A,
+            transaction1B,
+            transaction2B
+        ]);
+
+        expect.deepEqual(result, {
+            [product1]: ?
+            [product2]: ?
+        });
+    });
+```
+
+**Example 1 (implicit variables)**
+
+```javascript
+    it('returns an object with a two counts when 4 transactions of two different items are passed', () => {
+        let product1 = ?; // ID for product 1
+        let product2 = ?; // ID for product 2
+
+        let transactions = [
+            buildTransactionRecord(product1, transactionStatuses.Sale, ?),
+            buildTransactionRecord(product2, transactionStatuses.Sale, ?),
+            buildTransactionRecord(product1, transactionStatuses.Sale, ?),
+            buildTransactionRecord(product2, transactionStatuses.Sale, ?),
+        ];
+
+        let result = getProductCountBySale(transactions);
+
+        expect.deepEqual(result, {
+            [product1]: ?
+            [product2]: ?
+        });
+    });
+```
+
+</details>
+
+</details>
+
+#### It returns counts only for sales, ignoring returns ####
+
+The last test of the `getProductCountBySale` function is to ensure that it does not count returns.
+
+The process you will follow is:
+
+1. Enable the test
+2. Add guide comments
+   1. Arrange
+   2. Act
+   3. Assert
+3. Implement the arrange
+4. Implement the act
+5. Implement the assert
+6. Remove Guide comments
+
+You will need at least 2 transaction records. One that is a Sale and one that is a Return, they can have the same product ID or different ones.
+
+You will need to use `transactionStatuses.Return` to set the type for the return transaction.
+
+<details><summary>Hints</summary>
+
+In the "Arrange" you will need to create both a Sale and a Return.
+
+<details><summary>Code</summary>
+
+**Example 1 (explicit, diff IDs)**
+
+```javascript
+    it('returns counts only for sales, ignoring returns', () => {
+        let saleTransaction = buildTransactionRecord(?, transactionStatuses.Sale, ?);
+        let returnTransaction = buildTransactionRecord(?, transactionStatuses.Return, ?);
+
+        let result = getProductCountBySale([returnTransaction, saleTransaction]);
+
+        assert.deepEqual(result, {
+            [?]: ?
+        });
+    });
+```
+
+**Example 2 (explicit, same IDs)**
+
+```javascript
+    it('returns counts only for sales, ignoring returns', () => {
+        let productId = ?;
+        let saleTransaction = buildTransactionRecord(productId, transactionStatuses.Sale, ?);
+        let returnTransaction = buildTransactionRecord(productId, transactionStatuses.Return, ?);
+
+        let result = getProductCountBySale([returnTransaction, saleTransaction]);
+
+        assert.deepEqual(result, {
+            [productId]: ?
+        });
+    });
+```
+
+**Example 3 (implicit, diff IDs)**
+
+```javascript
+    it('returns counts only for sales, ignoring returns', () => {
+        let transactions = [
+            buildTransactionRecord(?, transactionStatuses.Return, ?),
+            buildTransactionRecord(?, transactionStatuses.Sale, ?),
+        ];
+
+        let result = getProductCountBySale(transactions);
+
+        assert.deepEqual(result, {
+            [?]: ?
+        });
+    });
+```
+
+**Example 4 (implicit, same IDs)**
+
+```javascript
+    it('returns counts only for sales, ignoring returns', () => {
+        let productId = ?;
+        let transactions = [
+            buildTransactionRecord(productId, transactionStatuses.Return, ?),
+            buildTransactionRecord(productId, transactionStatuses.Sale, ?),
+        ];
+
+        let result = getProductCountBySale([returnTransaction, saleTransaction]);
+
+        assert.deepEqual(result, {
+            [productId]: ?
         });
     });
 ```
