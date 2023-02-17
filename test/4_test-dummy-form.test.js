@@ -35,19 +35,16 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
     describe('Point of Sale Data Utilities', function () {
         // File being tested can be found here:
         // ../jsforms-source/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js
+        
+        let pointOfSaleDataUtilities;
+        let transactionStatuses;
+
+        beforeEach(function () {
+            transactionStatuses = buildTransactionStatuses();
+            pointOfSaleDataUtilities = pointOfSaleDataUtilsFactory(transactionStatuses);
+        });
 
         describe('get product count by sale', function () {
-
-            let pointOfSaleDataUtilities;
-            let transactionStatuses;
-            let testData;
-
-            beforeEach(function(){
-                testData = buildSimpleTestData();
-                transactionStatuses = buildTransactionStatuses();
-                pointOfSaleDataUtilities = pointOfSaleDataUtilsFactory(transactionStatuses);
-            });
-
             it('returns an empty object for sale counts if no sale data exists');
 
             it('returns an object with a single count of 1 when only one item, quantity 1 was purchased');
