@@ -165,7 +165,7 @@ TBD
 
 ## Point of Sale Data Utilities ##
 
-### Important Files
+### Important Files ###
 
 Test File:
 
@@ -178,7 +178,7 @@ File Under Test:
 Helpers File:
 
 > test/form-helpers/[4_test-dummy-helpers.js](../test/form-helpers/4_test-dummy-helpers.js)
-
+    
 ### Get product count by sale
 
 You will be testing that the `getProductCountBySale` works correctly. (Don't worry it does, but you have to prove it.)
