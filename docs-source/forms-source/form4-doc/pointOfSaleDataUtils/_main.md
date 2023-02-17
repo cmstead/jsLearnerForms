@@ -6,4 +6,5 @@
 <!--bl
     (section "./importantFiles.md")
     (section "./getProductCountBySale.md")
+    (section "./getProductCountByReturn.md")
 /bl-->

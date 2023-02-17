@@ -1,8 +1,10 @@
 <!--bl
     (filemeta
-        (title "It returns with counts only for return transactions")
+        (title "Get Product Count by Return Status")
     )
 /bl-->
+
+#### It returns with counts only for return transactions ####
 
 There is only one test to this section. The reason is if you look at the file [pointOfSaleDataUtilsFactory.js](../jsforms-source/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js) you will see that the only difference between `getProductCountBySale` and `getProductCountByReturn` is a value passed to a second parameter of a method called underneath. So in regard to returns we just need to prove that the function can count them.
 
