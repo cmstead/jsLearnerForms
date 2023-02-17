@@ -326,7 +326,7 @@ You need to make a call the the `getProductCountBySale` method with an empty arr
         let ? = buildTransactionRecord(?, transactionStatuses.Sale, 1);
         
         // Act
-        let result = getProductCountBySale([?]);
+        let result = pointOfSaleDataUtilities.getProductCountBySale([?]);
         // Assert
     });
 ```
@@ -339,7 +339,7 @@ You need to make a call the the `getProductCountBySale` method with an empty arr
         var ? = buildTransactionRecord(?, transactionStatuses.Sale, 1);
 
         // Act
-        var result = getProductCountBySale([?]);
+        var result = pointOfSaleDataUtilities.getProductCountBySale([?]);
         // Assert
     });
 ```
@@ -384,7 +384,7 @@ You can just copy the provided object above into the assert for the expected val
         let transactionRecord = buildTransactionRecord(?, transactionStatuses.Sale, 1);
         
         // Act
-        let result = getProductCountBySale([transactionRecord]);
+        let result = pointOfSaleDataUtilities.getProductCountBySale([transactionRecord]);
         
         // Assert
         assert.deepEqual(result, {
@@ -401,7 +401,7 @@ You can just copy the provided object above into the assert for the expected val
         var transactionRecord = buildTransactionRecord(?, transactionStatuses.Sale, 1);
 
         // Act
-        var result = getProductCountBySale([transactionRecord]);
+        var result = pointOfSaleDataUtilities.getProductCountBySale([transactionRecord]);
         
         // Assert
         assert.deepEqual(result, {
@@ -430,7 +430,7 @@ Just delete them.
     it('returns an object with a single count of 1 when only one item, quantity 1 was purchased', () => {
         let transactionRecord = buildTransactionRecord(?, transactionStatuses.Sale, 1);
         
-        let result = getProductCountBySale([transactionRecord]);
+        let result = pointOfSaleDataUtilities.getProductCountBySale([transactionRecord]);
         
         assert.deepEqual(result, {
             [?]: 1
@@ -444,7 +444,7 @@ Just delete them.
     it('returns an object with a single count of 1 when only one item, quantity 1 was purchased', () => {
         var transactionRecord = buildTransactionRecord(?, transactionStatuses.Sale, 1);
 
-        var result = getProductCountBySale([transactionRecord]);
+        var result = pointOfSaleDataUtilities.getProductCountBySale([transactionRecord]);
         
         assert.deepEqual(result, {
             [?]: 1
@@ -528,7 +528,7 @@ The last two lines of this test should look almost exactly like the test above e
     it('returns an object with a single count of 2 when only one item, quantity 2 was purchased', () => {
         let transactionRecord = buildTransactionRecord(?, transactionStatuses.Sale, 2);
 
-        let result = getProductCountBySale([transactionRecord]);
+        let result = pointOfSaleDataUtilities.getProductCountBySale([transactionRecord]);
 
         assert.deepEqual(result, {
             [?]: 2
@@ -542,7 +542,7 @@ The last two lines of this test should look almost exactly like the test above e
     it('returns an object with a single count of 2 when only one item, quantity 2 was purchased', () => {
         var transactionRecord = buildTransactionRecord(?, transactionStatuses.Sale, 2);
 
-        var result = getProductCountBySale([transactionRecord]);
+        var result = pointOfSaleDataUtilities.getProductCountBySale([transactionRecord]);
 
         assert.deepEqual(result, {
             [?]: 2
@@ -595,7 +595,7 @@ then the result should look like:
 
 All three parts of the test that change. In the "Arrange" you will want to create the two transactions records.
 
-In the "Act" you will pass both of the transaction records to the `getProductCountBySale` function.
+In the "Act" you will pass both of the transaction records to the `getProductCountBySale` method.
 
 In the "Assert" you want to ensure the resulting object has those record quantities.
 
@@ -608,7 +608,7 @@ In the "Assert" you want to ensure the resulting object has those record quantit
         let transactionP1 = buildTransactionRecord(?, transactionStatuses.Sale, 1);
         let transactionP2 = buildTransactionRecord(?, transactionStatuses.Sale, 1);
 
-        let result = getProductCountBySale([
+        let result = pointOfSaleDataUtilities.getProductCountBySale([
             transactionP1,
             transactionP2
         ]);
@@ -629,7 +629,7 @@ In the "Assert" you want to ensure the resulting object has those record quantit
             buildTransactionRecord(?, transactionStatuses.Sale, 1)
         ];
 
-        let result = getProductCountBySale(transactions);
+        let result = pointOfSaleDataUtilities.getProductCountBySale(transactions);
 
         assert.deepEqual(result, {
             [?]: 1
@@ -644,7 +644,7 @@ In the "Assert" you want to ensure the resulting object has those record quantit
 
 #### It returns an object with a two counts when 4 transactions of two different items are passed ####
 
-The intent of this test is to see if the `getProductCountBySale` function will sum quantities across two different products.
+The intent of this test is to see if the `getProductCountBySale` method will sum quantities across two different products.
 
 The process you will follow is:
 
@@ -670,7 +670,7 @@ Again all the portions of the test have changed.
 
 In the "Arrange" you will need to create four different transaction records across two different product IDs. You will need to ensure that the totals of the `quantities` across the products are different.
 
-In the "Act", you will be passing all four transaction records to the `getProductCountBySale` function.
+In the "Act", you will be passing all four transaction records to the `getProductCountBySale` method.
 
 In the "Assert" you will verify that then resulting object has only the two product IDs passed and it has the correct summation of their quantities.
 
@@ -688,7 +688,7 @@ In the "Assert" you will verify that then resulting object has only the two prod
         let transaction2A = buildTransactionRecord(product2, transactionStatuses.Sale, ?);
         let transaction2B = buildTransactionRecord(product2, transactionStatuses.Sale, ?);
 
-        let result = getProductCountBySale([
+        let result = pointOfSaleDataUtilities.getProductCountBySale([
             transaction1A,
             transaction2A,
             transaction1B,
@@ -716,7 +716,7 @@ In the "Assert" you will verify that then resulting object has only the two prod
             buildTransactionRecord(product2, transactionStatuses.Sale, ?),
         ];
 
-        let result = getProductCountBySale(transactions);
+        let result = pointOfSaleDataUtilities.getProductCountBySale(transactions);
 
         expect.deepEqual(result, {
             [product1]: ?
@@ -731,7 +731,7 @@ In the "Assert" you will verify that then resulting object has only the two prod
 
 #### It returns counts only for sales, ignoring returns ####
 
-The last test of the `getProductCountBySale` function is to ensure that it does not count returns.
+The last test of the `getProductCountBySale` method is to ensure that it does not count returns.
 
 The process you will follow is:
 
@@ -762,7 +762,7 @@ In the "Arrange" you will need to create both a Sale and a Return.
         let saleTransaction = buildTransactionRecord(?, transactionStatuses.Sale, ?);
         let returnTransaction = buildTransactionRecord(?, transactionStatuses.Return, ?);
 
-        let result = getProductCountBySale([returnTransaction, saleTransaction]);
+        let result = pointOfSaleDataUtilities.getProductCountBySale([returnTransaction, saleTransaction]);
 
         assert.deepEqual(result, {
             [?]: ?
@@ -778,7 +778,7 @@ In the "Arrange" you will need to create both a Sale and a Return.
         let saleTransaction = buildTransactionRecord(productId, transactionStatuses.Sale, ?);
         let returnTransaction = buildTransactionRecord(productId, transactionStatuses.Return, ?);
 
-        let result = getProductCountBySale([returnTransaction, saleTransaction]);
+        let result = pointOfSaleDataUtilities.getProductCountBySale([returnTransaction, saleTransaction]);
 
         assert.deepEqual(result, {
             [productId]: ?
@@ -795,7 +795,7 @@ In the "Arrange" you will need to create both a Sale and a Return.
             buildTransactionRecord(?, transactionStatuses.Sale, ?),
         ];
 
-        let result = getProductCountBySale(transactions);
+        let result = pointOfSaleDataUtilities.getProductCountBySale(transactions);
 
         assert.deepEqual(result, {
             [?]: ?
@@ -813,7 +813,7 @@ In the "Arrange" you will need to create both a Sale and a Return.
             buildTransactionRecord(productId, transactionStatuses.Sale, ?),
         ];
 
-        let result = getProductCountBySale([returnTransaction, saleTransaction]);
+        let result = pointOfSaleDataUtilities.getProductCountBySale([returnTransaction, saleTransaction]);
 
         assert.deepEqual(result, {
             [productId]: ?
