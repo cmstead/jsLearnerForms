@@ -6,11 +6,11 @@
 
 ### Important Files
 
-Test File: 
+Test File:
 
 > test/[4_test-dummy-form.test.js](../test/4_test-dummy-form.test.js)
 
-File Under Test: 
+File Under Test:
 
 > jsforms-source/4_test-dummy-form/pos-transaction-services/[pointOfSaleDataUtilsFactory.js](../jsforms-source/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js)
 

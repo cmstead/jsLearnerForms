@@ -17,6 +17,6 @@ You will be working in the [test/4_test-dummy-form.test.js](../test/4_test-dummy
         (section-main "./why.md")
         (section-main "./hints.md")
         (section-main "./app.md")
-        (section-main "./pointOfSaleDataUtils.md")
+        (section-main "./pointOfSaleDataUtils/_main.md")
     )
 /bl-->
