@@ -224,6 +224,25 @@ The `getTransactionData` function returns an array of objects that have the foll
     quantity // integer number -- count sold or returned
 }
 ```
+
+##### Get Transaction Types Function #####
+
+The `getTransactionTypes` function has the following signature:
+
+```javascript
+getTransactionTypes()
+```
+
+###### Get Transaction Types Return Value ######
+
+The `getTransactionTypes` function returns an object with the following structure:
+
+```javascript
+{
+    Sale = X, // where X is an integer number
+    Return = Y // where Y is an integer number
+}
+```
     
 
 ### Report Data Builder Factory ###
@@ -231,7 +250,7 @@ The `getTransactionData` function returns an array of objects that have the foll
 The function `reportDataBuilderFactory` has the following signature:
 
 ```javascript
-    function reportDataBuilderFactory(transactionStatuses)
+function reportDataBuilderFactory(transactionStatuses)
 ```
 
 #### Report Data Builder Factory Parameter ####
@@ -239,10 +258,10 @@ The function `reportDataBuilderFactory` has the following signature:
 It takes an object with the following shape:
 
 ```javascript
-    {
-        Sale = X, // where X is an integer number
-        Return = Y // where Y is an integer number
-    }
+{
+    Sale = X, // where X is an integer number
+    Return = Y // where Y is an integer number
+}
 ```
 
 #### Report Data Builder Factory Return Value ####
@@ -260,11 +279,11 @@ It then returns an object with the following structure:
 The `buildReportData` is a function that has the following signature:
 
 ```javascript
-    buildReportData(
-        transactionStatus /*integer number*/,
-        transactionData /*object array*/,
-        productData /*object array*/
-    )
+buildReportData(
+    transactionStatus /*integer number*/,
+    transactionData /*object array*/,
+    productData /*object array*/
+)
 ```
 
 The `transactionStatus` parameter maps to one of the integers in the `transactionStatuses` object.

@@ -7,7 +7,7 @@
 The function `reportDataBuilderFactory` has the following signature:
 
 ```javascript
-    function reportDataBuilderFactory(transactionStatuses)
+function reportDataBuilderFactory(transactionStatuses)
 ```
 
 #### Report Data Builder Factory Parameter ####
@@ -15,10 +15,10 @@ The function `reportDataBuilderFactory` has the following signature:
 It takes an object with the following shape:
 
 ```javascript
-    {
-        Sale = X, // where X is an integer number
-        Return = Y // where Y is an integer number
-    }
+{
+    Sale = X, // where X is an integer number
+    Return = Y // where Y is an integer number
+}
 ```
 
 #### Report Data Builder Factory Return Value ####
@@ -36,11 +36,11 @@ It then returns an object with the following structure:
 The `buildReportData` is a function that has the following signature:
 
 ```javascript
-    buildReportData(
-        transactionStatus /*integer number*/, 
-        transactionData /*object array*/, 
-        productData /*object array*/
-    )
+buildReportData(
+    transactionStatus /*integer number*/, 
+    transactionData /*object array*/, 
+    productData /*object array*/
+)
 ```
 
 The `transactionStatus` parameter maps to one of the integers in the `transactionStatuses` object.

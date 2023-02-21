@@ -65,3 +65,22 @@ The `getTransactionData` function returns an array of objects that have the foll
     quantity // integer number -- count sold or returned
 }
 ```
+
+##### Get Transaction Types Function #####
+
+The `getTransactionTypes` function has the following signature:
+
+```javascript
+getTransactionTypes()
+```
+
+###### Get Transaction Types Return Value ######
+
+The `getTransactionTypes` function returns an object with the following structure:
+
+```javascript
+{
+    Sale = X, // where X is an integer number
+    Return = Y // where Y is an integer number
+}
+```
