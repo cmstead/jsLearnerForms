@@ -30,7 +30,7 @@ By writing tests for this code, you will gain understanding of _how_ to write te
 
 ### Regression ###
 
-The biggest reason to test a known working code base is to ensure that it stays working. You will see by testing this code base that coming into a code base you do not understand and gaining that understanding is hard work. Having tests around that code ensures that someone unfamiliar with, or has been away to long from, the code base does not accidently break existing functionality.
+The biggest reason to test a known working code base is to ensure that it stays working. You will see by testing this code base that coming into a code base you do not understand and gaining that understanding is hard work. Having tests around that code ensures that someone unfamiliar with, or has been away to long from, the code base does not accidentally break existing functionality.
     
     
 
@@ -170,7 +170,6 @@ Documentation for the Report Data Builder Factory coming.
 
 Documentation on Sales Reporter Factory coming.
     
-
     
 
 ## Point of Sale Data Utilities ##
@@ -1188,9 +1187,7 @@ Files Under Test:
 Helpers File:
 
 > test/form-helpers/[4_test-dummy-helpers.js](../test/form-helpers/4_test-dummy-helpers.js)
-
     
-
     
 
 ## TDB ##
