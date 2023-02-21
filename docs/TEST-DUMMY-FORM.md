@@ -167,6 +167,7 @@ Documentation for the Report Data Builder Factory coming.
     
 
 ### Sales Reporter Factory ###
+
 Documentation on Sales Reporter Factory coming.
     
 
