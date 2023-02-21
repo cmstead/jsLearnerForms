@@ -1,5 +1,5 @@
 // eslint-disable-next-line
-function reportDataBuilderFactory() {
+function reportDataBuilderFactory(transactionStatuses) {
 
     function getObjectElements(dataObject) {
         return Object.keys(dataObject)
@@ -7,7 +7,7 @@ function reportDataBuilderFactory() {
     }
 
     function isSaleType(transactionType) {
-        return transactionType === 'Sale';
+        return transactionType === transactionStatuses.Sale;
     }
 
     function getTotalSignMultiplier(transactionType) {

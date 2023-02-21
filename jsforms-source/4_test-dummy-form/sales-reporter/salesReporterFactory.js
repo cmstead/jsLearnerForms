@@ -11,7 +11,7 @@ function salesReporterFactory(
         const transactionTypes = dataLoader.getTransactionTypes();
         
         const pointOfSaleDataUtils = pointOfSaleDataUtilsFactory(transactionTypes);
-        const reportDataBuilder = reportDataBuilderFactory(pointOfSaleDataUtils);
+        const reportDataBuilder = reportDataBuilderFactory(transactionTypes)(pointOfSaleDataUtils);
 
         return reportDataBuilder.buildReportData(transactionType, transactionData, productData);
     }
