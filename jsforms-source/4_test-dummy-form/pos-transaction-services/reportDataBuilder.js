@@ -40,13 +40,13 @@ function reportDataBuilderFactory(transactionStatuses) {
                 : pointOfSaleDataUtils.getProductCountByReturn;
         }
 
-        function buildReportData(transactionType, transactionData, productData) {
-            const getProductCounts = pickProductCountAction(transactionType);
+        function buildReportData(transactionStatus, transactionData, productData) {
+            const getProductCounts = pickProductCountAction(transactionStatus);
             const productCounts = getProductCounts(transactionData);
 
             return getObjectElements(productData)
                 .filter(isProductInCountData(productCounts))
-                .map(buildProductTransactionRecord(productCounts, transactionType))
+                .map(buildProductTransactionRecord(productCounts, transactionStatus))
         }
 
         return {
