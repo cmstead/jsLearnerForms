@@ -163,8 +163,13 @@ Because there is a total of 3 items returned of Product ID 3, and 5 items return
 
 ### Report Data Builder Factory ###
 
-TBD
+Documentation for the Report Data Builder Factory coming.
     
+
+### Sales Reporter Factory ###
+Documentation on Sales Reporter Factory coming.
+    
+
     
 
 ## Point of Sale Data Utilities ##
