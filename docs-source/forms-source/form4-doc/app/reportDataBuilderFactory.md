@@ -4,11 +4,13 @@
     )
 /bl-->
 
-This is a function with the following signature:
+The function `reportDataBuilderFactory` has the following signature:
 
 ```javascript
     function reportDataBuilderFactory(transactionStatuses)
 ```
+
+#### Report Data Builder Factory Parameter ####
 
 It takes an object with the following shape:
 
@@ -19,6 +21,8 @@ It takes an object with the following shape:
     }
 ```
 
+#### Report Data Builder Factory Return Value ####
+
 It then returns an object with the following structure:
 
 ```javascript
@@ -27,10 +31,16 @@ It then returns an object with the following structure:
 }
 ```
 
+##### Build Report Data Parameters #####
+
 The `buildReportData` is a function that has the following signature:
 
 ```javascript
-    buildReportData(transactionStatus /*integer number*/, transactionData /*object array*/, productData /*object array*/)
+    buildReportData(
+        transactionStatus /*integer number*/, 
+        transactionData /*object array*/, 
+        productData /*object array*/
+    )
 ```
 
 The `transactionStatus` parameter maps to one of the integers in the `transactionStatuses` object.
@@ -39,7 +49,7 @@ The `transactionData` parameter is an array of objects with the following struct
 
 ```javascript
 {
-    productId, // integer number -- id from a product record
+    productId, // integer number -- id from a product datum
     transactionStatus, // integer number -- sale or return, must match the transactionStatuses object
     quantity // integer number -- count sold or returned
 }
@@ -55,8 +65,14 @@ The `productData` parameter is an array of objects that have the following struc
 }
 ```
 
+##### Build Report Data Return Value #####
+
 The `buildReportData` function returns an array of objects that have the following structure:
 
 ```javascript
-    // ?
+{
+    productName, // string -- Name of product, from productDatum.Name
+    quantity, // integer number -- count sold or returned, total of transactionData.quantity
+    total // number -- the sales price for a single item of this product quantity * productDatum.price
+}
 ```

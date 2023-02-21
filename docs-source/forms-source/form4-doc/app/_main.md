@@ -8,6 +8,6 @@ The application under test is a Point of Sale reporting utility. It will report 
 
 <!--bl
     (section "./pointOfSaleDataUtilityFactoryBuilder.md")
-    (section "./reportDataBuilderFactory.md")
     (section "./salesReporterFactory.md")
+    (section "./reportDataBuilderFactory.md")
 /bl-->

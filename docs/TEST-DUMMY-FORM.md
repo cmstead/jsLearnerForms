@@ -161,13 +161,80 @@ The result should look like the following:
 Because there is a total of 3 items returned of Product ID 3, and 5 items returned of Product ID 6.
     
 
+### Sales Reporter Factory ###
+
+The `salesReporterFactory` function has the following signature
+
+```javascript
+function salesReporterFactory(
+    dataLoader,
+    pointOfSaleDataUtilsFactory,
+    reportDataBuilderFactory
+)
+```
+
+#### Sales Reporter Factory Parameters ####
+
+The `dataLoader` parameter is an object with following shape:
+
+```javascript
+{
+    getProductData,
+    getTransactionData,
+    getTransactionTypes
+}
+```
+
+##### Get Product Data Function #####
+
+The getProductData function has the following signature:
+
+```javascript
+getProductData()
+```
+
+###### Get Product Data Return Value ######
+
+The `getProductData` function returns an array of objects that have then following structure:
+
+```javascript
+{
+    id, // integer number -- id uniquely identifies this product
+    name, // string -- Name of product
+    price // number -- the sales price for a single item of this product
+}
+```
+
+##### Get Transaction Data Function #####
+
+The `getTransactionData` function has the following signature:
+
+```javascript
+getTransactionData()
+```
+
+###### Get Transaction Data Return Value ######
+
+The `getTransactionData` function returns an array of objects that have the following structure:
+
+```javascript
+{
+    productId, // integer number -- id from a product datum
+    transactionStatus, // integer number -- sale or return, must match the transactionStatuses object
+    quantity // integer number -- count sold or returned
+}
+```
+    
+
 ### Report Data Builder Factory ###
 
-This is a function with the following signature:
+The function `reportDataBuilderFactory` has the following signature:
 
 ```javascript
     function reportDataBuilderFactory(transactionStatuses)
 ```
+
+#### Report Data Builder Factory Parameter ####
 
 It takes an object with the following shape:
 
@@ -178,6 +245,8 @@ It takes an object with the following shape:
     }
 ```
 
+#### Report Data Builder Factory Return Value ####
+
 It then returns an object with the following structure:
 
 ```javascript
@@ -186,10 +255,16 @@ It then returns an object with the following structure:
 }
 ```
 
+##### Build Report Data Parameters #####
+
 The `buildReportData` is a function that has the following signature:
 
 ```javascript
-    buildReportData(transactionStatus /*integer number*/, transactionData /*object array*/, productData /*object array*/)
+    buildReportData(
+        transactionStatus /*integer number*/,
+        transactionData /*object array*/,
+        productData /*object array*/
+    )
 ```
 
 The `transactionStatus` parameter maps to one of the integers in the `transactionStatuses` object.
@@ -198,7 +273,7 @@ The `transactionData` parameter is an array of objects with the following struct
 
 ```javascript
 {
-    productId, // integer number -- id from a product record
+    productId, // integer number -- id from a product datum
     transactionStatus, // integer number -- sale or return, must match the transactionStatuses object
     quantity // integer number -- count sold or returned
 }
@@ -214,16 +289,17 @@ The `productData` parameter is an array of objects that have the following struc
 }
 ```
 
+##### Build Report Data Return Value #####
+
 The `buildReportData` function returns an array of objects that have the following structure:
 
 ```javascript
-    // ?
+{
+    productName, // string -- Name of product, from productDatum.Name
+    quantity, // integer number -- count sold or returned, total of transactionData.quantity
+    total // number -- the sales price for a single item of this product quantity * productDatum.price
+}
 ```
-    
-
-### Sales Reporter Factory ###
-
-Documentation on Sales Reporter Factory coming.
     
     
 
