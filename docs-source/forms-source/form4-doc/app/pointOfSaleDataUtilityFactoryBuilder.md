@@ -1,12 +1,8 @@
 <!--bl
     (filemeta
-        (title "The application under test")
+        (title "Point Of Sale Data Utility Factory Builder")
     )
 /bl-->
-
-The application under test is a Point of Sale reporting utility. It will report on all sales or all returns.
-
-### Point Of Sale Data Utility Factory Builder
 
 File: [/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js](../jsforms-source/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js)
 
@@ -16,7 +12,7 @@ This function takes a single parameter `transactionStatuses` that allow the stat
 
 `Sale` which is a constant number that maps to transactions caused by the sale of product. For our tests we will configure this to have the value `1`.
 
-and 
+and
 
 `Return` which is a constant number that maps to transactions caused by the return of product. For our tests we will configure this to have the value `2`.
 
@@ -73,7 +69,7 @@ The result should look like the following:
 
 Because there is a total of 5 items sold of Product ID 3, and only 4 items sold of Product ID 6.
 
-### `getProductCountByReturn`
+#### `getProductCountByReturn`
 
 This method takes the parameter `transactionRecords` which is an array of transaction records. Each record is expected to have the following shape:
 
@@ -121,7 +117,3 @@ The result should look like the following:
 ```
 
 Because there is a total of 3 items returned of Product ID 3, and 5 items returned of Product ID 6.
-
-### Report Data Builder Factory
-
-TBD

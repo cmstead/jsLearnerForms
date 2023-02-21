@@ -43,7 +43,8 @@ This section is doable without the hints. it is _hard_ but doable. However, the 
 
 The application under test is a Point of Sale reporting utility. It will report on all sales or all returns.
 
-### Point Of Sale Data Utility Factory Builder
+
+### Point Of Sale Data Utility Factory Builder ###
 
 File: [/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js](../jsforms-source/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js)
 
@@ -110,7 +111,7 @@ The result should look like the following:
 
 Because there is a total of 5 items sold of Product ID 3, and only 4 items sold of Product ID 6.
 
-### `getProductCountByReturn`
+#### `getProductCountByReturn`
 
 This method takes the parameter `transactionRecords` which is an array of transaction records. Each record is expected to have the following shape:
 
@@ -158,10 +159,12 @@ The result should look like the following:
 ```
 
 Because there is a total of 3 items returned of Product ID 3, and 5 items returned of Product ID 6.
+    
 
-### Report Data Builder Factory
+### Report Data Builder Factory ###
 
 TBD
+    
     
 
 ## Point of Sale Data Utilities ##
