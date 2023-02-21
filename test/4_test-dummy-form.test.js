@@ -65,6 +65,9 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
     });
 
     describe('sales report', function () {
+        // files being tested are:
+        //      ../jsforms-source/4_test-dummy-form/sales-reporter/salesReporterFactory.js
+        //      ../jsforms-source/4_test-dummy-form/pos-transaction-services/reportDataBuilder.js
         describe('get sales report', function () {
             it('returns a sales report with no sales');
 
