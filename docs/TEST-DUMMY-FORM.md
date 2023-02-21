@@ -166,7 +166,7 @@ TBD
 
 ## Point of Sale Data Utilities ##
 
-### Important Files ###
+### Point of Sale Data Utilities &mdash; Important Files ###
 
 Test File:
 
@@ -1162,7 +1162,26 @@ In the "Arrange" you will be creating 3 different transaction reports. Two will 
     
 
 ## Sales Report ##
-Sales report documentation coming...
+This will be a bit more in depth about the skills needed to write tests.
+
+
+### Sales Report &mdash; Important Files ###
+
+Test File:
+
+> test/[4_test-dummy-form.test.js](../test/4_test-dummy-form.test.js)
+
+Files Under Test:
+
+> jsforms-source/4_test-dummy-form/sales-reporter/[salesReporterFactory.js](../jsforms-source/4_test-dummy-form/sales-reporter/salesReporterFactory.js)
+> jsforms-source/4_test-dummy-form/pos-transaction-services/[reportDataBuilder.js](../jsforms-source/4_test-dummy-form/pos-transaction-services/reportDataBuilder.js)
+
+Helpers File:
+
+> test/form-helpers/[4_test-dummy-helpers.js](../test/form-helpers/4_test-dummy-helpers.js)
+
+    
+
     
 
 ## TDB ##
