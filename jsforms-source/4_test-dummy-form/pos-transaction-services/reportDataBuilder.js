@@ -6,18 +6,18 @@ function reportDataBuilderFactory(transactionStatuses) {
             .map(key => dataObject[key]);
     }
 
-    function isSaleType(transactionType) {
-        return transactionType === transactionStatuses.Sale;
+    function isSaleType(transactionStatus) {
+        return transactionStatus === transactionStatuses.Sale;
     }
 
-    function getTotalSignMultiplier(transactionType) {
-        return isSaleType(transactionType) ? 1 : -1;
+    function getTotalSignMultiplier(transactionStatus) {
+        return isSaleType(transactionStatus) ? 1 : -1;
     }
 
-    function buildProductTransactionRecord(productCounts, transactionType) {
+    function buildProductTransactionRecord(productCounts, transactionStatus) {
         return function (product) {
             const quantity = productCounts[product.id];
-            const signMultiplier = getTotalSignMultiplier(transactionType);
+            const signMultiplier = getTotalSignMultiplier(transactionStatus);
 
             return {
                 productName: product.name,
@@ -34,8 +34,8 @@ function reportDataBuilderFactory(transactionStatuses) {
     }
 
     return function (pointOfSaleDataUtils) {
-        function pickProductCountAction(transactionType) {
-            return isSaleType(transactionType)
+        function pickProductCountAction(transactionStatus) {
+            return isSaleType(transactionStatus)
                 ? pointOfSaleDataUtils.getProductCountBySale
                 : pointOfSaleDataUtils.getProductCountByReturn;
         }

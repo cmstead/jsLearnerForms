@@ -8,13 +8,13 @@ function dataLoaderFactory(dataSourceAccess) {
         return dataSourceAccess.loadTransactionData()
     }
 
-    function getTransactionTypes() {
-        return dataSourceAccess.loadTransactionTypes();
+    function getTransactionStatuses() {
+        return dataSourceAccess.loadTransactionStatuses();
     }
 
     return {
         getProductData: getProductData,
         getTransactionData: getTransactionData,
-        getTransactionTypes: getTransactionTypes
+        getTransactionStatuses: getTransactionStatuses
     };
 }

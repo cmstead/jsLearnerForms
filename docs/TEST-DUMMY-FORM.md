@@ -243,6 +243,34 @@ The `getTransactionTypes` function returns an object with the following structur
     Return = Y // where Y is an integer number
 }
 ```
+
+#### Sales Reporter Factory Return Value ####
+
+The `` function returns an object with the following structure:
+
+```javascript
+{
+    getReport
+}
+```
+
+##### Get Report Function #####
+
+The `getReport` function has the following signature:
+
+```javascript
+function getReport(transactionType)
+```
+
+The `transactionType` parameter is an integer number that maps to Sale or Return as determined by the `transactionTypes` returned from the `getTransactionTypes` function.
+
+###### Get Report Return Value ######
+
+The `getReport` function returns an object with the following structure:
+
+```javascript
+// ?
+```
     
 
 ### Report Data Builder Factory ###
@@ -1321,7 +1349,9 @@ In the "Arrange" you will be creating 3 different transaction reports. Two will 
 
 ## Get Report ##
 
-In testing the `getReport` method, you will be required to do a lot more of the initial work. Fortunately you have the code from the "get product count by sale" test suite you just finished.
+In testing the `getReport` function, you will be required to do a lot more of the initial work. Fortunately you have the code from the "get product count by sale" test suite you just finished.
+
+The `getReport` function can either create a Sales report or a Returns report.
 
 ### Sales Report &mdash; Important Files ###
 
@@ -1337,6 +1367,45 @@ Files Under Test:
 Helpers File:
 
 > test/form-helpers/[4_test-dummy-helpers.js](../test/form-helpers/4_test-dummy-helpers.js)
+    
+
+### Get Sales Report ###
+
+You will be focusing on testing that a sales report is created correctly. In creating these tests you will follow the basic steps listed bellow.
+
+1. Write the first test.
+2. Write the second test.
+3. Refactor tests to remove repetitive code into a `beforeEach` block.
+4. Finish writing tests, stopping periodically to refactor as needed.
+
+Now when you write each test, you will follow the process you did before with one additional step.
+
+1. Enable the test
+2. Add guide comments
+   1. Arrange
+   2. Act
+   3. Assert
+3. Implement the arrange
+4. Implement the act
+5. Implement the assert
+6. Remove Guide comments
+7. Refactor code if possible
+
+#### It returns a sales report with no sales ####
+
+Starting with a base case of there were no sales, you will write the test that proves that it returns a report with nothing in it.
+
+To test the `getReport` function you will need to first call the `salesReporterFactory` function. The `salesReporterFactory` has the following signature:
+
+```javascript
+function salesReporterFactory(
+    dataLoader,
+    pointOfSaleDataUtilsFactory,
+    reportDataBuilderFactory
+)
+```
+
+You will have to create a fake `dataLoader`, use the `pointOfSaleDataUtilsFactoryBuilder` to get the `pointOfSaleDataUtilsFactory` and simply pass the `reportDataBuilderFactory` that is already available to the test.
     
     
 

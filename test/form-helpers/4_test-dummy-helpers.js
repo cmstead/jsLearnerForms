@@ -55,7 +55,7 @@ const fourthFormHelpers = (function () {
     function buildTestData(productData, transactionStatuses, transactionData = []) {
         return {
             productData: productData,
-            transactionTypes: transactionStatuses,
+            transactionStatuses: transactionStatuses,
             transactionData: transactionData
         };
     }

@@ -5,15 +5,15 @@ function salesReporterFactory(
     reportDataBuilderFactory
 ) {
 
-    function getReport(transactionType) {
+    function getReport(transactionStatus) {
         const productData = dataLoader.getProductData();
         const transactionData = dataLoader.getTransactionData();
-        const transactionTypes = dataLoader.getTransactionTypes();
+        const transactionStatuses = dataLoader.getTransactionStatuses();
         
-        const pointOfSaleDataUtils = pointOfSaleDataUtilsFactory(transactionTypes);
-        const reportDataBuilder = reportDataBuilderFactory(transactionTypes)(pointOfSaleDataUtils);
+        const pointOfSaleDataUtils = pointOfSaleDataUtilsFactory(transactionStatuses);
+        const reportDataBuilder = reportDataBuilderFactory(transactionStatuses)(pointOfSaleDataUtils);
 
-        return reportDataBuilder.buildReportData(transactionType, transactionData, productData);
+        return reportDataBuilder.buildReportData(transactionStatus, transactionData, productData);
     }
 
     return {
