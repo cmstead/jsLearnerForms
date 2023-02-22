@@ -42,7 +42,7 @@ You will have to create a fake `dataLoader`. You will also  use the `pointOfSale
 
 This will return an empty array.
 
-<details><summary>dataLoader hints</summary>
+<details><summary>Data Loader Hints</summary>
 
 The `dataLoader` has 3 functions and the following structure:
 
