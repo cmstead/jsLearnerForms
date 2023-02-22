@@ -16,7 +16,7 @@ You will be working in the [test/4_test-dummy-form.test.js](../test/4_test-dummy
 - [Section 2: A word about hints](#user-content-a-word-about-hints)
 - [Section 3: The application under test](#user-content-the-application-under-test)
 - [Section 4: Point of Sale Data Utilities](#user-content-point-of-sale-data-utilities)
-- [Section 5: Sales Report](#user-content-sales-report)
+- [Section 5: Get Report](#user-content-get-report)
 
 ## Why would I write tests for code I know works? ##
 
@@ -1319,7 +1319,7 @@ In the "Arrange" you will be creating 3 different transaction reports. Two will 
     
     
 
-## Sales Report ##
+## Get Report ##
 This will be a bit more in depth about the skills needed to write tests.
 
 

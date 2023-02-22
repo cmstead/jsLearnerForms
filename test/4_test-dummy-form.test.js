@@ -64,7 +64,7 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
         });
     });
 
-    describe('sales report', function () {
+    describe('get report', function () {
         // files being tested are:
         //      ../jsforms-source/4_test-dummy-form/sales-reporter/salesReporterFactory.js
         //      ../jsforms-source/4_test-dummy-form/pos-transaction-services/reportDataBuilder.js
@@ -79,10 +79,9 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
 
             it('returns a sales report with no "returns" data');
         });
-    });
 
-    describe('returns report', function () {
-        it('returns a "returns" report with no "sales" data');
+        describe('get returns report', function () {
+            it('returns a "returns" report with no "sales" data');
+        });
     });
-
 });
