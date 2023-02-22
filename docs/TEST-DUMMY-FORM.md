@@ -181,7 +181,7 @@ The `dataLoader` parameter is an object with following shape:
 {
     getProductData,
     getTransactionData,
-    getTransactionTypes
+    getTransactionStatuses
 }
 ```
 
@@ -227,15 +227,15 @@ The `getTransactionData` function returns an array of objects that have the foll
 
 ##### Get Transaction Types Function #####
 
-The `getTransactionTypes` function has the following signature:
+The `getTransactionStatuses` function has the following signature:
 
 ```javascript
-getTransactionTypes()
+getTransactionStatuses()
 ```
 
 ###### Get Transaction Types Return Value ######
 
-The `getTransactionTypes` function returns an object with the following structure:
+The `getTransactionStatuses` function returns an object with the following structure:
 
 ```javascript
 {
@@ -259,18 +259,24 @@ The `` function returns an object with the following structure:
 The `getReport` function has the following signature:
 
 ```javascript
-function getReport(transactionType)
+function getReport(transactionStatus)
 ```
 
-The `transactionType` parameter is an integer number that maps to Sale or Return as determined by the `transactionTypes` returned from the `getTransactionTypes` function.
+The `transactionStatus` parameter is an integer number that maps to Sale or Return as determined by the `transactionStatuses` returned from the `getTransactionStatuses` function.
 
 ###### Get Report Return Value ######
 
-The `getReport` function returns an object with the following structure:
+The `getReport` function returns an array of objects with the following structure:
 
 ```javascript
-// ?
+{
+    productName, // string -- Name of product, from productDatum.Name
+    quantity, // integer number -- count sold or returned, total of transactionData.quantity
+    total // number -- the sales price for a single item of this product quantity * productDatum.price
+}
 ```
+
+Each item in the array will represent the results for a different product.
     
 
 ### Report Data Builder Factory ###
@@ -347,6 +353,8 @@ The `buildReportData` function returns an array of objects that have the followi
     total // number -- the sales price for a single item of this product quantity * productDatum.price
 }
 ```
+
+Each item in the array will represent the results for a different product.
     
     
 
@@ -1405,7 +1413,67 @@ function salesReporterFactory(
 )
 ```
 
-You will have to create a fake `dataLoader`, use the `pointOfSaleDataUtilsFactoryBuilder` to get the `pointOfSaleDataUtilsFactory` and simply pass the `reportDataBuilderFactory` that is already available to the test.
+You will have to create a fake `dataLoader`. You will also  use the `pointOfSaleDataUtilsFactory` and the `reportDataBuilderFactory` that are already available to the test.
+
+This will return an empty array.
+
+<details><summary>dataLoader hints</summary>
+
+The `dataLoader` has 3 functions and the following structure:
+
+```javascript
+{
+    getProductData,
+    getTransactionData,
+    getTransactionStatuses
+}
+```
+
+The `getProductData` will be set to the `buildProductData` helper function. The `getTransactionStatuses` will be set to the `buildTransactionStatuses` helper function.
+
+The real odd ball here is the `getTransactionData` which is expected to return an array of transaction records. You will have to create this function, and have it return an empty array.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    let dataLoader = {
+        getProductData: buildProductData,
+        getTransactionData: () => [],
+        getTransactionStatuses: buildTransactionStatuses
+    };
+```
+
+</details>
+
+</details>
+
+<details><summary>Hints</summary>
+
+You just have to pass the values to the function, and capture the returned function. You will then have to call that function with a "Sale" transactionStatus.
+
+<details><summary>Code</summary>
+
+```javascript
+it('returns an empty object for sale counts if no sale data exists', () => {
+    let dataLoader = {
+        getProductData: buildProductData,
+        getTransactionData: () => [],
+        getTransactionStatuses: buildTransactionStatuses
+    };
+
+    let { getReport } = salesReporterFactory(dataLoader, pointOfSaleDataUtilsFactory, reportDataBuilderFactory);
+
+    let result = getReport(transactionStatuses.Sale);
+
+    assert.deepEqual(result, []);
+});
+```
+
+</details>
+
+</details>
     
     
 

@@ -38,4 +38,64 @@ function salesReporterFactory(
 )
 ```
 
-You will have to create a fake `dataLoader`, use the `pointOfSaleDataUtilsFactoryBuilder` to get the `pointOfSaleDataUtilsFactory` and simply pass the `reportDataBuilderFactory` that is already available to the test.
+You will have to create a fake `dataLoader`. You will also  use the `pointOfSaleDataUtilsFactory` and the `reportDataBuilderFactory` that are already available to the test.
+
+This will return an empty array.
+
+<details><summary>dataLoader hints</summary>
+
+The `dataLoader` has 3 functions and the following structure:
+
+```javascript
+{
+    getProductData,
+    getTransactionData,
+    getTransactionStatuses
+}
+```
+
+The `getProductData` will be set to the `buildProductData` helper function. The `getTransactionStatuses` will be set to the `buildTransactionStatuses` helper function.
+
+The real odd ball here is the `getTransactionData` which is expected to return an array of transaction records. You will have to create this function, and have it return an empty array.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+    let dataLoader = {
+        getProductData: buildProductData,
+        getTransactionData: () => [],
+        getTransactionStatuses: buildTransactionStatuses
+    };
+```
+
+</details>
+
+</details>
+
+<details><summary>Hints</summary>
+
+You just have to pass the values to the function, and capture the returned function. You will then have to call that function with a "Sale" transactionStatus.
+
+<details><summary>Code</summary>
+
+```javascript
+it('returns an empty object for sale counts if no sale data exists', () => {
+    let dataLoader = {
+        getProductData: buildProductData,
+        getTransactionData: () => [],
+        getTransactionStatuses: buildTransactionStatuses
+    };
+
+    let { getReport } = salesReporterFactory(dataLoader, pointOfSaleDataUtilsFactory, reportDataBuilderFactory);
+
+    let result = getReport(transactionStatuses.Sale);
+
+    assert.deepEqual(result, []);
+});
+```
+
+</details>
+
+</details>

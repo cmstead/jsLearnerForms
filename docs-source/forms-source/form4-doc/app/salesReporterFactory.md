@@ -22,7 +22,7 @@ The `dataLoader` parameter is an object with following shape:
 {
     getProductData,
     getTransactionData,
-    getTransactionTypes
+    getTransactionStatuses
 }
 ```
 
@@ -68,15 +68,15 @@ The `getTransactionData` function returns an array of objects that have the foll
 
 ##### Get Transaction Types Function #####
 
-The `getTransactionTypes` function has the following signature:
+The `getTransactionStatuses` function has the following signature:
 
 ```javascript
-getTransactionTypes()
+getTransactionStatuses()
 ```
 
 ###### Get Transaction Types Return Value ######
 
-The `getTransactionTypes` function returns an object with the following structure:
+The `getTransactionStatuses` function returns an object with the following structure:
 
 ```javascript
 {
@@ -100,15 +100,21 @@ The `` function returns an object with the following structure:
 The `getReport` function has the following signature:
 
 ```javascript
-function getReport(transactionType)
+function getReport(transactionStatus)
 ```
 
-The `transactionType` parameter is an integer number that maps to Sale or Return as determined by the `transactionTypes` returned from the `getTransactionTypes` function.
+The `transactionStatus` parameter is an integer number that maps to Sale or Return as determined by the `transactionStatuses` returned from the `getTransactionStatuses` function.
 
 ###### Get Report Return Value ######
 
-The `getReport` function returns an object with the following structure:
+The `getReport` function returns an array of objects with the following structure:
 
 ```javascript
-// ?
+{
+    productName, // string -- Name of product, from productDatum.Name
+    quantity, // integer number -- count sold or returned, total of transactionData.quantity
+    total // number -- the sales price for a single item of this product quantity * productDatum.price
+}
 ```
+
+Each item in the array will represent the results for a different product.

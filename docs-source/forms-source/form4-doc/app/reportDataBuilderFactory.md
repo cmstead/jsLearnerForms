@@ -76,3 +76,5 @@ The `buildReportData` function returns an array of objects that have the followi
     total // number -- the sales price for a single item of this product quantity * productDatum.price
 }
 ```
+
+Each item in the array will represent the results for a different product.
