@@ -84,3 +84,31 @@ The `getTransactionTypes` function returns an object with the following structur
     Return = Y // where Y is an integer number
 }
 ```
+
+#### Sales Reporter Factory Return Value ####
+
+The `` function returns an object with the following structure:
+
+```javascript
+{
+    getReport
+}
+```
+
+##### Get Report Function #####
+
+The `getReport` function has the following signature:
+
+```javascript
+function getReport(transactionType)
+```
+
+The `transactionType` parameter is an integer number that maps to Sale or Return as determined by the `transactionTypes` returned from the `getTransactionTypes` function.
+
+###### Get Report Return Value ######
+
+The `getReport` function returns an object with the following structure:
+
+```javascript
+// ?
+```
