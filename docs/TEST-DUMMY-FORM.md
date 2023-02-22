@@ -44,6 +44,12 @@ This section is doable without the hints. it is _hard_ but doable. However, the 
 The application under test is a Point of Sale reporting utility. It will report on all sales or all returns.
 
 
+### Sales Report App &mdash; Important Files ###
+
+> jsforms-source/4_test-dummy-form/sales-reporter/[salesReporterFactory.js](../jsforms-source/4_test-dummy-form/sales-reporter/salesReporterFactory.js)
+> jsforms-source/4_test-dummy-form/pos-transaction-services/[reportDataBuilder.js](../jsforms-source/4_test-dummy-form/pos-transaction-services/reportDataBuilder.js)
+    
+
 ### Point Of Sale Data Utility Factory Builder ###
 
 File: [/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js](../jsforms-source/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js)
