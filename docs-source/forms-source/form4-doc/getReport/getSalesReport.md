@@ -355,3 +355,58 @@ Most of the arrange in this test can be deleted. You will just need to add the s
 </details>
 
 </details>
+
+#### It returns a sales report with two sales of different products ####
+
+Now you will test that the `getReport` can return a report with two different products.
+
+This will look very similar to the above test, but you will need to add two products, with different quantities to the transaction records.
+
+To write this test follow these steps.
+
+1. Enable the test
+2. Add guide comments
+   1. Arrange
+   2. Act
+   3. Assert
+3. Implement the arrange
+4. Implement the act
+5. Implement the assert
+6. Remove Guide comments
+7. Refactor code if possible
+
+<details><summary>Hints</summary>
+
+Add the two different products to the transaction records. Make sure that the `productId` of each maps to a product that is returned by the `buildProductData` function. You will also want each product to have a different non-one `quantity` value.
+
+You will also have two objects in the result to test for.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+it('returns a sales report with two sales of the same product', () => {
+    transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
+    transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
+    
+    let result = reportBuilder(transactionStatuses.Sale);
+
+    assert.deepEqual(result, [
+        {
+            productName: ?, // The name that maps to the first product ID
+            quantity: ?, // The quantity of the first transaction record
+            total: ? // the price from the first product multiplied by te quantity
+        },
+        {
+            productName: ?, // The name that maps to the second product ID
+            quantity: ?, // The quantity of the second transaction record
+            total: ? // the price from the second product multiplied by te quantity
+        },
+    ]);
+});
+```
+
+</details>
+
+</details>
