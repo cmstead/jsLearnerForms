@@ -1396,9 +1396,6 @@ Now when you write each test, you will follow the process you did before with on
 
 1. Enable the test
 2. Add guide comments
-   1. Arrange
-   2. Act
-   3. Assert
 3. Implement the arrange
 4. Implement the act
 5. Implement the assert
@@ -1422,6 +1419,18 @@ function salesReporterFactory(
 You will have to create a fake `dataLoader`. You will also  use the `pointOfSaleDataUtilsFactory` and the `reportDataBuilderFactory` that are already available to the test.
 
 This will return an empty array.
+
+To write this test follow these steps.
+
+1. Enable the test
+2. Add guide comments
+   1. Arrange
+   2. Act
+   3. Assert
+3. Implement the arrange
+4. Implement the act
+5. Implement the assert
+6. Remove Guide comments
 
 <details><summary>Data Loader Hints</summary>
 
