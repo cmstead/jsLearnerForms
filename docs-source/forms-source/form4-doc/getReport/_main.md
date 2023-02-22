@@ -3,8 +3,8 @@
         (title "Get Report")
     )
 /bl-->
-This will be a bit more in depth about the skills needed to write tests.
 
+In testing the `getReport` method, you will be required to do a lot more of the initial work. Fortunately you have the code from the "get product count by sale" test suite you just finished.
 <!--bl
     (section "./importantFiles.md")
 /bl-->
