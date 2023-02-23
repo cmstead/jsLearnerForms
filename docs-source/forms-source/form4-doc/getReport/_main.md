@@ -10,4 +10,5 @@ The `getReport` function can either create a Sales report or a Returns report.
 <!--bl
     (section "./importantFiles.md")
     (section "./getSalesReport.md")
+    (section "./getReturnsReport.md")
 /bl-->
