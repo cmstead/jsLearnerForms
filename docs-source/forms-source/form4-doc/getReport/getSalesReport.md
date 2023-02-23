@@ -439,7 +439,7 @@ There will only be a single object in the result.
 **Example**
 
 ```javascript
-it('returns a sales report with no "returns" data', () => {
+it('returns a sales report with two sales of the same product', () => {
     let productId = ?;
     transactionRecords.push(buildTransactionRecord(productId, transactionStatuses.Sale, ?));
     transactionRecords.push(buildTransactionRecord(productId, transactionStatuses.Sale, ?));
@@ -451,6 +451,60 @@ it('returns a sales report with no "returns" data', () => {
             productName: ?, // The name that maps to the product ID
             quantity: ?, // The total quantity of the transaction records
             total: ? // the price from the product multiplied by the total quantity
+        },
+    ]);
+});
+```
+
+</details>
+
+</details>
+
+#### It returns a sales report with no "returns" data ####
+
+Now, you will verify that the `getReport` function filters according to the Sale transaction status.
+
+You will want to create a number of sale transactions, at least 3 across at least two products, with one or more return transactions mixed into the bunch.
+
+To write this test follow these steps.
+
+1. Enable the test
+2. Add guide comments
+   1. Arrange
+   2. Act
+   3. Assert
+3. Implement the arrange
+4. Implement the act
+5. Implement the assert
+6. Remove Guide comments
+7. Refactor code if possible
+
+<details><summary>Hints</summary>
+
+You are going to create the test very similarly to two tests ago, but you will add a new transaction record that has the `transactionStatus` equal to Return.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+it('returns a sales report with no "returns" data', () => {
+    transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
+    transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Return, ?)); // This is the record that is not going to be counted
+    transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
+    
+    let result = reportBuilder(transactionStatuses.Sale);
+
+    assert.deepEqual(result, [
+        {
+            productName: ?, // The name that maps to the first product ID
+            quantity: ?, // The quantity of the first transaction record
+            total: ? // the price from the first product multiplied by te quantity
+        },
+        {
+            productName: ?, // The name that maps to the third product ID
+            quantity: ?, // The quantity of the third transaction record
+            total: ? // the price from the third product multiplied by the quantity
         },
     ]);
 });
