@@ -20,9 +20,10 @@ You will be working in then [jsforms-source/1_first-form.js](..\jsforms-source\1
 - [Section 8: The Other JS Learner Forms](#user-content-the-other-js-learner-forms)
 
 ## Variables and Operations ##
+
 You will explore the creation and use of variables.
 
-### declaration and initialization
+### Declaration and Initialization ###
 
 Here you will declare and initialize variables.
 
@@ -101,8 +102,9 @@ const jsforms = (function () {
 </details>
 
 </details>
+    
 
-### assignment and operators
+### Assignment and Operators ###
 
 Now that you have a variable you will assign it a value different then what it was initialized with.
 
@@ -171,10 +173,10 @@ Initialize a variable with equals: `var b = ...`
 </details>
 
 </details>
+    
 
-### method call
-
-YOu will make a call to a method on an object.
+### Method Call ###
+You will make a call to a method on an object.
 
 #### It should log variable "b" to the console
 
@@ -208,7 +210,9 @@ Console.log might be just the ticket...
 
 </details>
 
-### exposing values
+    
+
+### Exposing Values ###
 
 You well now expose values to the outside world.
 
@@ -233,6 +237,8 @@ Find `return {};` add a "b" -> `return {b};`
 </details>
 
 </details>
+
+    
     
 
 ## Function Creation ##
