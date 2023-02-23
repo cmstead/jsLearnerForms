@@ -1767,7 +1767,7 @@ You will also have two objects in the result to test for.
 **Example**
 
 ```javascript
-it('returns a sales report with two sales of the same product', () => {
+it('returns a sales report with two sales of different products', () => {
     transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
     transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
 
@@ -1782,7 +1782,56 @@ it('returns a sales report with two sales of the same product', () => {
         {
             productName: ?, // The name that maps to the second product ID
             quantity: ?, // The quantity of the second transaction record
-            total: ? // the price from the second product multiplied by te quantity
+            total: ? // the price from the second product multiplied by the quantity
+        },
+    ]);
+});
+```
+
+</details>
+
+</details>
+
+#### It returns a sales report with two sales of the same product ####
+
+You will test what happens if the transaction records have two different transactions for the sale of the same product. The result should represent the total of the quantity.
+
+To write this test follow these steps.
+
+1. Enable the test
+2. Add guide comments
+   1. Arrange
+   2. Act
+   3. Assert
+3. Implement the arrange
+4. Implement the act
+5. Implement the assert
+6. Remove Guide comments
+7. Refactor code if possible
+
+<details><summary>Hints</summary>
+
+This test will look very similar to the above with the difference that the two transaction records will share the same `productId`.
+
+There will only be a single object in the result.
+
+<details><summary>Code</summary>
+
+**Example**
+
+```javascript
+it('returns a sales report with no "returns" data', () => {
+    let productId = ?;
+    transactionRecords.push(buildTransactionRecord(productId, transactionStatuses.Sale, ?));
+    transactionRecords.push(buildTransactionRecord(productId, transactionStatuses.Sale, ?));
+
+    let result = reportBuilder(transactionStatuses.Sale);
+
+    assert.deepEqual(result, [
+        {
+            productName: ?, // The name that maps to the product ID
+            quantity: ?, // The total quantity of the transaction records
+            total: ? // the price from the product multiplied by the total quantity
         },
     ]);
 });
