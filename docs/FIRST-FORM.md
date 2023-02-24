@@ -1059,7 +1059,7 @@ Add logic to handle 0, 1 or 2 vector cases
 
 </details>
 
-### It returns only vectors which are not too long ####
+#### It returns only vectors which are not too long ###
 
 Modify the `getVectorsShorterThan` function so that it now returns only those vectors with a magnitude less then the length.
 
@@ -1114,6 +1114,7 @@ Move to general code for filtering vecctors (Is there a way you can use a known 
 </details>
 
 </details>
+    
     
 
 ## The Other JS Learner Forms ##

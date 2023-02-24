@@ -1,12 +1,8 @@
 <!--bl
     (filemeta
-        (title "Looping and inequality comparison")
+        (title "Get Vectors Shorter Than")
     )
 /bl-->
-
-Now it is time to use functions to examine looping and comparisons.
-
-### Get Vectors Shorter Than ###
 
 You will now create a function called `getVectorsShorterThan` that will take an array of arrays. It will compare each array based on its magnitude and return all arrays that have a magnitude smaller then the number provided.
 
@@ -144,7 +140,7 @@ Add logic to handle 0, 1 or 2 vector cases
 
 </details>
 
-### It returns only vectors which are not too long ####
+#### It returns only vectors which are not too long ###
 
 Modify the `getVectorsShorterThan` function so that it now returns only those vectors with a magnitude less then the length.
 
