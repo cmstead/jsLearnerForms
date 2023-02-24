@@ -57,7 +57,7 @@ const fourthFormHelpers = (function () {
     function buildSalesReporter(dataSourceAccess) {
         const dataLoader = dataLoaderFactory(dataSourceAccess);
     
-        const pointOfSaleDataUtilsFactory = pointOfSaleDataUtilsFactoryBuilder();
+        const pointOfSaleDataUtilsFactory = pointOfSaleDataUtilityFactoryBuilder();
         const reportDataBuilder = reportDataBuilderFactory();
     
         return salesReporterFactory(

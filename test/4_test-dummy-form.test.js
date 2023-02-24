@@ -29,10 +29,13 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
     let salesReporter;
 
     beforeEach(function () {
-        pointOfSaleDataUtilsFactory = pointOfSaleDataUtilsFactoryBuilder();
+        pointOfSaleDataUtilsFactory = pointOfSaleDataUtilityFactoryBuilder();
     });
 
     describe('Point of Sale Data Utilities', function () {
+        // File being tested can be found here:
+        // ../jsforms-source/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js
+
         describe('get product count by sale', function () {
 
             let pointOfSaleDataUtilities;

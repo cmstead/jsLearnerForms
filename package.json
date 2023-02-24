@@ -6,7 +6,12 @@
   "scripts": {
     "start": "node ./start.js",
     "setup": "node ./setup.js",
-    "build-readme": "node ./node_modules/booklisp/ ./readme-source/readme.md README.md",
+    "docs:readme": "node ./node_modules/booklisp/ ./docs-source/readme-source/readme.md README.md",
+    "docs:form1": "node ./node_modules/booklisp/ ./docs-source/forms-source/form1-doc/_main.md ./docs/FIRST-FORM.md",
+    "docs:form2": "node ./node_modules/booklisp/ ./docs-source/forms-source/form2-doc/_main.md ./docs/SECOND-FORM.md",
+    "docs:form3": "node ./node_modules/booklisp/ ./docs-source/forms-source/form3-doc/_main.md ./docs/THIRD-FORM.md",
+    "docs:form4": "node ./node_modules/booklisp/ ./docs-source/forms-source/form4-doc/_main.md ./docs/TEST-DUMMY-FORM.md",
+    "docs:forms": "node ./node_modules/booklisp/ ./docs-source/forms-source/_main.md ./FORMS.md",
     "update-forms": "node ./runner-utils/update-forms.js"
   },
   "repository": {
@@ -20,10 +25,11 @@
   },
   "homepage": "https://github.com/cmstead/jsLearnerForms",
   "devDependencies": {
+    "all-contributors-cli": "^6.24.0",
     "booklisp": "^2.0.0",
     "chai": "^4.2.0",
-    "eslint": "^3.19.0",
-    "mocha": "^3.5.3",
+    "eslint": "^8.34.0",
+    "mocha": "^10.2.0",
     "mockery": "^2.1.0",
     "sinon": "^2.4.1"
   },
@@ -34,7 +40,7 @@
     "estraverse": "^4.2.0",
     "express": "^4.17.1",
     "inquirer": "^6.4.1",
-    "livereload": "^0.8.0",
+    "livereload": "^0.9.3",
     "open": "^6.4.0"
   }
 }

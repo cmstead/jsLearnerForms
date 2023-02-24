@@ -445,6 +445,12 @@ describe('Forms - Second Form', function () {
                     })
             });
 
+            it('should return a vector where toString returns a vector string', function () {
+                let vector = jsforms.buildVector([1, 2, 3]);
+
+                assert.equal(vector.toString(), '<1,2,3>');
+            });
+
             it('returns a new Vector object instead of an array', function () {
                 const analyzerNewObjectOptions = {
                     formNumber: 2,
@@ -461,6 +467,12 @@ describe('Forms - Second Form', function () {
                         assert.isTrue(result);
                     })
             });
+
+            it('should return vector with valueOf function which does not return original array of points', function () {
+                let vector = jsforms.buildVector([1, 2, 3]);
+
+                assert.equal(vector.valueOf() !== vector, true);
+            });
         });
 
         it('should return a vector matching original values', function () {
@@ -476,18 +488,6 @@ describe('Forms - Second Form', function () {
             let vector = jsforms.buildVector(initialArray);
 
             assert.equal(initialArray !== vector, true);
-        });
-
-        it('should return vector with valueOf function which does not return original array of points', function () {
-            let vector = jsforms.buildVector([1, 2, 3]);
-
-            assert.equal(vector.valueOf() !== vector, true);
-        });
-
-        it('should return a vector where toString returns a vector string', function () {
-            let vector = jsforms.buildVector([1, 2, 3]);
-
-            assert.equal(vector.toString(), '<1,2,3>');
         });
 
     });
@@ -540,7 +540,7 @@ describe('Forms - Second Form', function () {
 
                 return analyzer
                     .analyze(analyzerFunctionOptions)
-                    .then(function({ result }) {
+                    .then(function ({ result }) {
                         assert.isTrue(result);
                     });
             });
@@ -557,7 +557,7 @@ describe('Forms - Second Form', function () {
 
                 return analyzer
                     .analyze(analyzerParametersOptions)
-                    .then(function({ result }) {
+                    .then(function ({ result }) {
                         assert.isTrue(result);
                     });
             });
@@ -575,7 +575,7 @@ describe('Forms - Second Form', function () {
 
                 return analyzer
                     .analyze(analyzerCallOptions)
-                    .then(function({ result }) {
+                    .then(function ({ result }) {
                         assert.isTrue(result);
                     });
             });
@@ -591,7 +591,7 @@ describe('Forms - Second Form', function () {
 
                 return analyzer
                     .analyze(analyzerAssignmentOptions)
-                    .then(function({ result }) {
+                    .then(function ({ result }) {
                         assert.isFalse(result);
                     });
             });
@@ -650,4 +650,3 @@ describe('Forms - Second Form', function () {
     // Good job! I like what you got.
 
 });
-

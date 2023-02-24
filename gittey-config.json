@@ -25,7 +25,35 @@
         },
         {
             "name": "push",
-            "command": "gittey commit && git push"
+            "command": "gittey docs && gittey commit && git push"
+        },
+        {
+            "name": "docs:form1",
+            "command": "npm run docs:form1"
+        },
+        {
+            "name": "docs:form2",
+            "command": "npm run docs:form2"
+        },
+        {
+            "name": "docs:form3",
+            "command": "npm run docs:form3"
+        },
+        {
+            "name": "docs:form4",
+            "command": "npm run docs:form4"
+        },
+        {
+            "name": "docs:readme",
+            "command": "npm run docs:readme"
+        },
+        {
+            "name": "docs:forms",
+            "command": "npm run docs:forms"
+        },
+        {
+            "name": "docs",
+            "command": "gittey docs:form1 && gittey docs:form2 && gittey docs:form3 && gittey docs:form4 && gittey docs:forms && gittey docs:readme"
         }
     ],
     "collaborators": []
