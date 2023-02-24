@@ -14,7 +14,7 @@ You will be working in then [jsforms-source/1_first-form.js](..\jsforms-source\1
         (section-main "./variables/_main.md")
         (section-main "./functions/_main.md")
         (section-main "./arrays/_main.md")
-        (section-main "./complex.md")
+        (section-main "./complex/_main.md")
         (section-main "./copying-arrays.md")
         (section-main "./combining.md")
         (section-main "./looping.md")

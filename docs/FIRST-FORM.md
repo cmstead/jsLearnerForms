@@ -10,7 +10,7 @@ You will be working in then [jsforms-source/1_first-form.js](..\jsforms-source\1
 ## Table Of Contents ##
 
 - [Section 1: Variables and Operations](#user-content-variables-and-operations)
-- [Section 2: Function Creation](#user-content-function-creation)
+- [Section 2: Function Creation, Function Declaration, and the Return Statement](#user-content-function-creation,-function-declaration,-and-the-return-statement)
 - [Section 3: Arrays, Loops, and Function Calls](#user-content-arrays,-loops,-and-function-calls)
 - [Section 4: Combining Complex Functions](#user-content-combining-complex-functions)
 - [Section 5: Copying Arrays](#user-content-copying-arrays)
@@ -208,7 +208,6 @@ Console.log might be just the ticket...
 </details>
 
 </details>
-
     
 
 ### Exposing Values ###
@@ -236,12 +235,10 @@ Find `return {};` add a "b" -> `return {b};`
 </details>
 
 </details>
-
     
     
 
-## Function Creation ##
-#### [function declaration, return statement] ####
+## Function Creation, Function Declaration, and the Return Statement ##
 
 Time to create functions and have them return a value.
 
@@ -684,6 +681,7 @@ Add logic to square all numbers and return the sum (squareAll and sum might be u
 
 </details>
     
+    
 
 ## Copying Arrays ##
 #### Using Array.slice ####
@@ -918,6 +916,7 @@ The magnitude of a vector is computed by:
     
 
 ## Looping and inequality comparison ##
+
 Now it is time to use functions to examine looping and comparisons.
 
 ### Get Vectors Shorter Than ###
