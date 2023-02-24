@@ -3,6 +3,7 @@
         (title "Sum")
     )
 /bl-->
+
 You are going to refactor and change the shape of the `sum` method.
 
 ### Refactoring steps ###

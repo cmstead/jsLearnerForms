@@ -3,6 +3,7 @@
         (title "Build Vector")
     )
 /bl-->
+
 Now you will refactor the `buildVector` function changing its shape.
 
 ### Refactoring steps ###

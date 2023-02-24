@@ -3,6 +3,7 @@
         (title "Square All")
     )
 /bl-->
+
 You will now refactor and change the shape of the `squareAll` method.
 
 ### Refactoring steps ###

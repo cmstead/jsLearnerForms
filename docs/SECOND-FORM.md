@@ -20,6 +20,7 @@ You will be working in the [jsforms-source/2_second-form.js](../jsforms-source/2
 - [Section 6: The Other JS Learner Forms](#user-content-the-other-js-learner-forms)
 
 ## Greeter ##
+
 Let us change the `greet` function.
 
 ### Refactoring steps ###
@@ -99,10 +100,10 @@ The `typeof` operator returns a string with the name of the type. Maybe you can 
 </details>
 
 </details>
-
     
 
 ## Sum ##
+
 You are going to refactor and change the shape of the `sum` method.
 
 ### Refactoring steps ###
@@ -209,6 +210,7 @@ An arrow function expression to log a value to the console looks like `value => 
     
 
 ## Square All ##
+
 You will now refactor and change the shape of the `squareAll` method.
 
 ### Refactoring steps ###
@@ -292,6 +294,7 @@ Instead of an assignment, maybe just return the result of map.
     
 
 ## Build Vector ##
+
 Now you will refactor the `buildVector` function changing its shape.
 
 ### Refactoring steps ###
