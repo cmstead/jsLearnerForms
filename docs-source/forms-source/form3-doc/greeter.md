@@ -5,7 +5,7 @@
 /bl-->
 You are going to start by refactoring the `greet` function.
 
-### Refactoring steps
+### Refactoring steps ###
 
 Here are the steps you will take to refactor the `greet` function to ensure you change the shape without changing the behavior.
 
@@ -14,7 +14,7 @@ Here are the steps you will take to refactor the `greet` function to ensure you 
 3. Create function called `eitherOnType`
 4. Replace ternary in greet function with `eitherOnType`
 
-#### It has a function called `isTypeOf` which takes parameters `type` and `value`
+#### It has a function called `isTypeOf` which takes parameters `type` and `value` ####
 
 Create a function called `isTypeOf` with the two parameters of `type` and `value`. You are _not_ exporting this function. This function checks the type of the `value` and returns a Boolean true if the `value` is of the given `type`.
 
@@ -36,7 +36,7 @@ This will use `typeOf` to do the check.
 
 </details>
 
-#### It calls isTypeOf from greet
+#### It calls isTypeOf from greet ####
 
 Now you will modify the `greet` function to use the `isTypeOf` function instead of the `typeOf` function.
 
@@ -58,7 +58,7 @@ You will need to replace not only the call to `typeOf` but also the comparison t
 
 </details>
 
-#### It has a function called `eitherOnType` with parameters `type`, `testValue`, `defaultValue` -- return `testValue` if it matches `type`, otherwise return `defaultValue`
+#### It has a function called `eitherOnType` with parameters `type`, `testValue`, `defaultValue` -- return `testValue` if it matches `type`, otherwise return `defaultValue` ####
 
 Create a the function `eitherOnType`, you will _not_ export this function. The `eitherOnType` function takes two parameters `testValue` and `type`. It then compares the `testValue`'s type. If the `testValue` has the same type as the one given, it returns the `testValue`. If the `testValue` has a different type then it returns the `defaultValue`.
 
@@ -92,7 +92,7 @@ You will want to use the new `isTypeOf` function.
 
 </details>
 
-#### It calls eitherOnType from greet
+#### It calls eitherOnType from greet ####
 
 Modify the `greet` function so that you replace the trinary operator with the `eitherOnType` function.
 

@@ -5,11 +5,11 @@
 /bl-->
 You will now refactor and change the shape of the `squareAll` method.
 
-### Refactoring steps
+### Refactoring steps ###
 
 These are the steps you will take in changing the shape of the `squareAll` method, to ensure you do not change its behavior.
 
-#### It is refactored to replace for loop with `nums.map`
+#### It is refactored to replace for loop with `nums.map` ####
 
 The [`Array.prototype.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function allows you to perform a function on each member of an array and capture the result. Use this method instead of the given for loop.
 
@@ -41,7 +41,7 @@ The `Array.prototype.map` allows you to transform all values in an array such th
 
 </details>
 
-#### It is refactored to remove function wrapping `square`
+#### It is refactored to remove function wrapping `square` ####
 
 Now modify the `squareAll` function to simplify the function expression or the arrow function expression.
 
@@ -64,7 +64,7 @@ If you were to log all items in an array to the console, you don't need a functi
 
 </details>
 
-#### It is refactored to return result of map operation without assigning output to result
+#### It is refactored to return result of map operation without assigning output to result ####
 
 Now modify the `squareAll` function to remove the unnecessary `result` variable.
 

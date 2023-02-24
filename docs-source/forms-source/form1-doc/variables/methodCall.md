@@ -5,7 +5,7 @@
 /bl-->
 You will make a call to a method on an object.
 
-#### It should log variable "b" to the console
+#### It should log variable "b" to the console ####
 
 Use the `console.log` method to log the value contained in variable `b` to the console.
 

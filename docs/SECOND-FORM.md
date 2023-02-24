@@ -22,11 +22,11 @@ You will be working in the [jsforms-source/2_second-form.js](../jsforms-source/2
 ## Greeter ##
 Let us change the `greet` function.
 
-### Refactoring steps
+### Refactoring steps ###
 
 Lets look at the steps in refactoring the `greet` function.
 
-#### It is refactored to remove the unnecessary else
+#### It is refactored to remove the unnecessary else ####
 
 Modify the `greet` function to remove the else statement.
 
@@ -52,7 +52,7 @@ Because of the `return greeting + '!';` in the first part of the `if` statement 
 
 </details>
 
-#### It is refactored to remove if and replace with a ternary expression
+#### It is refactored to remove if and replace with a ternary expression ####
 
 Because both paths of the function return a value, you can change the shape of the code from an `if` `return` to a [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
@@ -78,7 +78,7 @@ A ternary operator has the following form
 
 </details>
 
-#### It is refactored to use typeof comparison to "string"
+#### It is refactored to use typeof comparison to "string" ####
 
 You will now modify the `greet` function to remove the `greeting === undefined` comparison and instead use the [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator to prove whether or not what was passed in was a string.
 
@@ -105,11 +105,11 @@ The `typeof` operator returns a string with the name of the type. Maybe you can 
 ## Sum ##
 You are going to refactor and change the shape of the `sum` method.
 
-### Refactoring steps
+### Refactoring steps ###
 
 These are the steps you will use to change the shape of the `sum` method, thereby changing how it does its work, while not changing the work it does.
 
-#### It has an add function
+#### It has an add function ####
 
 Now create a function called `add` that takes two number and adds them. You are _not_ exporting this function, it is part of your refactoring of the `sum` function.
 
@@ -129,7 +129,7 @@ Return the values after using the `+` operator.
 
 </details>
 
-#### It is refactored to replace += with a call to the add function
+#### It is refactored to replace += with a call to the add function ####
 
 Modify the `sum` method to use the new `add` method above instead of the `+=` operator.
 
@@ -157,7 +157,7 @@ The `+=` operator is equivalent to setting a value to itself plus the other valu
 
 </details>
 
-#### It is refactored to replace for loop with `nums.forEach`
+#### It is refactored to replace for loop with `nums.forEach` ####
 
 Now modify the `sum` method to remove the `for` loop, and use the [`Array.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) method provided on nums.
 
@@ -183,7 +183,7 @@ Now modify the `sum` method to remove the `for` loop, and use the [`Array.protot
 
 </details>
 
-#### It is refactored to replace the function expression with an arrow function
+#### It is refactored to replace the function expression with an arrow function ####
 
 Now modify the `sum` function to replace the function expression with an [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
@@ -211,11 +211,11 @@ An arrow function expression to log a value to the console looks like `value => 
 ## Square All ##
 You will now refactor and change the shape of the `squareAll` method.
 
-### Refactoring steps
+### Refactoring steps ###
 
 These are the steps you will take in changing the shape of the `squareAll` method, to ensure you do not change its behavior.
 
-#### It is refactored to replace for loop with `nums.map`
+#### It is refactored to replace for loop with `nums.map` ####
 
 The [`Array.prototype.map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) function allows you to perform a function on each member of an array and capture the result. Use this method instead of the given for loop.
 
@@ -247,7 +247,7 @@ The `Array.prototype.map` allows you to transform all values in an array such th
 
 </details>
 
-#### It is refactored to remove function wrapping `square`
+#### It is refactored to remove function wrapping `square` ####
 
 Now modify the `squareAll` function to simplify the function expression or the arrow function expression.
 
@@ -270,7 +270,7 @@ If you were to log all items in an array to the console, you don't need a functi
 
 </details>
 
-#### It is refactored to return result of map operation without assigning output to result
+#### It is refactored to return result of map operation without assigning output to result ####
 
 Now modify the `squareAll` function to remove the unnecessary `result` variable.
 
@@ -294,11 +294,11 @@ Instead of an assignment, maybe just return the result of map.
 ## Build Vector ##
 Now you will refactor the `buildVector` function changing its shape.
 
-### Refactoring steps
+### Refactoring steps ###
 
 These are the steps you will use to change the shape of the `buildVector` function without changing its behavior.
 
-#### It has a refactoring in magnitude function to replace vector value with `vector.valueOf()`
+#### It has a refactoring in magnitude function to replace vector value with `vector.valueOf()` ####
 
 Now modify the `magnitude` function by not passing the vector directly but passing the result of the `valueOf` method on vector. Currently the `valueOf` function just returns the original array. However this will make space for later changes that will happen to the `buildVector` function.
 
@@ -321,7 +321,7 @@ Just add a `.valueOf()` call after the vector in the call to `sumOfSquares`.
 
 </details>
 
-#### It contains a constructor for an object called Vector
+#### It contains a constructor for an object called Vector ####
 
 Now you will create a constructor for an object called `Vector`. You are not yet exporting that constructor. This constructor can just be an empty function.
 
@@ -342,7 +342,7 @@ You will not be using JavaScripts class objects. Instead work from the original 
 
 </details>
 
-#### It accepts a parameter "points" into Vector constructor
+#### It accepts a parameter "points" into Vector constructor ####
 
 Modify the `Vector` function to take a parameter called points. There is no need to do anything with this parameter yet.
 
@@ -363,7 +363,7 @@ The `Vector` constructor is just a function. All functions can have a name repre
 
 </details>
 
-#### It assigns `points` variable to "this.points" in `Vector` constructor
+#### It assigns `points` variable to "this.points" in `Vector` constructor ####
 
 Modify the `Vector` constructor to save the `points` parameter.
 
@@ -385,7 +385,7 @@ Remember in JavaScript, you do not have to predefine member variables before you
 
 </details>
 
-#### It overrides the valueOf function on the Vector prototype
+#### It overrides the valueOf function on the Vector prototype ####
 
 Now you will need to override the internal `valueOf` function on `Vector`. Remember that `valueOf` comes from object and by default just returns the object. You will now change the behavior of this function to return a copy of its internal points.
 
@@ -407,7 +407,7 @@ The way to override an internal function in JavaScript without the use of the `c
 
 </details>
 
-#### It overrides the `toString` function on the `Vector` prototype
+#### It overrides the `toString` function on the `Vector` prototype ####
 
 Now you will need to override the internal `toString` function on `Vector`. Remember what you learned above.
 
@@ -428,7 +428,7 @@ The way to override an internal function in JavaScript without the use of the `c
 
 </details>
 
-#### It should return a vector where toString returns a vector string
+#### It should return a vector where toString returns a vector string ####
 
 You will modify the overridden `toString` method on `Vector` such that:
 
@@ -476,7 +476,7 @@ You can use the [`Array.prototype.forEach`](https://developer.mozilla.org/en-US/
 
 </details>
 
-#### It returns a new Vector object instead of an array
+#### It returns a new Vector object instead of an array ####
 
 You will now modify the `buildVector` function to return a new `Vector` instead of an array of values.
 
@@ -503,7 +503,7 @@ Remember to use the `new` keyword in your return value.
 
 You will now modify the `getVectorsShorterThan` function changing its shape without changing its behavior.
 
-### Refactoring steps
+### Refactoring steps ###
 
 This is how you will modify the `getVectorsShorterThan` function such that it ensures you do not change its external behavior.
 
@@ -513,7 +513,7 @@ This is how you will modify the `getVectorsShorterThan` function such that it en
 
 _**KEEP THE TESTS PASSING!**_
 
-#### It has a function called `isMagnitudeShorterThanLength`
+#### It has a function called `isMagnitudeShorterThanLength` ####
 
 Create a function called `isMagnitudeShorterThanLength`. This can be an empty function right now. You are also _not_ exporting that function.
 
@@ -534,7 +534,7 @@ Create a function that calculates the magnitude and then just return the value o
 
 </details>
 
-#### It has `vector` and `length` as parameters of `isMagnitudeShorterThanLength`
+#### It has `vector` and `length` as parameters of `isMagnitudeShorterThanLength` ####
 
 You will modify the `isMagnitudeShorterThanLength` function to take the two parameters `vector` and `length`. You will also modify the function to return a [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) `true` if the vector's magnitude is less then the provided length and false if it is equal to or greater.
 
@@ -557,7 +557,7 @@ You will need to calculate the magnitude (there is a function to help with this)
 
 </details>
 
-#### It is refactored to use `vectors.filter()` instead of for loop
+#### It is refactored to use `vectors.filter()` instead of for loop ####
 
 You will modify the `getVectorsShorterThan` function to use the internal [`Array.prototype.filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) instead of recreating the functionality in a for loop.
 
@@ -581,7 +581,7 @@ The filter method takes  a function as a parameter that returns a Boolean. If th
 
 </details>
 
-#### It does not assign filter to results, it just returns directly
+#### It does not assign filter to results, it just returns directly ####
 
 Now modify the `getVectorsShorterThan` not to use the unnecessary variable `result`.
 

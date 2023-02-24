@@ -6,7 +6,7 @@
 
 Here you will declare and initialize variables.
 
-#### It should have a variable called "a"
+#### It should have a variable called "a" ####
 
 Create a variable at the top of the block called "a". You will need to use `let` or `var`.
 
@@ -44,7 +44,7 @@ const jsforms = (function () {
 
 </details>
 
-#### It should initialize "a" with the value 5
+#### It should initialize "a" with the value 5 ####
 
 Set the initial value of a to 5.
 

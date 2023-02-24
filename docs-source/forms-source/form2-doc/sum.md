@@ -5,11 +5,11 @@
 /bl-->
 You are going to refactor and change the shape of the `sum` method.
 
-### Refactoring steps
+### Refactoring steps ###
 
 These are the steps you will use to change the shape of the `sum` method, thereby changing how it does its work, while not changing the work it does.
 
-#### It has an add function
+#### It has an add function ####
 
 Now create a function called `add` that takes two number and adds them. You are _not_ exporting this function, it is part of your refactoring of the `sum` function.
 
@@ -29,7 +29,7 @@ Return the values after using the `+` operator.
 
 </details>
 
-#### It is refactored to replace += with a call to the add function
+#### It is refactored to replace += with a call to the add function ####
 
 Modify the `sum` method to use the new `add` method above instead of the `+=` operator.
 
@@ -57,7 +57,7 @@ The `+=` operator is equivalent to setting a value to itself plus the other valu
 
 </details>
 
-#### It is refactored to replace for loop with `nums.forEach`
+#### It is refactored to replace for loop with `nums.forEach` ####
 
 Now modify the `sum` method to remove the `for` loop, and use the [`Array.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) method provided on nums.
 
@@ -83,7 +83,7 @@ Now modify the `sum` method to remove the `for` loop, and use the [`Array.protot
 
 </details>
 
-#### It is refactored to replace the function expression with an arrow function
+#### It is refactored to replace the function expression with an arrow function ####
 
 Now modify the `sum` function to replace the function expression with an [arrow function expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 

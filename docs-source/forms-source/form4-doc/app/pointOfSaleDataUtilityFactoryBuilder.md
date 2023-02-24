@@ -20,7 +20,7 @@ These values are already set up for you.
 
 This function returns an object with two methods.
 
-#### `getProductCountBySale`
+#### `getProductCountBySale` ####
 
 This method takes the parameter `transactionRecords` which is an array of transaction records. Each record is expected to have the following shape:
 
@@ -69,7 +69,7 @@ The result should look like the following:
 
 Because there is a total of 5 items sold of Product ID 3, and only 4 items sold of Product ID 6.
 
-#### `getProductCountByReturn`
+#### `getProductCountByReturn` ####
 
 This method takes the parameter `transactionRecords` which is an array of transaction records. Each record is expected to have the following shape:
 

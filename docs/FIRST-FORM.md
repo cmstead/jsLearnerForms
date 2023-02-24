@@ -27,7 +27,7 @@ You will explore the creation and use of variables.
 
 Here you will declare and initialize variables.
 
-#### It should have a variable called "a"
+#### It should have a variable called "a" ####
 
 Create a variable at the top of the block called "a". You will need to use `let` or `var`.
 
@@ -65,7 +65,7 @@ const jsforms = (function () {
 
 </details>
 
-#### It should initialize "a" with the value 5
+#### It should initialize "a" with the value 5 ####
 
 Set the initial value of a to 5.
 
@@ -108,7 +108,7 @@ const jsforms = (function () {
 
 Now that you have a variable you will assign it a value different then what it was initialized with.
 
-#### It should assign the sum of 3 and 7 (3 + 7) to "a"
+#### It should assign the sum of 3 and 7 (3 + 7) to "a" ####
 
 Now assign variable `a` with the value of `3 + 7`.
 
@@ -142,7 +142,7 @@ Add two numbers using the plus (+) operator
 
 </details>
 
-#### It should have a variable "b" initialized to "Hello, World!"
+#### It should have a variable "b" initialized to "Hello, World!" ####
 
 Create a variable called `b` and initialize it with the value `"Hello, World!"
 
@@ -178,7 +178,7 @@ Initialize a variable with equals: `var b = ...`
 ### Method Call ###
 You will make a call to a method on an object.
 
-#### It should log variable "b" to the console
+#### It should log variable "b" to the console ####
 
 Use the `console.log` method to log the value contained in variable `b` to the console.
 
@@ -216,7 +216,7 @@ Console.log might be just the ticket...
 
 You well now expose values to the outside world.
 
-#### It should expose variable "b" to be read outside of the module
+#### It should expose variable "b" to be read outside of the module ####
 
 Expose the variable `b` to the outside world, by adding it the the object being exported.
 
@@ -243,11 +243,12 @@ Find `return {};` add a "b" -> `return {b};`
 
 ## Function Creation ##
 #### [function declaration, return statement] ####
+
 Time to create functions and have them return a value.
 
-### \*\*greeter function\*\*
+### greeter function ###
 
-##### It should say "Hello!" by default
+##### It should say "Hello!" by default #####
 
 Write a function called `greet` that returns the value "Hello!". (note: don't forget the "!")
 
@@ -273,9 +274,9 @@ Functions start with the keyword `function` followed by the name of the function
 
 </details>
 
-#### conditional logic [if/else]
+#### conditional logic [if/else] ####
 
-##### It should say "Salutations!" when Salutations is passed
+##### It should say "Salutations!" when Salutations is passed #####
 
 Modify the greet function to take a greeting and return the greeting if it was passed.
 
@@ -306,13 +307,13 @@ Add condition to greet to handle custom greeting case.
 
 </details>
 
-### function calls and mathematical operations [Math library]
+### function calls and mathematical operations [Math library] ###
 
-#### \*\*square function\*\*
+#### square function ####
 
 Create a function that takes a number and returns its square.
 
-##### It should square 1
+##### It should square 1 #####
 
 The function called `square` will be passed 1 and should return 1.
 
@@ -338,7 +339,7 @@ Add square function that returns a simple value rather then worrying about actua
 
 </details>
 
-##### It should square 3
+##### It should square 3 #####
 
 Modify the `square` function such that it returns the square of the value passed in.
 
@@ -378,11 +379,11 @@ Modify the `square` function such that it returns the square of the value passed
 
 </details>
 
-#### \*\*squareRoot function\*\*
+#### squareRoot function ####
 
 Create a function that takes a number and returns the square root of that number. (note: use the Math library).
 
-##### It should take the square root of 1
+##### It should take the square root of 1 #####
 
 Create a function called `squareRoot` that will be passed 1 and return 1.
 
@@ -408,7 +409,7 @@ Create a function that returns a simple value rather then worrying about actuall
 
 </details>
 
-##### It should take the square root of 4
+##### It should take the square root of 4 #####
 
 Modify the `squareRoot` function to return the square root of the value passed.
 
@@ -439,11 +440,11 @@ Add logic to properly take square root
 ## Arrays, Loops, and Function Calls ##
 You will use functions to work with arrays and loops.
 
-### \*\*sum function\*\*
+### Sum Function ###
 
 You are going to create a function called `sum` that adds numbers together.
 
-#### It should take the sum of one number
+#### It should take the sum of one number ####
 
 Create a `sum` function that accepts an array and returns 1.
 
@@ -469,7 +470,7 @@ Create a function that returns a simple number instead of worrying about actuall
 
 </details>
 
-#### It should add two numbers
+#### It should add two numbers ####
 
 Modify the `sum` function so that it adds the first two numbers in an array.
 
@@ -499,7 +500,7 @@ Add logic to sum 1 or two numbers (An `if` structure might help here)
 
 </details>
 
-#### It should add multiple numbers
+#### It should add multiple numbers ####
 
 Modify the `sum` function to add all numbers in an array.
 
@@ -549,7 +550,7 @@ Add logic to sum an arbitrary length array of numbers (A for loop might help to 
 
 </details>
 
-### \*\*squareAll function\*\*
+### Square All Function ###
 
 Create a function that squares each number in an array.
 
@@ -558,7 +559,7 @@ The steps you will take to building the `squareAll` function are:
 1. Add a `squareAll` function that returns a constant value.
 2. Chang the `squareAll` function to perform square computation on array value
 
-#### It should square all numbers in a single-value array
+#### It should square all numbers in a single-value array ####
 
 Create a function called `squareAll` that takes an array and returns the square of the first element.
 
@@ -585,7 +586,7 @@ Create a function that only squares the first value of an array and returns that
 
 </details>
 
-#### It should square multiple numbers
+#### It should square multiple numbers ####
 
 Modify the `squareAll` function so that it now squares each number in the array.
 
@@ -617,13 +618,14 @@ Add logic to square all numbers in array (How did you solve sum?)
     
 
 ## Combining Complex Functions ##
+
 You will use previous functions chained to gether to give us new results.
 
-### \*\*sumOfSquares function\*\*
+### sumOfSquares function ###
 
 Create a function that takes an array of numbers, squares each number and then returns the sum of those squares.
 
-#### It should square number in a 1-length array and return it
+#### It should square number in a 1-length array and return it ####
 
 Create a function called `sumOfSquares` that takes an array and returns the square of the first element.
 
@@ -652,7 +654,7 @@ Try to do the following:
 
 </details>
 
-#### It should take the sum of squares of multiple numbers
+#### It should take the sum of squares of multiple numbers ####
 
 Modify the `sumOfSquares` function so that it squares all numbers in the array.
 
@@ -677,20 +679,20 @@ Add logic to square all numbers and return the sum (squareAll and sum might be u
 </details>
 
 </details>
-
     
 
 ## Copying Arrays ##
 #### Using Array.slice ####
+
 You are going to use functions to explore the `Array.prototype.slice` method.
 
-### \*\*buildVector function\*\*
+### buildVector function ###
 
 You will now create a function called `buildVector` that returns a copy of the array as it was passed.
 
 > A vector is an ordered set of points which describes a "directed line segment," in other words, a vector is a line segment with an arrow
 
-#### It returns a vector (array) containing the same numbers as the original -- try returning the array you get in your function
+#### It returns a vector (array) containing the same numbers as the original -- try returning the array you get in your function ####
 
 Create a function called `buildVector` that returns the same array passed to it.
 
@@ -716,7 +718,7 @@ Add buildVector function (Would it be possible to just return something?)
 
 </details>
 
-#### It returns a copy of the original vector
+#### It returns a copy of the original vector ####
 
 Modify the `buildVector` function so that it returns a copy of the array passed to it. (note: use the `slice` method on array.)
 
@@ -742,13 +744,12 @@ Add logic to return a copy of vector array (Slice will create a new array just l
 </details>
 
 </details>
-
     
 
 ## Combining existing code to solve new problems ##
 You will now take code you wrote and use it define more complex behaviors
 
-### \*\*magnitude function\*\*
+### Magnitude Function ###
 
 You will create a function called `magnitude` that will calculate the magnitude of all given numbers.
 
@@ -780,7 +781,7 @@ or
 >
 > d = 3
 
-#### It returns the magnitude of a vector with only one number
+#### It returns the magnitude of a vector with only one number ####
 
 Create a function called `magnitude` that returns the first item in an array that is given to it.
 
@@ -806,7 +807,7 @@ Can you just return a value from the array?
 
 </details>
 
-#### It returns only positive numbers -- all magnitudes are positive
+#### It returns only positive numbers -- all magnitudes are positive ####
 
 Modify the `magnitude` function that returns the positive value of the first item in an array that is given to it.
 
@@ -839,7 +840,7 @@ Currently the magnitude of a vector is computed by:
 
 </details>
 
-#### It should return the magnitude of a vector with two values
+#### It should return the magnitude of a vector with two values ####
 
 Modify the `magnitude` function so that it returns the magnitude of the first 2 items in an array given to it.
 
@@ -877,7 +878,7 @@ Currently the magnitude of a vector is computed by:
 
 </details>
 
-#### It should return the magnitude of a vector with multiple values
+#### It should return the magnitude of a vector with multiple values ####
 
 Modify the `magnitude` function so that it returns the magnitude of all the values in the array.
 
@@ -910,13 +911,12 @@ The magnitude of a vector is computed by:
 </details>
 
 </details>
-
     
 
 ## Looping and inequality comparison ##
 Now it is time to use functions to examine looping and comparisons.
 
-### \*\*getVectorsShorterThan\*\*
+### getVectorsShorterThan ###
 
 You will now create a function called `getVectorsShorterThan` that will take an array of arrays. It will compare each array based on its magnitude and return all arrays that have a magnitude smaller then the number provided.
 
@@ -928,7 +928,7 @@ getVectorsShorterThan(length, arrayOfVectors)
 
 Such that `length` is the number for which You will compare magnitudes against, and `arrayOfVectors` is the array of arrays, where then inner arrays are to contain numbers.
 
-#### It returns an array of one vector when the vector is shorter than 5 -- arguments are: length, arrayOfVectors
+#### It returns an array of one vector when the vector is shorter than 5 -- arguments are: length, arrayOfVectors ####
 
 Create a the function `getVectorsShorterThan` where the first parameter is `length` and the second parameter is `arrayOfVectors` that returns all vectors where the magnitude is less then 5. There is only one vector at this point and its length is less then 5.
 
@@ -954,7 +954,7 @@ Can you just return the first value of the array?
 
 </details>
 
-#### It returns an empty array when all vectors are too long -- tests one vector
+#### It returns an empty array when all vectors are too long -- tests one vector ####
 
 Modify the `getVectorsShorterThan` function so that it will return an empty array if the first vector has a magnitude longer then `length`.
 
@@ -1004,7 +1004,7 @@ Add logic to handle the case where a vector is too long (How might you compare t
 
 </details>
 
-#### It returns an array of more than one vector when all are short enough
+#### It returns an array of more than one vector when all are short enough ####
 
 Modify the `getVectorsShorterThan` function so that it returns all vectors if the first one has a magnitude less then the length.
 
@@ -1054,7 +1054,7 @@ Add logic to handle 0, 1 or 2 vector cases
 
 </details>
 
-### It returns only vectors which are not too long
+### It returns only vectors which are not too long ####
 
 Modify the `getVectorsShorterThan` function so that it now returns only those vectors with a magnitude less then the length.
 

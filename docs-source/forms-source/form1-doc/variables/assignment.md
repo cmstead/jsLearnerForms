@@ -6,7 +6,7 @@
 
 Now that you have a variable you will assign it a value different then what it was initialized with.
 
-#### It should assign the sum of 3 and 7 (3 + 7) to "a"
+#### It should assign the sum of 3 and 7 (3 + 7) to "a" ####
 
 Now assign variable `a` with the value of `3 + 7`.
 
@@ -40,7 +40,7 @@ Add two numbers using the plus (+) operator
 
 </details>
 
-#### It should have a variable "b" initialized to "Hello, World!"
+#### It should have a variable "b" initialized to "Hello, World!" ####
 
 Create a variable called `b` and initialize it with the value `"Hello, World!"
 
