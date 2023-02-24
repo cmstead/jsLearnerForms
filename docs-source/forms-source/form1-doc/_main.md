@@ -13,7 +13,7 @@ You will be working in then [jsforms-source/1_first-form.js](..\jsforms-source\1
 <!--bl
     (table-of-contents
         (section-main "./variables/_main.md")
-        (section-main "./functions.md")
+        (section-main "./functions/_main.md")
         (section-main "./arrays.md")
         (section-main "./complex.md")
         (section-main "./copying-arrays.md")
