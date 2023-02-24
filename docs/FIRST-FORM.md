@@ -248,7 +248,7 @@ Time to create functions and have them return a value.
 
 ### Greeter Function ###
 
-##### It should say `"Hello!"` by default #####
+#### It should say `"Hello!"` by default ####
 
 Write a function called `greet` that returns the value "Hello!". (note: don't forget the "!")
 
@@ -306,6 +306,7 @@ Add condition to greet to handle custom greeting case.
 </details>
 
 </details>
+    
 
 ### Function Calls and Mathematical Operations [Math Library] ###
 
@@ -436,8 +437,10 @@ Add logic to properly take square root
 
 </details>
     
+    
 
 ## Arrays, Loops, and Function Calls ##
+
 You will use functions to work with arrays and loops.
 
 ### Sum Function ###
