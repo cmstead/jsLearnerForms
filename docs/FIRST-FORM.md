@@ -13,7 +13,7 @@ You will be working in then [jsforms-source/1_first-form.js](..\jsforms-source\1
 - [Section 2: Function Creation, Function Declaration, and the Return Statement](#user-content-function-creation,-function-declaration,-and-the-return-statement)
 - [Section 3: Arrays, Loops, and Function Calls](#user-content-arrays,-loops,-and-function-calls)
 - [Section 4: Combining Complex Functions](#user-content-combining-complex-functions)
-- [Section 5: Copying Arrays](#user-content-copying-arrays)
+- [Section 5: Copying Arrays Using `Array.slice`](#user-content-copying-arrays-using-`array.slice`)
 - [Section 6: Combining existing code to solve new problems](#user-content-combining-existing-code-to-solve-new-problems)
 - [Section 7: Looping and inequality comparison](#user-content-looping-and-inequality-comparison)
 - [Section 8: The Other JS Learner Forms](#user-content-the-other-js-learner-forms)
@@ -683,8 +683,7 @@ Add logic to square all numbers and return the sum (squareAll and sum might be u
     
     
 
-## Copying Arrays ##
-#### Using Array.slice ####
+## Copying Arrays Using `Array.slice` ##
 
 You are going to use functions to explore the `Array.prototype.slice` method.
 
@@ -746,6 +745,7 @@ Add logic to return a copy of vector array (Slice will create a new array just l
 </details>
 
 </details>
+    
     
 
 ## Combining existing code to solve new problems ##
