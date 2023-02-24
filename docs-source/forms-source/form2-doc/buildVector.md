@@ -53,7 +53,7 @@ You will not be using JavaScripts class objects. Instead work from the original 
 
 </details>
 
-#### It accepts a parameter "points" into Vector constructor ####
+#### It accepts a parameter `points` into Vector constructor ####
 
 Modify the `Vector` function to take a parameter called points. There is no need to do anything with this parameter yet.
 
@@ -74,7 +74,7 @@ The `Vector` constructor is just a function. All functions can have a name repre
 
 </details>
 
-#### It assigns `points` variable to "this.points" in `Vector` constructor ####
+#### It assigns `points` variable to `this.points` in `Vector` constructor ####
 
 Modify the `Vector` constructor to save the `points` parameter.
 
@@ -96,7 +96,7 @@ Remember in JavaScript, you do not have to predefine member variables before you
 
 </details>
 
-#### It overrides the valueOf function on the Vector prototype ####
+#### It overrides the `valueOf` function on the Vector prototype ####
 
 Now you will need to override the internal `valueOf` function on `Vector`. Remember that `valueOf` comes from object and by default just returns the object. You will now change the behavior of this function to return a copy of its internal points.
 
@@ -139,7 +139,7 @@ The way to override an internal function in JavaScript without the use of the `c
 
 </details>
 
-#### It should return a vector where toString returns a vector string ####
+#### It should return a vector where `toString` returns a vector string ####
 
 You will modify the overridden `toString` method on `Vector` such that:
 

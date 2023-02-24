@@ -67,7 +67,7 @@ These values are already set up for you.
 
 This function returns an object with two methods.
 
-#### `getProductCountBySale` ####
+#### Get Product Count by Sale ####
 
 This method takes the parameter `transactionRecords` which is an array of transaction records. Each record is expected to have the following shape:
 
@@ -116,7 +116,7 @@ The result should look like the following:
 
 Because there is a total of 5 items sold of Product ID 3, and only 4 items sold of Product ID 6.
 
-#### `getProductCountByReturn` ####
+#### Get Product Count by Return ####
 
 This method takes the parameter `transactionRecords` which is an array of transaction records. Each record is expected to have the following shape:
 
@@ -1401,7 +1401,7 @@ Now when you write each test, you will follow the process you did before with on
 6. Remove Guide comments
 7. Refactor code if possible
 
-#### It returns a sales report with no sales ####
+#### It returns a report of sales with no sales ####
 
 Starting with a base case of there were no sales, you will write the test that proves that it returns a report with nothing in it.
 
@@ -1492,7 +1492,7 @@ it('returns an empty object for sale counts if no sale data exists', () => {
 
 </details>
 
-#### It returns a sales report with one sale ####
+#### It returns a report of sales with one sale ####
 
 Okay, the last test did a lot of heavy lifting for you. Now you will test the `getReport` function for a sales report with only one item sold.
 
@@ -1556,7 +1556,7 @@ Once you have the `dataLoader` created, you will need to only change the Assert 
 **Example**
 
 ```javascript
-it('returns a sales report with one sale', () => {
+it('returns a report of sales with one sale', () => {
     // Arrange
     let dataLoader = {
         getProductData: buildProductData,
@@ -1640,7 +1640,7 @@ Bellow those, but still before the "get sales report" section, you will need to 
 
 ##### Refactor Sales Report Tests Modify the First Test #####
 
-You need to change the first test, "returns a sales report with no sales", so that it uses the new suite level variables.
+You need to change the first test, "returns a report of sales with no sales", so that it uses the new suite level variables.
 
 <details><summary>Hints</summary>
 
@@ -1719,7 +1719,7 @@ Most of the arrange in this test can be deleted. You will just need to add the s
 
             // ...
 
-            it('returns a sales report with one sale', () => {
+            it('returns a report of sales with one sale', () => {
                 transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, 1));
 
                 let result = reportBuilder(transactionStatuses.Sale);
@@ -1736,7 +1736,7 @@ Most of the arrange in this test can be deleted. You will just need to add the s
 
 </details>
 
-#### It returns a sales report with two sales of different products ####
+#### It returns a report of sales with two sales of different products ####
 
 Now you will test that the `getReport` can return a report with two different products.
 
@@ -1766,7 +1766,7 @@ You will also have two objects in the result to test for.
 **Example**
 
 ```javascript
-it('returns a sales report with two sales of different products', () => {
+it('returns a report of sales with two sales of different products', () => {
     transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
     transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
 
@@ -1791,7 +1791,7 @@ it('returns a sales report with two sales of different products', () => {
 
 </details>
 
-#### It returns a sales report with two sales of the same product ####
+#### It returns a report of sales with two sales of the same product ####
 
 You will test what happens if the transaction records have two different transactions for the sale of the same product. The result should represent the total of the quantity.
 
@@ -1819,7 +1819,7 @@ There will only be a single object in the result.
 **Example**
 
 ```javascript
-it('returns a sales report with two sales of the same product', () => {
+it('returns a report of sales with two sales of the same product', () => {
     let productId = ?;
     transactionRecords.push(buildTransactionRecord(productId, transactionStatuses.Sale, ?));
     transactionRecords.push(buildTransactionRecord(productId, transactionStatuses.Sale, ?));
@@ -1840,7 +1840,7 @@ it('returns a sales report with two sales of the same product', () => {
 
 </details>
 
-#### It returns a sales report with no "returns" data ####
+#### It returns a report of sales excluding any return transactions ####
 
 Now, you will verify that the `getReport` function filters according to the Sale transaction status.
 
@@ -1868,7 +1868,7 @@ You are going to create the test very similarly to two tests ago, but you will a
 **Example**
 
 ```javascript
-it('returns a sales report with no "returns" data', () => {
+it('returns a report of sales excluding any return transactions', () => {
     transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
     transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Return, ?)); // This is the record that is not going to be counted
     transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?));
@@ -1899,7 +1899,7 @@ it('returns a sales report with no "returns" data', () => {
 
 There is little to do in testing the "Returns" report because if you look at the code, it is almost entirely the same code as what creates the "Sales" report. So the only thing we have to do is test that it correctly filters when we ask for a report of the "Returns".
 
-#### It returns a "returns" report with no "sales" data ####
+#### It returns a report of return transactions that excludes sales transactions ####
 
 You will now create a test that will verify that the report is correct when you ask for it to give you a report of the returns.
 
@@ -1932,7 +1932,7 @@ This will look very much like the last test but the transaction statuses are swa
 
 ```javascript
 describe('get returns report', function () {
-    it('returns a "returns" report with no "sales" data', () => {
+    it('returns a report of return transactions that excludes sales transactions', () => {
         transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Return, ?));
         transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?)); // This is the record that is not going to be counted
         transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Return, ?));

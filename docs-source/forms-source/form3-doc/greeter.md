@@ -36,7 +36,7 @@ This will use `typeOf` to do the check.
 
 </details>
 
-#### It calls isTypeOf from greet ####
+#### It calls `isTypeOf` from greet ####
 
 Now you will modify the `greet` function to use the `isTypeOf` function instead of the `typeOf` function.
 
@@ -92,7 +92,7 @@ You will want to use the new `isTypeOf` function.
 
 </details>
 
-#### It calls eitherOnType from greet ####
+#### It calls `eitherOnType` from greet ####
 
 Modify the `greet` function so that you replace the trinary operator with the `eitherOnType` function.
 

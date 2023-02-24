@@ -9,7 +9,7 @@ Time to create functions and have them return a value.
 
 ### Greeter Function ###
 
-##### It should say "Hello!" by default #####
+##### It should say `"Hello!"` by default #####
 
 Write a function called `greet` that returns the value "Hello!". (note: don't forget the "!")
 
@@ -37,7 +37,7 @@ Functions start with the keyword `function` followed by the name of the function
 
 #### Conditional Logic [If / Else] ####
 
-##### It should say "Salutations!" when Salutations is passed #####
+##### It should say `"Salutations!"` when salutations is passed #####
 
 Modify the greet function to take a greeting and return the greeting if it was passed.
 

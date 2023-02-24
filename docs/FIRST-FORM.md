@@ -27,7 +27,7 @@ You will explore the creation and use of variables.
 
 Here you will declare and initialize variables.
 
-#### It should have a variable called "a" ####
+#### It should have a variable called `a` ####
 
 Create a variable at the top of the block called "a". You will need to use `let` or `var`.
 
@@ -65,7 +65,7 @@ const jsforms = (function () {
 
 </details>
 
-#### It should initialize "a" with the value 5 ####
+#### It should initialize `a` with the value 5 ####
 
 Set the initial value of a to 5.
 
@@ -108,7 +108,7 @@ const jsforms = (function () {
 
 Now that you have a variable you will assign it a value different then what it was initialized with.
 
-#### It should assign the sum of 3 and 7 (3 + 7) to "a" ####
+#### It should assign the sum of 3 and 7 (3 + 7) to `a` ####
 
 Now assign variable `a` with the value of `3 + 7`.
 
@@ -142,9 +142,9 @@ Add two numbers using the plus (+) operator
 
 </details>
 
-#### It should have a variable "b" initialized to "Hello, World!" ####
+#### It should have a variable `b` initialized to `Hello, World!` ####
 
-Create a variable called `b` and initialize it with the value `"Hello, World!"
+Create a variable called `b` and initialize it with the value `"Hello, World!"`
 
 <details><summary>Hints</summary>
 
@@ -178,7 +178,7 @@ Initialize a variable with equals: `var b = ...`
 ### Method Call ###
 You will make a call to a method on an object.
 
-#### It should log variable "b" to the console ####
+#### It should log variable `b` to the console ####
 
 Use the `console.log` method to log the value contained in variable `b` to the console.
 
@@ -216,7 +216,7 @@ Console.log might be just the ticket...
 
 You well now expose values to the outside world.
 
-#### It should expose variable "b" to be read outside of the module ####
+#### It should expose variable `b` to be read outside of the module ####
 
 Expose the variable `b` to the outside world, by adding it the the object being exported.
 
@@ -248,7 +248,7 @@ Time to create functions and have them return a value.
 
 ### Greeter Function ###
 
-##### It should say "Hello!" by default #####
+##### It should say `"Hello!"` by default #####
 
 Write a function called `greet` that returns the value "Hello!". (note: don't forget the "!")
 
@@ -276,7 +276,7 @@ Functions start with the keyword `function` followed by the name of the function
 
 #### Conditional Logic [If / Else] ####
 
-##### It should say "Salutations!" when Salutations is passed #####
+##### It should say `"Salutations!"` when salutations is passed #####
 
 Modify the greet function to take a greeting and return the greeting if it was passed.
 
@@ -928,7 +928,7 @@ getVectorsShorterThan(length, arrayOfVectors)
 
 Such that `length` is the number for which You will compare magnitudes against, and `arrayOfVectors` is the array of arrays, where then inner arrays are to contain numbers.
 
-#### It returns an array of one vector when the vector is shorter than 5 -- arguments are: length, arrayOfVectors ####
+#### It returns an array of one vector when the vector is shorter than 5 ####
 
 Create a the function `getVectorsShorterThan` where the first parameter is `length` and the second parameter is `arrayOfVectors` that returns all vectors where the magnitude is less then 5. There is only one vector at this point and its length is less then 5.
 

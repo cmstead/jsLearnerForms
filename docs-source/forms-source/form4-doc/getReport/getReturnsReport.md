@@ -6,7 +6,7 @@
 
 There is little to do in testing the "Returns" report because if you look at the code, it is almost entirely the same code as what creates the "Sales" report. So the only thing we have to do is test that it correctly filters when we ask for a report of the "Returns".
 
-#### It returns a "returns" report with no "sales" data ####
+#### It returns a report of return transactions that excludes sales transactions ####
 
 You will now create a test that will verify that the report is correct when you ask for it to give you a report of the returns.
 
@@ -39,7 +39,7 @@ This will look very much like the last test but the transaction statuses are swa
 
 ```javascript
 describe('get returns report', function () {
-    it('returns a "returns" report with no "sales" data', () => {
+    it('returns a report of return transactions that excludes sales transactions', () => {
         transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Return, ?));
         transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Sale, ?)); // This is the record that is not going to be counted
         transactionRecords.push(buildTransactionRecord(?, transactionStatuses.Return, ?));

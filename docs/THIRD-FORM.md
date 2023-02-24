@@ -51,7 +51,7 @@ This will use `typeOf` to do the check.
 
 </details>
 
-#### It calls isTypeOf from greet ####
+#### It calls `isTypeOf` from greet ####
 
 Now you will modify the `greet` function to use the `isTypeOf` function instead of the `typeOf` function.
 
@@ -107,7 +107,7 @@ You will want to use the new `isTypeOf` function.
 
 </details>
 
-#### It calls eitherOnType from greet ####
+#### It calls `eitherOnType` from greet ####
 
 Modify the `greet` function so that you replace the trinary operator with the `eitherOnType` function.
 
@@ -466,7 +466,7 @@ You already have the code, you will just add it into a new function.
 
 </details>
 
-##### It has a function called `assertArrayOfType` with a parameters `type` and `values`' #####
+##### It has a function called `assertArrayOfType` with a parameters `type` and `values` #####
 
 Now create a function called `assertArrayOfType` that compares all items in `values` with the given `type` and throws an exception if any of the values are not the correct type.
 
@@ -503,7 +503,7 @@ Again you already have this code. You just need to add it in the new function.
 
 </details>
 
-##### It has a call in `assertArrayOfType` function to `assertArray` with `values` as an argument' #####
+##### It has a call in `assertArrayOfType` function to `assertArray` with `values` as an argument #####
 
 Modify the `assertArrayOfType` function to call the `assertArray` function before it checks the values in the array.
 

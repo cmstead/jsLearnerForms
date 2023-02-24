@@ -17,7 +17,7 @@ getVectorsShorterThan(length, arrayOfVectors)
 
 Such that `length` is the number for which You will compare magnitudes against, and `arrayOfVectors` is the array of arrays, where then inner arrays are to contain numbers.
 
-#### It returns an array of one vector when the vector is shorter than 5 -- arguments are: length, arrayOfVectors ####
+#### It returns an array of one vector when the vector is shorter than 5 ####
 
 Create a the function `getVectorsShorterThan` where the first parameter is `length` and the second parameter is `arrayOfVectors` that returns all vectors where the magnitude is less then 5. There is only one vector at this point and its length is less then 5.
 
