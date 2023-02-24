@@ -1,11 +1,8 @@
 <!--bl
     (filemeta
-        (title "Combining existing code to solve new problems")
+        (title "Magnitude Function")
     )
 /bl-->
-You will now take code you wrote and use it define more complex behaviors
-
-### Magnitude Function ###
 
 You will create a function called `magnitude` that will calculate the magnitude of all given numbers.
 

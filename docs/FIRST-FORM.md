@@ -749,6 +749,7 @@ Add logic to return a copy of vector array (Slice will create a new array just l
     
 
 ## Combining existing code to solve new problems ##
+
 You will now take code you wrote and use it define more complex behaviors
 
 ### Magnitude Function ###
@@ -913,6 +914,7 @@ The magnitude of a vector is computed by:
 </details>
 
 </details>
+    
     
 
 ## Looping and inequality comparison ##
