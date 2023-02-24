@@ -7,7 +7,6 @@ You can also look at [JS Learner Forms documentation](../FORMS.md) for other for
 
 You will be working in then [jsforms-source/1_first-form.js](..\jsforms-source\1_first-form.js) file.
 
-
 ## Table Of Contents ##
 
 - [Section 1: Variables and Operations](#user-content-variables-and-operations)
@@ -552,6 +551,7 @@ Add logic to sum an arbitrary length array of numbers (A for loop might help to 
 </details>
 
 </details>
+    
 
 ### Square All Function ###
 
@@ -618,6 +618,7 @@ Add logic to square all numbers in array (How did you solve sum?)
 </details>
 
 </details>
+    
     
 
 ## Combining Complex Functions ##
