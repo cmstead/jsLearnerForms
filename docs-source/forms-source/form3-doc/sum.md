@@ -3,6 +3,7 @@
         (title "Sum")
     )
 /bl-->
+
 You will refactor the `sum` function.
 
 ### Refactoring steps ###

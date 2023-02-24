@@ -18,6 +18,7 @@ You will be working in the [jsforms-source/3_third-form.js](../jsforms-source/3_
 - [Section 4: The Other JS Learner Forms](#user-content-the-other-js-learner-forms)
 
 ## Greeter ##
+
 You are going to start by refactoring the `greet` function.
 
 ### Refactoring steps ###
@@ -131,6 +132,7 @@ The trinary operator has effectively moved to the `eitherOnType` method. The one
     
 
 ## Sum ##
+
 You will refactor the `sum` function.
 
 ### Refactoring steps ###
@@ -228,6 +230,7 @@ Get rid of the `result` variable and just return the result of the call to reduc
     
 
 ## Build Vector ##
+
 You will refactor the `buildVector` function.
 
 ### Getter properties and value immutability ###

@@ -3,6 +3,7 @@
         (title "Greeter")
     )
 /bl-->
+
 You are going to start by refactoring the `greet` function.
 
 ### Refactoring steps ###

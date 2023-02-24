@@ -3,6 +3,7 @@
         (title "Build Vector")
     )
 /bl-->
+
 You will refactor the `buildVector` function.
 
 ### Getter properties and value immutability ###
