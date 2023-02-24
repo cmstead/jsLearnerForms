@@ -19,6 +19,16 @@ const fourthFormHelpers = (function () {
                 id: 2,
                 name: 'Robot Costume',
                 price: 59.99
+            },
+            {
+                id: 3,
+                name: 'Cow Costume',
+                price: 49.99
+            },
+            {
+                id: 3,
+                name: 'Doctor Costume',
+                price: 35.99
             }
         ];
     }
@@ -45,7 +55,7 @@ const fourthFormHelpers = (function () {
     function buildTestData(productData, transactionStatuses, transactionData = []) {
         return {
             productData: productData,
-            transactionTypes: transactionStatuses,
+            transactionStatuses: transactionStatuses,
             transactionData: transactionData
         };
     }

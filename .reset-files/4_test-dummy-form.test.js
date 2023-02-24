@@ -66,20 +66,20 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
 
     describe('sales report', function () {
         describe('get sales report', function () {
-            it('returns a sales report with no sales');
+            it('returns a report of sales with no sales');
 
-            it('returns a sales report with one sale');
+            it('returns a report of sales with one sale');
 
-            it('returns a sales report with two sales of different products');
+            it('returns a report of sales with two sales of different products');
 
-            it('returns a sales report with two sales of the same product');
+            it('returns a report of sales with two sales of the same product');
 
-            it('returns a sales report with no "returns" data');
+            it('returns a report of sales excluding any return transactions');
         });
     });
 
     describe('returns report', function () {
-        it('returns a "returns" report with no "sales" data');
+        it('returns a report of return transactions that excludes sales transactions');
     });
 
 });

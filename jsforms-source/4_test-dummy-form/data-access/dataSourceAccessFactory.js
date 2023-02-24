@@ -6,7 +6,7 @@ function dataSourceAccessFactory() {
 
     return {
         loadTransactionData: throwOnLoad,
-        loadTransactionTypes: throwOnLoad,
+        loadTransactionStatuses: throwOnLoad,
         loadProductTypes: throwOnLoad
     };
 }

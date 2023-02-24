@@ -3,9 +3,10 @@
         (title "Sum")
     )
 /bl-->
+
 You will refactor the `sum` function.
 
-### Refactoring steps
+### Refactoring steps ###
 
 Here are the steps you will take to refactor the `sum` method so that you can change its shape without changing its behavior.
 
@@ -15,7 +16,7 @@ Here are the steps you will take to refactor the `sum` method so that you can ch
 
 _**KEEP THE TESTS PASSING!**_
 
-#### It has been refactored to use `reduce` in the place of `forEach`, assigning the output to result
+#### It has been refactored to use `reduce` in the place of `forEach`, assigning the output to result ####
 
 Modify the `sum` function to use the [`Array.prototype.reduce`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) method in place of the [`Array.prototype.forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) method.
 
@@ -52,7 +53,7 @@ In short you can use this similarly to the `forEach` method but without the need
 
 </details>
 
-#### It has been refactored to pass the add function directly to reduce
+#### It has been refactored to pass the add function directly to reduce ####
 
 Modify the `sum` function to no longer use a function expression and instead just directly use the `add` function.
 
@@ -76,7 +77,7 @@ The `reduce` method takes a function with two parameters, `add` takes two parame
 
 </details>
 
-#### It has been refactored to not assign the sum before returning it
+#### It has been refactored to not assign the sum before returning it ####
 
 Modify the `sum` function to just return the result instead of assigning it to a variable.
 

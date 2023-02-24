@@ -1,11 +1,8 @@
 <!--bl
     (filemeta
-        (title "Combining existing code to solve new problems")
+        (title "Magnitude Function")
     )
 /bl-->
-You will now take code you wrote and use it define more complex behaviors
-
-### \*\*magnitude function\*\*
 
 You will create a function called `magnitude` that will calculate the magnitude of all given numbers.
 
@@ -37,7 +34,7 @@ or
 >
 > d = 3
 
-#### It returns the magnitude of a vector with only one number
+#### It returns the magnitude of a vector with only one number ####
 
 Create a function called `magnitude` that returns the first item in an array that is given to it.
 
@@ -63,7 +60,7 @@ Can you just return a value from the array?
 
 </details>
 
-#### It returns only positive numbers -- all magnitudes are positive
+#### It returns only positive numbers -- all magnitudes are positive ####
 
 Modify the `magnitude` function that returns the positive value of the first item in an array that is given to it.
 
@@ -96,7 +93,7 @@ Currently the magnitude of a vector is computed by:
 
 </details>
 
-#### It should return the magnitude of a vector with two values
+#### It should return the magnitude of a vector with two values ####
 
 Modify the `magnitude` function so that it returns the magnitude of the first 2 items in an array given to it.
 
@@ -134,7 +131,7 @@ Currently the magnitude of a vector is computed by:
 
 </details>
 
-#### It should return the magnitude of a vector with multiple values
+#### It should return the magnitude of a vector with multiple values ####
 
 Modify the `magnitude` function so that it returns the magnitude of all the values in the array.
 

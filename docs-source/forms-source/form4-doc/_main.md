@@ -14,9 +14,11 @@ You will be working in the [test/4_test-dummy-form.test.js](../test/4_test-dummy
 
 <!--bl
     (table-of-contents
-        (section-main "./why.md")
+        (section-main "./why/_main.md")
         (section-main "./hints.md")
-        (section-main "./app.md")
-        (section-main "./pointOfSaleDataUtils.md")
+        (section-main "./app/_main.md")
+        (section-main "./pointOfSaleDataUtils/_main.md")
+        (section-main "./getReport/_main.md")
     )
 /bl-->
+## TDB ##

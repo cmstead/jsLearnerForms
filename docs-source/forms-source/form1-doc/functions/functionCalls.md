@@ -1,79 +1,14 @@
 <!--bl
     (filemeta
-        (title "Function Creation")
-        (subtitle "[function declaration, return statement]")
+        (title "Function Calls and Mathematical Operations [Math Library]")
     )
 /bl-->
-Time to create functions and have them return a value.
 
-### \*\*greeter function\*\*
-
-##### It should say "Hello!" by default
-
-Write a function called `greet` that returns the value "Hello!". (note: don't forget the "!")
-
-<details><summary>Hints</summary>
-
-Functions start with the keyword `function` followed by the name of the function and then a set of parenthesis `()`. All the logic of a function is contained an open curly brace `{` and a closed curly brace `}`. What the function returns follows the key word `return`.
-
-<details><summary>Code</summary>
-
-**Example**
-
-```javascript
-    function greet() {
-        return _string_;
-    }
-
-    return {
-        greet,
-    };
-```
-
-</details>
-
-</details>
-
-#### conditional logic [if/else]
-
-##### It should say "Salutations!" when Salutations is passed
-
-Modify the greet function to take a greeting and return the greeting if it was passed.
-
-<details><summary>Hints</summary>
-
-Add condition to greet to handle custom greeting case.
-(Try using an "if/else" structure. "If" is a control structure)
-
-<details><summary>Code</summary>
-
-**Example**
-
-```javascript
-    function greet (greeting) {
-        if (_something_ === undefined) {
-            return _string_;
-        } else {
-            return _something_ + '!';
-        }
-    }
-
-    return {
-        greet,
-    };
-```
-
-</details>
-
-</details>
-
-### function calls and mathematical operations [Math library]
-
-#### \*\*square function\*\*
+#### Square Function ####
 
 Create a function that takes a number and returns its square.
 
-##### It should square 1
+##### It should square 1 #####
 
 The function called `square` will be passed 1 and should return 1.
 
@@ -99,7 +34,7 @@ Add square function that returns a simple value rather then worrying about actua
 
 </details>
 
-##### It should square 3
+##### It should square 3 #####
 
 Modify the `square` function such that it returns the square of the value passed in.
 
@@ -139,11 +74,11 @@ Modify the `square` function such that it returns the square of the value passed
 
 </details>
 
-#### \*\*squareRoot function\*\*
+#### Square Root Function ####
 
 Create a function that takes a number and returns the square root of that number. (note: use the Math library).
 
-##### It should take the square root of 1
+##### It should take the square root of 1 #####
 
 Create a function called `squareRoot` that will be passed 1 and return 1.
 
@@ -169,7 +104,7 @@ Create a function that returns a simple value rather then worrying about actuall
 
 </details>
 
-##### It should take the square root of 4
+##### It should take the square root of 4 #####
 
 Modify the `squareRoot` function to return the square root of the value passed.
 

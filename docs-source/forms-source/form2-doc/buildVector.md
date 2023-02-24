@@ -3,13 +3,14 @@
         (title "Build Vector")
     )
 /bl-->
+
 Now you will refactor the `buildVector` function changing its shape.
 
-### Refactoring steps
+### Refactoring steps ###
 
 These are the steps you will use to change the shape of the `buildVector` function without changing its behavior.
 
-#### It has a refactoring in magnitude function to replace vector value with `vector.valueOf()`
+#### It has a refactoring in magnitude function to replace vector value with `vector.valueOf()` ####
 
 Now modify the `magnitude` function by not passing the vector directly but passing the result of the `valueOf` method on vector. Currently the `valueOf` function just returns the original array. However this will make space for later changes that will happen to the `buildVector` function.
 
@@ -32,7 +33,7 @@ Just add a `.valueOf()` call after the vector in the call to `sumOfSquares`.
 
 </details>
 
-#### It contains a constructor for an object called Vector
+#### It contains a constructor for an object called Vector ####
 
 Now you will create a constructor for an object called `Vector`. You are not yet exporting that constructor. This constructor can just be an empty function.
 
@@ -53,7 +54,7 @@ You will not be using JavaScripts class objects. Instead work from the original 
 
 </details>
 
-#### It accepts a parameter "points" into Vector constructor
+#### It accepts a parameter `points` into Vector constructor ####
 
 Modify the `Vector` function to take a parameter called points. There is no need to do anything with this parameter yet.
 
@@ -74,7 +75,7 @@ The `Vector` constructor is just a function. All functions can have a name repre
 
 </details>
 
-#### It assigns `points` variable to "this.points" in `Vector` constructor
+#### It assigns `points` variable to `this.points` in `Vector` constructor ####
 
 Modify the `Vector` constructor to save the `points` parameter.
 
@@ -96,7 +97,7 @@ Remember in JavaScript, you do not have to predefine member variables before you
 
 </details>
 
-#### It overrides the valueOf function on the Vector prototype
+#### It overrides the `valueOf` function on the Vector prototype ####
 
 Now you will need to override the internal `valueOf` function on `Vector`. Remember that `valueOf` comes from object and by default just returns the object. You will now change the behavior of this function to return a copy of its internal points.
 
@@ -118,7 +119,7 @@ The way to override an internal function in JavaScript without the use of the `c
 
 </details>
 
-#### It overrides the `toString` function on the `Vector` prototype
+#### It overrides the `toString` function on the `Vector` prototype ####
 
 Now you will need to override the internal `toString` function on `Vector`. Remember what you learned above.
 
@@ -139,7 +140,7 @@ The way to override an internal function in JavaScript without the use of the `c
 
 </details>
 
-#### It should return a vector where toString returns a vector string
+#### It should return a vector where `toString` returns a vector string ####
 
 You will modify the overridden `toString` method on `Vector` such that:
 
@@ -187,7 +188,7 @@ You can use the [`Array.prototype.forEach`](https://developer.mozilla.org/en-US/
 
 </details>
 
-#### It returns a new Vector object instead of an array
+#### It returns a new Vector object instead of an array ####
 
 You will now modify the `buildVector` function to return a new `Vector` instead of an array of values.
 

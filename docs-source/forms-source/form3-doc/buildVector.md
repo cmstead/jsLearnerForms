@@ -3,13 +3,14 @@
         (title "Build Vector")
     )
 /bl-->
+
 You will refactor the `buildVector` function.
 
-### Getter properties and value immutability
+### Getter properties and value immutability ###
 
 You will learn how to add readonly properties to an object. You will be modifying the `Vector` object.
 
-#### It should have access to read, but not write, vector.points
+#### It should have access to read, but not write, vector.points ####
 
 The `Vector` object's internal `points` array should be read only. This is accomplished by using a [property getter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get).
 
@@ -39,7 +40,7 @@ function Vector(points) {
 
 </details>
 
-#### It should not change `Vector` object when the original array is modified
+#### It should not change `Vector` object when the original array is modified ####
 
 Now you will modify the `Vector` function to return a copy of the array passed into it. This will isolate the `Vector` object from changes that happen outside of the object.
 
@@ -64,7 +65,7 @@ Maybe the `Array.prototype.slice` method might be useful.
 
 </details>
 
-#### It should not be possible to modify `vector.points`
+#### It should not be possible to modify `vector.points` ####
 
 Modify the `Vector` method to make the copy of the `points` array read only.
 
@@ -89,11 +90,11 @@ It might help to use the [Object.freeze](https://developer.mozilla.org/en-US/doc
 
 </details>
 
-#### Constructor type check
+#### Constructor type check ####
 
 You will be modifying the `Vector` function to have better type checking. This will include type validation and throwing of errors.
 
-#### It throws an error if constructor is called with a value which is not an array
+#### It throws an error if constructor is called with a value which is not an array ####
 
 Modify the `Vector` function to throw an error if the `points` parameter is not a type of an array.
 
@@ -122,7 +123,7 @@ To test that something is an array or not, you cannot use the `typeOf` function 
 
 </details>
 
-#### It throws an error if constructor is called with an array of one value which is not a number
+#### It throws an error if constructor is called with an array of one value which is not a number ####
 
 Modify the `Vector` function to check the type of the first element in the array to ensure it is a number. Then `throw` a new `Error` if it isn't.
 
@@ -155,7 +156,7 @@ You might be able to use the `isTypeOf` function here.
 
 </details>
 
-#### It throws an error if constructor is called with an array which contains values other than numbers
+#### It throws an error if constructor is called with an array which contains values other than numbers ####
 
 Modify the `Vector` function to check the type of all elements in the array to ensure that they are all numbers. Then `throw` a new `Error` if any of them are not.
 
@@ -210,14 +211,14 @@ You might be able to use the `Array.prototype.filter` method or the `Array.proto
 
 </details>
 
-#### Refactoring steps
+#### Refactoring steps ####
 
 Now you will modify the `Vector` method such that you will change the shape of it without changing the behavior.
 
 1. You will create methods that handle the type checking.
 2. You will then utilize these methods instead of having the error checking embedded in the `Vector` constructor.
 
-##### It has a function called `assertArray` with parameter `values`
+##### It has a function called `assertArray` with parameter `values` #####
 
 Create a function called `assertArray` which will look at the type of the parameter `values` and throw an exception if `values` is not an array.
 
@@ -241,7 +242,7 @@ You already have the code, you will just add it into a new function.
 
 </details>
 
-##### It has a function called `assertArrayOfType` with a parameters `type` and `values`'
+##### It has a function called `assertArrayOfType` with a parameters `type` and `values` #####
 
 Now create a function called `assertArrayOfType` that compares all items in `values` with the given `type` and throws an exception if any of the values are not the correct type.
 
@@ -278,7 +279,7 @@ Again you already have this code. You just need to add it in the new function.
 
 </details>
 
-##### It has a call in `assertArrayOfType` function to `assertArray` with `values` as an argument'
+##### It has a call in `assertArrayOfType` function to `assertArray` with `values` as an argument #####
 
 Modify the `assertArrayOfType` function to call the `assertArray` function before it checks the values in the array.
 
@@ -312,7 +313,7 @@ Modify the `assertArrayOfType` function to call the `assertArray` function befor
 
 </details>
 
-##### It has a call in `Vector` constructor to `assertArrayOfType`
+##### It has a call in `Vector` constructor to `assertArrayOfType` #####
 
 Now modify the `Vector` function to call the `assertArrayOfType` instead of the logic to check the type.
 

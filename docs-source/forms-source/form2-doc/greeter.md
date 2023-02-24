@@ -3,13 +3,14 @@
         (title "Greeter")
     )
 /bl-->
+
 Let us change the `greet` function.
 
-### Refactoring steps
+### Refactoring steps ###
 
 Lets look at the steps in refactoring the `greet` function.
 
-#### It is refactored to remove the unnecessary else
+#### It is refactored to remove the unnecessary else ####
 
 Modify the `greet` function to remove the else statement.
 
@@ -35,7 +36,7 @@ Because of the `return greeting + '!';` in the first part of the `if` statement 
 
 </details>
 
-#### It is refactored to remove if and replace with a ternary expression
+#### It is refactored to remove if and replace with a ternary expression ####
 
 Because both paths of the function return a value, you can change the shape of the code from an `if` `return` to a [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
@@ -61,7 +62,7 @@ A ternary operator has the following form
 
 </details>
 
-#### It is refactored to use typeof comparison to "string"
+#### It is refactored to use `typeof` comparison to `string` ####
 
 You will now modify the `greet` function to remove the `greeting === undefined` comparison and instead use the [typeof](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof) operator to prove whether or not what was passed in was a string.
 

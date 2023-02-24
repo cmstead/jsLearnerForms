@@ -37,6 +37,24 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "senpl",
+      "name": "Michał Urbanek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5415941?v=4",
+      "profile": "https://github.com/senpl",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "willemlarsen",
+      "name": "Willem Larsen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3875136?v=4",
+      "profile": "http://thermodynamicsofemotion.com/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,

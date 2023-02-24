@@ -1,15 +1,12 @@
 <!--bl
     (filemeta
-        (title "Combining Complex Functions")
+        (title "Sum Of Squares Function")
     )
 /bl-->
-You will use previous functions chained to gether to give us new results.
-
-### \*\*sumOfSquares function\*\*
 
 Create a function that takes an array of numbers, squares each number and then returns the sum of those squares.
 
-#### It should square number in a 1-length array and return it
+#### It should square number in a 1-length array and return it ####
 
 Create a function called `sumOfSquares` that takes an array and returns the square of the first element.
 
@@ -38,7 +35,7 @@ Try to do the following:
 
 </details>
 
-#### It should take the sum of squares of multiple numbers
+#### It should take the sum of squares of multiple numbers ####
 
 Modify the `sumOfSquares` function so that it squares all numbers in the array.
 
