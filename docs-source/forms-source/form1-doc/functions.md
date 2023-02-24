@@ -7,7 +7,7 @@
 
 Time to create functions and have them return a value.
 
-### greeter function ###
+### Greeter Function ###
 
 ##### It should say "Hello!" by default #####
 
@@ -35,7 +35,7 @@ Functions start with the keyword `function` followed by the name of the function
 
 </details>
 
-#### conditional logic [if/else] ####
+#### Conditional Logic [If / Else] ####
 
 ##### It should say "Salutations!" when Salutations is passed #####
 
@@ -68,9 +68,9 @@ Add condition to greet to handle custom greeting case.
 
 </details>
 
-### function calls and mathematical operations [Math library] ###
+### Function Calls and Mathematical Operations [Math Library] ###
 
-#### square function ####
+#### Square Function ####
 
 Create a function that takes a number and returns its square.
 
@@ -140,7 +140,7 @@ Modify the `square` function such that it returns the square of the value passed
 
 </details>
 
-#### squareRoot function ####
+#### Square Root Function ####
 
 Create a function that takes a number and returns the square root of that number. (note: use the Math library).
 

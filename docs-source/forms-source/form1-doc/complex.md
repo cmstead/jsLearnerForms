@@ -6,7 +6,7 @@
 
 You will use previous functions chained to gether to give us new results.
 
-### sumOfSquares function ###
+### Sum Of Squares Function ###
 
 Create a function that takes an array of numbers, squares each number and then returns the sum of those squares.
 

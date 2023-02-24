@@ -5,7 +5,7 @@
 /bl-->
 Now it is time to use functions to examine looping and comparisons.
 
-### getVectorsShorterThan ###
+### Get Vectors Shorter Than ###
 
 You will now create a function called `getVectorsShorterThan` that will take an array of arrays. It will compare each array based on its magnitude and return all arrays that have a magnitude smaller then the number provided.
 

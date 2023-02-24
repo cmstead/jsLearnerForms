@@ -246,7 +246,7 @@ Find `return {};` add a "b" -> `return {b};`
 
 Time to create functions and have them return a value.
 
-### greeter function ###
+### Greeter Function ###
 
 ##### It should say "Hello!" by default #####
 
@@ -274,7 +274,7 @@ Functions start with the keyword `function` followed by the name of the function
 
 </details>
 
-#### conditional logic [if/else] ####
+#### Conditional Logic [If / Else] ####
 
 ##### It should say "Salutations!" when Salutations is passed #####
 
@@ -307,9 +307,9 @@ Add condition to greet to handle custom greeting case.
 
 </details>
 
-### function calls and mathematical operations [Math library] ###
+### Function Calls and Mathematical Operations [Math Library] ###
 
-#### square function ####
+#### Square Function ####
 
 Create a function that takes a number and returns its square.
 
@@ -379,7 +379,7 @@ Modify the `square` function such that it returns the square of the value passed
 
 </details>
 
-#### squareRoot function ####
+#### Square Root Function ####
 
 Create a function that takes a number and returns the square root of that number. (note: use the Math library).
 
@@ -621,7 +621,7 @@ Add logic to square all numbers in array (How did you solve sum?)
 
 You will use previous functions chained to gether to give us new results.
 
-### sumOfSquares function ###
+### Sum Of Squares Function ###
 
 Create a function that takes an array of numbers, squares each number and then returns the sum of those squares.
 
@@ -686,7 +686,7 @@ Add logic to square all numbers and return the sum (squareAll and sum might be u
 
 You are going to use functions to explore the `Array.prototype.slice` method.
 
-### buildVector function ###
+### Build Vector Function ###
 
 You will now create a function called `buildVector` that returns a copy of the array as it was passed.
 
@@ -916,7 +916,7 @@ The magnitude of a vector is computed by:
 ## Looping and inequality comparison ##
 Now it is time to use functions to examine looping and comparisons.
 
-### getVectorsShorterThan ###
+### Get Vectors Shorter Than ###
 
 You will now create a function called `getVectorsShorterThan` that will take an array of arrays. It will compare each array based on its magnitude and return all arrays that have a magnitude smaller then the number provided.
 
