@@ -29,22 +29,22 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
     let salesReporter;
 
     beforeEach(function () {
-        pointOfSaleDataUtilsFactory = pointOfSaleDataUtilsFactoryBuilder();
+        pointOfSaleDataUtilsFactory = pointOfSaleDataUtilityFactoryBuilder();
     });
 
     describe('Point of Sale Data Utilities', function () {
+        // File being tested can be found here:
+        // ../jsforms-source/4_test-dummy-form/pos-transaction-services/pointOfSaleDataUtilsFactory.js
+        
+        let pointOfSaleDataUtilities;
+        let transactionStatuses;
+
+        beforeEach(function () {
+            transactionStatuses = buildTransactionStatuses();
+            pointOfSaleDataUtilities = pointOfSaleDataUtilsFactory(transactionStatuses);
+        });
+
         describe('get product count by sale', function () {
-
-            let pointOfSaleDataUtilities;
-            let transactionStatuses;
-            let testData;
-
-            beforeEach(function(){
-                testData = buildSimpleTestData();
-                transactionStatuses = buildTransactionStatuses();
-                pointOfSaleDataUtilities = pointOfSaleDataUtilsFactory(transactionStatuses);
-            });
-
             it('returns an empty object for sale counts if no sale data exists');
 
             it('returns an object with a single count of 1 when only one item, quantity 1 was purchased');
@@ -64,7 +64,10 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
         });
     });
 
-    describe('sales report', function () {
+    describe('get report', function () {
+        // files being tested are:
+        //      ../jsforms-source/4_test-dummy-form/sales-reporter/salesReporterFactory.js
+        //      ../jsforms-source/4_test-dummy-form/pos-transaction-services/reportDataBuilder.js
         describe('get sales report', function () {
             it('returns a report of sales with no sales');
 
@@ -76,10 +79,9 @@ describe('Test Dummy Form - Costume Shop Sales', function () {
 
             it('returns a report of sales excluding any return transactions');
         });
-    });
 
-    describe('returns report', function () {
-        it('returns a report of return transactions that excludes sales transactions');
+        describe('get returns report', function () {
+            it('returns a report of return transactions that excludes sales transactions');
+        });
     });
-
 });
