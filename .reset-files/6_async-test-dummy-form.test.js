@@ -1,17 +1,27 @@
-/* global httpService, pluginApi, asyncContacts */
+/*
+global
+
+asyncContacts,
+chai,
+httpService,
+pluginApi
+*/
 
 'use strict';
 
-describe('Test Dummy Form', function () {
+describe('Async Test Dummy Form', function () {
 
     let contactService;
+    let responseData;
 
     beforeEach(function () {
+        responseData = {};
+        
         const httpInstance = httpService();
         const contactServiceInstance = contactService(httpInstance);
         const pluginApiInstance = pluginApi();
-    
-        return asyncContacts(contactServiceInstance, pluginApiInstance);
+
+        asyncContacts(contactServiceInstance, pluginApiInstance);
     });
 
     // For this first suite of tests, we are going to work with comparing strings
@@ -23,7 +33,7 @@ describe('Test Dummy Form', function () {
         it('should return 0 when two values are equal');
 
         // Equality checking is one of the most common ways to test
-        // the results of code, so it's important to get comnfortable with it
+        // the results of code, so it's important to get comfortable with it
         it('should return -1 when name1 comes before name2 alphabetically');
 
         // It's important to test all cases. The function, compareNames, has
@@ -31,7 +41,6 @@ describe('Test Dummy Form', function () {
         // is to test until you're bored. Ideally, being bored will come at
         // about the same time you've tested all cases.
         it('should return 1 when name1 comes after name2 alphabetically');
-
     });
 
     // Our second suite of tests will validate the behavior of a record comparison
@@ -60,7 +69,6 @@ describe('Test Dummy Form', function () {
         // We could use the same record from the previous test to run this test case as well
         // If this generates duplicate code, how would we resolve that?
         it('should return 1 when last names are equal and record1.firstName comes after record3.firstName alphabetically');
-
     });
 
     describe('sortByContactName', function () {
@@ -75,7 +83,6 @@ describe('Test Dummy Form', function () {
         // sortByContactName always returns an array, so a calling function
         // doesn't fail on a type error
         it('should return an empty array if passed argument is not an array');
-
     });
 
     describe('getContactNames', function () {
